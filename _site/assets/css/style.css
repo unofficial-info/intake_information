@@ -386,3 +386,48 @@ body {
 .news-list li:nth-child(3) {
   transition-delay: 0.2s; /* 3番目の項目は0.2秒遅れて開始 */
 }
+
+/* --- カテゴリ絞り込みボタンのスタイル --- */
+.category-filter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+
+.filter-btn {
+  padding: 8px 16px;
+  border: 1px solid var(--color-border, #eee);
+  background-color: var(--bg-primary, #fff);
+  color: var(--text-dark, #333);
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.filter-btn:hover {
+  background-color: var(--bg-secondary, #f0f0f0);
+}
+
+/* 選択中のボタンのスタイル */
+.filter-btn.is-active {
+  background-color: var(--text-dark, #333);
+  color: var(--text-light, #fff);
+  border-color: var(--text-dark, #333);
+}
+
+/* --- ページネーション（もっと見る）用のスタイル --- */
+/* 初期状態で11件目以降のliを非表示にする */
+.news-list li:nth-child(n+11) {
+  display: none;
+}
+
+.news-list li.is-visible {
+  display: list-item; /* JSで表示するためのクラス */
+}
+
+.load-more-container {
+  text-align: center;
+  margin-top: 40px;
+}

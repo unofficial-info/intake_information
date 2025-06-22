@@ -4,3 +4,34 @@ description: "インテイクの非公式情報サイトです。"
 
 baseurl: "/intake_information"
 url: "https://piencode.github.io"
+
+# ... (既存の title, baseurlなどの設定) ...
+
+collections:
+  news:
+    output: true # 各ニュースの詳細ページを生成する場合はtrue
+    sort_by: date
+
+# ... (collectionsの設定の下などに追記) ...
+
+# Plugins
+plugins:
+  - jekyll-paginate-v2
+
+# Pagination Settings
+pagination:
+  enabled: true
+  per_page: 10 # 1ページあたりの表示件数
+  collection: "news" # 'news'コレクションをページネーションの対象にする
+  sort_field: "date"
+  sort_reverse: true
+  permalink: "/news/page/:num/" # 2ページ目以降のURL (例: /news/page/2/)
+
+# Category Pages Settings
+autopages:
+  enabled: true
+  categories:
+    layouts:
+      - "category.html" # カテゴリ別ページで使う設計図
+    title: "NEWS | :cat" # カテゴリ別ページのタイトル
+    permalink: "/news/category/:slug" # カテゴリ別ページのURL

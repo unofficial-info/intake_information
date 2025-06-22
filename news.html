@@ -1,0 +1,25 @@
+---
+layout: default
+title: NEWS
+pagination:
+  enabled: true # このページでページネーションを有効にする
+---
+
+<div class="content-section">
+  <h1 class="section-title">NEWS</h1>
+
+  <ul class="news-list">
+    {% for item in paginator.posts %}
+      <li class="animate-on-scroll">
+        <a href="{{ item.url | relative_url }}">
+          <span class="date">{{ item.date | date: "%Y.%m.%d" }}</span>
+          <span class="category">{{ item.category }}</span>
+          <span class="title">{{ item.title }}</span>
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+
+  {% include pagination.html %}
+
+</div>
