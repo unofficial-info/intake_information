@@ -2,10 +2,10 @@
     <h2 class="section-title">NEWS</h2>
   
     <ul class="news-list">
-      {% for item in site.data.news limit:3 %}
+      {% for item in site.news limit:3 %}
         <li class="animate-on-scroll">
           <a href="{{ item.url | relative_url }}">
-            <span class="date">{{ item.date }}</span>
+            <span class="date">{{ item.date | date: "%Y.%m.%d" }}</span>
             <span class="category">{{ item.category }}</span>
             <span class="title">{{ item.title }}</span>
           </a>
@@ -13,7 +13,8 @@
       {% endfor %}
     </ul>
   
-    <div class="view-more animate-on-scroll">
-        <a href="{{ site.baseurl }}/news.html" class="button">VIEW MORE</a>
+    <div class="view-more">
+      <a href="{{ site.baseurl }}/news.html" class="button">VIEW MORE</a>
     </div>
+  </section>
   </section>
