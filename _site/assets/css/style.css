@@ -431,3 +431,35 @@ body {
   text-align: center;
   margin-top: 40px;
 }
+
+/* --- カテゴリ別ページへのリンクのスタイル --- */
+.category-links {
+  text-align: center;
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--color-border, #eee);
+}
+
+.category-links strong {
+  margin-right: 10px;
+}
+
+.category-link {
+  display: inline-block;
+  padding: 8px 16px;
+  margin: 5px;
+  border: 1px solid var(--color-border, #eee);
+  background-color: var(--bg-primary, #fff);
+  color: var(--text-dark, #333);
+  border-radius: 20px; /* 角を丸くする */
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.category-link:hover {
+  background-color: var(--text-dark, #333);
+  color: var(--text-light, #fff);
+  border-color: var(--text-dark, #333);
+  transform: translateY(-2px); /* 少しだけ上に動かす */
+}
