@@ -20,7 +20,7 @@
   </main>
 
   <footer class="site-footer-bottom">
-    <p>&copy; {% now '%Y' %} YOUR NAME. All Rights Reserved.</p>
+    <p>&copy; {{ site.time | date: '%Y' }} YOUR NAME. All Rights Reserved.</p>
   </footer>
 
   <script src="{{ site.baseurl }}/assets/js/script.js"></script>
