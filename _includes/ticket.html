@@ -1,0 +1,93 @@
+---
+layout: default
+title: Ticket
+---
+
+<h1>Ticket</h1>
+
+<form id="filter-form" class="filter-form">
+    <div class="form-group">
+        <label>期間:</label>
+        <input type="date" id="start-date">
+        <span>～</span>
+        <input type="date" id="end-date">
+    </div>
+    <div class="form-group">
+        <label for="prefecture">都道府県:</label>
+        <select id="prefecture">
+            <option value="">すべて</option>
+            <option value="東京都">東京都</option>
+            <option value="大阪府">大阪府</option>
+            <option value="福岡県">福岡県</option>
+            </select>
+    </div>
+    <div class="form-group">
+        <label for="artist">出演者:</label>
+        <input type="text" id="artist" placeholder="ゲスト名で検索">
+    </div>
+    <div class="form-buttons">
+        <button type="submit">この条件で絞り込む</button>
+        <button type="reset" id="reset-button">リセット</button>
+    </div>
+</form>
+
+<div id="ticket-list-container" class="ticket-list">
+    </div>
+
+
+<script src="{{ site.baseurl }}/assets/js/data/ticket-data.js"></script>
+
+<script>
+    // --- 要素の取得 ---
+    const container = document.getElementById('ticket-list-container');
+    const filterForm = document.getElementById('filter-form');
+    const resetButton = document.getElementById('reset-button');
+
+    // --- 関数定義 ---
+    function renderTickets(tickets) {
+        container.innerHTML = '';
+        if (tickets.length === 0) {
+            container.innerHTML = '<p>該当するチケット情報はありません。</p>';
+            return;
+        }
+        tickets.forEach(function(ticket) {
+            const ticketItemHTML = `
+                <div class="ticket-item">
+                    <h3>${ticket.title}</h3>
+                    <p>日時: ${ticket.datetime_str}</p>
+                    <p>会場: ${ticket.place} (${ticket.prefecture})</p>
+                    <p>他の出演者: ${ticket.artists.length > 0 ? ticket.artists.join(', ') : 'なし'}</p>
+                    <a href="${ticket.url}" class="ticket-button">詳細を見る</a>
+                </div>
+            `;
+            container.innerHTML += ticketItemHTML;
+        });
+    }
+
+    // --- イベントリスナーの設定 ---
+    filterForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        const startDate = document.getElementById('start-date').value;
+        const endDate = document.getElementById('end-date').value;
+        const prefecture = document.getElementById('prefecture').value;
+        const artist = document.getElementById('artist').value.trim();
+        const filteredTickets = ticketData.filter(function(ticket) {
+            if (startDate && ticket.date < startDate) return false;
+            if (endDate && ticket.date > endDate) return false;
+            if (prefecture && ticket.prefecture !== prefecture) return false;
+            if (artist && !ticket.artists.some(a => a.includes(artist))) return false;
+            return true;
+        });
+        renderTickets(filteredTickets);
+    });
+    
+    resetButton.addEventListener('click', function() {
+        renderTickets(ticketData);
+    });
+
+    // --- 初期表示 ---
+    // ticketDataが読み込まれた後に実行する
+    if (typeof ticketData !== 'undefined') {
+        renderTickets(ticketData);
+    }
+</script>

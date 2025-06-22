@@ -1,0 +1,28 @@
+<section id="profile" class="content-section">
+    <h2 class="section-title">PROFILE</h2>
+  
+    <div class="profile-list-container">
+  
+      {% for person in site.data.profiles %}
+        <div class="profile-card animate-on-scroll">
+          <div class="profile-image">
+            <img src="{{ site.baseurl }}/assets/images/{{ person.image }}" alt="{{ person.name }}">
+          </div>
+      
+          <div class="profile-text">
+            <h3>{{ person.name }}</h3>
+            <p>{{ person.bio }}</p>
+  
+            <div class="social-links">
+              <a href="{{ person.twitter_url }}" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                <i class="fa-brands fa-x-twitter"></i>
+              </a>
+              <a href="{{ person.instagram_url }}" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+      </div>
+  </section>

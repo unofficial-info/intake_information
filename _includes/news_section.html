@@ -1,0 +1,19 @@
+<section id="news" class="content-section animate-on-scroll">
+    <h2 class="section-title">NEWS</h2>
+  
+    <ul class="news-list">
+      {% for item in site.data.news limit:3 %}
+        <li class="animate-on-scroll">
+          <a href="{{ item.url | relative_url }}">
+            <span class="date">{{ item.date }}</span>
+            <span class="category">{{ item.category }}</span>
+            <span class="title">{{ item.title }}</span>
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  
+    <div class="view-more animate-on-scroll">
+      <a href="#" class="button">VIEW MORE</a>
+    </div>
+  </section>

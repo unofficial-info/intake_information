@@ -4,38 +4,13 @@ title: Home
 ---
 <section class="hero">
     <div class="hero-text">
-        <h1>YOUR NAME</h1> 
-        <p>Official Website</p>
+        <h1>インテイク</h1> 
+        <p>非公式information</p>
     </div>
     <a href="#news" class="scroll-down"><span>Scroll</span></a>
 </section>
 
-<section id="news" class="content-section">
-    <h2 class="section-title">NEWS</h2>
-    <ul class="news-list">
-        <li>
-            <a href="#">
-                <span class="date">2025.06.22</span>
-                <span class="category">RELEASE</span>
-                <span class="title">新曲「スターライト」の配信がスタートしました。</span>
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                <span class="date">2025.06.15</span>
-                <span class="category">MEDIA</span>
-                <span class="title">雑誌「月刊ステージ」8月号の表紙に決定！</span>
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                <span class="date">2025.06.01</span>
-                <span class="category">LIVE</span>
-                <span class="title">夏のライブツアーのチケット一般発売が開始しました。</span>
-            </a>
-        </li>
-    </ul>
-    <div class="view-more">
-        <a href="#" class="button">VIEW MORE</a>
-    </div>
+{% include profile.html %}
+
+{% include news_section.html %}
 </section>
