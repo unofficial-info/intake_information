@@ -1,0 +1,199 @@
+/* --- 基本設定とフォント --- */
+body {
+    font-family: 'Noto Sans JP', sans-serif; /* 日本語用のフォント */
+    margin: 0;
+    background-color: #f0f0f0; /* 背景を少しだけグレーに */
+    color: #333;
+}
+
+/* --- ヘッダー --- */
+.site-header {
+    position: sticky; /* 画面上部に固定 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: rgba(0, 0, 0, 0.8); /* 最初は少し透明に */
+    z-index: 1000; /* 他の要素より手前に表示 */
+    transition: background-color 0.3s;
+    box-sizing: border-box; /* paddingを含めて幅100%にする */
+}
+/* スクロールしたらヘッダーの背景を黒くするなど、より高度なことも可能です */
+
+.logo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+/* ハンバーガーメニュー関連のスタイルは前回のをそのまま流用できます */
+
+
+/* --- 全画面メインビジュアル (hero) --- */
+.hero {
+    height: 100vh; /* 画面の高さ100% */
+    background: url('images/int_image.jpg') no-repeat center center/cover;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative; /* スクロール矢印の基準位置 */
+}
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); /* 画像を少し暗くして文字を読みやすくする */
+}
+.hero-text {
+    position: relative; /* 文字をオーバーレイより手前に */
+    z-index: 1;
+}
+.hero-text h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 4rem; /* 文字サイズ */
+    font-weight: 700;
+    letter-spacing: 0.15em; /* 文字間隔 */
+    margin: 0;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); /* 文字に影をつけて立体感を出す */
+}
+.hero-text p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    letter-spacing: 0.1em;
+    margin-top: 10px;
+}
+
+/* スクロールを促す矢印 */
+.scroll-down {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    color: white;
+    text-decoration: none;
+    writing-mode: vertical-rl; /* 文字を縦書きに */
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    padding: 10px;
+    transition: opacity 0.3s;
+}
+.scroll-down span {
+    position: relative;
+    padding-right: 20px;
+}
+.scroll-down span::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 1px;
+    height: 60px; /* 縦線の長さ */
+    background: white;
+    animation: scroll-animation 2s infinite;
+}
+@keyframes scroll-animation { /* アニメーション */
+    0% { transform: scaleY(0); transform-origin: top; }
+    50% { transform: scaleY(1); transform-origin: top; }
+    51% { transform: scaleY(1); transform-origin: bottom; }
+    100% { transform: scaleY(0); transform-origin: bottom; }
+}
+
+
+/* --- コンテンツセクション --- */
+.content-section {
+    max-width: 900px; /* コンテンツの最大幅 */
+    margin: 80px auto; /* 上下の余白と、左右中央揃え */
+    padding: 20px;
+    background-color: #fff; /* 白い背景 */
+    box-shadow: 0 0 15px rgba(0,0,0,0.05);
+}
+.section-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 40px;
+    letter-spacing: 0.1em;
+}
+
+/* NEWSリスト */
+.news-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.news-list li {
+    border-bottom: 1px solid #eee;
+}
+.news-list li a {
+    display: flex;
+    flex-wrap: wrap; /* スマホで折り返すように */
+    padding: 20px 10px;
+    text-decoration: none;
+    color: #333;
+    transition: background-color 0.2s;
+}
+.news-list li a:hover {
+    background-color: #f8f8f8;
+}
+.news-list .date {
+    margin-right: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+.news-list .category {
+    margin-right: 20px;
+    background-color: #333;
+    color: white;
+    font-size: 0.8rem;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+/* VIEW MOREボタン */
+.view-more {
+    text-align: center;
+    margin-top: 40px;
+}
+.button {
+    display: inline-block;
+    padding: 12px 40px;
+    border: 1px solid #333;
+    color: #333;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0.1em;
+    transition: all 0.3s;
+}
+.button:hover {
+    background-color: #333;
+    color: white;
+}
+
+/* --- フッター --- */
+.site-footer-bottom {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.8em;
+    color: #666;
+}
+/* --- ふわっと表示させるためのアニメーション設定 --- */
+
+/* アニメーション前の状態（最初は透明で、少し下にいる） */
+.content-section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s, transform 0.8s;
+}
+
+/* JavaScriptによってこのクラスが付与されたら、アニメーション後の状態になる */
+.content-section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}

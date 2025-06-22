@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>チケット情報 - My Fan Club</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <a href="index.html" class="logo">インテイク非公式情報</a>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">ホーム</a></li>
+                <li><a href="ticket.html">チケット</a></li>
+                <li><a href="#">グッズ</a></li>
+            </ul>
+        </nav>
+        <button class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <main>
+        <h1>チケット情報</h1>
+    
+        <form id="filter-form" class="filter-form">
+            <div class="form-group">
+                <label>期間:</label>
+                <input type="date" id="start-date">
+                <span>～</span>
+                <input type="date" id="end-date">
+            </div>
+            <div class="form-group">
+                <label for="prefecture">都道府県:</label>
+                <select id="prefecture">
+                    <option value="">すべて</option>
+                    <option value="東京都">東京都</option>
+                    <option value="大阪府">大阪府</option>
+                    <option value="福岡県">福岡県</option>
+                    </select>
+            </div>
+            <div class="form-group">
+                <label for="artist">出演者:</label>
+                <input type="text" id="artist" placeholder="ゲスト名で検索">
+            </div>
+            <div class="form-buttons">
+                <button type="submit">この条件で絞り込む</button>
+                <button type="reset" id="reset-button">リセット</button>
+            </div>
+        </form>
+        <div id="ticket-list-container" class="ticket-list">
+            </div>
+    </main>
+    <script src="script.js"></script>
+    <script src="data/ticket-data.js"></script> <script>
+        // --- 要素の取得 ---
+        const container = document.getElementById('ticket-list-container');
+        const filterForm = document.getElementById('filter-form');
+        const resetButton = document.getElementById('reset-button');
+
+        // --- 関数定義 ---
+
+        /**
+         * チケットデータを元にHTMLを描画する関数
+         * @param {Array} tickets - 表示するチケット情報の配列
+         */
+        function renderTickets(tickets) {
+            // まずコンテナの中身を空にする
+            container.innerHTML = '';
+
+            if (tickets.length === 0) {
+                container.innerHTML = '<p>該当するチケット情報はありません。</p>';
+                return; // 条件に合うものがなければここで処理終了
+            }
+
+            tickets.forEach(function(ticket) {
+                // 表示用のHTMLを生成（今回は表示用の日時 datetime_str を使用）
+                const ticketItemHTML = `
+                    <div class="ticket-item">
+                        <h3>${ticket.title}</h3>
+                        <p>日時: ${ticket.datetime_str}</p>
+                        <p>会場: ${ticket.place} (${ticket.prefecture})</p>
+                        <p>他の出演者: ${ticket.artists.length > 0 ? ticket.artists.join(', ') : 'なし'}</p>
+                        <a href="${ticket.url}" class="ticket-button">詳細を見る</a>
+                    </div>
+                `;
+                // コンテナにHTMLを追加
+                container.innerHTML += ticketItemHTML;
+            });
+        }
+
+
+        // --- イベントリスナーの設定 ---
+
+        // フォームが送信された（「絞り込む」ボタンが押された）時の処理
+        filterForm.addEventListener('submit', function(event) {
+            // フォーム送信時のデフォルトのページ再読み込みをキャンセル
+            event.preventDefault();
+
+            // 入力された値を取得
+            const startDate = document.getElementById('start-date').value;
+            const endDate = document.getElementById('end-date').value;
+            const prefecture = document.getElementById('prefecture').value;
+            const artist = document.getElementById('artist').value.trim(); // 前後の空白を削除
+
+            // 元のデータをフィルタリング
+            const filteredTickets = ticketData.filter(function(ticket) {
+                
+                // 1. 日付の絞り込み
+                if (startDate && ticket.date < startDate) {
+                    return false; // 開始日より前なら除外
+                }
+                if (endDate && ticket.date > endDate) {
+                    return false; // 終了日より後なら除外
+                }
+
+                // 2. 都道府県の絞り込み
+                if (prefecture && ticket.prefecture !== prefecture) {
+                    return false; // 指定された都道府県と違うなら除外
+                }
+                
+                // 3. 出演者の絞り込み
+                if (artist && !ticket.artists.some(a => a.includes(artist))) {
+                    // 入力された出演者名が、artists配列のどの要素にも含まれていないなら除外
+                    return false;
+                }
+
+                // すべての条件をクリアしたものだけを残す
+                return true;
+            });
+            
+            // 絞り込んだ結果で一覧を再描画
+            renderTickets(filteredTickets);
+        });
+        
+        // リセットボタンが押された時の処理
+        resetButton.addEventListener('click', function() {
+            // フォームの内容は<button type="reset">がクリアしてくれる
+            // 全件表示に戻す
+            renderTickets(ticketData);
+        });
+
+
+        // --- 初期表示 ---
+        // ページが読み込まれたら、まず全件を表示する
+        renderTickets(ticketData);
+    </script>
+</body>
+</html>
