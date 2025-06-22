@@ -1,6 +1,6 @@
 /* --- 基本設定とフォント --- */
 body {
-    font-family: 'Noto Sans JP', sans-serif; /* 日本語用のフォント */
+    font-family: 'Tangerine', serif; /* 日本語用のフォント */
     margin: 0;
     background-color: #f0f0f0; /* 背景を少しだけグレーに */
     color: #333;
@@ -24,7 +24,7 @@ body {
 /* スクロールしたらヘッダーの背景を黒くするなど、より高度なことも可能です */
 
 .logo {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Tangerine', serif;
     font-size: 1.5em;
     font-weight: bold;
     color: white;
@@ -56,12 +56,12 @@ body {
     z-index: 1;
 }
 .hero-text h1 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Tangerine', serif;
     font-size: 4rem; /* 文字サイズ */
     font-weight: 700;
     letter-spacing: 0.15em; /* 文字間隔 */
     margin: 0;
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); /* 文字に影をつけて立体感を出す */
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5); /* 文字に影をつけて立体感を出す */
 }
 .hero-text p {
     font-family: 'Montserrat', sans-serif;
@@ -196,4 +196,26 @@ body {
 .content-section.is-visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* PC表示（画面幅が768px以上）の時のスタイル */
+@media (min-width: 768px) {
+    /* ↓↓↓ この .menu-toggle ルールを丸ごと削除します ↓↓↓ */
+    .menu-toggle {
+        display: none; /* PCでは三本線ボタンを隠す */
+    }
+
+    /* ↓↓↓ この .main-nav ルールも丸ごと削除します ↓↓↓ */
+    .main-nav {
+        display: block; /* PCではメニューを常に表示 */
+        position: static;
+        width: auto;
+        background-color: transparent;
+    }
+    .main-nav ul {
+        display: flex; /* 横並びにする */
+    }
+    .main-nav li a {
+        border-bottom: none;
+    }
 }
