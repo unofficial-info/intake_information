@@ -1,0 +1,8 @@
+# サイトの基本設定
+title: My Fan Club
+author: piencode # あなたのアカウント名
+description: "ファンクラブのオフィシャルウェブサイトです。"
+
+# GitHub Pagesで正しく表示させるための重要な設定
+baseurl: "/intake_information" # あなたのリポジトリ名（先頭に / を付ける）
+url: "https://piencode.github.io" # あなたのGitHub Pagesの基本URL

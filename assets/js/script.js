@@ -1,17 +1,3 @@
-// DOMが読み込まれたら実行
-document.addEventListener("DOMContentLoaded", function () {
-  // 必要な要素を取得
-  const menuToggle = document.querySelector(".menu-toggle");
-  const mainNav = document.querySelector(".main-nav");
-
-  // メニューボタンがクリックされた時の処理
-  menuToggle.addEventListener("click", function () {
-    // 'is-active' というクラスを付けたり外したりする
-    menuToggle.classList.toggle("is-active");
-    mainNav.classList.toggle("is-active");
-  });
-});
-
 // --- スクロールでふわっと表示させるアニメーション ---
 
 // 監視対象の要素をすべて取得

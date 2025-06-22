@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }} - {{ site.title }}</title>
+  
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Noto+Sans+JP&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  {% include header.html %}
+
+  <main>
+    {{ content }}
+  </main>
+
+  <footer class="site-footer-bottom">
+    <p>&copy; {% now '%Y' %} YOUR NAME. All Rights Reserved.</p>
+  </footer>
+
+  <script src="{{ site.baseurl }}/assets/js/script.js"></script>
+</body>
+</html>
