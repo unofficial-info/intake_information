@@ -2,14 +2,20 @@
 layout: default
 ---
 <div class="content-section">
-  <h1 class="section-title">カテゴリ: {{ page.title }}</h1>
+  <h1 class="section-title">NEWS | {{ page.category_name }}</h1>
 
-  <p>このページが表示されていれば、カテゴリページの自動生成は成功しています。</p>
+  {% include category_links.html %}
 
-  <h2>このカテゴリの記事一覧:</h2>
-  <ul>
-    {% for item in site.categories[page.category] %}
-      <li>{{ item.title }}</li>
+  <ul class="news-list">
+    {% assign category_posts = site.news | where: "category", page.category_name %}
+    {% for item in category_posts %}
+      <li class="animate-on-scroll">
+        <a href="{{ item.url | relative_url }}">
+          <span class="date">{{ item.date | date: "%Y.%m.%d" }}</span>
+          <span class="category">{{ item.category }}</span>
+          <span class="title">{{ item.title }}</span>
+        </a>
+      </li>
     {% endfor %}
   </ul>
 </div>

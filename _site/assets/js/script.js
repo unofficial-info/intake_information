@@ -52,3 +52,58 @@ navLinks.forEach(function (link) {
     drawerInput.checked = false;
   });
 });
+
+// --- ライブ情報セクションのスクロールページ番号表示処理 ---
+
+// ページ番号表示のセットアップを関数化する
+function setupPaginationIndicator(scrollerId) {
+  const scroller = document.getElementById(scrollerId);
+  const paginationId = scrollerId.replace("-scroller", "-pagination");
+  const paginationIndicator = document.getElementById(paginationId);
+
+  if (!scroller || !paginationIndicator) {
+    return;
+  }
+
+  const cards = scroller.querySelectorAll(".live-card");
+  const totalPages = cards.length;
+
+  // カードが1枚以下ならページ番号表示を隠す
+  if (totalPages <= 1) {
+    paginationIndicator.style.display = "none";
+    return;
+  }
+
+  // ページ番号を更新する関数
+  const updatePagination = () => {
+    let currentPage = 1;
+    let minDistance = Infinity;
+
+    // 現在、最も中央に近いカードを探して、その番号を現在のページ番号とする
+    const scrollerCenter =
+      scroller.getBoundingClientRect().left + scroller.clientWidth / 2;
+    cards.forEach((card, index) => {
+      const cardCenter =
+        card.getBoundingClientRect().left + card.clientWidth / 2;
+      const distance = Math.abs(scrollerCenter - cardCenter);
+
+      if (distance < minDistance) {
+        minDistance = distance;
+        currentPage = index + 1;
+      }
+    });
+
+    // 見つけたページ番号を表示に反映させる
+    paginationIndicator.textContent = `${currentPage} / ${totalPages}`;
+  };
+
+  // ユーザーが手動でスワイプした時もページ番号を更新する
+  scroller.addEventListener("scroll", updatePagination, { passive: true });
+
+  // 初期状態を設定
+  setTimeout(updatePagination, 100);
+}
+
+// 作成した関数を、それぞれのスライダーIDで呼び出す
+setupPaginationIndicator("todays-live-scroller");
+setupPaginationIndicator("upcoming-lives-scroller");

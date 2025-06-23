@@ -1,0 +1,10 @@
+<div class="category-links">
+  <strong>カテゴリ:</strong>
+  <a href="{{ '/news.html' | relative_url }}" class="category-link">すべて</a>
+  
+  {% assign categories = site.news | map: "category" | uniq | sort %}
+
+  {% for category in categories %}
+    <a href="{{ site.baseurl }}/news/category/{{ category | slugify }}/" class="category-link">{{ category }}</a>
+  {% endfor %}
+</div>
