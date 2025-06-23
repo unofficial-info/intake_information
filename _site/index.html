@@ -28,7 +28,7 @@
       <nav class="nav_content">
         <ul class="nav_list">
           <li class="nav_item"><a href="/intake_information/">HOME</a></li>
-          <li class="nav_item"><a href="/intake_information/#profile">PROFILE</a></li>
+          <li class="nav_item"><a href="/intake_information/profile">PROFILE</a></li>
           <li class="nav_item"><a href="/intake_information/news.html">NEWS</a></li>
           <li class="nav_item"><a href="/intake_information/ticket.html">TICKET</a></li>
           <li class="nav_item"><a href="#">MEDIA</a></li>
@@ -43,7 +43,7 @@
         <h1>インテイク</h1> 
         <p>非公式information</p>
     </div>
-    <a href="#news" class="scroll-down"><span>Scroll</span></a>
+    <a href="#live-info" class="scroll-down"><span>Scroll</span></a>
 </section>
 
 
@@ -53,20 +53,36 @@
 
 
 
-<section class="content-section">
+<section id="live-info" class="content-section">
   <div class="live-info-wrapper">
 
-    <div class="live-info-box todays-live">
+    <div class="live-info-box todays-live animate-on-scroll">
       <div class="scroller-header">
         <h2>TODAY'S LIVE</h2>
         <div class="scroller-pagination" id="todays-live-pagination"></div>
       </div>
       <div class="live-details" id="todays-live-scroller">
-        <div class="live-card"><h3>アコースティックライブ Vol.5</h3><p>日時: 2025年9月20日(土) 19:00開演</p><p>会場: 大阪 なんばHatch (大阪府)</p><a href="#" class="button">詳細を見る</a></div><div class="live-card"><h3>アコースティックライブ Vol.6</h3><p>日時: 2025年9月20日(土) 19:00開演</p><p>会場: 大阪 なんばHatch (大阪府)</p><a href="#" class="button">詳細を見る</a></div>
+        
+        
+        <div class="live-card">
+            <h3>アコースティックライブ Vol.5</h3>
+            <p>日時: 2025年9月20日(土) 19:00開演</p>
+            <p>会場: 大阪 なんばHatch (大阪府)</p>
+            <a href="#" class="button">詳細を見る</a>
+        </div>
+        
+        <div class="live-card">
+            <h3>アコースティックライブ Vol.6</h3>
+            <p>日時: 2025年9月20日(土) 19:00開演</p>
+            <p>会場: 大阪 なんばHatch (大阪府)</p>
+            <a href="#" class="button">詳細を見る</a>
+        </div>
+        
+        
       </div>
     </div>
 
-    <div class="live-info-box upcoming-lives">
+    <div class="live-info-box upcoming-lives animate-on-scroll">
       <div class="scroller-header">
         <h2>UPCOMING LIVES</h2>
         <div class="scroller-pagination" id="upcoming-lives-pagination"></div>
@@ -78,55 +94,6 @@
 
   </div>
 </section>
-
-<section id="profile" class="content-section">
-    <h2 class="section-title">PROFILE</h2>
-  
-    <div class="profile-list-container">
-  
-      
-        <div class="profile-card animate-on-scroll">
-          <div class="profile-image">
-            <img src="/intake_information/assets/images/suzuki.jpg" alt="鈴木龍平">
-          </div>
-      
-          <div class="profile-text">
-            <h3>鈴木龍平</h3>
-            <p>生年月日：1996/01/31</p>
-  
-            <div class="social-links">
-              <a href="https://twitter.com/Ryu_su_131" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-                <i class="fa-brands fa-x-twitter"></i>
-              </a>
-              <a href="https://www.instagram.com/intk__7" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                <i class="fa-brands fa-instagram"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-      
-        <div class="profile-card animate-on-scroll">
-          <div class="profile-image">
-            <img src="/intake_information/assets/images/maekz.jpg" alt="まえかず">
-          </div>
-      
-          <div class="profile-text">
-            <h3>まえかず</h3>
-            <p>生年月日：1994/12/22</p>
-  
-            <div class="social-links">
-              <a href="https://twitter.com/intmaekz" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-                <i class="fa-brands fa-x-twitter"></i>
-              </a>
-              <a href="https://www.instagram.com/int_maekz" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                <i class="fa-brands fa-instagram"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-      
-      </div>
-  </section>
 
 <section id="news" class="content-section animate-on-scroll">
     <h2 class="section-title">NEWS</h2>
