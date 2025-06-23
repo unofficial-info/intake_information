@@ -1,9 +1,9 @@
 {% assign today_date = "now" | date: "%Y-%m-%d" %}
 {% assign seven_days_in_seconds = 60 | times: 60 | times: 24 | times: 7 %}
 {% assign limit_date = "now" | date: "%s" | plus: seven_days_in_seconds | date: "%Y-%m-%d" %}
-{% assign sorted_tickets = site.data.tickets | sort: "date" %}
-{% assign todays_lives = sorted_tickets | where_exp: "item", "item.date == today_date" %}
-{% assign upcoming_lives = sorted_tickets | where_exp: "item", "item.date > today_date" | where_exp: "item", "item.date <= limit_date" %}
+{% assign sorted_lives = site.data.lives | sort: "date" %}
+{% assign todays_lives = sorted_lives | where_exp: "item", "item.date == today_date" %}
+{% assign upcoming_lives = sorted_lives | where_exp: "item", "item.date > today_date" | where_exp: "item", "item.date <= limit_date" %}
 
 <section id="live-info" class="content-section">
   <div class="live-info-wrapper">

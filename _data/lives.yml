@@ -1,0 +1,19 @@
+- date: "2025-08-10"
+  title: "夏のファンミーティング"
+  category: "EVENT" # ← カテゴリを追加
+  venue: "東京国際フォーラム" # ← placeからvenueに名前を変更
+  prefecture: "東京都"
+  time_open: "17:00" # ← 開場時間を追加
+  time_start: "18:00" # ← 開演時間を追加
+  artists: ["ゲストA", "ゲストB"]
+  url: "#"
+
+- date: "2025-09-20"
+  title: "アコースティックライブ Vol.5"
+  category: "LIVE"
+  venue: "大阪 なんばHatch"
+  prefecture: "大阪府"
+  time_open: "18:00"
+  time_start: "19:00"
+  artists: []
+  url: "#"

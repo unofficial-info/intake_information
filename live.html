@@ -1,0 +1,118 @@
+---
+layout: default
+title: LIVE
+permalink: /live.html
+---
+
+<div class="content-section">
+  <h1 class="section-title">LIVE</h1>
+
+  <form id="filter-form" class="filter-form">
+  <div class="form-group">
+    <label for="start-date"><i class="fa-solid fa-calendar-days"></i> 期間:</label>
+    <div class="date-inputs">
+      <input type="date" id="start-date">
+      <span>～</span>
+      <input type="date" id="end-date">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="prefecture"><i class="fa-solid fa-map-location-dot"></i> 都道府県:</label>
+    <select id="prefecture">
+      <option value="">すべて</option>
+      <option value="東京都">東京都</option>
+      <option value="大阪府">大阪府</option>
+      <option value="福岡県">福岡県</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="artist"><i class="fa-solid fa-users"></i> 出演者:</label>
+    <input type="text" id="artist" placeholder="ゲスト名で検索">
+  </div>
+  <div class="form-buttons">
+    <button type="submit">絞り込む</button>
+    <button type="reset" id="reset-button">リセット</button>
+  </div>
+</form>
+
+  <div id="live-list-container">
+    <ul class="professional-live-list">
+      {% for live in site.data.lives %}
+        <li class="live-list-item animate-on-scroll"
+            data-date="{{ live.date }}" 
+            data-prefecture="{{ live.prefecture }}" 
+            data-artists="{{ live.artists | join: ',' | downcase }}">
+
+            <a href="{{ live.url | relative_url }}" class="live-link-block">
+              <div class="live-date">
+                <span class="year">{{ live.date | date: "%Y" }}</span>
+                <span class="day">{{ live.date | date: "%m.%d (%a)" }}</span>
+              </div>
+      
+              <div class="live-details-main">
+                <p class="live-title">{{ live.title }}</p>
+                <div class="live-meta">
+                  <span><i class="fa-solid fa-location-dot"></i> {{ live.venue }}</span>
+                  <span><i class="fa-solid fa-clock"></i> OPEN {{ live.time_open }} / START {{ live.time_start }}</span>
+                </div>
+              </div>
+
+              <div class="live-arrow-icon">
+                <i class="fa-solid fa-chevron-right"></i>
+              </div>
+            </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+
+<script>
+  // --- 要素の取得 ---
+  const filterForm = document.getElementById('filter-form');
+  const liveItems = document.querySelectorAll('.live-list-item');
+
+  // --- 絞り込み処理 ---
+  function applyFilters() {
+    // 入力された値を取得
+    const startDate = document.getElementById('start-date').value;
+    const endDate = document.getElementById('end-date').value;
+    const prefecture = document.getElementById('prefecture').value;
+    const artist = document.getElementById('artist').value.trim().toLowerCase();
+
+    // HTMLにある各ライブ項目をループして、表示/非表示を切り替える
+    liveItems.forEach(item => {
+      // 各項目の data-* 属性から情報を取得
+      const itemDate = item.dataset.date;
+      const itemPrefecture = item.dataset.prefecture;
+      const itemArtists = item.dataset.artists;
+
+      let isVisible = true;
+
+      // 各条件でフィルタリング
+      if (startDate && itemDate < startDate) isVisible = false;
+      if (endDate && itemDate > endDate) isVisible = false;
+      if (prefecture && itemPrefecture !== prefecture) isVisible = false;
+      if (artist && !itemArtists.includes(artist)) isVisible = false;
+
+      // ▼▼▼ この一行を修正しました ▼▼▼
+      // isVisibleがfalseの時に 'none' (非表示) にする
+      item.style.display = isVisible ? '' : 'none';
+    });
+  }
+
+  // --- イベントリスナーの設定 ---
+  filterForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+    applyFilters();
+  });
+
+  filterForm.addEventListener('reset', function() {
+    // フォームリセット後、0.1秒待ってから全件表示に戻す
+    setTimeout(() => {
+        liveItems.forEach(item => {
+            item.style.display = '';
+        });
+    }, 100);
+  });
+</script>
