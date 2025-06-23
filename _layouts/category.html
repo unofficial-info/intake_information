@@ -2,17 +2,14 @@
 layout: default
 ---
 <div class="content-section">
-  <h1 class="section-title">{{ page.title }}</h1>
-  <ul class="news-list">
-    {% for item in paginator.posts %}
-      <li class="animate-on-scroll">
-        <a href="{{ item.url | relative_url }}">
-          <span class="date">{{ item.date | date: "%Y.%m.%d" }}</span>
-          <span class="category">{{ item.category }}</span>
-          <span class="title">{{ item.title }}</span>
-        </a>
-      </li>
+  <h1 class="section-title">カテゴリ: {{ page.title }}</h1>
+
+  <p>このページが表示されていれば、カテゴリページの自動生成は成功しています。</p>
+
+  <h2>このカテゴリの記事一覧:</h2>
+  <ul>
+    {% for item in site.categories[page.category] %}
+      <li>{{ item.title }}</li>
     {% endfor %}
   </ul>
-  {% include pagination.html %}
 </div>
