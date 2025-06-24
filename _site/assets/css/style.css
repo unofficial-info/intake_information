@@ -1,10 +1,15 @@
 /* --- 色の変数を定義 --- */
 :root {
   /* メインのテキストカラーやヘッダーの色など */
-  --text-main: #fff;
+  --text-main: #FFFEF6;
 
   /* 背景色など */
   --bg-main: #333;
+
+  /* ▼▼▼ フォント用の変数を追加 ▼▼▼ */
+  --font-main: 'Noto Sans JP', sans-serif; /* 基本の本文用フォント */
+  --font-heading: 'Kaisei Decol', serif;   /* 見出し用フォント */
+  --font-accent: 'Montserrat', sans-serif; /* ロゴなどのアクセント用フォント */
 }
 
 /* --- 基本設定とフォント --- */
@@ -37,7 +42,7 @@ body {
   
   .logo {
     font-size: 24px;
-    font-family: 'Zen Kurenaido', sans-serif; /* 既存のフォントスタイルを適用 */
+    font-family: "Kaisei Decol", serif; /* 既存のフォントスタイルを適用 */
   }
   
   /* ここから下がハンバーガーメニューに関するCSS */
@@ -160,7 +165,7 @@ body {
     z-index: 1;
 }
 .hero-text h1 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--font-heading); ;
     font-size: 4rem; /* 文字サイズ */
     font-weight: 500;
     letter-spacing: 0.15em; /* 文字間隔 */
@@ -809,4 +814,10 @@ body {
   line-height: 1.8;
   color: #555;
   margin-bottom: 40px;
+}
+
+.zen-kurenaido-regular {
+  font-family: "Zen Kurenaido", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }

@@ -42,7 +42,7 @@ body {
   
   .logo {
     font-size: 24px;
-    font-family: var(--font-heading); /* 既存のフォントスタイルを適用 */
+    font-family: "Kaisei Decol", serif; /* 既存のフォントスタイルを適用 */
   }
   
   /* ここから下がハンバーガーメニューに関するCSS */
@@ -165,7 +165,7 @@ body {
     z-index: 1;
 }
 .hero-text h1 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--font-heading); ;
     font-size: 4rem; /* 文字サイズ */
     font-weight: 500;
     letter-spacing: 0.15em; /* 文字間隔 */
@@ -816,11 +816,8 @@ body {
   margin-bottom: 40px;
 }
 
-/* --- コンテンツセクション --- */
-.section-title {
-  font-family: 'Kaisei Decol', serif; /* ← この一行を追加 */
-  font-size: 2.5rem;
-  text-align: center;
-  margin-bottom: 40px;
-  letter-spacing: 0.1em;
+.zen-kurenaido-regular {
+  font-family: "Zen Kurenaido", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }

@@ -18,8 +18,8 @@
         {% for live in todays_lives %}
         <div class="live-card">
             <h3>{{ live.title }}</h3>
-            <p>日時: {{ live.datetime_str }}</p>
-            <p>会場: {{ live.place }} ({{ live.prefecture }})</p>
+            <p>日時:  {{ live.date|date:"%Y" }}年{{ live.date|date:"%m" }}月{{ live.date|date:"%d" }}日</p>
+            <p>会場: {{ live.venue }} </p>
             <a href="{{ live.url }}" class="button">詳細を見る</a>
         </div>
         {% endfor %}
@@ -37,7 +37,19 @@
         <div class="scroller-pagination" id="upcoming-lives-pagination"></div>
       </div>
       <div class="live-details" id="upcoming-lives-scroller">
-        {% if upcoming_lives.size > 0 %}{% for live in upcoming_lives %}<div class="live-card"><h3>{{ live.title }}</h3><p>日時: {{ live.datetime_str }}</p><p>会場: {{ live.place }} ({{ live.prefecture }})</p><a href="{{ live.url }}" class="button">詳細を見る</a></div>{% endfor %}{% else %}<div class="live-card"><p>今後一週間のライブ予定は現在ありません。</p></div>{% endif %}
+        {% if upcoming_lives.size > 0 %}{% for live in upcoming_lives %}
+        <div class="live-card">
+            <h3>{{ live.title }}</h3>
+            <p>日時: {{ live.date|date:"%Y" }}年{{ live.date|date:"%m" }}月{{ live.date|date:"%d" }}日</p>
+            <p>会場: {{ live.venue }}</p>
+            <a href="{{ live.url }}" class="button">詳細を見る</a>
+        </div>
+        {% endfor %}
+        {% else %}
+        <div class="live-card">
+            <p>今後一週間のライブ予定は現在ありません。</p>
+        </div>
+        {% endif %}
       </div>
     </div>
 
