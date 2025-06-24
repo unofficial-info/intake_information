@@ -601,7 +601,7 @@ body {
   flex-grow: 1; /* 残りのスペースを全て使う */
 }
 .live-title {
-  font-size: 1.0rem;
+  font-size: 0.8rem;
   font-weight: bold;
   margin: 10px 0;
 }
