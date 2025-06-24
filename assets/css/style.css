@@ -234,38 +234,59 @@ body {
     letter-spacing: 0.1em;
 }
 
-/* NEWSリスト */
+/* --- NEWSリストのスタイル --- */
 .news-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
-.news-list li {
-    border-bottom: 1px solid #eee;
+.news-list-item {
+  border-bottom: 1px solid var(--color-border, #eee);
 }
-.news-list li a {
-    display: flex;
-    flex-wrap: wrap; /* スマホで折り返すように */
-    padding: 20px 10px;
-    text-decoration: none;
-    color: var(--white);
-    transition: background-color 0.2s;
+
+/* リンクブロック全体のスタイル */
+.news-link-block {
+  display: block; /* リンクをブロック要素にする */
+  padding: 20px 10px;
+  text-decoration: none;
+  color: var(--white);
+  transition: background-color 0.2s;
 }
-.news-list li a:hover {
-    background-color: var(--white);
-    color:var(--gray);
+.news-link-block:hover {
+  background-color: var(--white);
+  color: var(--gray);
 }
+
+/* 一行目：日付のスタイル */
 .news-list .date {
-    margin-right: 20px;
-    font-family: var(--font-main);
+  font-size: 0.9rem;
+  color: #888;
+  font-family: 'Montserrat', sans-serif;
 }
-.news-list .category {
+
+/* 二行目のコンテナ */
+.news-item-line-2 {
+  display: flex;
+  align-items: center;
+  margin-top: 8px; /* 日付との間隔 */
+}
+
+.news-list .category-tag {
     margin-right: 20px;
-    background-color: #111;
+    background-color: #222;
     color: var(--white);
     font-size: 0.8rem;
     padding: 2px 8px;
     border-radius: 4px;
+}
+
+/* タイトルのスタイル */
+.news-list .title {
+  font-weight: bold;
+  /* 長いタイトルは「…」で省略する設定 */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* VIEW MOREボタン */

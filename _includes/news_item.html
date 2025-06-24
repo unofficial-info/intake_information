@@ -1,0 +1,14 @@
+<li class="news-list-item animate-on-scroll">
+  <a href="{{ include.item.url | relative_url }}" class="news-link-block">
+
+    <div class="news-item-line-1">
+      <span class="date">{{ include.item.date | date: "%Y.%m.%d" }}</span>
+      <span class="category-tag">{{ include.item.category }}</span>
+    </div>
+
+    <div class="news-item-line-2">
+      <span class="title">{{ include.item.title }}</span>
+    </div>
+    
+  </a>
+</li>

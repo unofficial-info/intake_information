@@ -13,13 +13,7 @@ permalink: /news.html
 
   <ul class="news-list">
     {% for item in paginator.posts %}
-      <li class="animate-on-scroll">
-        <a href="{{ item.url | relative_url }}">
-          <span class="date">{{ item.date | date: "%Y.%m.%d" }}</span>
-          <span class="category">{{ item.category }}</span>
-          <span class="title">{{ item.title }}</span>
-        </a>
-      </li>
+      {% include news_item.html item=item %}
     {% endfor %}
   </ul>
 
