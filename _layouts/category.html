@@ -1,0 +1,15 @@
+---
+layout: default
+---
+<div class="content-section">
+  <h1 class="section-title">NEWS | {{ page.category_name }}</h1>
+
+  {% include category_links.html %}
+
+  <ul class="news-list">
+    {% assign category_posts = site.news | where: "category", page.category_name %}
+    {% for item in category_posts %}
+      {% include news_item.html item=item %}
+    {% endfor %}
+  </ul>
+</div>
