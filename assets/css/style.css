@@ -1,3 +1,10 @@
+/* --- サイト全体の計算方法を安定させるための、おまじない --- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 /* --- 変数を定義 --- */
 :root {
   --white: #FFFEF6;
@@ -837,7 +844,7 @@ body {
   /* --- 問題3：TODAY/UPCOMING LIVEボックスの見切れを調整 --- */
   .live-info-wrapper {
     /* 左右の余白を調整して、カードが見切れすぎないようにする */
-    padding: 0 10px;
+    padding: 0 0px;
     /* クリップさせないことで、ボックスの影などがはみ出ても表示されるように */
     overflow: clip; 
     flex-direction: column;
