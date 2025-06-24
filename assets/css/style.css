@@ -868,4 +868,9 @@ body {
     scroll-snap-align: start; /* スナップ位置を中央から左端に変更 */
   }
 
+   /* スクロール位置のページ番号表示が折り返さないようにする */
+  .scroller-pagination {
+    white-space: nowrap; /* テキストの折り返しを禁止する */
+    font-size: 1rem;     /* 文字サイズを少しだけ調整 */
+  }
 }
