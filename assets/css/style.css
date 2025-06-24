@@ -473,7 +473,7 @@ body {
 }
 .live-info-box {
   flex: 1;
-  min-width: 320px;
+  min-width: 0px;
   padding: 25px;
   border-radius: 8px;
   display: flex;
@@ -825,7 +825,7 @@ body {
 
   /* --- 問題2：トップ写真と文字の見切れを調整 --- */
   .hero {
-    height: 80vh; /* 写真の高さを画面の高さの80%に調整 */
+    height: 50vh; /* 写真の高さを画面の高さの80%に調整 */
   }
   .hero-text h1 {
     font-size: 2.5rem; /* トップの文字サイズをスマホ用に小さくする */
@@ -840,6 +840,7 @@ body {
     padding: 0 10px;
     /* クリップさせないことで、ボックスの影などがはみ出ても表示されるように */
     overflow: clip; 
+    flex-direction: column;
   }
   .live-info-box {
     min-width: 0; /* 最小幅の指定をリセット */
