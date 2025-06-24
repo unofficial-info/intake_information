@@ -650,14 +650,14 @@ body {
 /* スマホ表示（画面幅が768px未満）の時の調整 */
 @media (max-width: 767px) {
   .live-date {
-    width: 80px;
+    width: 70px;
     padding-right: 10px;
   }
   .live-date .day {
     font-size: 1.0rem;
   }
   .live-title {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
   }
 }
 
