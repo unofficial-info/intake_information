@@ -71,6 +71,7 @@ function setupPaginationIndicator(scrollerId) {
   // カードが1枚以下ならページ番号表示を隠す
   if (totalPages <= 1) {
     paginationIndicator.style.display = "none";
+    scroller.classList.add("is-not-scrollable");
     return;
   }
 

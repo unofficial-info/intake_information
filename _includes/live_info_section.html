@@ -20,7 +20,10 @@
             <h3>{{ live.title }}</h3>
             <p>日時:  {{ live.date|date:"%Y" }}年{{ live.date|date:"%m" }}月{{ live.date|date:"%d" }}日</p>
             <p>会場: {{ live.venue }} </p>
-            <a href="{{ live.url }}" class="button">詳細を見る</a>
+            <div class="card-footer">
+                <a href="{{ live.url }}" class="button">詳細を見る</a>
+                <span class="card-swipe-prompt"><i class="fa-solid fa-hand-point-right"></i> swipe</span>
+            </div>
         </div>
         {% endfor %}
         {% else %}
@@ -42,7 +45,10 @@
             <h3>{{ live.title }}</h3>
             <p>日時: {{ live.date|date:"%Y" }}年{{ live.date|date:"%m" }}月{{ live.date|date:"%d" }}日</p>
             <p>会場: {{ live.venue }}</p>
-            <a href="{{ live.url }}" class="button">詳細を見る</a>
+            <div class="card-footer">
+                <a href="{{ live.url }}" class="button">詳細を見る</a>
+                <span class="card-swipe-prompt"><i class="fa-solid fa-hand-point-right"></i> swipe</span>
+            </div>
         </div>
         {% endfor %}
         {% else %}

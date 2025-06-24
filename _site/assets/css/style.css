@@ -899,3 +899,25 @@ body {
     font-size: 1rem;     /* 文字サイズを少しだけ調整 */
   }
 }
+
+/* --- カードフッターとスワイプ表示のスタイル --- */
+.card-footer {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-swipe-prompt {
+  font-size: 0.9rem;
+  font-family: 'Montserrat', sans-serif;
+  opacity: 0.5;
+}
+.card-swipe-prompt .fa-solid {
+  margin-right: 5px;
+}
+
+/* スクロールできない時は、スワイプ表示を隠す */
+.live-details.is-not-scrollable .card-swipe-prompt {
+  display: none;
+}
