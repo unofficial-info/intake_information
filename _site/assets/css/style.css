@@ -1,15 +1,11 @@
-/* --- 色の変数を定義 --- */
+/* --- 変数を定義 --- */
 :root {
-  /* メインのテキストカラーやヘッダーの色など */
-  --text-main: #FFFEF6;
+  --white: #FFFEF6;
+  --gray: #333;
 
-  /* 背景色など */
-  --bg-main: #333;
-
-  /* ▼▼▼ フォント用の変数を追加 ▼▼▼ */
-  --font-main: 'Noto Sans JP', sans-serif; /* 基本の本文用フォント */
-  --font-heading: 'Kaisei Decol', serif;   /* 見出し用フォント */
-  --font-accent: 'Montserrat', sans-serif; /* ロゴなどのアクセント用フォント */
+  --font-main: 'Noto Sans JP', sans-serif;
+  --font-heading: 'Kaisei Decol', serif; 
+  --font-accent: 'Montserrat', sans-serif;
 }
 
 /* --- 基本設定とフォント --- */
@@ -17,12 +13,11 @@ html {
   scroll-behavior: smooth; /* スムーズスクロールを有効にする */
 }
 
-/* --- 基本設定とフォント --- */
 body {
-    font-family: 'Montserrat', sans-serif; /* 日本語用のフォント */
+    font-family: var(--font-main);
     margin: 0;
-    background-color: #333;
-    color: var(--text-main);
+    background-color: var(--gray);
+    color: var(--white);
 }
 
 /* --- 新しいヘッダーとハンバーガーメニュー --- */
@@ -32,9 +27,9 @@ body {
     align-items: center;
     padding: 0 20px;
     height: 60px; /* 高さを指定 */
-    color: var(--text-main);
-    background: #333;
-    /* ヘッダーを最上部に固定したい場合は以下の3行を追加 */
+    color: var(--white);
+    background: var(--gray);
+    /* ヘッダーを最上部に固定 */
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -42,10 +37,10 @@ body {
   
   .logo {
     font-size: 24px;
-    font-family: "Kaisei Decol", serif; /* 既存のフォントスタイルを適用 */
+    font-family: var(--font-heading); /* 既存のフォントスタイルを適用 */
   }
   
-  /* ここから下がハンバーガーメニューに関するCSS */
+  /* --- ハンバーガーメニューに関するCSS --- */
   
   /* チェックボックスを非表示にする */
   .drawer_hidden {
@@ -60,7 +55,7 @@ body {
     justify-content: center;
     align-items: center;
     position: relative;
-    z-index: 100;/* 重なり順を一番上にする */
+    z-index: 100;
     cursor: pointer;
   }
   
@@ -73,7 +68,7 @@ body {
     height: 3px;
     width: 25px;
     border-radius: 3px;
-    background: #fff;
+    background: var(--white);
     transition: 0.5s;
     position: absolute;
   }
@@ -112,7 +107,7 @@ body {
     top: 0;
     left: 100%; /* メニューを画面の外に飛ばす */
     z-index: 99;
-    background: #333;
+    background: var(--gray);
     transition: .5s;
   }
   
@@ -127,14 +122,14 @@ body {
     display: block;
     padding: 20px;
     text-align: center;
-    color: var(--text-main);
+    color: var(--white);
     text-decoration: none;
     border-bottom: 1px solid #f0f0f0;
   }
   
   .nav_item a:hover {
-    background: #f0f0f0;
-    color:#333
+    background: var(--white);
+    color: var(--gray)
   }
   
   /* アイコンがクリックされたらメニューを表示 */
@@ -146,7 +141,7 @@ body {
 .hero {
     height: 100vh; /* 画面の高さ100% */
     background: url('../images/int_image.jpg') no-repeat center center/cover;
-    color: var(--text-main);
+    color: var(--white);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -173,7 +168,7 @@ body {
     text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5); /* 文字に影をつけて立体感を出す */
 }
 .hero-text p {
-    font-family: 'Zen Kurenaido', sans-serif;
+    font-family: var(--font-heading);
     font-size: 1.2rem;
     letter-spacing: 0.1em;
     margin-top: 10px;
@@ -186,7 +181,7 @@ body {
     left: 50%;
     transform: translateX(-50%);
     z-index: 1;
-    color: var(--text-main);
+    color: var(--white);
     text-decoration: none;
     writing-mode: vertical-rl; /* 文字を縦書きに */
     font-size: 0.8rem;
@@ -205,7 +200,7 @@ body {
     right: 0;
     width: 1px;
     height: 60px; /* 縦線の長さ */
-    background: white;
+    background: var(--white);
     animation: scroll-animation 2s infinite;
 }
 @keyframes scroll-animation { /* アニメーション */
@@ -221,11 +216,11 @@ body {
     max-width: 900px; /* コンテンツの最大幅 */
     margin: 80px auto; /* 上下の余白と、左右中央揃え */
     padding: 20px;
-    background-color: #333; /* 白い背景 */
+    background-color: var(--gray); 
     box-shadow: 0 0 15px rgba(0,0,0,0.05);
 }
 .section-title {
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--font-heading);
     font-size: 2.5rem;
     text-align: center;
     margin-bottom: 40px;
@@ -246,21 +241,21 @@ body {
     flex-wrap: wrap; /* スマホで折り返すように */
     padding: 20px 10px;
     text-decoration: none;
-    color: var(--text-main);
+    color: var(--white);
     transition: background-color 0.2s;
 }
 .news-list li a:hover {
-    background-color: #f0f0f0;
-    color:#333
+    background-color: var(--white);
+    color:var(--gray);
 }
 .news-list .date {
     margin-right: 20px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--font-main);
 }
 .news-list .category {
     margin-right: 20px;
     background-color: #111;
-    color: var(--text-main);
+    color: var(--white);
     font-size: 0.8rem;
     padding: 2px 8px;
     border-radius: 4px;
@@ -275,15 +270,15 @@ body {
     display: inline-block;
     padding: 12px 40px;
     border: 1px solid #fff;
-    color: var(--text-main);
+    color: var(--white);
     text-decoration: none;
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--font-main);
     letter-spacing: 0.1em;
     transition: all 0.3s;
 }
 .button:hover {
-    background-color: #fff;
-    color: #333;
+    background-color: var(--white);
+    color: var(--gray);
 }
 
 /* --- フッター --- */
@@ -365,7 +360,7 @@ body {
 
 .profile-text h3 {
   margin-top: 0;
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-main);
   font-size: 1.5rem;
 }
 
@@ -375,12 +370,12 @@ body {
 .social-links a {
   display: inline-block;
   margin: 0 15px; /* アイコン同士の間隔 */
-  color: var(--text-dark, #fff); /* アイコンの色。CSS変数を使います */
+  color: var(--white); /* アイコンの色*/
   font-size: 2rem; /* アイコンの大きさ (1rem = 約16px) */
   transition: transform 0.2s, color 0.2s; /* ホバー時のアニメーション設定 */
 }
 .social-links a:hover {
-  color: var(--text-main, #111); /* ホバーした時の色 */
+  color: var(--gray); /* ホバーした時の色 */
   transform: scale(1.1); /* ホバーした時に少しだけ大きくする */
 }
 
@@ -404,15 +399,16 @@ body {
 .filter-btn {
   padding: 8px 16px;
   border: 1px solid var(--color-border, #eee);
-  background-color: var(--bg-primary, #fff);
-  color: var(--text-dark, #333);
+  background-color: var(--white);
+  color: var(--gray);
   border-radius: 20px;
   cursor: pointer;
   transition: all 0.2s;
 }
 
 .filter-btn:hover {
-  background-color: var(--bg-secondary, #f0f0f0);
+  background-color: var(--gray);
+  color: var(--white);
 }
 
 /* 選択中のボタンのスタイル */
@@ -493,13 +489,12 @@ body {
 }
 .live-info-box h2 {
   margin: 0; padding: 0; border: none;
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-heading);
   letter-spacing: 1px;
 }
 
-/* ▼▼▼ 矢印のスタイルを削除し、ページ番号のスタイルを追加 ▼▼▼ */
 .scroller-pagination {
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-heading);
   font-size: 1.1rem;
   font-weight: bold;
 }
@@ -507,10 +502,8 @@ body {
   color: rgba(255, 255, 255, 0.7);
 }
 .upcoming-lives .scroller-pagination {
-  color: #fff;
+  color: var(--white);
 }
-/* ▲▲▲ ここまで ▲▲▲ */
-
 
 .live-details {
   display: flex;
@@ -533,26 +526,23 @@ body {
 /* --- TODAY'S LIVE の個別スタイル --- */
 .todays-live {
   background-color: #555;
-  color: var(--text-light, #fff);
+  color: var(--white);
 }
 .todays-live .scroller-header {
   border-color: rgba(255, 255, 255, 0.5);
-}
-.todays-live .button {
-  background-color: #fff;
-  color: #2c3e50;
 }
 
 /* --- UPCOMING LIVES の個別スタイル --- */
 .upcoming-lives {
   background-color: #444;
-  color:#fff
+  color:var(--white);
 }
 .upcoming-lives .scroller-header {
   border-color: var(--color-border, #eee);
 }
 
-/* --- 新しいLIVEページリストのスタイル --- */
+
+/* --- LIVEページリストのスタイル --- */
 .professional-live-list {
   list-style: none;
   padding: 0;
@@ -569,13 +559,13 @@ body {
   align-items: center;
   padding: 25px 15px;
   text-decoration: none;
-  color: #FFFEF6;
+  color: var(--white);
   transition: background-color 0.2s;
 }
 
 .live-link-block:hover {
-  background-color: #FFFEF6;
-  color:#333
+  background-color: var(--white);
+  color:var(--gray);
 }
 
 /* 左側：日付エリア */
@@ -665,14 +655,14 @@ body {
 .form-group label {
   font-weight: bold;
   font-size: 0.9rem;
-  color: #fff;
+  color: var(--white);
   display: flex;
   align-items: center;
   gap: 8px; /* アイコンとテキストの間隔 */
 }
 
 .form-group label .fa-solid {
-  color: #fff;
+  color: vae(--white);
 }
 
 /* 入力欄の共通スタイル */
@@ -684,6 +674,7 @@ body {
   border: none;
   border-bottom: 2px solid var(--color-border, #eee);
   background-color: transparent;
+  color: #999;
   font-size: 1rem;
   transition: border-color 0.3s;
   box-sizing: border-box; /* paddingを含めた幅計算 */
@@ -693,7 +684,7 @@ body {
 .filter-form input[type="date"]:focus,
 .filter-form select:focus {
   outline: none;
-  border-bottom-color: #fff;
+  border-bottom-color: var(--white);
 }
 
 .date-inputs {
@@ -724,8 +715,8 @@ body {
 /* 絞り込みボタン (プライマリ) */
 .form-buttons button[type="submit"] {
   background-color: #444;
-  border-color: var(--text-main, #2c3e50);
-  color: var(--text-light, #fff);
+  border-color: #999;
+  color: var(--white);
 }
 .form-buttons button[type="submit"]:hover {
   opacity: 0.8;
@@ -734,8 +725,8 @@ body {
 /* リセットボタン (セカンダリ) */
 .form-buttons button[type="reset"] {
   background-color: transparent;
-  border-color: var(--color-border, #ccc);
-  color: #fff;
+  border-color: #999;
+  color: var(--white);
 }
 .form-buttons button[type="reset"]:hover {
   background-color: var(--bg-secondary, #f0f0f0);
@@ -789,7 +780,7 @@ body {
 /* リンクにカーソルを合わせた時のスタイル */
 .post-content a:hover {
   /* メインのテキストカラーに変えるなど、お好みで設定 */
-  color: var(--text-main, #2c3e50);
+  color: #fff;
 }
 
 /* --- Coming Soon ページのスタイル --- */
