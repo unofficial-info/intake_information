@@ -1,10 +1,15 @@
 /* --- 色の変数を定義 --- */
 :root {
   /* メインのテキストカラーやヘッダーの色など */
-  --text-main: #fff;
+  --text-main: #FFFEF6;
 
   /* 背景色など */
   --bg-main: #333;
+
+  /* ▼▼▼ フォント用の変数を追加 ▼▼▼ */
+  --font-main: 'Noto Sans JP', sans-serif; /* 基本の本文用フォント */
+  --font-heading: 'Kaisei Decol', serif;   /* 見出し用フォント */
+  --font-accent: 'Montserrat', sans-serif; /* ロゴなどのアクセント用フォント */
 }
 
 /* --- 基本設定とフォント --- */
@@ -37,7 +42,7 @@ body {
   
   .logo {
     font-size: 24px;
-    font-family: 'Zen Kurenaido', sans-serif; /* 既存のフォントスタイルを適用 */
+    font-family: var(--font-heading); /* 既存のフォントスタイルを適用 */
   }
   
   /* ここから下がハンバーガーメニューに関するCSS */
@@ -564,12 +569,13 @@ body {
   align-items: center;
   padding: 25px 15px;
   text-decoration: none;
-  color: #fff;
+  color: #FFFEF6;
   transition: background-color 0.2s;
 }
 
 .live-link-block:hover {
-  background-color: #f8f9fa;
+  background-color: #FFFEF6;
+  color:#333
 }
 
 /* 左側：日付エリア */
@@ -784,4 +790,37 @@ body {
 .post-content a:hover {
   /* メインのテキストカラーに変えるなど、お好みで設定 */
   color: var(--text-main, #2c3e50);
+}
+
+/* --- Coming Soon ページのスタイル --- */
+.content-section.text-center {
+  text-align: center;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+.coming-soon-icon {
+  font-size: 4rem; /* アイコンの大きさ */
+  color: #ccc;
+  margin-bottom: 30px;
+}
+.coming-soon-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5rem;
+  letter-spacing: 0.1em;
+  margin-bottom: 20px;
+  color: var(--text-dark, #333);
+}
+.content-section.text-center p {
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+/* --- コンテンツセクション --- */
+.section-title {
+  font-family: 'Kaisei Decol', serif; /* ← この一行を追加 */
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 40px;
+  letter-spacing: 0.1em;
 }

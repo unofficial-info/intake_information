@@ -564,12 +564,13 @@ body {
   align-items: center;
   padding: 25px 15px;
   text-decoration: none;
-  color: #fff;
+  color: #FFFEF6;
   transition: background-color 0.2s;
 }
 
 .live-link-block:hover {
-  background-color: #f8f9fa;
+  background-color: #FFFEF6;
+  color:#333
 }
 
 /* 左側：日付エリア */
@@ -784,4 +785,28 @@ body {
 .post-content a:hover {
   /* メインのテキストカラーに変えるなど、お好みで設定 */
   color: var(--text-main, #2c3e50);
+}
+
+/* --- Coming Soon ページのスタイル --- */
+.content-section.text-center {
+  text-align: center;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+.coming-soon-icon {
+  font-size: 4rem; /* アイコンの大きさ */
+  color: #ccc;
+  margin-bottom: 30px;
+}
+.coming-soon-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5rem;
+  letter-spacing: 0.1em;
+  margin-bottom: 20px;
+  color: var(--text-dark, #333);
+}
+.content-section.text-center p {
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 40px;
 }
