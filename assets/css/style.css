@@ -842,15 +842,20 @@ body {
   }
 
   /* --- 問題3：TODAY/UPCOMING LIVEボックスの見切れを調整 --- */
+  /* --- 問題1：TODAY/UPCOMING LIVEボックスの見切れを解決 --- */
   .live-info-wrapper {
-    /* 左右の余白を調整して、カードが見切れすぎないようにする */
-    padding: 0 0px;
-    /* クリップさせないことで、ボックスの影などがはみ出ても表示されるように */
+    /* 左右の余白を確保 */
+    padding: 0 15px;
     overflow: clip; 
-    flex-direction: column;
   }
   .live-info-box {
-    min-width: 0; /* 最小幅の指定をリセット */
+    min-width: 0; /* PC用のmin-widthをリセット */
+    width: 100%;  /* ボックスの幅を親要素の100%に強制する */
+  }
+
+  /* --- 問題2：LIVEページの文字の折り返しを解決 --- */
+  .live-meta {
+    font-size: 0.8rem; /* 文字サイズを少し小さくして一行に収める */
   }
 
   /* --- 問題4：スワイプが完全に移動しきらない問題を修正 --- */
