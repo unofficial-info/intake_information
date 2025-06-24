@@ -24,11 +24,3 @@ pagination:
   sort_reverse: true
   permalink: "/news/page/:num/"
 # autopages: のブロックは、このファイルから完全に削除する
-
-# --- カテゴリの表示順を定義 ---
-category_order:
-  - "RELEASE"
-  - "MEDIA"
-  - "LIVE"
-  - "GOODS"
-# (今後カテゴリが増えたり、順番を変えたい場合は、このリストを編集してください)
