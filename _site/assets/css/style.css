@@ -749,6 +749,8 @@ body {
 }
 .form-buttons button[type="submit"]:hover {
   opacity: 0.8;
+  background-color: var(--white);
+  color: var(--gray)
 }
 
 /* リセットボタン (セカンダリ) */
@@ -758,7 +760,9 @@ body {
   color: var(--white);
 }
 .form-buttons button[type="reset"]:hover {
-  background-color: var(--bg-secondary, #f0f0f0);
+  opacity: 0.8;
+  background-color: var(--white);
+  color: var(--gray);
 }
 
 /* --- 個別記事ページ (post) のスタイル --- */
