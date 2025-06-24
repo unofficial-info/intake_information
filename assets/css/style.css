@@ -477,6 +477,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
+  flex-direction: column;
 }
 .live-info-box {
   flex: 1;
