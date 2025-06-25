@@ -33,39 +33,47 @@ permalink: /live.html
 
   <div id="live-list-container">
     <ul class="professional-live-list">
+      
+      {% assign today_date = "now" | date: "%Y-%m-%d" %}
+
       {% for live in site.data.lives %}
-        
-        {% assign theater_category = "その他" %} {% if live.venue contains "神保町" %}
-          {% assign theater_category = "神保町よしもと漫才劇場" %}
-        {% elsif live.venue contains "渋谷" %}
-          {% assign theater_category = "渋谷よしもと漫才劇場" %}
-        {% endif %}
-      
-        <li class="live-list-item animate-on-scroll"
-            data-date="{{ live.date }}" 
-            data-theater="{{ theater_category }}">
 
-            <a href="{{ live.url | relative_url }}" class="live-link-block">
-              <div class="live-date">
-                <span class="year">{{ live.date | date: "%Y" }}</span>
-                <span class="day">{{ live.date | date: "%m.%d (%a)" }}</span>
-              </div>
+        {% if live.date >= today_date %}
+
+          {% assign theater_category = "その他" %}
+          {% if live.venue contains "神保町" %}
+            {% assign theater_category = "神保町よしもと漫才劇場" %}
+          {% elsif live.venue contains "渋谷" %}
+            {% assign theater_category = "渋谷よしもと漫才劇場" %}
+          {% endif %}
       
-              <div class="live-details-main">
-                <p class="live-title">{{ live.title }}</p>
-                <div class="live-meta">
-                  <span><i class="fa-solid fa-location-dot"></i> {{ live.venue }}</span>
-                  <span><i class="fa-solid fa-clock"></i> OPEN {{ live.time_open }} / START {{ live.time_start }}</span>
+          <li class="live-list-item animate-on-scroll"
+              data-date="{{ live.date }}" 
+              data-theater="{{ theater_category }}">
+
+              <a href="{{ live.url | relative_url }}" class="live-link-block">
+                <div class="live-date">
+                  {% assign day_of_week = live.date | date: "%w" %}
+                  {% case day_of_week %}{% when "0" %}{% assign day_name = "日" %}{% when "1" %}{% assign day_name = "月" %}{% when "2" %}{% assign day_name = "火" %}{% when "3" %}{% assign day_name = "水" %}{% when "4" %}{% assign day_name = "木" %}{% when "5" %}{% assign day_name = "金" %}{% when "6" %}{% assign day_name = "土" %}{% endcase %}
+                  <span class="year">{{ live.date | date: "%Y" }}</span>
+                  <span class="day">{{ live.date | date: "%m.%d" }} ({{ day_name }})</span>
                 </div>
-              </div>
+        
+                <div class="live-details-main">
+                  <p class="live-title">{{ live.title }}</p>
+                  <div class="live-meta">
+                    <span><i class="fa-solid fa-location-dot"></i> {{ live.venue }}</span>
+                    <span><i class="fa-solid fa-clock"></i> OPEN {{ live.time_open }} / START {{ live.time_start }}</span>
+                  </div>
+                </div>
 
-              <div class="live-arrow-icon">
-                <i class="fa-solid fa-chevron-right"></i>
-              </div>
-            </a>
-        </li>
-      {% endfor %}
-    </ul>
+                <div class="live-arrow-icon">
+                  <i class="fa-solid fa-chevron-right"></i>
+                </div>
+              </a>
+          </li>
+
+        {% endif %} {% endfor %} </ul>
   </div>
 </div>
 
