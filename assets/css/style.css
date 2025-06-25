@@ -921,3 +921,6 @@ body {
 .live-details.is-not-scrollable .card-swipe-prompt {
   display: none;
 }
+.live-card:last-child .card-swipe-prompt {
+  display: none;
+}
