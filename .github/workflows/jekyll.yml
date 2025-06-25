@@ -4,6 +4,11 @@ on:
   push:
     branches:
       - main
+
+  schedule:
+    # UTCの毎日15:00（日本時間の深夜0:00）に自動実行
+    - cron: "0 15 * * *"
+
   workflow_dispatch:
 
 jobs:
