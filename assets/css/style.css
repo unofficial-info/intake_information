@@ -937,6 +937,8 @@ body {
   position: relative;
   /* 点々を表示するためのスペースをコンテナの下に確保 */
   padding-bottom: 30px; 
+
+  overflow: hidden;
 }
 
 .swiper-slide {
