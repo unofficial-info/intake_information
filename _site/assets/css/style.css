@@ -969,3 +969,103 @@ body {
 .swiper-pagination-bullet-active {
   background-color: var(--white);
 }
+
+/* --- プロフィールページ (新デザイン) --- */
+.combo-profile-section {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+.combo-profile-image {
+  flex: 1;
+  max-width: 400px;
+}
+.combo-profile-image img {
+  width: 100%;
+  border-radius: 8px;
+}
+.combo-profile-details {
+  flex: 1.5;
+}
+.combo-profile-details h1 {
+  font-family: 'Kaisei Decol', serif;
+  font-size: 2.5rem;
+  margin-top: 0;
+}
+.combo-profile-details p {
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+.combo-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+.combo-links .button {
+  text-decoration: none;
+}
+.combo-links .button.primary-action {
+  background-color: var(--color-accent, #007bff);
+  color: #fff;
+}
+.combo-links .button .fa-solid {
+  margin-right: 8px;
+}
+
+
+/* メンバー紹介セクション */
+.member-profile-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2列表示 */
+  gap: 40px;
+}
+.member-card {
+  display: flex;
+  gap: 20px;
+}
+.member-image {
+  width: 100px;
+  height: 100px;
+  flex-shrink: 0;
+}
+.member-image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%; /* 丸く切り抜く */
+  object-fit: cover; /* 画像の比率を保ったままトリミング */
+}
+.member-details h2 {
+  margin: 0 0 10px 0;
+}
+.member-details p {
+  font-size: 0.9rem;
+  margin: 0 0 15px 0;
+}
+.social-links {
+  display: flex;
+  gap: 15px;
+}
+.social-links a {
+  font-size: 1.5rem;
+  color: #555;
+  transition: color 0.2s, transform 0.2s;
+}
+.social-links a:hover {
+  color: var(--text-main, #2c3e50);
+  transform: scale(1.1);
+}
+
+/* スマホ表示の調整 */
+@media (max-width: 767px) {
+  .combo-profile-section, .member-card {
+    flex-direction: column;
+    text-align: center;
+  }
+  .combo-links, .social-links {
+    justify-content: center;
+  }
+  .member-profile-section {
+    grid-template-columns: 1fr; /* 1列表示 */
+  }
+}

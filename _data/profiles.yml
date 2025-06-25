@@ -1,11 +1,46 @@
-- name: "鈴木龍平"
-  image: "suzuki.jpg"
-  bio: "生年月日：1996/01/31"
-  twitter_url: "https://twitter.com/Ryu_su_131"
-  instagram_url: "https://www.instagram.com/intk__7"
+# === コンビのプロフィール情報を追加 ===
+combo:
+  name: "インテイク"
+  image: "int_image.jpg" # コンビの写真を指定 (assets/images/ に配置)
+  description: |
+    吉本興業所属の芸歴8年目のコンビ。
+    東京NSC23期で同期には令和ロマンやヨネダ2000などがいる。
+    相方探しの会でまえかずさんから声をかけ、コンビを組んだ。
+  links:
+    - name: "公式サイト"
+      url: "https://profile.yoshimoto.co.jp/talent/detail?id=8976"
+      icon: "fa-solid fa-globe"
+    - name: "インテイクのカド"
+      url: "https://stand.fm/channels/6030fcec85b142d0d89e72df"
+      icon: "fa-solid fa-podcast"
+    - name: "Wiki"
+      url: "https://ja.everybodywiki.com/%E3%82%A4%E3%83%B3%E3%83%86%E3%82%A4%E3%82%AF_(%E3%81%8A%E7%AC%91%E3%81%84)"
+      icon: "fa-brands fa-wikipedia-w"
+# === 個人のプロフィール情報 ===
+members:
+  - name: "鈴木龍平"
+    image: "int_image.jpg" # 個人の写真
+    bio: |
+      1996年1月31日うまれ。
+      埼玉県川口市出身。
+      INFJ（神保町公式Instagramより）。
+      インテイクのネタ作成＆ボケ担当。
+      アイドル(特にITZY)や映画が好き。
+      マリマリーのタコスさんとおとうふの山中さんと一緒にYoutubeチャンネルをやっている。
+    social:
+      twitter: "https://twitter.com/Ryu_su_131"
+      instagram: "https://instagram.com/intk__7"
 
-- name: "まえかず"
-  image: "maekz.jpg"
-  bio: "生年月日：1994/12/22"
-  twitter_url: "https://twitter.com/intmaekz"
-  instagram_url: "https://www.instagram.com/int_maekz"
+  - name: "まえかず"
+    image: "int_image.jpg"
+    bio: |
+      1993年12月22日うまれ。
+      青森県おいらせ町出身。
+      ENFP（神保町公式Instagramより）。
+      コンビのツッコミ(リアクション)担当。
+      サッカーをやっており、「トーキック」というもちギャグがある。
+    social:
+      twitter: "https://twitter.com/intmaekz"
+      instagram: "https://instagram.com/int_maekz"
+      threads: "https://threads.net/int_maekz" # ← メンバーBにだけThreadsを追加
+      youtube: "https://youtube.com/@int_maekz1222" # ← メンバーBにだけYouTubeを追加

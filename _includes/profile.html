@@ -1,28 +1,50 @@
-<section id="profile" class="content-section">
-    <h2 class="section-title">PROFILE</h2>
-  
-    <div class="profile-list-container">
-  
-      {% for person in site.data.profiles %}
-        <div class="profile-card animate-on-scroll">
-          <div class="profile-image">
-            <img src="{{ site.baseurl }}/assets/images/{{ person.image }}" alt="{{ person.name }}">
-          </div>
-      
-          <div class="profile-text">
-            <h3>{{ person.name }}</h3>
-            <p>{{ person.bio }}</p>
-  
-            <div class="social-links">
-              <a href="{{ person.twitter_url }}" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-                <i class="fa-brands fa-x-twitter"></i>
-              </a>
-              <a href="{{ person.instagram_url }}" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                <i class="fa-brands fa-instagram"></i>
-              </a>
-            </div>
+<div class="profile-page-wrapper">
+
+  <section class="combo-profile-section animate-on-scroll">
+    <div class="combo-profile-image">
+      <img src="{{ site.baseurl }}/assets/images/{{ site.data.profiles.combo.image }}" alt="{{ site.data.profiles.combo.name }}">
+    </div>
+    <div class="combo-profile-details">
+      <h1>{{ site.data.profiles.combo.name }}</h1>
+      <p>{{ site.data.profiles.combo.description | newline_to_br }}</p>
+      <div class="combo-links">
+        <a href="{{ '/main-lives/' | relative_url }}" class="button primary-action">主なライブの情報</a>
+        {% for link in site.data.profiles.combo.links %}
+          <a href="{{ link.url }}" class="button" target="_blank" rel="noopener noreferrer">
+            <i class="{{ link.icon }}"></i> {{ link.name }}
+          </a>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+
+  <section class="member-profile-section">
+    {% for member in site.data.profiles.members %}
+      <div class="member-card animate-on-scroll">
+        <div class="member-image">
+          <img src="{{ site.baseurl }}/assets/images/{{ member.image }}" alt="{{ member.name }}">
+        </div>
+        <div class="member-details">
+          <h2>{{ member.name }}</h2>
+          <p>{{ member.bio | newline_to_br }}</p>
+          <div class="social-links">
+            {% if member.social.twitter %}
+              <a href="{{ member.social.twitter }}" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            {% endif %}
+            {% if member.social.instagram %}
+              <a href="{{ member.social.instagram }}" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            {% endif %}
+            {% if member.social.threads %}
+              <a href="{{ member.social.threads }}" target="_blank" rel="noopener noreferrer" aria-label="Threads"><i class="fa-brands fa-threads"></i></a>
+            {% endif %}
+            {% if member.social.youtube %}
+              <a href="{{ member.social.youtube }}" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            {% endif %}
           </div>
         </div>
-      {% endfor %}
       </div>
+    {% endfor %}
   </section>
+
+</div>
