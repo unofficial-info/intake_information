@@ -1,0 +1,12 @@
+<div class="swiper-container">
+  <div class="swiper-wrapper">
+    {% for banner in site.data.banners %}
+      <div class="swiper-slide">
+        <a href="{{ banner.url | relative_url }}">
+          <img src="{{ site.baseurl }}/assets/images/{{ banner.image }}" alt="{{ banner.alt }}">
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+  <div class="swiper-pagination"></div>
+</div>

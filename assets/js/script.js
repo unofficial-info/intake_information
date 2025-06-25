@@ -108,3 +108,18 @@ function setupPaginationIndicator(scrollerId) {
 // 作成した関数を、それぞれのスライダーIDで呼び出す
 setupPaginationIndicator("todays-live-scroller");
 setupPaginationIndicator("upcoming-lives-scroller");
+
+// --- トップページのスライダー設定 ---
+if (document.querySelector(".swiper-container")) {
+  const swiper = new Swiper(".swiper-container", {
+    loop: true,
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
+}

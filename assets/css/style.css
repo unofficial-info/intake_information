@@ -924,3 +924,46 @@ body {
 .live-card:last-child .card-swipe-prompt {
   display: none;
 }
+
+/* --- トップページのスライダー --- */
+.swiper-container {
+  width: 100%;
+  
+  /* 要望2: バナーの上に30pxの余白を追加 */
+  margin-top: 30px;
+  margin-bottom: 40px;
+  
+  /* 要望1: 点々の位置を正しくするために、コンテナを位置の基準にする */
+  position: relative;
+  /* 点々を表示するためのスペースをコンテナの下に確保 */
+  padding-bottom: 30px; 
+}
+
+.swiper-slide {
+  /* 要望3: 中の画像を中央揃えにするための準備 */
+  text-align: center;
+}
+
+.swiper-slide img {
+  display: block;
+  height: auto;
+
+  /* 要望3: 画像の最大幅をコンテナの90%に制限し、少し小さくする */
+  max-width: 90%;
+  
+  /* 要望3: 画像を左右中央に配置する */
+  margin: 0 auto;
+  
+  border-radius: 8px; /* 画像の角を少し丸めるとお洒落です */
+}
+
+/* 要望1: 点々の位置を調整 */
+.swiper-pagination {
+  /* 位置をコンテナの下端から10px上に指定 */
+  bottom: 10px; 
+}
+
+/* ページネーションの点々の色を変える */
+.swiper-pagination-bullet-active {
+  background-color: var(--white);
+}

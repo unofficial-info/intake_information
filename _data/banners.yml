@@ -1,0 +1,6 @@
+- image: "banner1.png"
+  url: "/live.html"
+  alt: "ライブツアー開催中"
+- image: "banner2.jpg"
+  url: "/news.html"
+  alt: "新曲リリース"
