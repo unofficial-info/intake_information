@@ -1117,3 +1117,10 @@ body {
 .next-event-list .button {
   text-align: center;
 }
+
+/* --- 埋め込みカレンダーのラッパー --- */
+.calendar-wrapper {
+  max-width: 500px; /* カレンダーの最大の横幅を800pxに指定 */
+  margin: 40px auto;   /* 上下に40pxの余白、左右は中央に配置 */
+  padding: 0 15px;  /* スマホ表示で左右に余白を持たせる */
+}
