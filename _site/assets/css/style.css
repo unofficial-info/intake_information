@@ -147,7 +147,7 @@ body {
 /* --- 全画面メインビジュアル (hero) --- */
 .hero {
     height: 100vh; /* 画面の高さ100% */
-    background: url('../images/int_image_04.JPG') no-repeat center center/cover;
+    background: url('../images/int_image_07.png') no-repeat center center/contain;
     color: var(--white);
     display: flex;
     justify-content: center;
