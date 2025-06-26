@@ -10,6 +10,8 @@ collections:
   news:
     output: true
     sort_by: date
+  main_lives: # ← main_lives の設定があるか
+    output: true
 
 # --- Jekyll プラグイン設定 ---
 plugins:
