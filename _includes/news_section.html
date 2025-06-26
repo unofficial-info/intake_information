@@ -2,11 +2,15 @@
     <h2 class="section-title">NEWS</h2>
   
     <ul class="news-list">
-      {% for item in site.news reversed limit:3 %}
-        {% include news_item.html item=item %}
+
+      {% assign sorted_news = site.news | reverse %}
+
+      {% for item in sorted_news limit:3 %}
+      {% include news_item.html item=item %}
       {% endfor %}
+    
     </ul>
-  
+ 
     <div class="view-more">
       <a href="{{ site.baseurl }}/news.html" class="button">VIEW MORE</a>
     </div>
