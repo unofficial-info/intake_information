@@ -792,6 +792,9 @@ body {
 
 .post-content {
   line-height: 1.8; /* 行間を広げて読みやすくする */
+
+  overflow-wrap: break-word; 
+  word-break: break-all;  
 }
 .post-content h2 {
   font-size: 1.5rem;
