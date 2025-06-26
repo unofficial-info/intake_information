@@ -1,0 +1,26 @@
+---
+layout: default
+title: 主なライブ
+permalink: /main-lives/
+---
+<div class="content-section">
+  <h1 class="section-title">主なライブ</h1>
+  <div class="main-live-list">
+    {% for live in site.main_lives %}
+      <div class="main-live-card animate-on-scroll">
+        <div class="main-live-content">
+          <div class="main-live-summary">
+            <h2>{{ live.summary.title }}</h2>
+            <ul>
+              <li><strong>開催頻度:</strong> {{ live.summary.frequency }}</li>
+              <li><strong>開催場所:</strong> {{ live.summary.venue }}</li>
+            </ul>
+          </div>
+          <div class="main-live-action">
+            <a href="{{ live.url | relative_url }}" class="button">詳細を見る</a>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>

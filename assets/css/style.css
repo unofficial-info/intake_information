@@ -1069,3 +1069,51 @@ body {
     grid-template-columns: 1fr; /* 1列表示 */
   }
 }
+
+/* --- 主なライブ一覧ページ (修正) --- */
+.main-live-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px;
+}
+.main-live-summary h2 {
+  margin: 0 0 10px 0;
+  font-size: 1.5rem;
+}
+.main-live-summary ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: #555;
+}
+
+/* --- 主なライブ詳細ページ --- */
+.main-live-details-box {
+  background-color: var(--bg-secondary, #f0f0f0);
+  border-radius: 8px;
+  padding: 25px;
+  margin-top: 40px;
+}
+.main-live-details-box h3 {
+  margin: 0 0 20px 0;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--color-border, #eee);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.main-live-details-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  line-height: 2;
+}
+.next-event-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.next-event-list .button {
+  text-align: center;
+}

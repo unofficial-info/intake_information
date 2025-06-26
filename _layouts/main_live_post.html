@@ -1,0 +1,43 @@
+---
+layout: default
+---
+<div class="content-section">
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">{{ page.summary.title }}</h1>
+    </header>
+    <div class="post-content">
+      {{ content }}
+    </div>
+  </article>
+
+  <div class="main-live-details-box">
+    <h3><i class="fa-solid fa-circle-info"></i> ライブ詳細</h3>
+    <ul>
+      <li><strong>出演者:</strong> {{ page.summary.performers | join: ", " }}</li>
+      <li><strong>開催頻度:</strong> {{ page.summary.frequency }}</li>
+      <li><strong>開催場所:</strong> {{ page.summary.venue }}</li>
+      <li><strong>構成:</strong> {{ page.summary.composition }}</li>
+      <li><strong>備考:</strong> {{ page.summary.notes }}</li>
+    </ul>
+  </div>
+
+  <div class="main-live-details-box">
+    <h3><i class="fa-solid fa-ticket"></i> 次回の開催予定</h3>
+    {% if page.next_events.size > 0 %}
+      <div class="next-event-list">
+        {% for event in page.next_events %}
+          <a href="{{ event.url }}" class="button primary-action" target="_blank" rel="noopener noreferrer">
+            {{ event.date | date: "%Y年%m月%d日" }} のチケット情報
+          </a>
+        {% endfor %}
+      </div>
+    {% else %}
+      <p>次回の開催予定は未定です。</p>
+    {% endif %}
+  </div>
+
+  <div style="text-align: center; margin-top: 40px;">
+    <a href="{{ '/main-lives/' | relative_url }}" class="button">&laquo; 主なライブ一覧に戻る</a>
+  </div>
+</div>

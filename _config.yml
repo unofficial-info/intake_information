@@ -24,3 +24,5 @@ pagination:
   sort_reverse: true
   permalink: "/news/page/:num/"
 # autopages: のブロックは、このファイルから完全に削除する
+
+timezone: Asia/Tokyo
