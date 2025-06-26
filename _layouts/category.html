@@ -8,7 +8,7 @@ layout: default
 
   <ul class="news-list">
     {% assign category_posts = site.news | where: "category", page.category_name %}
-    {% for item in category_posts %}
+    {% for item in category_posts reversed %}
       {% include news_item.html item=item %}
     {% endfor %}
   </ul>
