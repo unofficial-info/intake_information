@@ -1098,15 +1098,11 @@ body {
   background-color: var(--bg-secondary, #f0f0f0);
   border-color: #ddd;
 }
-/* 現在のページ (リンクなし) */
-.pagination li.active span {
-  background-color: var(--text-dark, #333);
-  color: var(--text-light, #fff);
-  border-color: var(--text-dark, #333);
-  font-weight: bold;
-}
 /* 「前へ」「次へ」が無効な時 */
 .pagination li.disabled span {
   color: #ccc;
   background-color: transparent;
+}
+.pagination-first {
+  margin-left: auto;
 }

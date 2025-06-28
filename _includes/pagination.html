@@ -1,19 +1,17 @@
 {% if paginator.total_pages > 1 %}
 <nav class="pagination">
   <ul>
-    {% if paginator.previous_page %}
-      <li><a href="{{ paginator.previous_page_path | relative_url }}">前へ</a></li>
+       {% if paginator.page > 1 %}
+      <li><a href="{{ '/news.html/' | relative_url }}">最初のページへ</a></li>
     {% else %}
-      <li class="disabled"><span>前へ</span></li>
+      <li class="disabled"><span>最初のページへ</span></li>
     {% endif %}
 
-    {% for page in (1..paginator.total_pages) %}
-      {% if page == paginator.page %}
-        <li class="active"><span>{{ page }}</span></li>
-      {% else %}
-        <li><a href="{{ paginator.page_path | replace: ':num', page | relative_url }}">{{ page }}</a></li>
-      {% endif %}
-    {% endfor %}
+    {% if paginator.previous_page %}
+      <li class="pagination-first"><a href="{{ paginator.previous_page_path | relative_url }}">前へ</a></li>
+    {% else %}
+      <li class="pagination-first disabled"><span>前へ</span></li>
+    {% endif %}
 
     {% if paginator.next_page %}
       <li><a href="{{ paginator.next_page_path | relative_url }}">次へ</a></li>

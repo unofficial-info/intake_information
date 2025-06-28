@@ -1,4 +1,4 @@
-/* --- サイト全体の計算方法を安定させるための、おまじない --- */
+/* --- サイト全体の計算方法を安定させる --- */
 *,
 *::before,
 *::after {
@@ -15,9 +15,16 @@
   --font-accent: 'Montserrat', sans-serif;
 }
 
+/* --- fontの読み込み --- */
+.zen-kurenaido-regular {
+  font-family: "Zen Kurenaido", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 /* --- 基本設定とフォント --- */
 html {
-  scroll-behavior: smooth; /* スムーズスクロールを有効にする */
+  scroll-behavior: smooth; 
 }
 
 body {
@@ -27,34 +34,29 @@ body {
     color: var(--white);
 }
 
-/* --- 新しいヘッダーとハンバーガーメニュー --- */
+/* --- ヘッダー --- */
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
-    height: 60px; /* 高さを指定 */
+    height: 60px; 
     color: var(--white);
     background: var(--gray);
-    /* ヘッダーを最上部に固定 */
     position: sticky;
     top: 0;
     z-index: 1000;
-  }
-  
+  } 
   .logo {
     font-size: 24px;
-    font-family: var(--font-heading); /* 既存のフォントスタイルを適用 */
+    font-family: var(--font-heading); 
   }
   
-  /* --- ハンバーガーメニューに関するCSS --- */
-  
-  /* チェックボックスを非表示にする */
+  /* --- ハンバーガーメニュー --- */
   .drawer_hidden {
     display: none;
   }
-  
-  /* ハンバーガーアイコンの設置スペース */
+
   .drawer_open {
     display: flex;
     height: 60px;
@@ -66,7 +68,6 @@ body {
     cursor: pointer;
   }
   
-  /* ハンバーガーメニューのアイコン */
   .drawer_open span,
   .drawer_open span:before,
   .drawer_open span:after {
@@ -80,22 +81,18 @@ body {
     position: absolute;
   }
   
-  /* 三本線の一番上の棒の位置調整 */
   .drawer_open span:before {
     bottom: 8px;
   }
   
-  /* 三本線の一番下の棒の位置調整 */
   .drawer_open span:after {
     top: 8px;
   }
   
-  /* アイコンがクリックされたら真ん中の線を透明にする */
   #drawer_input:checked ~ .drawer_open span {
     background: rgba(255, 255, 255, 0);
   }
   
-  /* アイコンがクリックされたらアイコンが×印になように上下の線を回転 */
   #drawer_input:checked ~ .drawer_open span::before {
     bottom: 0;
     transform: rotate(45deg);
@@ -106,22 +103,20 @@ body {
     transform: rotate(-45deg);
   }
   
-  /* メニューのデザイン*/
   .nav_content {
     width: 100%;
     height: 100%;
     position: fixed;
     top: 0;
-    left: 100%; /* メニューを画面の外に飛ばす */
+    left: 100%;
     z-index: 99;
     background: var(--gray);
     transition: .5s;
   }
   
-  /* メニューリストのスタイル */
   .nav_list {
     list-style: none;
-    padding-top: 60px; /* ヘッダーの高さ分、上を空ける */
+    padding-top: 60px;
     margin: 0;
   }
   
@@ -139,40 +134,39 @@ body {
     color: var(--gray)
   }
   
-  /* アイコンがクリックされたらメニューを表示 */
   #drawer_input:checked ~ .nav_content {
-    left: 0;/* メニューを画面に入れる */
+    left: 0;
   }
 
-/* --- 全画面メインビジュアル (hero) --- */
+/* --- TOPページメインビジュアル --- */
 .hero {
-    height: 100vh; /* 画面の高さ100% */
+    height: 100vh; 
     background: url('../images/int_image_02.JPG') no-repeat center center/contain;
     color: var(--white);
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    position: relative; /* スクロール矢印の基準位置 */
+    position: relative;
 }
 .hero::before {
     content: '';
     position: absolute;
     top: 0; left: 0;
     width: 100%; height: 100%;
-    background-color: rgba(0, 0, 0, 0.3); /* 画像を少し暗くして文字を読みやすくする */
+    background-color: rgba(0, 0, 0, 0.3); 
 }
 .hero-text {
-    position: relative; /* 文字をオーバーレイより手前に */
+    position: relative;
     z-index: 1;
 }
 .hero-text h1 {
     font-family: var(--font-heading); ;
-    font-size: 4rem; /* 文字サイズ */
+    font-size: 4rem;
     font-weight: 500;
-    letter-spacing: 0.15em; /* 文字間隔 */
+    letter-spacing: 0.15em;
     margin: 0;
-    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5); /* 文字に影をつけて立体感を出す */
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
 }
 .hero-text p {
     font-family: var(--font-heading);
@@ -190,7 +184,7 @@ body {
     z-index: 1;
     color: var(--white);
     text-decoration: none;
-    writing-mode: vertical-rl; /* 文字を縦書きに */
+    writing-mode: vertical-rl; 
     font-size: 0.8rem;
     letter-spacing: 0.2em;
     padding: 10px;
@@ -206,7 +200,7 @@ body {
     top: 50%;
     right: 0;
     width: 1px;
-    height: 60px; /* 縦線の長さ */
+    height: 60px;
     background: var(--white);
     animation: scroll-animation 2s infinite;
 }
@@ -220,8 +214,8 @@ body {
 
 /* --- コンテンツセクション --- */
 .content-section {
-    max-width: 900px; /* コンテンツの最大幅 */
-    margin: 80px auto; /* 上下の余白と、左右中央揃え */
+    max-width: 900px;
+    margin: 80px auto;
     padding: 20px;
     background-color: var(--gray); 
     box-shadow: 0 0 15px rgba(0,0,0,0.05);
@@ -234,6 +228,83 @@ body {
     letter-spacing: 0.1em;
 }
 
+/* --- TODAY/NEXT LIVE セクションのスタイル --- */
+.live-info-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  flex-direction: column;
+}
+.live-info-box {
+  flex: 1;
+  min-width: 0px;
+  padding: 25px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+}
+.scroller-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+.live-info-box h2 {
+  margin: 0; padding: 0; border: none;
+  font-family: var(--font-heading);
+  letter-spacing: 1px;
+}
+
+.scroller-pagination {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+.todays-live .scroller-pagination {
+  color: rgba(255, 255, 255, 0.7);
+}
+.upcoming-lives .scroller-pagination {
+  color: var(--white);
+}
+
+.live-details {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.live-details::-webkit-scrollbar { display: none; }
+.live-details .live-card {
+  flex: 0 0 100%;
+  scroll-snap-align: center;
+  padding-right: 20px;
+}
+.live-details .live-card:last-child { padding-right: 0; }
+.live-details p { margin: 5px 0; }
+.live-details .button { margin-top: 15px; }
+
+
+/* --- TODAY'S LIVE の個別スタイル --- */
+.todays-live {
+  background-color: #555;
+  color: var(--white);
+}
+.todays-live .scroller-header {
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* --- UPCOMING LIVES の個別スタイル --- */
+.upcoming-lives {
+  background-color: #444;
+  color:var(--white);
+}
+.upcoming-lives .scroller-header {
+  border-color: var(--color-border, #eee);
+}
+
 /* --- NEWSリストのスタイル --- */
 .news-list {
   list-style: none;
@@ -244,9 +315,8 @@ body {
   border-bottom: 1px solid var(--color-border, #eee);
 }
 
-/* リンクブロック全体のスタイル */
 .news-link-block {
-  display: block; /* リンクをブロック要素にする */
+  display: block;
   padding: 20px 10px;
   text-decoration: none;
   color: var(--white);
@@ -257,18 +327,16 @@ body {
   color: var(--gray);
 }
 
-/* 一行目：日付のスタイル */
 .news-list .date {
   font-size: 0.9rem;
   color: #888;
   font-family: 'Montserrat', sans-serif;
 }
 
-/* 二行目のコンテナ */
 .news-item-line-2 {
   display: flex;
   align-items: center;
-  margin-top: 8px; /* 日付との間隔 */
+  margin-top: 8px;
 }
 
 .news-list .category-tag {
@@ -280,16 +348,13 @@ body {
     border-radius: 4px;
 }
 
-/* タイトルのスタイル */
 .news-list .title {
   font-weight: bold;
-  /* 長いタイトルは「…」で省略する設定 */
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-/* VIEW MOREボタン */
 .view-more {
     text-align: center;
     margin-top: 40px;
@@ -316,54 +381,24 @@ body {
     font-size: 0.8em;
     color: #666;
 }
-/* --- ふわっと表示させるためのアニメーション設定 --- */
 
-/* アニメーション前の状態（最初は透明で、少し下にいる） */
+/* --- ふわっと表示させるためのアニメーション設定 --- */
 .animate-on-scroll {
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.8s, transform 0.8s;
 }
 
-/* JavaScriptによってこのクラスが付与されたら、アニメーション後の状態になる */
-/* ↓↓↓ クラス名を変更 */
 .animate-on-scroll.is-visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* PC表示（画面幅が768px以上）の時のスタイル */
-@media (min-width: 768px) {
-    /* ↓↓↓ この .menu-toggle ルールを丸ごと削除します ↓↓↓ */
-    .menu-toggle {
-        display: none; /* PCでは三本線ボタンを隠す */
-    }
-
-    /* ↓↓↓ この .main-nav ルールも丸ごと削除します ↓↓↓ */
-    .main-nav {
-        display: block; /* PCではメニューを常に表示 */
-        position: static;
-        width: auto;
-        background-color: transparent;
-    }
-    .main-nav ul {
-        display: flex; /* 横並びにする */
-    }
-    .main-nav li a {
-        border-bottom: none;
-    }
-}
-.zen-kurenaido-regular {
-  font-family: "Zen Kurenaido", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
 /* --- プロフィールセクションのスタイル --- */
 .profile-list-container {
   display: flex;
-  flex-direction: column; /* スマホではまず縦に並べる */
-  gap: 50px; /* プロフィール間の余白 */
+  flex-direction: column;
+  gap: 50px;
 }
 
 .profile-card {
@@ -376,7 +411,7 @@ body {
 .profile-image {
   flex-shrink: 0;
   width: 150px;
-  margin-bottom: 20px; /* 画像とテキストの間隔 */
+  margin-bottom: 20px;
 }
 
 .profile-image img {
@@ -493,84 +528,6 @@ body {
   transform: translateY(-2px); /* 少しだけ上に動かす */
 }
 
-/* --- TODAY/NEXT LIVE セクションのスタイル --- */
-.live-info-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  flex-direction: column;
-}
-.live-info-box {
-  flex: 1;
-  min-width: 0px;
-  padding: 25px;
-  border-radius: 8px;
-  display: flex;
-  flex-direction: column;
-}
-.scroller-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 2px solid;
-  padding-bottom: 10px;
-  margin-bottom: 20px;
-}
-.live-info-box h2 {
-  margin: 0; padding: 0; border: none;
-  font-family: var(--font-heading);
-  letter-spacing: 1px;
-}
-
-.scroller-pagination {
-  font-family: var(--font-heading);
-  font-size: 1.1rem;
-  font-weight: bold;
-}
-.todays-live .scroller-pagination {
-  color: rgba(255, 255, 255, 0.7);
-}
-.upcoming-lives .scroller-pagination {
-  color: var(--white);
-}
-
-.live-details {
-  display: flex;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-}
-.live-details::-webkit-scrollbar { display: none; }
-.live-details .live-card {
-  flex: 0 0 100%;
-  scroll-snap-align: center;
-  padding-right: 20px;
-}
-.live-details .live-card:last-child { padding-right: 0; }
-.live-details p { margin: 5px 0; }
-.live-details .button { margin-top: 15px; }
-
-
-/* --- TODAY'S LIVE の個別スタイル --- */
-.todays-live {
-  background-color: #555;
-  color: var(--white);
-}
-.todays-live .scroller-header {
-  border-color: rgba(255, 255, 255, 0.5);
-}
-
-/* --- UPCOMING LIVES の個別スタイル --- */
-.upcoming-lives {
-  background-color: #444;
-  color:var(--white);
-}
-.upcoming-lives .scroller-header {
-  border-color: var(--color-border, #eee);
-}
-
-
 /* --- LIVEページリストのスタイル --- */
 .professional-live-list {
   list-style: none;
@@ -597,7 +554,6 @@ body {
   color:var(--gray);
 }
 
-/* 左側：日付エリア */
 .live-date {
   width: 100px;
   text-align: center;
@@ -617,7 +573,6 @@ body {
   letter-spacing: 1px;
 }
 
-/* 中央：詳細エリア */
 .live-details-main {
   flex-grow: 1; /* 残りのスペースを全て使う */
 }
@@ -639,7 +594,6 @@ body {
   gap: 8px;
 }
 
-/* 右側：矢印アイコン */
 .live-arrow-icon {
   font-size: 1.0rem;
   color: #ccc;
@@ -843,18 +797,10 @@ body {
   margin-bottom: 40px;
 }
 
-.zen-kurenaido-regular {
-  font-family: "Zen Kurenaido", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
 /* =================================================================
    スマートフォン表示用のスタイル (画面幅が767px以下で適用)
    ================================================================= */
 @media (max-width: 767px) {
-
-  /* --- 問題1：ヘッダーロゴの折り返しを解消 --- */
   .logo a {
     font-size: 1.2rem; /* スマホではロゴの文字サイズを少し小さくする */
   }
@@ -869,9 +815,6 @@ body {
   .hero-text p {
     font-size: 1rem;
   }
-
-  /* --- 問題3：TODAY/UPCOMING LIVEボックスの見切れを調整 --- */
-  /* --- 問題1：TODAY/UPCOMING LIVEボックスの見切れを解決 --- */
   .live-info-wrapper {
     /* 左右の余白を確保 */
     padding: 0 15px;
@@ -882,12 +825,10 @@ body {
     width: 100%;  /* ボックスの幅を親要素の100%に強制する */
   }
 
-  /* --- 問題2：LIVEページの文字の折り返しを解決 --- */
   .live-meta {
     font-size: 0.8rem; /* 文字サイズを少し小さくして一行に収める */
   }
 
-  /* --- 問題4：スワイプが完全に移動しきらない問題を修正 --- */
   .live-details {
     gap: 20px; /* カード間の余白はpaddingでなくgapで指定 */
   }
@@ -973,7 +914,7 @@ body {
   background-color: var(--white);
 }
 
-/* --- プロフィールページ (新デザイン) --- */
+/* --- プロフィールページ --- */
 .combo-profile-section {
   display: flex;
   align-items: center;
@@ -1020,7 +961,7 @@ body {
 /* メンバー紹介セクション */
 .member-profile-section {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2列表示 */
+  grid-template-columns: repeat(2, 1fr);
   gap: 40px;
 }
 .member-card {
@@ -1035,8 +976,8 @@ body {
 .member-image img {
   width: 100%;
   height: 100%;
-  border-radius: 50%; /* 丸く切り抜く */
-  object-fit: cover; /* 画像の比率を保ったままトリミング */
+  border-radius: 50%;
+  object-fit: cover; 
 }
 .member-details h2 {
   margin: 0 0 10px 0;
@@ -1069,7 +1010,7 @@ body {
     justify-content: center;
   }
   .member-profile-section {
-    grid-template-columns: 1fr; /* 1列表示 */
+    grid-template-columns: 1fr;
   }
 }
 
@@ -1126,4 +1067,42 @@ body {
   max-width: 500px; /* カレンダーの最大の横幅を800pxに指定 */
   margin: 40px auto;   /* 上下に40pxの余白、左右は中央に配置 */
   padding: 0 15px;  /* スマホ表示で左右に余白を持たせる */
+}
+
+/* --- ページネーションのナビゲーションスタイル --- */
+.pagination {
+  margin: 40px 0;
+}
+.pagination ul {
+  display: flex; /* Flexboxを使って要素を横並びにする */
+  justify-content: center; /* 全体を中央揃えにする */
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  gap: 8px; /* 各項目間の余白 */
+}
+/* リンクとスパンの共通スタイル */
+.pagination li a,
+.pagination li span {
+  display: block;
+  padding: 10px 16px;
+  border: 1px solid var(--color-border, #eee);
+  border-radius: 4px;
+  text-decoration: none;
+  color: var(--text-dark, #333);
+  background-color: var(--bg-primary, #fff);
+  transition: all 0.2s;
+}
+/* ホバー時のスタイル */
+.pagination li a:hover {
+  background-color: var(--bg-secondary, #f0f0f0);
+  border-color: #ddd;
+}
+/* 「前へ」「次へ」が無効な時 */
+.pagination li.disabled span {
+  color: #ccc;
+  background-color: transparent;
+}
+.pagination-first {
+  margin-left: auto;
 }
