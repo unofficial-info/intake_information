@@ -1,11 +1,11 @@
 # === コンビのプロフィール情報を追加 ===
-combo:
+duo:
   name: "インテイク"
-  image: "int_image.jpg" # コンビの写真を指定 (assets/images/ に配置)
+  image: "int_image_02.JPG" # コンビの写真を指定 (assets/images/ に配置)
   description: |
+    東京NSC23期。
     吉本興業所属の芸歴8年目のコンビ。
-    東京NSC23期で同期には令和ロマンやヨネダ2000などがいる。
-    相方探しの会でまえかずさんから声をかけ、コンビを組んだ。
+    相方探しの会でまえかずさんから声をかけてコンビ結成に至った。
   links:
     - name: "公式サイト"
       url: "https://profile.yoshimoto.co.jp/talent/detail?id=8976"
@@ -19,26 +19,23 @@ combo:
 # === 個人のプロフィール情報 ===
 members:
   - name: "鈴木龍平"
-    image: "int_image.jpg" # 個人の写真
+    image: "suzuki_02.jpg" # 個人の写真
     bio: |
       1996年1月31日うまれ。
       埼玉県川口市出身。
       INFJ（神保町公式Instagramより）。
       インテイクのネタ作成＆ボケ担当。
-      アイドル(特にITZY)や映画が好き。
-      マリマリーのタコスさんとおとうふの山中さんと一緒にYoutubeチャンネルをやっている。
     social:
       twitter: "https://twitter.com/Ryu_su_131"
       instagram: "https://instagram.com/intk__7"
 
   - name: "まえかず"
-    image: "int_image.jpg"
+    image: "maekz_02.jpg"
     bio: |
       1993年12月22日うまれ。
       青森県おいらせ町出身。
       ENFP（神保町公式Instagramより）。
-      コンビのツッコミ(リアクション)担当。
-      サッカーをやっており、「トーキック」というもちギャグがある。
+      インテイクのツッコミ(リアクション)担当。
     social:
       twitter: "https://twitter.com/intmaekz"
       instagram: "https://instagram.com/int_maekz"

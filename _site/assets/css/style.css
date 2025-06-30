@@ -915,45 +915,44 @@ body {
 }
 
 /* --- プロフィールページ --- */
-.combo-profile-section {
+.duo-profile-section {
   display: flex;
   align-items: center;
   gap: 40px;
   margin-bottom: 60px;
 }
-.combo-profile-image {
+.duo-profile-image {
   flex: 1;
   max-width: 400px;
 }
-.combo-profile-image img {
+.duo-profile-image img {
   width: 100%;
   border-radius: 8px;
 }
-.combo-profile-details {
+.duo-profile-details {
   flex: 1.5;
 }
-.combo-profile-details h1 {
-  font-family: 'Kaisei Decol', serif;
+.duo-profile-details h1 {
+  font-family: var(--font-main);
   font-size: 2.5rem;
   margin-top: 0;
 }
-.combo-profile-details p {
+.duo-profile-details p {
   line-height: 1.8;
   margin-bottom: 30px;
 }
-.combo-links {
+.duo-links {
   display: flex;
   flex-wrap: wrap;
   gap: 15px;
 }
-.combo-links .button {
+.duo-links .button {
   text-decoration: none;
 }
-.combo-links .button.primary-action {
-  background-color: var(--color-accent, #007bff);
-  color: #fff;
+.duo-links .button.primary-action {
+  color: var(--white);
 }
-.combo-links .button .fa-solid {
+.duo-links .button .fa-solid {
   margin-right: 8px;
 }
 
@@ -963,22 +962,51 @@ body {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 40px;
+  padding: 0 20px;
 }
 .member-card {
   display: flex;
   gap: 20px;
 }
-.member-image {
-  width: 100px;
-  height: 100px;
+
+/* メンバーのフォトコンテナ */
+.member-photo-container {
+  width: 100px; /* 画像の幅 */
+  height: 150px; /* 画像の高さ */
+  position: relative; /* 子要素の基準点 */
+  margin-bottom: 20px;
   flex-shrink: 0;
 }
-.member-image img {
+
+/* プロフィール写真 */
+.member-photo {
+  width: 100px;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 0px;
+}
+
+.member-photo img {
+  display: block;
   width: 100%;
   height: 100%;
-  border-radius: 50%;
-  object-fit: cover; 
+  object-fit: cover;
 }
+
+/* 白い枠線 */
+.member-photo-frame {
+  position: absolute;
+  top: 5px;      /* 枠を下にずらす量 */
+  left: 5px;     /* 枠を右にずらす量 */
+  width: 100px;    /* 枠線の幅（画像の幅と同じ） */
+  height: 150px;   /* 枠線の高さ（画像の高さと同じ） */
+  border: 2px solid var(--white);
+  background-color: transparent; /* 透明にする */
+  box-sizing: border-box; /* border を width/height に含める */
+  border-radius: 0px;
+  pointer-events: none; /* クリックイベントを透過 */
+}
+
 .member-details h2 {
   margin: 0 0 10px 0;
 }
@@ -996,17 +1024,21 @@ body {
   transition: color 0.2s, transform 0.2s;
 }
 .social-links a:hover {
-  color: var(--text-main, #2c3e50);
+  color: var(--white);
   transform: scale(1.1);
 }
 
 /* スマホ表示の調整 */
 @media (max-width: 767px) {
-  .combo-profile-section, .member-card {
+  .duo-profile-section{
     flex-direction: column;
     text-align: center;
   }
-  .combo-links, .social-links {
+  .member-card {
+    flex-direction: raw;
+    text-align: center;
+  }
+  .duo-links, .social-links {
     justify-content: center;
   }
   .member-profile-section {
