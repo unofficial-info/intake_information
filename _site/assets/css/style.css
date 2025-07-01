@@ -842,6 +842,23 @@ body {
     white-space: nowrap; /* テキストの折り返しを禁止する */
     font-size: 1rem;     /* 文字サイズを少しだけ調整 */
   }
+    .main-live-details-box {
+    /* ボックス全体の左右の余白を25pxから15pxに狭める */
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .next-event-list .button {
+    /* ボタン内の文字サイズを小さくする */
+    font-size: 0.8rem;
+    /* 文字の行間も少し詰める */
+    line-height: 1.5;
+    /* 上下の余白も少し詰める */
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+
 }
 
 /* --- カードフッターとスワイプ表示のスタイル --- */
