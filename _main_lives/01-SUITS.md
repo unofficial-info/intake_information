@@ -6,26 +6,30 @@ title: "インテイク×狛犬ツーマンライブ「SUITS」"
 # 一覧ページで表示する要約データ
 summary:
   title: "インテイク×狛犬ツーマンライブ「SUITS」"
-  frequency: "毎月開催"
   venue: "神保町よしもと漫才劇場"
   performers:
     - "インテイク"
     - "狛犬"
     - "先輩ゲスト"
-  composition: "OP + 新ネタ2本 + 先輩ゲストのネタ1本 ＋ トーク ＋ ED"
-  notes: "チケットはFANYチケットにて、毎月1日に発売されます。"
 
 # 次回のライブ情報を管理
 next_events:
   - date: "2025-07-21"
-    url: "https://example.com/ticket-a1"
-  - date: "2025-08-20"
-    url: "https://example.com/ticket-a2"
+    open: "20:15"
+    start: "20:30"
+    url: "https://ticket.fany.lol/event/detail/3572/12493?utm_medium=schedule&utm_source=jimbocho_manzaigekijyo&utm_campaign=%E3%82%A4%E3%83%B3%E3%83%86%E3%82%A4%E3%82%AF%C3%97%E7%8B%9B%E7%8A%AC%E3%83%84%E3%83%BC%E3%83%9E%E3%83%B3%E3%83%A9%E3%82%A4%E3%83%96%E3%80%8CSUITS%E3%80%8D"
+    note: "ゲスト：LLR"
+  - date: "2025-08-05"
+    open: "18:45"
+    start: "19:00"
+    url: "https://ticket.fany.lol/event/detail/4471/16337?utm_medium=schedule&utm_source=jimbocho_manzaigekijyo&utm_campaign=%E3%82%A4%E3%83%B3%E3%83%86%E3%82%A4%E3%82%AF%C3%97%E7%8B%9B%E7%8A%AC%E3%83%84%E3%83%BC%E3%83%9E%E3%83%B3%E3%83%A9%E3%82%A4%E3%83%96%E3%80%8CSUITS%E3%80%8D"
+    note: "ゲスト：ジェラードン"
 ---
 
-このライブは、インテイクと狛犬のツーマンライブです。<br>
-毎回先輩ゲストをお呼びして、ネタとトークで盛り上がります。<br>
-インテイクと狛犬は新ネタを 2 本卸します。
+毎月開催しているインテイクと狛犬のツーマンライブです。<br>
+各組の新ネタ 2 本とゲストのネタ 1 本に加え、先輩ゲストとの新鮮な絡みが見られるトークコーナーもあります。
 
-10 月,11 月は「Casual SUITS」というコーナーライブになります。<br>
-10 月はインテイク vs 狛犬、11 月はインテイク＆狛犬 vs スカイサーキット＆ワラバランスです。
+さらに、10 月と 11 月はネタなしのコーナーライブ「Casual SUITS」として開催します。
+
+10 月： インテイク vs 狛犬<br>
+11 月： インテイク＆狛犬 vs スカイサーキット＆ワラバランス

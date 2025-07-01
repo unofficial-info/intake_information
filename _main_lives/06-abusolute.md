@@ -6,23 +6,30 @@ title: "絶対漫才！"
 # 一覧ページで表示する要約データ
 summary:
   title: "絶対漫才！"
-  frequency: "毎月開催"
   venue: "渋谷よしもと漫才劇場"
   performers:
     - "カラタチ"
-    - ""
-    - "先輩ゲスト"
-  composition: "OP + ネタ1本 + 結果発表 ＋ ED"
-  notes: "チケットはFANYチケットにて、毎月1日に発売されます。"
+    - "ランパンプス"
+    - "くらげ"
+    - "ドッチモドッチ"
+    - "素敵じゃないか"
+    - "エバース"
+    - "インテイク"
+    - "世界クジラ"
+    - "ゲスト"
 
 # 次回のライブ情報を管理
 next_events:
-  - date: "2025-07-21"
-    url: "https://example.com/ticket-a1"
-  - date: "2025-08-20"
-    url: "https://example.com/ticket-a2"
+  - date: "2025-07-23"
+    open: "18:15"
+    start: "18:30"
+    url: "https://ticket.fany.lol/event/detail/3486/12384?utm_medium=schedule&utm_source=shibuya_manzaigekijyo&utm_campaign=%E7%B5%B6%E5%AF%BE%E6%BC%AB%E6%89%8D%EF%BC%81"
+  - date: "2025-08-24"
+    open: "18:15"
+    start: "18:30"
+    url: "https://ticket.fany.lol/event/detail/4598/16403?utm_medium=schedule&utm_source=shibuya_manzaigekijyo&utm_campaign=%E7%B5%B6%E5%AF%BE%E6%BC%AB%E6%89%8D%EF%BC%81"
 ---
 
-これは 8 組の漫才師たちによる、バトルライブです。<br>
-お客さんの投票で順位が決まります。<br>
-インテイクは途中からの参加ですが、よく 1 位をとっております。<br>
+毎月開催されている、8 組の漫才師たちによる、熱いバトルライブです。<br>
+出演する 8 組が、漫才を 1 本ずつ披露。<br>
+全組のネタ終了後、お客さんの投票によってその日の順位が決定します。

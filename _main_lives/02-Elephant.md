@@ -6,22 +6,28 @@ title: "Elephant"
 # 一覧ページで表示する要約データ
 summary:
   title: "Elephant"
-  frequency: "毎月開催"
   venue: "神保町よしもと漫才劇場"
   performers:
-    - "エルフ"
     - "鈴木バイダン"
+    - "エルフ"
     - "バリカタ友情飯"
     - "インテイク"
-  composition: "ネタ1本 + コーナー ＋ ED"
-  notes: "チケットはFANYチケットにて、毎月1日に発売されます。"
 
 # 次回のライブ情報を管理
 next_events:
-  - date: "2025-07-21"
-    url: "https://example.com/ticket-a1"
-  - date: "2025-08-20"
-    url: "https://example.com/ticket-a2"
+  - date: "2025-07-02"
+    open: "20:45"
+    start: "21:00"
+    url: "https://ticket.fany.lol/event/detail/3536/12466?utm_medium=schedule&utm_source=jimbocho_manzaigekijyo&utm_campaign=Elephant"
+    note: "コーナー担当：バリカタ友情飯"
+  - date: "2025-08-02"
+    open: "18:15"
+    start: "18:30"
+    url: "https://ticket.fany.lol/event/detail/4466/16331?utm_medium=schedule&utm_source=jimbocho_manzaigekijyo&utm_campaign=Elephant"
+    note: "コーナー担当：エルフ"
 ---
 
-このライブは、鈴木さん主催のライブです。
+毎月開催されている鈴木さん主催のライブです。<br>
+各組ネタ 1 本ずつと、コーナーがあります。<br>
+コーナーは出演者が持ち回りで担当し、担当者の個性が爆発する企画で、いつも大盛り上がりの楽しいライブです。<br>
+さらに出演者がデザインしたフライヤーの特製ステッカーも来場者全員に配布されます。<br>

@@ -123,3 +123,22 @@ if (document.querySelector(".swiper-container")) {
     },
   });
 }
+
+// --- 主なライブページの開閉機能 ---
+const liveCardHeaders = document.querySelectorAll(".main-live-header");
+
+// すべてのヘッダーにクリックイベントを設定
+liveCardHeaders.forEach((header) => {
+  header.addEventListener("click", () => {
+    // クリックされたヘッダーの親要素である .main-live-card を取得
+    const card = header.closest(".main-live-card");
+
+    // is-open クラスを付けたり外したりする
+    card.classList.toggle("is-open");
+
+    // aria-expanded の状態を更新する
+    const toggleButton = header.querySelector(".main-live-toggle");
+    const isExpanded = card.classList.contains("is-open");
+    toggleButton.setAttribute("aria-expanded", isExpanded);
+  });
+});

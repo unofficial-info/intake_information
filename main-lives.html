@@ -3,24 +3,72 @@ layout: default
 title: 主なライブ
 permalink: /main-lives/
 ---
+
 <div class="content-section">
   <h1 class="section-title">主なライブ</h1>
+
   <div class="main-live-list">
     {% for live in site.main_lives %}
       <div class="main-live-card animate-on-scroll">
+        <div class="main-live-header">
+          <button class="main-live-toggle" aria-expanded="false" aria-controls="live-content-{{ forloop.index }}">
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <h2>{{ live.title }}</h2>
+        </div>
+
         <div class="main-live-content">
-          <div class="main-live-summary">
-            <h2>{{ live.summary.title }}</h2>
-            <ul>
-              <li><strong>開催頻度:</strong> {{ live.summary.frequency }}</li>
-              <li><strong>開催場所:</strong> {{ live.summary.venue }}</li>
-            </ul>
+          <div class="live-description">
+            {{ live.content | markdownify }}
           </div>
-          <div class="main-live-action">
-            <a href="{{ live.url | relative_url }}" class="button">詳細を見る</a>
+          <div class="live-details-sidebar">
+            <div class="sidebar-content">
+              <strong><i class="fa-solid fa-location-dot"></i> 会場</strong>
+              <p>{{ live.summary.venue }}</p>
+
+              <strong><i class="fa-solid fa-users"></i> 出演者</strong>
+              <ul>
+                {% for performer in live.summary.performers %}
+                  <li>{{ performer }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+
+            <div class="main-live-details-box">
+              <h3><i class="fa-solid fa-ticket"></i> 次回の開催予定</h3>
+
+              {% if live.next_events.size > 0 %}
+                <div class="next-event-list">
+                  {% for event in live.next_events %}
+
+                    {% assign day_of_week = event.date | date: "%w" %}
+                    {% case day_of_week %}
+                      {% when "0" %}{% assign day_name = "日" %}
+                      {% when "1" %}{% assign day_name = "月" %}
+                      {% when "2" %}{% assign day_name = "火" %}
+                      {% when "3" %}{% assign day_name = "水" %}
+                      {% when "4" %}{% assign day_name = "木" %}
+                      {% when "5" %}{% assign day_name = "金" %}
+                      {% when "6" %}{% assign day_name = "土" %}
+                    {% endcase %}
+
+                    <a href="{{ event.url }}" class="button primary-action" target="_blank" rel="noopener noreferrer">
+                      {{ event.date | date: "%Y年%m月%d日" }} ({{ day_name }})<br>
+                      開場{{event.open}}｜開演{{event.start}}<br>
+                      {{event.note}}<br>
+                      チケットはこちらから
+                    </a>
+
+                  {% endfor %}
+                </div>
+              {% else %}
+                <p>次回の開催予定は未定です。</p>
+              {% endif %}
+            </div>
           </div>
         </div>
       </div>
     {% endfor %}
   </div>
+
 </div>
