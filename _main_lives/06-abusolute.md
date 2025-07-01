@@ -30,6 +30,6 @@ next_events:
     url: "https://ticket.fany.lol/event/detail/4598/16403?utm_medium=schedule&utm_source=shibuya_manzaigekijyo&utm_campaign=%E7%B5%B6%E5%AF%BE%E6%BC%AB%E6%89%8D%EF%BC%81"
 ---
 
-毎月開催されている、8 組の漫才師たちによる、熱いバトルライブです。<br>
-出演する 8 組が、漫才を 1 本ずつ披露。<br>
+毎月開催されている、漫才師たちによる熱いバトルライブです。<br>
+出演する全組が、漫才を 1 本ずつ披露。<br>
 全組のネタ終了後、お客さんの投票によってその日の順位が決定します。
