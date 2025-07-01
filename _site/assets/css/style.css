@@ -973,6 +973,11 @@ body {
   margin-right: 8px;
 }
 
+.duo-profile-details p,
+.member-details p {
+  overflow-wrap: break-word;
+  word-break: break-all;
+}
 
 /* メンバー紹介セクション */
 .member-profile-section {
@@ -1244,6 +1249,7 @@ body {
 .next-event-list .button {
   text-align: center;
 }
+
 
 /* --- 埋め込みカレンダーのラッパー --- */
 .calendar-wrapper {
