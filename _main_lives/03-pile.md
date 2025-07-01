@@ -14,10 +14,11 @@ summary:
 
 # 次回のライブ情報を管理
 next_events:
-  - date: "2025-07-21"
-    url: "https://example.com/ticket-a1"
-  - date: "2025-08-20"
-    url: "https://example.com/ticket-a2"
+  - date: "2025-07-22"
+    open: "19:30"
+    start: "20:00"
+    url: "https://passmarket.yahoo.co.jp/event/show/detail/02pwzdidebh41.html"
+    note: "会場：武蔵野芸能劇場"
 ---
 
 かつて神保町で開催されたライブ「積積」が、リニューアルして帰ってきます。<br>
