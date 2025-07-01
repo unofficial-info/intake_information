@@ -996,11 +996,11 @@ body {
 /* 白い枠線 */
 .member-photo-frame {
   position: absolute;
-  top: 5px;      /* 枠を下にずらす量 */
-  left: 5px;     /* 枠を右にずらす量 */
+  top: 3.5px;      /* 枠を下にずらす量 */
+  left: 3.5px;     /* 枠を右にずらす量 */
   width: 100px;    /* 枠線の幅（画像の幅と同じ） */
   height: 150px;   /* 枠線の高さ（画像の高さと同じ） */
-  border: 2px solid var(--white);
+  border: 1px solid var(--white);
   background-color: transparent; /* 透明にする */
   box-sizing: border-box; /* border を width/height に含める */
   border-radius: 0px;
@@ -1009,6 +1009,11 @@ body {
 
 .member-details h2 {
   margin: 0 0 10px 0;
+}
+.honorific {
+  font-size: 0.8rem;   /* 親要素（h2）の0.8倍の大きさに */
+  font-weight: normal; /* 太字を解除 */
+  margin-left: 0.2em;  /* 名前との間に少しだけ余白 */
 }
 .member-details p {
   font-size: 0.9rem;

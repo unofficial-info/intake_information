@@ -28,7 +28,7 @@
           </div>
           <div class="member-photo-frame"></div> </div>
         <div class="member-details">
-          <h2>{{ member.name }} さん</h2>
+          <h2>{{ member.name }}<span class="honorific"> さん</span></h2>
           <p>{{ member.bio | newline_to_br }}</p>
           <div class="social-links">
             {% if member.social.twitter %}
@@ -44,6 +44,13 @@
               <a href="{{ member.social.youtube }}" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
             {% endif %}
           </div>
+          {% if member.group %}
+            <p><br>{{ member.group.bio | newline_to_br }}</p>
+            <div class="social-links">
+              <a href="{{ member.social.youtube }}" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+              <a href="{{ member.group.social.instagram }}" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+          {% endif %}
         </div>
       </div>
     {% endfor %}
