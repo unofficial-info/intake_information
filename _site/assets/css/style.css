@@ -844,8 +844,8 @@ body {
   }
     .main-live-details-box {
     /* ボックス全体の左右の余白を25pxから15pxに狭める */
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 
   .next-event-list .button {
