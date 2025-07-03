@@ -15,11 +15,6 @@ summary:
 
 # 次回のライブ情報を管理
 next_events:
-  - date: "2025-07-02"
-    open: "20:45"
-    start: "21:00"
-    url: "https://ticket.fany.lol/event/detail/3536/12466?utm_medium=schedule&utm_source=jimbocho_manzaigekijyo&utm_campaign=Elephant"
-    note: "コーナー担当：バリカタ友情飯"
   - date: "2025-08-02"
     open: "18:15"
     start: "18:30"
