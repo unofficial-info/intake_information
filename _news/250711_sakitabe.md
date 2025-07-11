@@ -11,7 +11,9 @@ url: "#"
 <br>
 ▼視聴はこちら
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/cAMGybp_UWU?si=Tf3btOlL16lchC1q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<div class="video-size">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/cAMGybp_UWU?si=Tf3btOlL16lchC1q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
 <a href="https://youtu.be/cAMGybp_UWU?feature=shared" target="_blank">【#24】旅の始まり 車でおしゃべり 何も起きないはずもなく【崎食あそ美(さきたべあそみ)】</a>
 
 <br>

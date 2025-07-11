@@ -11,7 +11,9 @@ url: "#"
 <br>
 ▼視聴はこちら
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/if02Vqq6MJc?si=5TI1USUACEPkdmXK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<div class="video-size">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/if02Vqq6MJc?si=5TI1USUACEPkdmXK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
 <a href="https://youtu.be/if02Vqq6MJc?feature=shared" target="_blank">【#23】3 人の貯金箱を作るぞ！【崎食あそ美(さきたべあそみ)】</a>
 
 <br>

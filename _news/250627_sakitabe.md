@@ -11,7 +11,9 @@ url: "#"
 <br>
 ▼ 視聴はこちら
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/7iG00DbjosA?si=DTHuaMy-sO3yfKJK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<div class="video-size">
+    <iframe src="https://www.youtube.com/embed/7iG00DbjosA?si=DTHuaMy-sO3yfKJK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
 <a href="https://youtu.be/7iG00DbjosA?si=y5qhN2-CTOf500o6" target="_blank">【#20】池袋の四川麻辣燙へ</a>
 
 <br>
