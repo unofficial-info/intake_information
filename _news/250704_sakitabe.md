@@ -11,8 +11,8 @@ url: "#"
 <br>
 ▼視聴はこちら
 
-【#22】マクドナルドを食べましょう<br>
-<https://youtu.be/JKijkYSCnO0?si=urbwAExEkOut49fE>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/JKijkYSCnO0?si=iDg2CHAOkdqrRPb3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<a hreff="https://youtu.be/JKijkYSCnO0?si=urbwAExEkOut49fE" target="_blank">【#22】マクドナルドを食べましょう</a>
 
 <br>
 <br>

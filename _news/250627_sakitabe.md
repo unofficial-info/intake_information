@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2025-06-27
+date: 2025-06-27 18:00:00 +0900
 category: "MEDIA"
 title: "崎食あそ美#20更新"
 url: "#"
@@ -9,10 +9,10 @@ url: "#"
 鈴木さんご出演の崎食あそ美の最新の動画が公開されました。
 
 <br>
-▼ 視聴はこちらから
+▼ 視聴はこちら
 
-【#20】池袋の四川麻辣燙へ<br>
-<https://youtu.be/7iG00DbjosA?si=y5qhN2-CTOf500o6>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/7iG00DbjosA?si=DTHuaMy-sO3yfKJK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<a href="https://youtu.be/7iG00DbjosA?si=y5qhN2-CTOf500o6" target="_blank">【#20】池袋の四川麻辣燙へ</a>
 
 <br>
 <br>

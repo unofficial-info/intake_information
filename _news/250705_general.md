@@ -2,7 +2,7 @@
 layout: post
 date: 2025-07-05
 category: "TICKET"
-title: "一般販売開始"
+title: "【8月】一般販売開始"
 url: "#"
 ---
 
