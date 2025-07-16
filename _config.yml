@@ -27,4 +27,5 @@ pagination:
   permalink: "/news/page/:num/"
 # autopages: のブロックは、このファイルから完全に削除する
 
+# --- 日付が変わったことの判定を東京基準で行う　--- #
 timezone: Asia/Tokyo
