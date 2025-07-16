@@ -1,9 +1,9 @@
 # --- サイト基本設定 ---
 title: インテイク非公式information
-author: piencode
+author: HelpIntakeInfo
 description: "インテイクの非公式情報サイトです。"
 baseurl: "/intake_information"
-url: "https://piencode.github.io"
+url: "https://unofficial-info.github.io"
 
 # --- Jekyll コレクション設定 ---
 collections:
