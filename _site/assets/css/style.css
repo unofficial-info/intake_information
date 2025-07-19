@@ -1337,7 +1337,7 @@ body {
 
 /* --- 配信中セクションのスタイル --- */
 .now-streaming {
-  background: linear-gradient(45deg, #143314, #1e4d1e, #328032);
+  background: #143314;
   color: var(--white);
   border: none;
 }
