@@ -142,3 +142,6 @@ liveCardHeaders.forEach((header) => {
     toggleButton.setAttribute("aria-expanded", isExpanded);
   });
 });
+
+// 新しい「配信中」スライダーにも、同じセットアップ関数を呼び出す
+setupPaginationIndicator("streaming-now-scroller");

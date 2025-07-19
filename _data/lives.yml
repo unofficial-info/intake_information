@@ -1,3 +1,10 @@
+- date: "2025-07-14"
+  title: "スマイルキング"
+  venue: "渋谷よしもと漫才劇場"
+  time_open: "20:45"
+  time_start: "21:00"
+  streaming_url: "https://online-ticket.yoshimoto.co.jp/products/スマイルキング-7-14-21-00"
+
 - date: "2025-07-19"
   title: "人形劇場で#ワイガヤ《1部》"
   venue: "プーク人形劇場"
@@ -45,6 +52,7 @@
   venue: "神保町よしもと漫才劇場"
   time_open: "20:15"
   time_start: "20:30"
+  streaming_url: "https://online-ticket.yoshimoto.co.jp/products/インテイク-狛犬ツーマンライブ-suits-7-21-20-30"
   url: "https://ticket.fany.lol/event/detail/3572/12493?utm_medium=schedule&utm_source=jimbocho_manzaigekijyo&utm_campaign=%E3%82%A4%E3%83%B3%E3%83%86%E3%82%A4%E3%82%AF%C3%97%E7%8B%9B%E7%8A%AC%E3%83%84%E3%83%BC%E3%83%9E%E3%83%B3%E3%83%A9%E3%82%A4%E3%83%96%E3%80%8CSUITS%E3%80%8D"
 
 - date: "2025-07-22"
@@ -59,6 +67,7 @@
   venue: "渋谷よしもと漫才劇場"
   time_open: "18:15"
   time_start: "18:30"
+  streaming_url: "https://online-ticket.yoshimoto.co.jp/products/絶対漫才-7-23-18-30"
   url: "https://ticket.fany.lol/event/detail/3486/12384?utm_medium=schedule&utm_source=shibuya_manzaigekijyo&utm_campaign=%E7%B5%B6%E5%AF%BE%E6%BC%AB%E6%89%8D%EF%BC%81"
 
 - date: "2025-07-27"
@@ -80,6 +89,7 @@
   venue: "渋谷よしもと漫才劇場"
   time_open: "20:45"
   time_start: "21:00"
+  streaming_url: "https://online-ticket.yoshimoto.co.jp/products/jordan-7-28-21-00"
   url: "https://ticket.fany.lol/event/detail/3501/12389?utm_medium=schedule&utm_source=shibuya_manzaigekijyo&utm_campaign=JORDAN"
 
 - date: "2025-07-30"
@@ -87,6 +97,7 @@
   venue: "渋谷よしもと漫才劇場"
   time_open: "16:15"
   time_start: "16:30"
+  streaming_url: "https://online-ticket.yoshimoto.co.jp/products/渋谷kiwami極liveプラス-7-30-16-30"
   url: "https://ticket.fany.lol/event/detail/3477/12326?utm_medium=schedule&utm_source=shibuya_manzaigekijyo&utm_campaign=%E6%B8%8B%E8%B0%B7Kiwami%E6%A5%B5LIVE%E3%83%97%E3%83%A9%E3%82%B9%EF%BC%8B"
 
 - date: "2025-08-02"
@@ -129,6 +140,7 @@
   venue: "神保町よしもと漫才劇場"
   time_open: "18:45"
   time_start: "19:00"
+  streaming_url: "https://online-ticket.yoshimoto.co.jp/products/インテイク-狛犬ツーマンライブ-suits-8-5-19-00"
   url: "https://ticket.fany.lol/event/detail/4471/16337?utm_medium=schedule&utm_source=jimbocho_manzaigekijyo&utm_campaign=%E3%82%A4%E3%83%B3%E3%83%86%E3%82%A4%E3%82%AF%C3%97%E7%8B%9B%E7%8A%AC%E3%83%84%E3%83%BC%E3%83%9E%E3%83%B3%E3%83%A9%E3%82%A4%E3%83%96%E3%80%8CSUITS%E3%80%8D"
 
 - date: "2025-08-10"
@@ -136,6 +148,7 @@
   venue: "渋谷よしもと漫才劇場"
   time_open: "13:10"
   time_start: "13:25"
+  streaming_url: "https://online-ticket.yoshimoto.co.jp/products/グランドバトルeast-第五部-8-10-13-25"
   url: "https://ticket.fany.lol/event/detail/4563/16229?utm_medium=schedule&utm_source=shibuya_manzaigekijyo&utm_campaign=%E3%82%B0%E3%83%A9%E3%83%B3%E3%83%89%E3%83%90%E3%83%88%E3%83%ABEAST%20%E7%AC%AC%E4%BA%94%E9%83%A8"
 
 - date: "2025-08-11"
@@ -143,6 +156,7 @@
   venue: "大宮ラクーンよしもと劇場"
   time_open: "17:45"
   time_start: "18:00"
+  streaming_url: "https://online-ticket.yoshimoto.co.jp/products/神速ティッドライブ-8-11-18-00"
   url: "https://ticket.fany.lol/event/detail/5185/17566?utm_medium=schedule&utm_source=omiya&utm_campaign=神速ティッドライブ"
 
 - date: "2025-08-12"
@@ -157,6 +171,7 @@
   venue: "神保町よしもと漫才劇場"
   time_open: "18:45"
   time_start: "19:00"
+  streaming_url: "https://online-ticket.yoshimoto.co.jp/products/ネタ洗い-8-13-19-00"
   url: "https://ticket.fany.lol/event/detail/4487/16353?utm_medium=schedule&utm_source=jimbocho_manzaigekijyo&utm_campaign=%E3%83%8D%E3%82%BF%E6%B4%97%E3%81%84"
 
 - date: "2025-08-16"
@@ -171,6 +186,7 @@
   venue: "神保町よしもと漫才劇場"
   time_open: "20:15"
   time_start: "20:30"
+  streaming_url: "https://online-ticket.yoshimoto.co.jp/products/よしおかの部屋-8-16-20-30"
   url: "https://ticket.fany.lol/event/detail/4496/16361?utm_medium=schedule&utm_source=jimbocho_manzaigekijyo&utm_campaign=%E3%82%88%E3%81%97%E3%81%8A%E3%81%8B%E3%81%AE%E9%83%A8%E5%B1%8B"
 
 - date: "2025-08-17"
@@ -206,6 +222,7 @@
   venue: "渋谷よしもと漫才劇場"
   time_open: "18:15"
   time_start: "18:30"
+  streaming_url: "https://online-ticket.yoshimoto.co.jp/products/絶対漫才-8-24-18-30"
   url: "https://ticket.fany.lol/event/detail/4598/16403?utm_medium=schedule&utm_source=shibuya_manzaigekijyo&utm_campaign=%E7%B5%B6%E5%AF%BE%E6%BC%AB%E6%89%8D%EF%BC%81"
 
 - date: "2025-08-25"
@@ -220,6 +237,7 @@
   venue: "渋谷よしもと漫才劇場"
   time_open: "18:30"
   time_start: "18:45"
+  streaming_url: "https://online-ticket.yoshimoto.co.jp/products/スマイルキング-8-25-18-45"
   url: "https://ticket.fany.lol/event/detail/4599/16402?utm_medium=schedule&utm_source=shibuya_manzaigekijyo&utm_campaign=%E3%82%B9%E3%83%9E%E3%82%A4%E3%83%AB%E3%82%AD%E3%83%B3%E3%82%B0"
 
 - date: "2025-08-25"
@@ -227,6 +245,7 @@
   venue: "渋谷よしもと漫才劇場"
   time_open: "20:45"
   time_start: "21:00"
+  streaming_url: "https://online-ticket.yoshimoto.co.jp/products/jordan-8-25-21-00"
   url: "https://ticket.fany.lol/event/detail/4600/16406?utm_medium=schedule&utm_source=shibuya_manzaigekijyo&utm_campaign=JORDAN"
 
 - date: "2025-08-31"
@@ -241,4 +260,5 @@
   venue: "渋谷よしもと漫才劇場"
   time_open: "18:30"
   time_start: "18:45"
+  streaming_url: "https://online-ticket.yoshimoto.co.jp/products/ニッポンの社長のよしもとsp-8-31-18-45"
   url: "https://ticket.fany.lol/event/detail/4625/16412?utm_medium=schedule&utm_source=shibuya_manzaigekijyo&utm_campaign=%E3%83%8B%E3%83%83%E3%83%9D%E3%83%B3%E3%81%AE%E7%A4%BE%E9%95%B7%E3%81%AE%E3%82%88%E3%81%97%E3%82%82%E3%81%A8SP"

@@ -59,6 +59,7 @@ permalink: /live.html
                   <span class="day">{{ live.date | date: "%m.%d" }} ({{ day_name }})</span>
                 </div>
         
+                
                 <div class="live-details-main">
                   <p class="live-title">{{ live.title }}</p>
                   <div class="live-meta">
@@ -70,7 +71,16 @@ permalink: /live.html
                 <div class="live-arrow-icon">
                   <i class="fa-solid fa-chevron-right"></i>
                 </div>
+
               </a>
+
+              {% if live.streaming_url %}
+                <div class="streaming-info">
+                  <a href="{{ live.streaming_url }}" class="button streaming-button" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-solid fa-tower-broadcast"></i> オンライン配信で見る
+                  </a>
+                </div>
+              {% endif %}
           </li>
 
         {% endif %} {% endfor %} </ul>
