@@ -228,7 +228,7 @@ body {
     letter-spacing: 0.1em;
 }
 
-/* --- TODAY/NEXT LIVE セクションのスタイル --- */
+/* --- カード共通のスタイル --- */
 .live-info-wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -237,7 +237,7 @@ body {
 }
 .live-info-box {
   flex: 1;
-  min-width: 0px;
+  /* min-width: 0px; */
   padding: 25px;
   border-radius: 8px;
   display: flex;
@@ -269,6 +269,10 @@ body {
   color: var(--white);
 }
 
+.live-card p {
+  font-size: 0.9rem; 
+}
+
 .live-details {
   display: flex;
   overflow-x: auto;
@@ -296,6 +300,7 @@ body {
   border-color: rgba(255, 255, 255, 0.5);
 }
 
+
 /* --- UPCOMING LIVES の個別スタイル --- */
 .upcoming-lives {
   background-color: #444;
@@ -304,6 +309,23 @@ body {
 .upcoming-lives .scroller-header {
   border-color: var(--color-border, #eee);
 }
+
+/* --- 配信中セクションのスタイル --- */
+.now-streaming {
+  background: #143314;
+  color: var(--white);
+  border: none;
+}
+.now-streaming .scroller-header {
+  border-color: rgba(255, 255, 255, 0.5);
+}
+.now-streaming .scroller-pagination {
+  color: rgba(255, 255, 255, 0.7);
+}
+.now-streaming .live-card p {
+  font-size: 0.9rem;
+}
+
 
 /* --- NEWSリストのスタイル --- */
 .news-list {
@@ -1322,7 +1344,7 @@ body {
   margin-bottom: 10px;
   text-align: center;
 }
-.streaming-button {
+.button {
   color: var(--white);
   font-size: 0.8rem; /* 文字サイズを小さくする */
   padding: 8px 15px; 
@@ -1333,20 +1355,4 @@ body {
 }
 .streaming-button .fa-solid {
   margin-right: 8px;
-}
-
-/* --- 配信中セクションのスタイル --- */
-.now-streaming {
-  background: #143314;
-  color: var(--white);
-  border: none;
-}
-.now-streaming .scroller-header {
-  border-color: rgba(255, 255, 255, 0.5);
-}
-.now-streaming .scroller-pagination {
-  color: rgba(255, 255, 255, 0.7);
-}
-.now-streaming .live-card p {
-  font-size: 0.9rem;
 }
