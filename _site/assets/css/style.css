@@ -841,11 +841,11 @@ body {
     /* 左右の余白を確保 */
     padding: 0 15px;
     overflow: clip; 
-  }
+  }/*
   .live-info-box {
-    min-width: 0; /* PC用のmin-widthをリセット */
-    width: 100%;  /* ボックスの幅を親要素の100%に強制する */
-  }
+    min-width: 0; PC用のmin-widthをリセット 
+    width: 100%;   ボックスの幅を親要素の100%に強制する 
+  }*/
 
   .live-meta {
     font-size: 0.8rem; /* 文字サイズを少し小さくして一行に収める */
