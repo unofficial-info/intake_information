@@ -14,11 +14,6 @@ summary:
 
 # 次回のライブ情報を管理
 next_events:
-  - date: "2025-07-21"
-    open: "20:15"
-    start: "20:30"
-    url: "https://ticket.fany.lol/event/detail/3572/12493?utm_medium=schedule&utm_source=jimbocho_manzaigekijyo&utm_campaign=%E3%82%A4%E3%83%B3%E3%83%86%E3%82%A4%E3%82%AF%C3%97%E7%8B%9B%E7%8A%AC%E3%83%84%E3%83%BC%E3%83%9E%E3%83%B3%E3%83%A9%E3%82%A4%E3%83%96%E3%80%8CSUITS%E3%80%8D"
-    note: "ゲスト：LLR"
   - date: "2025-08-05"
     open: "18:45"
     start: "19:00"
