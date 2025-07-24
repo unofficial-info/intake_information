@@ -100,6 +100,13 @@
   streaming_url: "https://online-ticket.yoshimoto.co.jp/products/渋谷kiwami極liveプラス-7-30-16-30"
   url: "https://ticket.fany.lol/event/detail/3477/12326?utm_medium=schedule&utm_source=shibuya_manzaigekijyo&utm_campaign=%E6%B8%8B%E8%B0%B7Kiwami%E6%A5%B5LIVE%E3%83%97%E3%83%A9%E3%82%B9%EF%BC%8B"
 
+- date: "2025-08-01"
+  title: "渋谷Kiwami極LIVE"
+  venue: "渋谷よしもと漫才劇場"
+  time_open: "16:15"
+  time_start: "16:30"
+  url: "https://ticket.fany.lol/event/detail/4567/16233?utm_medium=schedule&utm_source=shibuya_manzaigekijyo&utm_campaign=%E6%B8%8B%E8%B0%B7Kiwami%E6%A5%B5LIVE"
+
 - date: "2025-08-02"
   title: "神保町よしもとお笑いライブ"
   venue: "神保町よしもと漫才劇場"
