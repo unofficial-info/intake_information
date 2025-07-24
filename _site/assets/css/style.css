@@ -839,7 +839,7 @@ body {
   }
   .live-info-wrapper {
     /* 左右の余白を確保 */
-    padding: 0 15px;
+    /*padding: 0 15px;*/
     overflow: clip; 
   }
   .live-info-box {
