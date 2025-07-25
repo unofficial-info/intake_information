@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2025-06-25　11:00:00 +0900
+date: 2025-07-25　11:00:00 +0900
 category: "TICKET"
 title: "【9月】FANYプレミアム先行開始"
 url: "#"
