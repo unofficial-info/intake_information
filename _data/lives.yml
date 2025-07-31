@@ -150,6 +150,13 @@
   streaming_url: "https://online-ticket.yoshimoto.co.jp/products/インテイク-狛犬ツーマンライブ-suits-8-5-19-00"
   url: "https://ticket.fany.lol/event/detail/4471/16337?utm_medium=schedule&utm_source=jimbocho_manzaigekijyo&utm_campaign=%E3%82%A4%E3%83%B3%E3%83%86%E3%82%A4%E3%82%AF%C3%97%E7%8B%9B%E7%8A%AC%E3%83%84%E3%83%BC%E3%83%9E%E3%83%B3%E3%83%A9%E3%82%A4%E3%83%96%E3%80%8CSUITS%E3%80%8D"
 
+- date: "2025-08-06"
+  title: "暴発搾り"
+  venue: "高円寺ジュンジョー"
+  time_open: "18:45"
+  time_start: "19:00"
+  url: "https://tiget.net/events/419343"
+
 - date: "2025-08-08"
   title: "幸福の漫才"
   venue: "GINZA ART BOX 7"
@@ -245,6 +252,13 @@
   time_open: "-"
   time_start: "-"
   url: "https://passmarket.yahoo.co.jp/event/?search_bar_query=&seller_user_id=CN1TgdX1zg-G9ZBoh6NtcyAN02CrQwGE7wCDq8LRA3IIrX-R00&seller_name=%E3%83%A9%E3%82%A4%E3%83%96%E5%88%B6%E4%BD%9C%20%E3%82%B0%E3%80%9C%E3%82%B0%E3%80%9C&lat=&lon=&slt=&egt=&c=&la=&tags=&eot="
+
+- date: "2025-08-20"
+  title: "DAISUKIDANE!!"
+  venue: "高円寺ジュンジョー"
+  time_open: "18:45"
+  time_start: "19:00"
+  url: "https://tiget.net/events/419356"
 
 - date: "2025-08-24"
   title: "絶対漫才！"
