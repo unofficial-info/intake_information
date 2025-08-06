@@ -17,6 +17,7 @@ next_events:
   - date: "2025-08-19"
     open: "19:30"
     start: "20:00"
+    url: "https://passmarket.yahoo.co.jp/event/show/detail/029hwf983tk41.html"
     note: "会場：武蔵野芸能劇場"
 ---
 
