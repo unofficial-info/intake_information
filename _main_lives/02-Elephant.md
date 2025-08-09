@@ -1,9 +1,7 @@
 ---
-# ページの基本情報
-layout: main_live_post # STEP2で作成する専用の設計図を指定
+layout: main_live_post
 title: "Elephant"
 
-# 一覧ページで表示する要約データ
 summary:
   title: "Elephant"
   venue: "神保町よしもと漫才劇場"
@@ -13,13 +11,7 @@ summary:
     - "バリカタ友情飯"
     - "インテイク"
 
-# 次回のライブ情報を管理
 next_events:
-  - date: "2025-08-02"
-    open: "18:15"
-    start: "18:30"
-    url: "https://ticket.fany.lol/event/detail/4466/16331?utm_medium=schedule&utm_source=jimbocho_manzaigekijyo&utm_campaign=Elephant"
-    note: "コーナー担当：エルフ"
   - date: "2025-09-14"
     open: "18:15"
     start: "18:30"

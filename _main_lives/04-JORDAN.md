@@ -1,10 +1,6 @@
 ---
-# ページの基本情報
-
-layout: main_live_post # STEP2 で作成する専用の設計図を指定
+layout: main_live_post
 title: "JORDAN"
-
-# 一覧ページで表示する要約データ
 
 summary:
   title: "JORDAN"
@@ -17,13 +13,7 @@ summary:
     - "ヨネダ 2000"
     - "MC:令和ロマン 松井ケムリ"
 
-# 次回のライブ情報を管理
-
 next_events:
-  - date: "2025-07-28"
-    open: "20:45"
-    start: "21:00"
-    url: "https://ticket.fany.lol/event/detail/3501/12389?utm_medium=schedule&utm_source=shibuya_manzaigekijyo&utm_campaign=JORDAN"
   - date: "2025-08-25"
     open: "20:45"
     start: "21:00"

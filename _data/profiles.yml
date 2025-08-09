@@ -1,9 +1,8 @@
-# === コンビのプロフィール情報を追加 ===
 duo:
   name: "インテイク"
-  image: "int_image_02.JPG" # コンビの写真を指定 (assets/images/ に配置)
+  image: "int_image_02.JPG"
   description: |
-    東京NSC23期。
+    NSC東京23期。
     吉本興業所属の芸歴8年目。
 
     [成績]
@@ -20,10 +19,10 @@ duo:
     - name: "Wiki"
       url: "https://ja.everybodywiki.com/%E3%82%A4%E3%83%B3%E3%83%86%E3%82%A4%E3%82%AF_(%E3%81%8A%E7%AC%91%E3%81%84)"
       icon: "fa-brands fa-wikipedia-w"
-# === 個人のプロフィール情報 ===
+
 members:
   - name: "鈴木龍平"
-    image: "suzuki_02.jpg" # 個人の写真
+    image: "suzuki_02.jpg"
     bio: |
       1996年1月31日うまれ。
       埼玉県川口市出身。

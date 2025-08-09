@@ -1,9 +1,7 @@
 ---
-# ページの基本情報
-layout: main_live_post # STEP2で作成する専用の設計図を指定
+layout: main_live_post
 title: "スマイルキング"
 
-# 一覧ページで表示する要約データ
 summary:
   title: "スマイルキング"
   venue: "渋谷よしもと漫才劇場"
@@ -15,7 +13,6 @@ summary:
     - "イチゴ"
     - "ゼロカラン"
 
-# 次回のライブ情報を管理
 next_events:
   - date: "2025-08-25"
     open: "18:30"

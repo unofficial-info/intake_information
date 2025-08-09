@@ -1,9 +1,7 @@
 ---
-# ページの基本情報
-layout: main_live_post # STEP2で作成する専用の設計図を指定
+layout: main_live_post
 title: "幸福の漫才"
 
-# 一覧ページで表示する要約データ
 summary:
   title: "幸福の漫才"
   venue: "外箱"
@@ -13,7 +11,6 @@ summary:
     - フランツ
     - インテイク
 
-# 次回のライブ情報を管理
 next_events:
   - date: "2025-08-08"
     open: "19:15"

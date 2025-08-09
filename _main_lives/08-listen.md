@@ -1,9 +1,7 @@
 ---
-# ページの基本情報
-layout: main_live_post # STEP2で作成する専用の設計図を指定
+layout: main_live_post
 title: "聞け！〜インテイク×デニスツーマンライブ〜"
 
-# 一覧ページで表示する要約データ
 summary:
   title: "聞け！〜インテイク×デニスツーマンライブ〜"
   venue: "神保町よしもと漫才劇場"
@@ -11,7 +9,6 @@ summary:
     - "デニス"
     - "インテイク"
 
-# 次回のライブ情報を管理
 next_events:
 ---
 
