@@ -1,20 +1,19 @@
-{% comment %}
-  --- 変数定義エリア ---
-{% endcomment %}
+{% comment %} --- 変数定義 --- {% endcomment %}
 {% assign now_seconds = "now" | date: "%s" | plus: 0 %}
 {% assign seven_days_seconds = 60 | times: 60 | times: 24 | times: 7 %}
+{% assign eight_days_seconds = 60 | times: 60 | times: 24 | times: 8 %}
 
-{% comment %}
-  --- 配信中のライブを絞り込む ---
-{% endcomment %}
+{% comment %} --- 配信中のライブを絞り込む --- {% endcomment %}
 {% assign streaming_now = "" | split: "," %}
 {% for live in site.data.lives %}
   {% if live.streaming_url %}
     {% assign live_start_seconds = live.date | date: "%s" | plus: 0 %}
-    
-    {% comment %} 視聴終了は7日後の23:59:59なので、8日後の00:00:00より前かで判定 {% endcomment %}
-    {% assign eight_days_seconds = 60 | times: 60 | times: 24 | times: 8 %}
-    {% assign live_end_seconds = live_start_seconds | plus: eight_days_seconds %}
+
+    {% if live.streaming_end_date %}
+      {% assign live_end_seconds = live.streaming_end_date | date: "%s" | plus: eight_days_seconds | minus: 1 | plus: 0 %}
+    {% else %}
+      {% assign live_end_seconds = live_start_seconds | plus: eight_days_seconds | plus: 0 %}
+    {% endif %}
     
     {% if now_seconds >= live_start_seconds and now_seconds < live_end_seconds %}
       {% assign streaming_now = streaming_now | push: live %}
@@ -22,14 +21,12 @@
   {% endif %}
 {% endfor %}
 
-{% comment %}
-  --- HTML表示エリア ---
-{% endcomment %}
+{% comment %} --- HTML表示エリア --- {% endcomment %}
 {% if streaming_now.size > 0 %}
-<section class="content-section animate-on-scroll">
+<section class="content-section">
   <div class="live-info-box now-streaming">
     <div class="scroller-header">
-      <h2>STREAMING</h2>
+      <h2>NOW STREAMING</h2>
       <div class="scroller-pagination" id="streaming-now-pagination"></div>
     </div>
     <div class="live-details" id="streaming-now-scroller">
@@ -37,22 +34,22 @@
         <div class="live-card">
           <h3>{{ live.title }}</h3>
           
-          {% comment %}
-            ▼▼▼ ここからが重要な修正点 ▼▼▼
-            まず、7日後の日付を一度だけ計算します
-          {% endcomment %}
-          {% assign end_date_seconds = live.date | date: "%s" | plus: seven_days_seconds %}
-          {% assign end_date_formatted = end_date_seconds | date: "%Y年%m月%d日" %}
-
-          <p><i class="fa-solid fa-ticket"></i> 販売終了: {{ end_date_formatted }} 12:00</p>
-          <p><i class="fa-solid fa-clock"></i> 視聴終了: {{ end_date_formatted }} 23:59</p>
-          
+          {% if live.streaming_end_date %}
+            {% assign end_date_formatted = live.streaming_end_date | date: "%Y年%m月%d日" %}
+            <p><i class="fa-solid fa-clock"></i> 視聴終了: {{ end_date_formatted }} 23:59</p>
+            <p><i class="fa-solid fa-ticket"></i> 販売終了: {{ end_date_formatted }} 23:59</p>
+          {% else %}
+            {% assign end_date_seconds = live.date | date: "%s" | plus: seven_days_seconds %}
+            {% assign end_date_formatted = end_date_seconds | date: "%Y年%m月%d日" %}
+            <p><i class="fa-solid fa-clock"></i> 視聴終了: {{ end_date_formatted }} 23:59</p>
+            <p><i class="fa-solid fa-ticket"></i> 販売終了: {{ end_date_formatted }} 12:00</p>
+          {% endif %}
           
           <div class="card-footer">
             <a href="{{ live.streaming_url }}" class="button streaming-button" target="_blank" rel="noopener noreferrer">
               <i class="fa-solid fa-tower-broadcast"></i> 配信はこちら
             </a>
-            <span class="card-swipe-prompt"><i class="fas fa-angle-double-right"></i> swipe</span>
+            <span class="card-swipe-prompt"><i class="fa-solid fa-hand-point-right"></i> swipe</span>
           </div>
         </div>
       {% endfor %}
