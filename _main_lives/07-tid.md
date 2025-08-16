@@ -4,7 +4,7 @@ title: "神速ティッドライブ"
 
 summary:
   title: "神速ティッドライブ"
-  venue: "大宮ラクーンよしもと漫才劇場"
+  venue: "大宮ラクーンよしもと劇場"
   performers:
     - "タモンズ"
     - "ゴング"
