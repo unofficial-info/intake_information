@@ -1356,3 +1356,8 @@ body {
 .streaming-button .fa-solid {
   margin-right: 8px;
 }
+
+hr.line1{
+  border: none;
+  border-top: 1px dashed var(--white);
+}
