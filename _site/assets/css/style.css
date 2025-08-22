@@ -1361,3 +1361,38 @@ hr.line1{
   border: none;
   border-top: 1px dashed var(--white);
 }
+
+/* --- リストのコントロール（件数表示・並び替え） --- */
+.list-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: -20px 0 30px 0;
+  padding: 0 10px; /* 左右に少し余白 */
+  flex-wrap: wrap; /* スマホで折り返す */
+  gap: 15px;
+}
+
+.item-count-display {
+  font-size: 0.9rem;
+  color: #888;
+}
+
+.sort-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sort-container label {
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.sort-container select {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--color-border, #eee);
+  background-color: var(--white);
+  font-size: 0.9rem;
+}

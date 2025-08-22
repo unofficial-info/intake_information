@@ -31,6 +31,19 @@ permalink: /live.html
     </div>
   </form>
 
+  <div class="list-controls">
+    <div class="sort-container">
+      <label for="sort-select">並び順:</label>
+      <select id="sort-select">
+        <option value="date-asc">公演日順（昇順）</option>
+        <option value="date-desc">公演日順（降順）</option>
+        <option value="added-desc">追加日順（新しい順）</option>
+        <option value="added-asc">追加日順（古い順）</option>
+      </select>
+    </div>
+    <div id="item-count-display" class="item-count-display"></div>
+  </div>
+
   <div id="live-list-container">
     <ul class="professional-live-list">
       
@@ -48,6 +61,7 @@ permalink: /live.html
           {% endif %}
       
           <li class="live-list-item animate-on-scroll"
+              data-index="{{ forloop.index }}"
               data-date="{{ live.date }}" 
               data-theater="{{ theater_category }}">
 
@@ -89,30 +103,63 @@ permalink: /live.html
 
 <script>
   const filterForm = document.getElementById('filter-form');
-  const liveItems = document.querySelectorAll('.live-list-item');
+  const liveListContainer = document.querySelector('.professional-live-list');
+  const allLiveItems = Array.from(document.querySelectorAll('.live-list-item')); 
+  const sortSelect = document.getElementById('sort-select');
+  const itemCountDisplay = document.getElementById('item-count-display');
 
+  // 件数表示を更新
+  function updateItemCount() {
+    const visibleItems = allLiveItems.filter(item => item.style.display !== 'none');
+    itemCountDisplay.textContent = `表示件数: ${visibleItems.length} 件`;
+  }
+
+  // フィルター処理
   function applyFilters() {
     const startDate = document.getElementById('start-date').value;
     const endDate = document.getElementById('end-date').value;
-    const selectedTheater = document.getElementById('theater-select').value; // 劇場セレクトボックスの値を取得
+    const selectedTheater = document.getElementById('theater-select').value;
 
-    liveItems.forEach(item => {
+    allLiveItems.forEach(item => {
       const itemDate = item.dataset.date;
-      const itemTheater = item.dataset.theater; // 各アイテムの劇場データを取得
+      const itemTheater = item.dataset.theater;
 
       let isVisible = true;
 
-      // 日付の絞り込み
       if (startDate && itemDate < startDate) isVisible = false;
       if (endDate && itemDate > endDate) isVisible = false;
-
-      // 劇場の絞り込み
       if (selectedTheater && itemTheater !== selectedTheater) isVisible = false;
       
       item.style.display = isVisible ? '' : 'none';
     });
+
+    applySorting();
+    updateItemCount();
   }
 
+  // 並び替え処理（表示されているアイテムのみ対象）
+  function applySorting() {
+    const sortValue = sortSelect.value;
+    const visibleItems = allLiveItems.filter(item => item.style.display !== 'none');
+
+    let sortedItems = [...visibleItems];
+
+    if (sortValue === 'date-asc') {
+      sortedItems.sort((a, b) => a.dataset.date.localeCompare(b.dataset.date));
+    } else if (sortValue === 'date-desc') {
+      sortedItems.sort((a, b) => b.dataset.date.localeCompare(a.dataset.date));
+    } else if (sortValue === 'added-asc') {
+      sortedItems.sort((a, b) => a.dataset.index - b.dataset.index);
+    } else if (sortValue === 'added-desc') {
+      sortedItems.sort((a, b) => b.dataset.index - a.dataset.index);
+    }
+
+    sortedItems.forEach(item => liveListContainer.appendChild(item));
+
+    updateItemCount();
+  }
+
+  // フィルターフォーム
   filterForm.addEventListener('submit', function(event) {
     event.preventDefault();
     applyFilters();
@@ -120,9 +167,23 @@ permalink: /live.html
 
   filterForm.addEventListener('reset', function() {
     setTimeout(() => {
-      liveItems.forEach(item => {
+      allLiveItems.forEach(item => {
         item.style.display = '';
       });
+      applySorting(); 
+      updateItemCount();
     }, 100);
   });
+
+  // 並び替えイベント
+  sortSelect.addEventListener('change', function() {
+    applySorting();
+  });
+
+  // 初期ロード時
+  document.addEventListener('DOMContentLoaded', () => {
+    sortSelect.value = 'date-asc';
+    applyFilters();
+  });
 </script>
+
