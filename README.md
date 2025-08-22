@@ -1,4 +1,4 @@
-# インテイク非公式 information サイト プロジェクト概要
+# インテイク非公式 information について
 
 Jekyll と GitHub Actions を利用して構築・運用されている、お笑いコンビ「インテイク」の非公式情報サイトです。
 
