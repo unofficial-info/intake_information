@@ -63,7 +63,8 @@ permalink: /live.html
           <li class="live-list-item animate-on-scroll"
               data-index="{{ forloop.index }}"
               data-date="{{ live.date }}" 
-              data-theater="{{ theater_category }}">
+              data-theater="{{ theater_category }}"
+              data-time-start="{{ live.time_start }}">
 
               <a href="{{ live.url | relative_url }}" class="live-link-block">
                 <div class="live-date">
@@ -137,6 +138,10 @@ permalink: /live.html
     updateItemCount();
   }
 
+  function parseDateTime(item) {
+    return new Date(item.dataset.date + "T" + item.dataset.timeStart);
+}
+
   // 並び替え処理（表示されているアイテムのみ対象）
   function applySorting() {
     const sortValue = sortSelect.value;
@@ -145,9 +150,9 @@ permalink: /live.html
     let sortedItems = [...visibleItems];
 
     if (sortValue === 'date-asc') {
-      sortedItems.sort((a, b) => a.dataset.date.localeCompare(b.dataset.date));
+      sortedItems.sort((a, b) => parseDateTime(a) - parseDateTime(b));
     } else if (sortValue === 'date-desc') {
-      sortedItems.sort((a, b) => b.dataset.date.localeCompare(a.dataset.date));
+      sortedItems.sort((a, b) => parseDateTime(b) - parseDateTime(a));
     } else if (sortValue === 'added-asc') {
       sortedItems.sort((a, b) => a.dataset.index - b.dataset.index);
     } else if (sortValue === 'added-desc') {
