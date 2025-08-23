@@ -1,0 +1,164 @@
+/* --- 主なライブ一覧ページ のスタイル --- */
+.main-live-list {
+  display: grid; /* グリッドレイアウトを使用 */
+  grid-template-columns: 1fr; /* 基本は1列 */
+  gap: 40px;
+}
+
+.main-live-card {
+  background: #444;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  display: flex; /* カードの中身をFlexboxで管理 */
+  flex-direction: column; /* 中身を縦に並べる */
+  height: 100%; /* 親のグリッドと同じ高さに伸ばす */
+}
+
+.main-live-header h2 {
+  background: var(--gray);
+  color: var(--white);
+  padding: 15px 25px;
+  margin: 0;
+  font-size: 1.3rem;
+  font-family: var(--font-main);
+  border-radius: 8px 8px 0 0; /* 上の角だけ丸める */
+}
+
+.main-live-content {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 25px;
+  flex-grow: 1; /* 残りの高さを全て使う */
+}
+
+/* --- 主なライブページの開閉機能スタイル --- */
+
+/* ヘッダー部分をFlexboxにして、ボタンとタイトルを横並びに */
+.main-live-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer; /* ヘッダー全体をクリック可能に見せる */
+  padding: 15px 25px;
+  background:	#819896;
+  color: var(--white);
+  border-radius: 8px; /* 初期状態では四隅を丸める */
+  transition: border-radius 0.3s ease-in-out;
+}
+
+.main-live-header h2 {
+  background: none;
+  padding: 0;
+  margin: 0;
+  color: inherit;
+  font-size: 1.3rem;
+}
+
+/* 開閉ボタンのスタイル */
+.main-live-toggle {
+  background: none;
+  border: none;
+  padding: 0;
+  color: inherit;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out; /* アイコン回転のアニメーション */
+}
+
+/* デフォルトでコンテンツを閉じておく */
+.main-live-content {
+  max-height: 0; /* 高さを0にする */
+  overflow: hidden; /* はみ出した部分を隠す */
+  transition: max-height 0.5s ease-in-out, padding 0.3s ease-in-out; /* なめらかなアニメーション */
+  padding: 0 25px; /* 開いた時のためにpaddingは用意しておくが、高さが0なので見えない */
+}
+
+
+/* --- 開いた状態のスタイル --- */
+.main-live-card.is-open .main-live-header {
+  border-radius: 8px 8px 0 0; /* 上の角だけ丸める */
+}
+/* アイコンを180度回転させる */
+.main-live-card.is-open .main-live-toggle {
+  transform: rotate(-180deg);
+}
+/* コンテンツを表示する（max-heightを大きな値に設定） */
+.main-live-card.is-open .main-live-content {
+  max-height: 2000px; /* 中身がどんなに長くても収まる十分な高さを指定 */
+  padding: 25px;
+}
+
+.live-description {
+  flex: 2;
+  min-width: 300px;
+  padding-right: 25px;
+  line-height: 1.8;
+}
+
+.live-details-sidebar {
+  flex: 1;
+  min-width: 220px;
+  border-left: 3px solid var(--color-border, #eee);
+  padding-left: 25px;
+  /* ▼▼▼ この3行がボタンを下に配置するための鍵 ▼▼▼ */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* 内容とボタンを上下に引き離す */
+}
+
+.live-details-sidebar strong {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 5px;
+}
+
+.live-details-sidebar p,
+.live-details-sidebar ul {
+  padding-left: 23px;
+  margin: 0 0 15px 0;
+  list-style: none;
+}
+
+.live-details-sidebar .button.primary-action {
+  width: 100%;
+  text-align: center;
+  background-color: var(--gray);
+  border-color: #819896;
+  color: var(--white);
+  font-weight: bold;
+}
+.live-details-sidebar .button.primary-action:hover {
+  color: var(--gray);
+  background-color: var(--white);
+}
+
+.main-live-details-box {
+  background-color: var(--gray);
+  color: var(--white);
+  border-radius: 8px;
+  padding: 25px;
+  margin-top: 40px;
+}
+.main-live-details-box h3 {
+  margin: 0 0 20px 0;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--white);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.main-live-details-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  line-height: 2;
+}
+.next-event-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.next-event-list .button {
+  text-align: center;
+}

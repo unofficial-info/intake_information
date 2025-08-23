@@ -1,0 +1,41 @@
+/* --- ふわっと表示させるためのアニメーション設定 --- */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s, transform 0.8s;
+}
+
+.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- YouTube埋め込み動画のレスポンシブ対応 --- */
+.video-size {
+  position: relative;
+  /* 縦横比16:9を維持するための設定 (9 ÷ 16 = 0.5625) */
+  padding-top: 56.25%; 
+  height: 0;
+  overflow: hidden;
+  margin: 20px 0; /* 動画の上下に少し余白をもたせる */
+  border-radius: 8px; /* 角を少し丸める */
+}
+
+.video-size iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none; /* フレームの枠線を消す */
+}
+.button {
+  color: var(--white);
+  font-size: 0.8rem; /* 文字サイズを小さくする */
+  padding: 8px 15px; 
+}
+
+hr.line1{
+  border: none;
+  border-top: 1px dashed var(--white);
+}

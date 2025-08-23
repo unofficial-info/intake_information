@@ -1,0 +1,224 @@
+/* --- LIVEページリストのスタイル --- */
+.professional-live-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 40px;
+  border-top: 1px solid var(--color-border, #eee);
+}
+
+.live-list-item {
+  border-bottom: 1px solid var(--color-border, #eee);
+}
+
+.live-link-block {
+  display: flex;
+  align-items: center;
+  padding: 15px 15px;
+  text-decoration: none;
+  color: var(--white);
+  transition: background-color 0.2s;
+}
+
+.live-link-block:hover {
+  background-color: var(--white);
+  color:var(--gray);
+}
+
+.live-date {
+  width: 100px;
+  text-align: center;
+  flex-shrink: 0;
+  font-family: 'Montserrat', sans-serif;
+  padding-right: 15px;
+}
+.live-date .year {
+  display: block;
+  font-size: 0.9rem;
+  color: #999;
+}
+.live-date .day {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.live-details-main {
+  flex-grow: 1; /* 残りのスペースを全て使う */
+}
+.live-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 10px 0;
+}
+.live-meta {
+  font-size: 0.8rem;
+  color: #999;
+  display: flex;
+  flex-direction: column; /* スマホでは縦に並べる */
+  gap: 5px;
+}
+.live-meta span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.live-arrow-icon {
+  font-size: 1.0rem;
+  color: #ccc;
+  padding: 0 10px;
+}
+
+/* --- 絞り込みフォーム用のスタイル (新デザイン) --- */
+.filter-form {
+  background-color: #444;
+  border-radius: 12px;
+  padding: 25px 30px;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 30px; /* 縦の隙間・横の隙間 */
+  align-items: flex-end; /* 要素の下端を揃える */
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex-grow: 1; /* スペースに応じて伸びる */
+}
+
+.form-group label {
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  gap: 8px; /* アイコンとテキストの間隔 */
+}
+
+.form-group label .fa-solid {
+  color: vae(--white);
+}
+
+/* 入力欄の共通スタイル */
+.filter-form input[type="text"],
+.filter-form input[type="date"],
+.filter-form select {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-bottom: 2px solid var(--color-border, #eee);
+  background-color: transparent;
+  color: #999;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+  box-sizing: border-box; /* paddingを含めた幅計算 */
+}
+
+.filter-form input[type="text"]:focus,
+.filter-form input[type="date"]:focus,
+.filter-form select:focus {
+  outline: none;
+  border-bottom-color: var(--white);
+}
+
+.date-inputs {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.date-inputs span {
+  font-weight: bold;
+}
+
+/* 絞り込みボタン (プライマリ) */
+.form-buttons button[type="submit"] {
+  background-color: #444;
+  border-color: #999;
+  color: var(--white);
+}
+.form-buttons button[type="submit"]:hover {
+  opacity: 0.8;
+  background-color: var(--white);
+  color: var(--gray)
+}
+
+/* ボタンのスタイル */
+.form-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.form-buttons button {
+  padding: 10px 20px;
+  border: 2px solid;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+/* リセットボタン (セカンダリ) */
+.form-buttons button[type="reset"] {
+  background-color: transparent;
+  border-color: #999;
+  color: var(--white);
+}
+.form-buttons button[type="reset"]:hover {
+  opacity: 0.8;
+  background-color: var(--white);
+  color: var(--gray);
+}
+
+.streaming-info {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.streaming-button:hover {
+  background-color: var(--white);
+  color: var(--gray);
+}
+.streaming-button .fa-solid {
+  margin-right: 8px;
+}
+
+/* --- リストのコントロール（件数表示・並び替え） --- */
+.list-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: -20px 0 30px 0;
+  padding: 0 10px; /* 左右に少し余白 */
+  flex-wrap: wrap; /* スマホで折り返す */
+  gap: 15px;
+}
+
+.item-count-display {
+  font-size: 0.9rem;
+  color: #888;
+}
+
+.sort-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sort-container label {
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.sort-container select {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--color-border, #eee);
+  background-color: var(--white);
+  font-size: 0.9rem;
+}

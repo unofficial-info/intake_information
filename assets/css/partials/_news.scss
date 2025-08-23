@@ -1,0 +1,177 @@
+/* --- カテゴリ絞り込みボタンのスタイル --- */
+.category-filter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+
+.filter-btn {
+  padding: 8px 16px;
+  border: 1px solid var(--color-border, #eee);
+  background-color: var(--white);
+  color: var(--gray);
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.filter-btn:hover {
+  background-color: var(--gray);
+  color: var(--white);
+}
+
+/* 選択中のボタンのスタイル */
+.filter-btn.is-active {
+  background-color: var(--text-dark, #333);
+  color: var(--text-light, #fff);
+  border-color: var(--text-dark, #333);
+}
+
+/* --- ページネーション（もっと見る）用のスタイル --- */
+/* 初期状態で11件目以降のliを非表示にする */
+.news-list li:nth-child(n+11) {
+  display: none;
+}
+
+.news-list li.is-visible {
+  display: list-item; /* JSで表示するためのクラス */
+}
+
+.load-more-container {
+  text-align: center;
+  margin-top: 40px;
+}
+
+/* --- カテゴリ別ページへのリンクのスタイル --- */
+.category-links {
+  text-align: center;
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--color-border, #eee);
+}
+
+.category-links strong {
+  margin-right: 10px;
+}
+
+.category-link {
+  display: inline-block;
+  padding: 8px 16px;
+  margin: 5px;
+  border: 1px solid var(--color-border, #eee);
+  background-color: var(--bg-primary, #fff);
+  color: var(--text-dark, #333);
+  border-radius: 20px; /* 角を丸くする */
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.category-link:hover {
+  background-color: var(--text-dark, #333);
+  color: var(--text-light, #fff);
+  border-color: var(--text-dark, #333);
+  transform: translateY(-2px); /* 少しだけ上に動かす */
+}
+
+/* --- 個別記事ページ (post) のスタイル --- */
+.post {
+  padding: 20px 0;
+}
+
+.post-header {
+  margin-bottom: 30px;
+  text-align: center;
+  border-bottom: 1px solid var(--color-border, #eee);
+  padding-bottom: 30px;
+}
+
+.post-title {
+  font-size: 2rem;
+  margin: 0 0 15px 0;
+}
+
+.post-meta {
+  color: #888;
+  font-size: 0.9rem;
+}
+.post-meta .category-tag {
+  margin-left: 15px;
+}
+
+.post-content {
+  line-height: 1.8; /* 行間を広げて読みやすくする */
+
+  overflow-wrap: break-word; 
+  word-break: break-all;  
+}
+.post-content h2 {
+  font-size: 1.5rem;
+  margin-top: 40px;
+  border-bottom: 2px solid var(--color-border, #eee);
+  padding-bottom: 10px;
+}
+.post-content p {
+  margin: 20px 0;
+}
+/* --- 記事本文 (post-content) 内のリンクスタイル --- */
+.post-content a {
+  /* 以前定義したCSS変数(--color-accent)を使って色を指定 */
+  color: #999;
+  text-decoration: underline; /* リンクに下線を引く */
+  transition: color 0.2s; /* ホバー時の色変化を滑らかに */
+}
+
+/* リンクにカーソルを合わせた時のスタイル */
+.post-content a:hover {
+  /* メインのテキストカラーに変えるなど、お好みで設定 */
+  color: #fff;
+}
+
+/* --- NEWSリストのアニメーションに時間差をつける --- */
+.news-list li:nth-child(2) {
+  transition-delay: 0.1s; /* 2番目の項目は0.1秒遅れて開始 */
+}
+.news-list li:nth-child(3) {
+  transition-delay: 0.2s; /* 3番目の項目は0.2秒遅れて開始 */
+}
+
+/* --- ページネーションのナビゲーションスタイル --- */
+.pagination {
+  margin: 40px 0;
+}
+.pagination ul {
+  display: flex; /* Flexboxを使って要素を横並びにする */
+  justify-content: center; /* 全体を中央揃えにする */
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  gap: 8px; /* 各項目間の余白 */
+}
+/* リンクとスパンの共通スタイル */
+.pagination li a,
+.pagination li span {
+  display: block;
+  padding: 10px 16px;
+  border: 1px solid var(--color-border, #eee);
+  border-radius: 4px;
+  text-decoration: none;
+  color: var(--text-dark, #333);
+  background-color: var(--bg-primary, #fff);
+  transition: all 0.2s;
+}
+/* ホバー時のスタイル */
+.pagination li a:hover {
+  background-color: var(--bg-secondary, #f0f0f0);
+  border-color: #ddd;
+}
+/* 「前へ」「次へ」が無効な時 */
+.pagination li.disabled span {
+  color: #ccc;
+  background-color: transparent;
+}
+.pagination-first {
+  margin-left: auto;
+}

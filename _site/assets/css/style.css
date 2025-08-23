@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* --- サイト全体の計算方法を安定させる --- */
 *,
 *::before,
@@ -9,10 +10,9 @@
 :root {
   --white: #FFFEF6;
   --gray: #333;
-
-  --font-main: 'Noto Sans JP', sans-serif;
-  --font-heading: 'Kaisei Decol', serif; 
-  --font-accent: 'Montserrat', sans-serif;
+  --font-main: "Noto Sans JP", sans-serif;
+  --font-heading: "Kaisei Decol", serif;
+  --font-accent: "Montserrat", sans-serif;
 }
 
 /* --- fontの読み込み --- */
@@ -24,384 +24,127 @@
 
 /* --- 基本設定とフォント --- */
 html {
-  scroll-behavior: smooth; 
+  scroll-behavior: smooth;
 }
 
 body {
-    font-family: var(--font-main);
-    margin: 0;
-    background-color: var(--gray);
-    color: var(--white);
+  font-family: var(--font-main);
+  margin: 0;
+  background-color: var(--gray);
+  color: var(--white);
 }
 
 /* --- ヘッダー --- */
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-    height: 60px; 
-    color: var(--white);
-    background: var(--gray);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-  } 
-  .logo {
-    font-size: 24px;
-    font-family: var(--font-heading); 
-  }
-  
-  /* --- ハンバーガーメニュー --- */
-  .drawer_hidden {
-    display: none;
-  }
-
-  .drawer_open {
-    display: flex;
-    height: 60px;
-    width: 60px;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    z-index: 100;
-    cursor: pointer;
-  }
-  
-  .drawer_open span,
-  .drawer_open span:before,
-  .drawer_open span:after {
-    content: '';
-    display: block;
-    height: 3px;
-    width: 25px;
-    border-radius: 3px;
-    background: var(--white);
-    transition: 0.5s;
-    position: absolute;
-  }
-  
-  .drawer_open span:before {
-    bottom: 8px;
-  }
-  
-  .drawer_open span:after {
-    top: 8px;
-  }
-  
-  #drawer_input:checked ~ .drawer_open span {
-    background: rgba(255, 255, 255, 0);
-  }
-  
-  #drawer_input:checked ~ .drawer_open span::before {
-    bottom: 0;
-    transform: rotate(45deg);
-  }
-  
-  #drawer_input:checked ~ .drawer_open span::after {
-    top: 0;
-    transform: rotate(-45deg);
-  }
-  
-  .nav_content {
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    left: 100%;
-    z-index: 99;
-    background: var(--gray);
-    transition: .5s;
-  }
-  
-  .nav_list {
-    list-style: none;
-    padding-top: 60px;
-    margin: 0;
-  }
-  
-  .nav_item a {
-    display: block;
-    padding: 20px;
-    text-align: center;
-    color: var(--white);
-    text-decoration: none;
-    border-bottom: 1px solid #f0f0f0;
-  }
-  
-  .nav_item a:hover {
-    background: var(--white);
-    color: var(--gray)
-  }
-  
-  #drawer_input:checked ~ .nav_content {
-    left: 0;
-  }
-
-/* --- TOPページメインビジュアル --- */
-.hero {
-    height: 100vh; 
-    background: url('../images/int_image_02.JPG') no-repeat center center/contain;
-    color: var(--white);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    position: relative;
-}
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background-color: rgba(0, 0, 0, 0.3); 
-}
-.hero-text {
-    position: relative;
-    z-index: 1;
-}
-.hero-text h1 {
-    font-family: var(--font-heading); ;
-    font-size: 4rem;
-    font-weight: 500;
-    letter-spacing: 0.15em;
-    margin: 0;
-    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
-}
-.hero-text p {
-    font-family: var(--font-heading);
-    font-size: 1.2rem;
-    letter-spacing: 0.1em;
-    margin-top: 10px;
-}
-
-/* スクロールを促す矢印 */
-.scroll-down {
-    position: absolute;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1;
-    color: var(--white);
-    text-decoration: none;
-    writing-mode: vertical-rl; 
-    font-size: 0.8rem;
-    letter-spacing: 0.2em;
-    padding: 10px;
-    transition: opacity 0.3s;
-}
-.scroll-down span {
-    position: relative;
-    padding-right: 20px;
-}
-.scroll-down span::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    right: 0;
-    width: 1px;
-    height: 60px;
-    background: var(--white);
-    animation: scroll-animation 2s infinite;
-}
-@keyframes scroll-animation { /* アニメーション */
-    0% { transform: scaleY(0); transform-origin: top; }
-    50% { transform: scaleY(1); transform-origin: top; }
-    51% { transform: scaleY(1); transform-origin: bottom; }
-    100% { transform: scaleY(0); transform-origin: bottom; }
-}
-
-
-/* --- コンテンツセクション --- */
-.content-section {
-    max-width: 900px;
-    margin: 80px auto;
-    padding: 20px;
-    background-color: var(--gray); 
-    box-shadow: 0 0 15px rgba(0,0,0,0.05);
-}
-.section-title {
-    font-family: var(--font-heading);
-    font-size: 2.5rem;
-    text-align: center;
-    margin-bottom: 40px;
-    letter-spacing: 0.1em;
-}
-
-/* --- カード共通のスタイル --- */
-.live-info-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  flex-direction: column;
-}
-.live-info-box {
-  flex: 1;
-  /* min-width: 0px; */
-  padding: 25px;
-  border-radius: 8px;
-  display: flex;
-  flex-direction: column;
-}
-.scroller-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 2px solid;
-  padding-bottom: 10px;
-  margin-bottom: 20px;
-}
-.live-info-box h2 {
-  margin: 0; padding: 0; border: none;
-  font-family: var(--font-heading);
-  letter-spacing: 1px;
-}
-
-.scroller-pagination {
-  font-family: var(--font-heading);
-  font-size: 1.1rem;
-  font-weight: bold;
-}
-.todays-live .scroller-pagination {
-  color: rgba(255, 255, 255, 0.7);
-}
-.upcoming-lives .scroller-pagination {
+  padding: 0 20px;
+  height: 60px;
   color: var(--white);
+  background: var(--gray);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-.live-card p {
-  font-size: 0.9rem; 
+.logo {
+  font-size: 24px;
+  font-family: var(--font-heading);
 }
 
-.live-details {
+/* --- ハンバーガーメニュー --- */
+.drawer_hidden {
+  display: none;
+}
+
+.drawer_open {
   display: flex;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-}
-.live-details::-webkit-scrollbar { display: none; }
-.live-details .live-card {
-  flex: 0 0 100%;
-  scroll-snap-align: center;
-  padding-right: 20px;
-}
-.live-details .live-card:last-child { padding-right: 0; }
-.live-details p { margin: 5px 0; }
-.live-details .button { margin-top: 15px; }
-
-
-/* --- TODAY'S LIVE の個別スタイル --- */
-.todays-live {
-  background-color: #555;
-  color: var(--white);
-}
-.todays-live .scroller-header {
-  border-color: rgba(255, 255, 255, 0.5);
+  height: 60px;
+  width: 60px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 100;
+  cursor: pointer;
 }
 
-
-/* --- UPCOMING LIVES の個別スタイル --- */
-.upcoming-lives {
-  background-color: #444;
-  color:var(--white);
-}
-.upcoming-lives .scroller-header {
-  border-color: var(--color-border, #eee);
-}
-
-/* --- 配信中セクションのスタイル --- */
-.now-streaming {
-  background: linear-gradient(70deg,#364d45, #598072,#7db39f);
-  color: var(--white);
-  border: none;
-}
-.now-streaming .scroller-header {
-  border-color: rgba(255, 255, 255, 0.5);
-}
-.now-streaming .scroller-pagination {
-  color: rgba(255, 255, 255, 0.7);
-}
-.now-streaming .live-card p {
-  font-size: 0.9rem;
+.drawer_open span,
+.drawer_open span:before,
+.drawer_open span:after {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 25px;
+  border-radius: 3px;
+  background: var(--white);
+  transition: 0.5s;
+  position: absolute;
 }
 
+.drawer_open span:before {
+  bottom: 8px;
+}
 
-/* --- NEWSリストのスタイル --- */
-.news-list {
+.drawer_open span:after {
+  top: 8px;
+}
+
+#drawer_input:checked ~ .drawer_open span {
+  background: rgba(255, 255, 255, 0);
+}
+
+#drawer_input:checked ~ .drawer_open span::before {
+  bottom: 0;
+  transform: rotate(45deg);
+}
+
+#drawer_input:checked ~ .drawer_open span::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+
+.nav_content {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 100%;
+  z-index: 99;
+  background: var(--gray);
+  transition: 0.5s;
+}
+
+.nav_list {
   list-style: none;
-  padding: 0;
+  padding-top: 60px;
   margin: 0;
 }
-.news-list-item {
-  border-bottom: 1px solid var(--color-border, #eee);
+
+.nav_item a {
+  display: block;
+  padding: 20px;
+  text-align: center;
+  color: var(--white);
+  text-decoration: none;
+  border-bottom: 1px solid #f0f0f0;
 }
 
-.news-link-block {
-  display: block;
-  padding: 20px 10px;
-  text-decoration: none;
-  color: var(--white);
-  transition: background-color 0.2s;
-}
-.news-link-block:hover {
-  background-color: var(--white);
+.nav_item a:hover {
+  background: var(--white);
   color: var(--gray);
 }
 
-.news-list .date {
-  font-size: 0.9rem;
-  color: #888;
-  font-family: 'Montserrat', sans-serif;
-}
-
-.news-item-line-2 {
-  display: flex;
-  align-items: center;
-  margin-top: 8px;
-}
-
-.news-list .category-tag {
-    margin-right: 20px;
-    background-color: #222;
-    color: var(--white);
-    font-size: 0.8rem;
-    padding: 2px 8px;
-    border-radius: 4px;
-}
-
-.news-list .title {
-  font-weight: bold;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.view-more {
-    text-align: center;
-    margin-top: 40px;
-}
-.button {
-    display: inline-block;
-    padding: 12px 40px;
-    border: 1px solid #fff;
-    color: var(--white);
-    text-decoration: none;
-    font-family: var(--font-main);
-    letter-spacing: 0.1em;
-    transition: all 0.3s;
-}
-.button:hover {
-    background-color: var(--white);
-    color: var(--gray);
+#drawer_input:checked ~ .nav_content {
+  left: 0;
 }
 
 /* --- フッター --- */
 .site-footer-bottom {
-    text-align: center;
-    padding: 20px;
-    font-size: 0.8em;
-    color: #666;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.8em;
+  color: #666;
 }
 
 /* --- ふわっと表示させるためのアニメーション設定 --- */
@@ -416,60 +159,573 @@ body {
   transform: translateY(0);
 }
 
-/* --- プロフィールセクションのスタイル --- */
-.profile-list-container {
-  display: flex;
-  flex-direction: column;
-  gap: 50px;
+/* --- YouTube埋め込み動画のレスポンシブ対応 --- */
+.video-size {
+  position: relative;
+  /* 縦横比16:9を維持するための設定 (9 ÷ 16 = 0.5625) */
+  padding-top: 56.25%;
+  height: 0;
+  overflow: hidden;
+  margin: 20px 0; /* 動画の上下に少し余白をもたせる */
+  border-radius: 8px; /* 角を少し丸める */
 }
 
-.profile-card {
+.video-size iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none; /* フレームの枠線を消す */
+}
+
+.button {
+  color: var(--white);
+  font-size: 0.8rem; /* 文字サイズを小さくする */
+  padding: 8px 15px;
+}
+
+hr.line1 {
+  border: none;
+  border-top: 1px dashed var(--white);
+}
+
+/* --- TOPページメインビジュアル --- */
+.hero {
+  height: 100vh;
+  background: url("../images/int_image_02.JPG") no-repeat center center/contain;
+  color: var(--white);
   display: flex;
-  flex-direction: row; 
+  justify-content: center;
   align-items: center;
   text-align: center;
+  position: relative;
 }
 
-.profile-image {
-  flex-shrink: 0;
-  width: 150px;
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.hero-text {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-text h1 {
+  font-family: var(--font-heading);
+  font-size: 4rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  margin: 0;
+  text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-text p {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  letter-spacing: 0.1em;
+  margin-top: 10px;
+}
+
+/* スクロールを促す矢印 */
+.scroll-down {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  color: var(--white);
+  text-decoration: none;
+  writing-mode: vertical-rl;
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  padding: 10px;
+  transition: opacity 0.3s;
+}
+
+.scroll-down span {
+  position: relative;
+  padding-right: 20px;
+}
+
+.scroll-down span::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 1px;
+  height: 60px;
+  background: var(--white);
+  animation: scroll-animation 2s infinite;
+}
+
+@keyframes scroll-animation { /* アニメーション */
+  0% {
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+  50% {
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+  51% {
+    transform: scaleY(1);
+    transform-origin: bottom;
+  }
+  100% {
+    transform: scaleY(0);
+    transform-origin: bottom;
+  }
+}
+/* --- コンテンツセクション --- */
+.content-section {
+  max-width: 900px;
+  margin: 80px auto;
+  padding: 20px;
+  background-color: var(--gray);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 40px;
+  letter-spacing: 0.1em;
+}
+
+/* --- カード共通のスタイル --- */
+.live-info-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  flex-direction: column;
+}
+
+.live-info-box {
+  flex: 1;
+  /* min-width: 0px; */
+  padding: 25px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.scroller-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid;
+  padding-bottom: 10px;
   margin-bottom: 20px;
 }
 
-.profile-image img {
+.live-info-box h2 {
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-family: var(--font-heading);
+  letter-spacing: 1px;
+}
+
+.scroller-pagination {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.todays-live .scroller-pagination {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.upcoming-lives .scroller-pagination {
+  color: var(--white);
+}
+
+.live-card p {
+  font-size: 0.9rem;
+}
+
+.live-details {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.live-details::-webkit-scrollbar {
+  display: none;
+}
+
+.live-details .live-card {
+  flex: 0 0 100%;
+  scroll-snap-align: center;
+  padding-right: 20px;
+}
+
+.live-details .live-card:last-child {
+  padding-right: 0;
+}
+
+.live-details p {
+  margin: 5px 0;
+}
+
+.live-details .button {
+  margin-top: 15px;
+}
+
+/* --- TODAY'S LIVE の個別スタイル --- */
+.todays-live {
+  background-color: #555;
+  color: var(--white);
+}
+
+.todays-live .scroller-header {
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* --- UPCOMING LIVES の個別スタイル --- */
+.upcoming-lives {
+  background-color: #444;
+  color: var(--white);
+}
+
+.upcoming-lives .scroller-header {
+  border-color: var(--color-border, #eee);
+}
+
+/* --- 配信中セクションのスタイル --- */
+.now-streaming {
+  background: linear-gradient(70deg, #364d45, #598072, #7db39f);
+  color: var(--white);
+  border: none;
+}
+
+.now-streaming .scroller-header {
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.now-streaming .scroller-pagination {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.now-streaming .live-card p {
+  font-size: 0.9rem;
+}
+
+/* --- カードフッターとスワイプ表示のスタイル --- */
+.card-footer {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-swipe-prompt {
+  font-size: 0.9rem;
+  font-family: "Montserrat", sans-serif;
+  opacity: 0.5;
+}
+
+.card-swipe-prompt .fa-solid {
+  margin-right: 5px;
+}
+
+/* スクロールできない時は、スワイプ表示を隠す */
+.live-details.is-not-scrollable .card-swipe-prompt {
+  display: none;
+}
+
+.live-card:last-child .card-swipe-prompt {
+  display: none;
+}
+
+/* --- トップページのスライダー --- */
+.swiper-container {
   width: 100%;
+  /* 要望2: バナーの上に30pxの余白を追加 */
+  margin-top: 30px;
+  margin-bottom: 40px;
+  /* 要望1: 点々の位置を正しくするために、コンテナを位置の基準にする */
+  position: relative;
+  /* 点々を表示するためのスペースをコンテナの下に確保 */
+  padding-bottom: 30px;
+  overflow: hidden;
+}
+
+.swiper-slide {
+  /* 要望3: 中の画像を中央揃えにするための準備 */
+  text-align: center;
+}
+
+.swiper-slide img {
+  display: block;
   height: auto;
-  border-radius: 50%;
-  border: 3px solid var(--color-border, #eee);
+  /* 要望3: 画像の最大幅をコンテナの90%に制限し、少し小さくする */
+  max-width: 90%;
+  /* 要望3: 画像を左右中央に配置する */
+  margin: 0 auto;
+  border-radius: 8px; /* 画像の角を少し丸めるとお洒落です */
 }
 
-.profile-text h3 {
-  margin-top: 0;
-  font-family: var(--font-main);
+/* 要望1: 点々の位置を調整 */
+.swiper-pagination {
+  /* 位置をコンテナの下端から10px上に指定 */
+  bottom: 10px;
+}
+
+/* ページネーションの点々の色を変える */
+.swiper-pagination-bullet-active {
+  background-color: var(--white);
+}
+
+/* --- 埋め込みカレンダーのラッパー --- */
+.calendar-wrapper {
+  max-width: 500px; /* カレンダーの最大の横幅を800pxに指定 */
+  margin: 40px auto; /* 上下に40pxの余白、左右は中央に配置 */
+  padding: 0 15px; /* スマホ表示で左右に余白を持たせる */
+}
+
+/* --- LIVEページリストのスタイル --- */
+.professional-live-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 40px;
+  border-top: 1px solid var(--color-border, #eee);
+}
+
+.live-list-item {
+  border-bottom: 1px solid var(--color-border, #eee);
+}
+
+.live-link-block {
+  display: flex;
+  align-items: center;
+  padding: 15px 15px;
+  text-decoration: none;
+  color: var(--white);
+  transition: background-color 0.2s;
+}
+
+.live-link-block:hover {
+  background-color: var(--white);
+  color: var(--gray);
+}
+
+.live-date {
+  width: 100px;
+  text-align: center;
+  flex-shrink: 0;
+  font-family: "Montserrat", sans-serif;
+  padding-right: 15px;
+}
+
+.live-date .year {
+  display: block;
+  font-size: 0.9rem;
+  color: #999;
+}
+
+.live-date .day {
+  display: block;
   font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 1px;
 }
 
-.social-links {
-  margin-top: 20px;
-}
-.social-links a {
-  display: inline-block;
-  margin: 0 15px; /* アイコン同士の間隔 */
-  color: var(--white); /* アイコンの色*/
-  font-size: 2rem; /* アイコンの大きさ (1rem = 約16px) */
-  transition: transform 0.2s, color 0.2s; /* ホバー時のアニメーション設定 */
-}
-.social-links a:hover {
-  color: var(--gray); /* ホバーした時の色 */
-  transform: scale(1.1); /* ホバーした時に少しだけ大きくする */
+.live-details-main {
+  flex-grow: 1; /* 残りのスペースを全て使う */
 }
 
-/* --- NEWSリストのアニメーションに時間差をつける --- */
-.news-list li:nth-child(2) {
-  transition-delay: 0.1s; /* 2番目の項目は0.1秒遅れて開始 */
+.live-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 10px 0;
 }
-.news-list li:nth-child(3) {
-  transition-delay: 0.2s; /* 3番目の項目は0.2秒遅れて開始 */
+
+.live-meta {
+  font-size: 0.8rem;
+  color: #999;
+  display: flex;
+  flex-direction: column; /* スマホでは縦に並べる */
+  gap: 5px;
+}
+
+.live-meta span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.live-arrow-icon {
+  font-size: 1rem;
+  color: #ccc;
+  padding: 0 10px;
+}
+
+/* --- 絞り込みフォーム用のスタイル (新デザイン) --- */
+.filter-form {
+  background-color: #444;
+  border-radius: 12px;
+  padding: 25px 30px;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 30px; /* 縦の隙間・横の隙間 */
+  align-items: flex-end; /* 要素の下端を揃える */
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex-grow: 1; /* スペースに応じて伸びる */
+}
+
+.form-group label {
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  gap: 8px; /* アイコンとテキストの間隔 */
+}
+
+.form-group label .fa-solid {
+  color: vae(--white);
+}
+
+/* 入力欄の共通スタイル */
+.filter-form input[type=text],
+.filter-form input[type=date],
+.filter-form select {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-bottom: 2px solid var(--color-border, #eee);
+  background-color: transparent;
+  color: #999;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+  box-sizing: border-box; /* paddingを含めた幅計算 */
+}
+
+.filter-form input[type=text]:focus,
+.filter-form input[type=date]:focus,
+.filter-form select:focus {
+  outline: none;
+  border-bottom-color: var(--white);
+}
+
+.date-inputs {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.date-inputs span {
+  font-weight: bold;
+}
+
+/* 絞り込みボタン (プライマリ) */
+.form-buttons button[type=submit] {
+  background-color: #444;
+  border-color: #999;
+  color: var(--white);
+}
+
+.form-buttons button[type=submit]:hover {
+  opacity: 0.8;
+  background-color: var(--white);
+  color: var(--gray);
+}
+
+/* ボタンのスタイル */
+.form-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.form-buttons button {
+  padding: 10px 20px;
+  border: 2px solid;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+/* リセットボタン (セカンダリ) */
+.form-buttons button[type=reset] {
+  background-color: transparent;
+  border-color: #999;
+  color: var(--white);
+}
+
+.form-buttons button[type=reset]:hover {
+  opacity: 0.8;
+  background-color: var(--white);
+  color: var(--gray);
+}
+
+.streaming-info {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.streaming-button:hover {
+  background-color: var(--white);
+  color: var(--gray);
+}
+
+.streaming-button .fa-solid {
+  margin-right: 8px;
+}
+
+/* --- リストのコントロール（件数表示・並び替え） --- */
+.list-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: -20px 0 30px 0;
+  padding: 0 10px; /* 左右に少し余白 */
+  flex-wrap: wrap; /* スマホで折り返す */
+  gap: 15px;
+}
+
+.item-count-display {
+  font-size: 0.9rem;
+  color: #888;
+}
+
+.sort-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sort-container label {
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.sort-container select {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--color-border, #eee);
+  background-color: var(--white);
+  font-size: 0.9rem;
 }
 
 /* --- カテゴリ絞り込みボタンのスタイル --- */
@@ -550,197 +806,6 @@ body {
   transform: translateY(-2px); /* 少しだけ上に動かす */
 }
 
-/* --- LIVEページリストのスタイル --- */
-.professional-live-list {
-  list-style: none;
-  padding: 0;
-  margin-top: 40px;
-  border-top: 1px solid var(--color-border, #eee);
-}
-
-.live-list-item {
-  border-bottom: 1px solid var(--color-border, #eee);
-}
-
-.live-link-block {
-  display: flex;
-  align-items: center;
-  padding: 15px 15px;
-  text-decoration: none;
-  color: var(--white);
-  transition: background-color 0.2s;
-}
-
-.live-link-block:hover {
-  background-color: var(--white);
-  color:var(--gray);
-}
-
-.live-date {
-  width: 100px;
-  text-align: center;
-  flex-shrink: 0;
-  font-family: 'Montserrat', sans-serif;
-  padding-right: 15px;
-}
-.live-date .year {
-  display: block;
-  font-size: 0.9rem;
-  color: #999;
-}
-.live-date .day {
-  display: block;
-  font-size: 1.5rem;
-  font-weight: bold;
-  letter-spacing: 1px;
-}
-
-.live-details-main {
-  flex-grow: 1; /* 残りのスペースを全て使う */
-}
-.live-title {
-  font-size: 1.2rem;
-  font-weight: bold;
-  margin: 10px 0;
-}
-.live-meta {
-  font-size: 0.8rem;
-  color: #999;
-  display: flex;
-  flex-direction: column; /* スマホでは縦に並べる */
-  gap: 5px;
-}
-.live-meta span {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.live-arrow-icon {
-  font-size: 1.0rem;
-  color: #ccc;
-  padding: 0 10px;
-}
-
-
-/* スマホ表示（画面幅が768px未満）の時の調整 */
-@media (max-width: 767px) {
-  .live-date {
-    width: 70px;
-    padding-right: 10px;
-  }
-  .live-date .day {
-    font-size: 1.0rem;
-  }
-  .live-title {
-    font-size: 0.9rem;
-  }
-}
-
-/* --- 絞り込みフォーム用のスタイル (新デザイン) --- */
-.filter-form {
-  background-color: #444;
-  border-radius: 12px;
-  padding: 25px 30px;
-  margin-bottom: 40px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px 30px; /* 縦の隙間・横の隙間 */
-  align-items: flex-end; /* 要素の下端を揃える */
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  flex-grow: 1; /* スペースに応じて伸びる */
-}
-
-.form-group label {
-  font-weight: bold;
-  font-size: 0.9rem;
-  color: var(--white);
-  display: flex;
-  align-items: center;
-  gap: 8px; /* アイコンとテキストの間隔 */
-}
-
-.form-group label .fa-solid {
-  color: vae(--white);
-}
-
-/* 入力欄の共通スタイル */
-.filter-form input[type="text"],
-.filter-form input[type="date"],
-.filter-form select {
-  width: 100%;
-  padding: 10px;
-  border: none;
-  border-bottom: 2px solid var(--color-border, #eee);
-  background-color: transparent;
-  color: #999;
-  font-size: 1rem;
-  transition: border-color 0.3s;
-  box-sizing: border-box; /* paddingを含めた幅計算 */
-}
-
-.filter-form input[type="text"]:focus,
-.filter-form input[type="date"]:focus,
-.filter-form select:focus {
-  outline: none;
-  border-bottom-color: var(--white);
-}
-
-.date-inputs {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.date-inputs span {
-  font-weight: bold;
-}
-
-/* ボタンのスタイル */
-.form-buttons {
-  display: flex;
-  gap: 10px;
-}
-
-.form-buttons button {
-  padding: 10px 20px;
-  border: 2px solid;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: bold;
-  font-size: 0.9rem;
-  transition: all 0.2s;
-}
-
-/* 絞り込みボタン (プライマリ) */
-.form-buttons button[type="submit"] {
-  background-color: #444;
-  border-color: #999;
-  color: var(--white);
-}
-.form-buttons button[type="submit"]:hover {
-  opacity: 0.8;
-  background-color: var(--white);
-  color: var(--gray)
-}
-
-/* リセットボタン (セカンダリ) */
-.form-buttons button[type="reset"] {
-  background-color: transparent;
-  border-color: #999;
-  color: var(--white);
-}
-.form-buttons button[type="reset"]:hover {
-  opacity: 0.8;
-  background-color: var(--white);
-  color: var(--gray);
-}
-
 /* --- 個別記事ページ (post) のスタイル --- */
 .post {
   padding: 20px 0;
@@ -762,25 +827,28 @@ body {
   color: #888;
   font-size: 0.9rem;
 }
+
 .post-meta .category-tag {
   margin-left: 15px;
 }
 
 .post-content {
   line-height: 1.8; /* 行間を広げて読みやすくする */
-
-  overflow-wrap: break-word; 
-  word-break: break-all;  
+  overflow-wrap: break-word;
+  word-break: break-all;
 }
+
 .post-content h2 {
   font-size: 1.5rem;
   margin-top: 40px;
   border-bottom: 2px solid var(--color-border, #eee);
   padding-bottom: 10px;
 }
+
 .post-content p {
   margin: 20px 0;
 }
+
 /* --- 記事本文 (post-content) 内のリンクスタイル --- */
 .post-content a {
   /* 以前定義したCSS変数(--color-accent)を使って色を指定 */
@@ -795,162 +863,106 @@ body {
   color: #fff;
 }
 
-/* --- Coming Soon ページのスタイル --- */
-.content-section.text-center {
-  text-align: center;
-  padding-top: 80px;
-  padding-bottom: 80px;
-}
-.coming-soon-icon {
-  font-size: 4rem; /* アイコンの大きさ */
-  color: #ccc;
-  margin-bottom: 30px;
-}
-.coming-soon-title {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 2.5rem;
-  letter-spacing: 0.1em;
-  margin-bottom: 20px;
-  color: var(--text-dark, #333);
-}
-.content-section.text-center p {
-  line-height: 1.8;
-  color: #555;
-  margin-bottom: 40px;
+/* --- NEWSリストのアニメーションに時間差をつける --- */
+.news-list li:nth-child(2) {
+  transition-delay: 0.1s; /* 2番目の項目は0.1秒遅れて開始 */
 }
 
-/* =================================================================
-   スマートフォン表示用のスタイル (画面幅が767px以下で適用)
-   ================================================================= */
-@media (max-width: 767px) {
-  .logo a {
-    font-size: 1.2rem; /* スマホではロゴの文字サイズを少し小さくする */
-  }
-
-  /* --- 問題2：トップ写真と文字の見切れを調整 --- */
-  .hero {
-    height: 50vh; /* 写真の高さを画面の高さの80%に調整 */
-  }
-  .hero-text h1 {
-    font-size: 2.5rem; /* トップの文字サイズをスマホ用に小さくする */
-  }
-  .hero-text p {
-    font-size: 1rem;
-  }
-  .live-info-wrapper {
-    /* 左右の余白を確保 */
-    /*padding: 0 15px;*/
-    overflow: clip; 
-  }
-  .live-info-box {
-    /*min-width: 0; PC用のmin-widthをリセット */
-    width: 100%;   /*ボックスの幅を親要素の100%に強制する*/
-  }
-
-  .live-meta {
-    font-size: 0.8rem; /* 文字サイズを少し小さくして一行に収める */
-  }
-
-  .live-details {
-    gap: 20px; /* カード間の余白はpaddingでなくgapで指定 */
-  }
-  .live-details .live-card {
-    padding-right: 0; /* カード右側の余白をなくす */
-    scroll-snap-align: start; /* スナップ位置を中央から左端に変更 */
-  }
-
-   /* スクロール位置のページ番号表示が折り返さないようにする */
-  .scroller-pagination {
-    white-space: nowrap; /* テキストの折り返しを禁止する */
-    font-size: 1rem;     /* 文字サイズを少しだけ調整 */
-  }
-    .main-live-details-box {
-    /* ボックス全体の左右の余白を25pxから15pxに狭める */
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-
-  .next-event-list .button {
-    /* ボタン内の文字サイズを小さくする */
-    font-size: 0.8rem;
-    /* 文字の行間も少し詰める */
-    line-height: 1.5;
-    /* 上下の余白も少し詰める */
-    padding-top: 12px;
-    padding-bottom: 12px;
-  }
-
-
+.news-list li:nth-child(3) {
+  transition-delay: 0.2s; /* 3番目の項目は0.2秒遅れて開始 */
 }
 
-/* --- カードフッターとスワイプ表示のスタイル --- */
-.card-footer {
-  margin-top: 15px;
-  display: flex;
-  justify-content: space-between;
+/* --- ページネーションのナビゲーションスタイル --- */
+.pagination {
+  margin: 40px 0;
+}
+
+.pagination ul {
+  display: flex; /* Flexboxを使って要素を横並びにする */
+  justify-content: center; /* 全体を中央揃えにする */
   align-items: center;
+  list-style: none;
+  padding: 0;
+  gap: 8px; /* 各項目間の余白 */
 }
 
-.card-swipe-prompt {
-  font-size: 0.9rem;
-  font-family: 'Montserrat', sans-serif;
-  opacity: 0.5;
-}
-.card-swipe-prompt .fa-solid {
-  margin-right: 5px;
-}
-
-/* スクロールできない時は、スワイプ表示を隠す */
-.live-details.is-not-scrollable .card-swipe-prompt {
-  display: none;
-}
-.live-card:last-child .card-swipe-prompt {
-  display: none;
+/* リンクとスパンの共通スタイル */
+.pagination li a,
+.pagination li span {
+  display: block;
+  padding: 10px 16px;
+  border: 1px solid var(--color-border, #eee);
+  border-radius: 4px;
+  text-decoration: none;
+  color: var(--text-dark, #333);
+  background-color: var(--bg-primary, #fff);
+  transition: all 0.2s;
 }
 
-/* --- トップページのスライダー --- */
-.swiper-container {
-  width: 100%;
-  
-  /* 要望2: バナーの上に30pxの余白を追加 */
-  margin-top: 30px;
-  margin-bottom: 40px;
-  
-  /* 要望1: 点々の位置を正しくするために、コンテナを位置の基準にする */
-  position: relative;
-  /* 点々を表示するためのスペースをコンテナの下に確保 */
-  padding-bottom: 30px; 
-
-  overflow: hidden;
+/* ホバー時のスタイル */
+.pagination li a:hover {
+  background-color: var(--bg-secondary, #f0f0f0);
+  border-color: #ddd;
 }
 
-.swiper-slide {
-  /* 要望3: 中の画像を中央揃えにするための準備 */
+/* 「前へ」「次へ」が無効な時 */
+.pagination li.disabled span {
+  color: #ccc;
+  background-color: transparent;
+}
+
+.pagination-first {
+  margin-left: auto;
+}
+
+/* --- プロフィールセクションのスタイル --- */
+.profile-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.profile-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   text-align: center;
 }
 
-.swiper-slide img {
-  display: block;
+.profile-image {
+  flex-shrink: 0;
+  width: 150px;
+  margin-bottom: 20px;
+}
+
+.profile-image img {
+  width: 100%;
   height: auto;
-
-  /* 要望3: 画像の最大幅をコンテナの90%に制限し、少し小さくする */
-  max-width: 90%;
-  
-  /* 要望3: 画像を左右中央に配置する */
-  margin: 0 auto;
-  
-  border-radius: 8px; /* 画像の角を少し丸めるとお洒落です */
+  border-radius: 50%;
+  border: 3px solid var(--color-border, #eee);
 }
 
-/* 要望1: 点々の位置を調整 */
-.swiper-pagination {
-  /* 位置をコンテナの下端から10px上に指定 */
-  bottom: 10px; 
+.profile-text h3 {
+  margin-top: 0;
+  font-family: var(--font-main);
+  font-size: 1.5rem;
 }
 
-/* ページネーションの点々の色を変える */
-.swiper-pagination-bullet-active {
-  background-color: var(--white);
+.social-links {
+  margin-top: 20px;
+}
+
+.social-links a {
+  display: inline-block;
+  margin: 0 15px; /* アイコン同士の間隔 */
+  color: var(--white); /* アイコンの色*/
+  font-size: 2rem; /* アイコンの大きさ (1rem = 約16px) */
+  transition: transform 0.2s, color 0.2s; /* ホバー時のアニメーション設定 */
+}
+
+.social-links a:hover {
+  color: var(--gray); /* ホバーした時の色 */
+  transform: scale(1.1); /* ホバーした時に少しだけ大きくする */
 }
 
 /* --- プロフィールページ --- */
@@ -960,37 +972,46 @@ body {
   gap: 40px;
   margin-bottom: 60px;
 }
+
 .duo-profile-image {
   flex: 1;
   max-width: 400px;
 }
+
 .duo-profile-image img {
   width: 100%;
   border-radius: 8px;
 }
+
 .duo-profile-details {
   flex: 1.5;
 }
+
 .duo-profile-details h1 {
   font-family: var(--font-main);
   font-size: 2.5rem;
   margin-top: 0;
 }
+
 .duo-profile-details p {
   line-height: 1.8;
   margin-bottom: 30px;
 }
+
 .duo-links {
   display: flex;
   flex-wrap: wrap;
   gap: 15px;
 }
+
 .duo-links .button {
   text-decoration: none;
 }
+
 .duo-links .button.primary-action {
   color: var(--white);
 }
+
 .duo-links .button .fa-solid {
   margin-right: 8px;
 }
@@ -1009,6 +1030,7 @@ body {
   gap: 40px;
   padding: 0 20px;
 }
+
 .member-card {
   display: flex;
   gap: 20px;
@@ -1041,10 +1063,10 @@ body {
 /* 白い枠線 */
 .member-photo-frame {
   position: absolute;
-  top: 3.5px;      /* 枠を下にずらす量 */
-  left: 3.5px;     /* 枠を右にずらす量 */
-  width: 100px;    /* 枠線の幅（画像の幅と同じ） */
-  height: 150px;   /* 枠線の高さ（画像の高さと同じ） */
+  top: 3.5px; /* 枠を下にずらす量 */
+  left: 3.5px; /* 枠を右にずらす量 */
+  width: 100px; /* 枠線の幅（画像の幅と同じ） */
+  height: 150px; /* 枠線の高さ（画像の高さと同じ） */
   border: 1px solid var(--white);
   background-color: transparent; /* 透明にする */
   box-sizing: border-box; /* border を width/height に含める */
@@ -1055,45 +1077,32 @@ body {
 .member-details h2 {
   margin: 0 0 10px 0;
 }
+
 .honorific {
-  font-size: 0.8rem;   /* 親要素（h2）の0.8倍の大きさに */
+  font-size: 0.8rem; /* 親要素（h2）の0.8倍の大きさに */
   font-weight: normal; /* 太字を解除 */
-  margin-left: 0.2em;  /* 名前との間に少しだけ余白 */
+  margin-left: 0.2em; /* 名前との間に少しだけ余白 */
 }
+
 .member-details p {
   font-size: 0.9rem;
   margin: 0 0 15px 0;
 }
+
 .social-links {
   display: flex;
   gap: 0px;
 }
+
 .social-links a {
   font-size: 1.5rem;
   color: #555;
   transition: color 0.2s, transform 0.2s;
 }
+
 .social-links a:hover {
   color: var(--white);
   transform: scale(1.1);
-}
-
-/* スマホ表示の調整 */
-@media (max-width: 767px) {
-  .duo-profile-section{
-    flex-direction: column;
-    text-align: center;
-  }
-  .member-card {
-    flex-direction: raw;
-    text-align: center;
-  }
-  .duo-links, .social-links {
-    justify-content: center;
-  }
-  .member-profile-section {
-    grid-template-columns: 1fr;
-  }
 }
 
 /* --- 主なライブ一覧ページ のスタイル --- */
@@ -1106,7 +1115,7 @@ body {
 .main-live-card {
   background: #444;
   border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
   display: flex; /* カードの中身をFlexboxで管理 */
   flex-direction: column; /* 中身を縦に並べる */
   height: 100%; /* 親のグリッドと同じ高さに伸ばす */
@@ -1130,7 +1139,6 @@ body {
 }
 
 /* --- 主なライブページの開閉機能スタイル --- */
-
 /* ヘッダー部分をFlexboxにして、ボタンとタイトルを横並びに */
 .main-live-header {
   display: flex;
@@ -1138,7 +1146,7 @@ body {
   gap: 15px;
   cursor: pointer; /* ヘッダー全体をクリック可能に見せる */
   padding: 15px 25px;
-  background:	#819896;
+  background: #819896;
   color: var(--white);
   border-radius: 8px; /* 初期状態では四隅を丸める */
   transition: border-radius 0.3s ease-in-out;
@@ -1171,15 +1179,16 @@ body {
   padding: 0 25px; /* 開いた時のためにpaddingは用意しておくが、高さが0なので見えない */
 }
 
-
 /* --- 開いた状態のスタイル --- */
 .main-live-card.is-open .main-live-header {
   border-radius: 8px 8px 0 0; /* 上の角だけ丸める */
 }
+
 /* アイコンを180度回転させる */
 .main-live-card.is-open .main-live-toggle {
   transform: rotate(-180deg);
 }
+
 /* コンテンツを表示する（max-heightを大きな値に設定） */
 .main-live-card.is-open .main-live-content {
   max-height: 2000px; /* 中身がどんなに長くても収まる十分な高さを指定 */
@@ -1226,11 +1235,232 @@ body {
   color: var(--white);
   font-weight: bold;
 }
+
 .live-details-sidebar .button.primary-action:hover {
   color: var(--gray);
   background-color: var(--white);
 }
 
+.main-live-details-box {
+  background-color: var(--gray);
+  color: var(--white);
+  border-radius: 8px;
+  padding: 25px;
+  margin-top: 40px;
+}
+
+.main-live-details-box h3 {
+  margin: 0 0 20px 0;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--white);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.main-live-details-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  line-height: 2;
+}
+
+.next-event-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.next-event-list .button {
+  text-align: center;
+}
+
+/* --- NEWSリストのスタイル --- */
+.news-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.news-list-item {
+  border-bottom: 1px solid var(--color-border, #eee);
+}
+
+.news-link-block {
+  display: block;
+  padding: 20px 10px;
+  text-decoration: none;
+  color: var(--white);
+  transition: background-color 0.2s;
+}
+
+.news-link-block:hover {
+  background-color: var(--white);
+  color: var(--gray);
+}
+
+.news-list .date {
+  font-size: 0.9rem;
+  color: #888;
+  font-family: "Montserrat", sans-serif;
+}
+
+.news-item-line-2 {
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.news-list .category-tag {
+  margin-right: 20px;
+  background-color: #222;
+  color: var(--white);
+  font-size: 0.8rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.news-list .title {
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.view-more {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.button {
+  display: inline-block;
+  padding: 12px 40px;
+  border: 1px solid #fff;
+  color: var(--white);
+  text-decoration: none;
+  font-family: var(--font-main);
+  letter-spacing: 0.1em;
+  transition: all 0.3s;
+}
+
+.button:hover {
+  background-color: var(--white);
+  color: var(--gray);
+}
+
+/* スマホ表示（画面幅が768px未満）の時の調整 */
+@media (max-width: 767px) {
+  .live-date {
+    width: 70px;
+    padding-right: 10px;
+  }
+  .live-date .day {
+    font-size: 1rem;
+  }
+  .live-title {
+    font-size: 0.9rem;
+  }
+}
+/* --- Coming Soon ページのスタイル --- */
+.content-section.text-center {
+  text-align: center;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.coming-soon-icon {
+  font-size: 4rem; /* アイコンの大きさ */
+  color: #ccc;
+  margin-bottom: 30px;
+}
+
+.coming-soon-title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2.5rem;
+  letter-spacing: 0.1em;
+  margin-bottom: 20px;
+  color: var(--text-dark, #333);
+}
+
+.content-section.text-center p {
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+/* =================================================================
+   スマートフォン表示用のスタイル (画面幅が767px以下で適用)
+   ================================================================= */
+@media (max-width: 767px) {
+  .logo a {
+    font-size: 1.2rem; /* スマホではロゴの文字サイズを少し小さくする */
+  }
+  /* --- 問題2：トップ写真と文字の見切れを調整 --- */
+  .hero {
+    height: 50vh; /* 写真の高さを画面の高さの80%に調整 */
+  }
+  .hero-text h1 {
+    font-size: 2.5rem; /* トップの文字サイズをスマホ用に小さくする */
+  }
+  .hero-text p {
+    font-size: 1rem;
+  }
+  .live-info-wrapper {
+    /* 左右の余白を確保 */
+    /*padding: 0 15px;*/
+    overflow: clip;
+  }
+  .live-info-box {
+    /*min-width: 0; PC用のmin-widthをリセット */
+    width: 100%; /*ボックスの幅を親要素の100%に強制する*/
+  }
+  .live-meta {
+    font-size: 0.8rem; /* 文字サイズを少し小さくして一行に収める */
+  }
+  .live-details {
+    gap: 20px; /* カード間の余白はpaddingでなくgapで指定 */
+  }
+  .live-details .live-card {
+    padding-right: 0; /* カード右側の余白をなくす */
+    scroll-snap-align: start; /* スナップ位置を中央から左端に変更 */
+  }
+  /* スクロール位置のページ番号表示が折り返さないようにする */
+  .scroller-pagination {
+    white-space: nowrap; /* テキストの折り返しを禁止する */
+    font-size: 1rem; /* 文字サイズを少しだけ調整 */
+  }
+  .main-live-details-box {
+    /* ボックス全体の左右の余白を25pxから15pxに狭める */
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .next-event-list .button {
+    /* ボタン内の文字サイズを小さくする */
+    font-size: 0.8rem;
+    /* 文字の行間も少し詰める */
+    line-height: 1.5;
+    /* 上下の余白も少し詰める */
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+}
+/* スマホ表示の調整 */
+@media (max-width: 767px) {
+  .duo-profile-section {
+    flex-direction: column;
+    text-align: center;
+  }
+  .member-card {
+    flex-direction: raw;
+    text-align: center;
+  }
+  .duo-links, .social-links {
+    justify-content: center;
+  }
+  .member-profile-section {
+    grid-template-columns: 1fr;
+  }
+}
 /* スマホ表示の調整 */
 @media (max-width: 767px) {
   .live-details-sidebar {
@@ -1243,156 +1473,4 @@ body {
   }
 }
 
-.main-live-details-box {
-  background-color: var(--gray);
-  color: var(--white);
-  border-radius: 8px;
-  padding: 25px;
-  margin-top: 40px;
-}
-.main-live-details-box h3 {
-  margin: 0 0 20px 0;
-  padding-bottom: 15px;
-  border-bottom: 1px solid var(--white);
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.main-live-details-box ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  line-height: 2;
-}
-.next-event-list {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-.next-event-list .button {
-  text-align: center;
-}
-
-
-/* --- 埋め込みカレンダーのラッパー --- */
-.calendar-wrapper {
-  max-width: 500px; /* カレンダーの最大の横幅を800pxに指定 */
-  margin: 40px auto;   /* 上下に40pxの余白、左右は中央に配置 */
-  padding: 0 15px;  /* スマホ表示で左右に余白を持たせる */
-}
-
-/* --- ページネーションのナビゲーションスタイル --- */
-.pagination {
-  margin: 40px 0;
-}
-.pagination ul {
-  display: flex; /* Flexboxを使って要素を横並びにする */
-  justify-content: center; /* 全体を中央揃えにする */
-  align-items: center;
-  list-style: none;
-  padding: 0;
-  gap: 8px; /* 各項目間の余白 */
-}
-/* リンクとスパンの共通スタイル */
-.pagination li a,
-.pagination li span {
-  display: block;
-  padding: 10px 16px;
-  border: 1px solid var(--color-border, #eee);
-  border-radius: 4px;
-  text-decoration: none;
-  color: var(--text-dark, #333);
-  background-color: var(--bg-primary, #fff);
-  transition: all 0.2s;
-}
-/* ホバー時のスタイル */
-.pagination li a:hover {
-  background-color: var(--bg-secondary, #f0f0f0);
-  border-color: #ddd;
-}
-/* 「前へ」「次へ」が無効な時 */
-.pagination li.disabled span {
-  color: #ccc;
-  background-color: transparent;
-}
-.pagination-first {
-  margin-left: auto;
-}
-
-/* --- YouTube埋め込み動画のレスポンシブ対応 --- */
-.video-size {
-  position: relative;
-  /* 縦横比16:9を維持するための設定 (9 ÷ 16 = 0.5625) */
-  padding-top: 56.25%; 
-  height: 0;
-  overflow: hidden;
-  margin: 20px 0; /* 動画の上下に少し余白をもたせる */
-  border-radius: 8px; /* 角を少し丸める */
-}
-
-.video-size iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: none; /* フレームの枠線を消す */
-}
-
-.streaming-info {
-  margin-top: 10px;
-  margin-bottom: 10px;
-  text-align: center;
-}
-.button {
-  color: var(--white);
-  font-size: 0.8rem; /* 文字サイズを小さくする */
-  padding: 8px 15px; 
-}
-.streaming-button:hover {
-  background-color: var(--white);
-  color: var(--gray);
-}
-.streaming-button .fa-solid {
-  margin-right: 8px;
-}
-
-hr.line1{
-  border: none;
-  border-top: 1px dashed var(--white);
-}
-
-/* --- リストのコントロール（件数表示・並び替え） --- */
-.list-controls {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: -20px 0 30px 0;
-  padding: 0 10px; /* 左右に少し余白 */
-  flex-wrap: wrap; /* スマホで折り返す */
-  gap: 15px;
-}
-
-.item-count-display {
-  font-size: 0.9rem;
-  color: #888;
-}
-
-.sort-container {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.sort-container label {
-  font-size: 0.9rem;
-  font-weight: bold;
-}
-
-.sort-container select {
-  padding: 8px 12px;
-  border-radius: 8px;
-  border: 1px solid var(--color-border, #eee);
-  background-color: var(--white);
-  font-size: 0.9rem;
-}
+/*# sourceMappingURL=style.css.map */

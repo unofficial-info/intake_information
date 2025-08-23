@@ -1,0 +1,19 @@
+---
+# このファイルはJekyllによって処理されることを示す
+---
+
+// --- Partials ---
+@use "partials/base";
+@use "partials/layout";
+@use "partials/component";
+@use "partials/top";
+@use "partials/live";
+@use "partials/news";
+@use "partials/profile";
+@use "partials/mainlive";
+@use "partials/responsive"
+
+
+
+// もし、スマートフォン用のスタイルも分割した場合は、最後に読み込む
+// @import "partials/responsive";

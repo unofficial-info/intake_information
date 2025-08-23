@@ -1,0 +1,263 @@
+/* --- TOPページメインビジュアル --- */
+.hero {
+    height: 100vh; 
+    background: url('../images/int_image_02.JPG') no-repeat center center/contain;
+    color: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); 
+}
+.hero-text {
+    position: relative;
+    z-index: 1;
+}
+.hero-text h1 {
+    font-family: var(--font-heading); ;
+    font-size: 4rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    margin: 0;
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
+}
+.hero-text p {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    letter-spacing: 0.1em;
+    margin-top: 10px;
+}
+
+/* スクロールを促す矢印 */
+.scroll-down {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    color: var(--white);
+    text-decoration: none;
+    writing-mode: vertical-rl; 
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    padding: 10px;
+    transition: opacity 0.3s;
+}
+.scroll-down span {
+    position: relative;
+    padding-right: 20px;
+}
+.scroll-down span::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 1px;
+    height: 60px;
+    background: var(--white);
+    animation: scroll-animation 2s infinite;
+}
+@keyframes scroll-animation { /* アニメーション */
+    0% { transform: scaleY(0); transform-origin: top; }
+    50% { transform: scaleY(1); transform-origin: top; }
+    51% { transform: scaleY(1); transform-origin: bottom; }
+    100% { transform: scaleY(0); transform-origin: bottom; }
+}
+
+/* --- コンテンツセクション --- */
+.content-section {
+    max-width: 900px;
+    margin: 80px auto;
+    padding: 20px;
+    background-color: var(--gray); 
+    box-shadow: 0 0 15px rgba(0,0,0,0.05);
+}
+.section-title {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 40px;
+    letter-spacing: 0.1em;
+}
+
+/* --- カード共通のスタイル --- */
+.live-info-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  flex-direction: column;
+}
+.live-info-box {
+  flex: 1;
+  /* min-width: 0px; */
+  padding: 25px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+}
+.scroller-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+.live-info-box h2 {
+  margin: 0; padding: 0; border: none;
+  font-family: var(--font-heading);
+  letter-spacing: 1px;
+}
+
+.scroller-pagination {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+.todays-live .scroller-pagination {
+  color: rgba(255, 255, 255, 0.7);
+}
+.upcoming-lives .scroller-pagination {
+  color: var(--white);
+}
+
+.live-card p {
+  font-size: 0.9rem; 
+}
+
+.live-details {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.live-details::-webkit-scrollbar { display: none; }
+.live-details .live-card {
+  flex: 0 0 100%;
+  scroll-snap-align: center;
+  padding-right: 20px;
+}
+.live-details .live-card:last-child { padding-right: 0; }
+.live-details p { margin: 5px 0; }
+.live-details .button { margin-top: 15px; }
+
+
+/* --- TODAY'S LIVE の個別スタイル --- */
+.todays-live {
+  background-color: #555;
+  color: var(--white);
+}
+.todays-live .scroller-header {
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+
+/* --- UPCOMING LIVES の個別スタイル --- */
+.upcoming-lives {
+  background-color: #444;
+  color:var(--white);
+}
+.upcoming-lives .scroller-header {
+  border-color: var(--color-border, #eee);
+}
+
+/* --- 配信中セクションのスタイル --- */
+.now-streaming {
+  background: linear-gradient(70deg,#364d45, #598072,#7db39f);
+  color: var(--white);
+  border: none;
+}
+.now-streaming .scroller-header {
+  border-color: rgba(255, 255, 255, 0.5);
+}
+.now-streaming .scroller-pagination {
+  color: rgba(255, 255, 255, 0.7);
+}
+.now-streaming .live-card p {
+  font-size: 0.9rem;
+}
+
+/* --- カードフッターとスワイプ表示のスタイル --- */
+.card-footer {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-swipe-prompt {
+  font-size: 0.9rem;
+  font-family: 'Montserrat', sans-serif;
+  opacity: 0.5;
+}
+.card-swipe-prompt .fa-solid {
+  margin-right: 5px;
+}
+
+/* スクロールできない時は、スワイプ表示を隠す */
+.live-details.is-not-scrollable .card-swipe-prompt {
+  display: none;
+}
+.live-card:last-child .card-swipe-prompt {
+  display: none;
+}
+
+/* --- トップページのスライダー --- */
+.swiper-container {
+  width: 100%;
+  
+  /* 要望2: バナーの上に30pxの余白を追加 */
+  margin-top: 30px;
+  margin-bottom: 40px;
+  
+  /* 要望1: 点々の位置を正しくするために、コンテナを位置の基準にする */
+  position: relative;
+  /* 点々を表示するためのスペースをコンテナの下に確保 */
+  padding-bottom: 30px; 
+
+  overflow: hidden;
+}
+
+.swiper-slide {
+  /* 要望3: 中の画像を中央揃えにするための準備 */
+  text-align: center;
+}
+
+.swiper-slide img {
+  display: block;
+  height: auto;
+
+  /* 要望3: 画像の最大幅をコンテナの90%に制限し、少し小さくする */
+  max-width: 90%;
+  
+  /* 要望3: 画像を左右中央に配置する */
+  margin: 0 auto;
+  
+  border-radius: 8px; /* 画像の角を少し丸めるとお洒落です */
+}
+
+/* 要望1: 点々の位置を調整 */
+.swiper-pagination {
+  /* 位置をコンテナの下端から10px上に指定 */
+  bottom: 10px; 
+}
+
+/* ページネーションの点々の色を変える */
+.swiper-pagination-bullet-active {
+  background-color: var(--white);
+}
+
+/* --- 埋め込みカレンダーのラッパー --- */
+.calendar-wrapper {
+  max-width: 500px; /* カレンダーの最大の横幅を800pxに指定 */
+  margin: 40px auto;   /* 上下に40pxの余白、左右は中央に配置 */
+  padding: 0 15px;  /* スマホ表示で左右に余白を持たせる */
+}
