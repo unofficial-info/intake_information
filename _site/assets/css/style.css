@@ -190,6 +190,11 @@ hr.line1 {
   border-top: 1px dashed var(--white);
 }
 
+hr.line2 {
+  border: none;
+  border-top: double 3px #999;
+}
+
 /* --- TOPページメインビジュアル --- */
 .hero {
   height: 100vh;

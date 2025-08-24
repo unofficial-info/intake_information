@@ -39,3 +39,8 @@ hr.line1{
   border: none;
   border-top: 1px dashed var(--white);
 }
+
+hr.line2{
+  border:none;
+  border-top: double 3px #999;
+}
