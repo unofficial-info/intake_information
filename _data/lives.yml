@@ -65,6 +65,7 @@
   venue: "渋谷よしもと漫才劇場"
   time_open: "20:45"
   time_start: "21:00"
+  streaming_url: "https://online-ticket.yoshimoto.co.jp/products/絶対漫才-9-13-21-00"
   url: "https://ticket.fany.lol/event/detail/5424/18194?utm_medium=schedule&utm_source=shibuya_manzaigekijyo&utm_campaign=%E7%B5%B6%E5%AF%BE%E6%BC%AB%E6%89%8D%EF%BC%81"
 
 - date: "2025-09-14"
@@ -93,6 +94,7 @@
   venue: "渋谷よしもと漫才劇場"
   time_open: "20:45"
   time_start: "21:00"
+  streaming_url: "https://online-ticket.yoshimoto.co.jp/products/スマイルキング-9-17-21-00"
   url: "https://ticket.fany.lol/event/detail/5436/18192?utm_medium=schedule&utm_source=shibuya_manzaigekijyo&utm_campaign=%E3%82%B9%E3%83%9E%E3%82%A4%E3%83%AB%E3%82%AD%E3%83%B3%E3%82%B0"
 
 - date: "2025-09-22"
@@ -100,6 +102,7 @@
   venue: "渋谷よしもと漫才劇場"
   time_open: "18:30"
   time_start: "18:45"
+  streaming_url: "https://online-ticket.yoshimoto.co.jp/products/jordan-9-22-18-45"
   url: "https://ticket.fany.lol/event/detail/5433/18203?utm_medium=schedule&utm_source=shibuya_manzaigekijyo&utm_campaign=JORDAN"
 
 - date: "2025-09-26"
@@ -107,6 +110,7 @@
   venue: "神保町よしもと漫才劇場"
   time_open: "20:45"
   time_start: "21:00"
+  streaming_url: "https://online-ticket.yoshimoto.co.jp/products/イワサキ主催ライブ-cheer-up-9-26-21-00"
   url: "https://ticket.fany.lol/event/detail/5463/18298?utm_medium=schedule&utm_source=jimbocho_manzaigekijyo&utm_campaign=%E3%82%A4%E3%83%AF%E3%82%B5%E3%82%AD%E4%B8%BB%E5%82%AC%E3%83%A9%E3%82%A4%E3%83%96%E3%80%8CCheer%20up%EF%BC%81%EF%BC%81%E3%80%8D"
 
 - date: "2025-09-30"
