@@ -16,10 +16,6 @@ summary:
     - "インテイク"
 
 next_events:
-  - date: "2025-08-11"
-    open: "17:45"
-    start: "18:00"
-    url: "https://ticket.fany.lol/event/detail/5185/17566?utm_medium=schedule&utm_source=omiya&utm_campaign=神速ティッドライブ"
 ---
 
 不定期で開催される神速ティッドのチームライブです。<br>

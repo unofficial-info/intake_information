@@ -11,10 +11,6 @@ summary:
     - "ストレッチーズ"
 
 next_events:
-  - date: "2025-08-19"
-    open: "19:30"
-    start: "20:00"
-    url: "https://passmarket.yahoo.co.jp/event/show/detail/029hwf983tk41.html#detail"
   - date: "2025-09-30"
     open: "19:30"
     start: "20:00"

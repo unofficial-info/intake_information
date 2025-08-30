@@ -14,10 +14,6 @@ summary:
     - "MC:令和ロマン 松井ケムリ"
 
 next_events:
-  - date: "2025-08-25"
-    open: "20:45"
-    start: "21:00"
-    url: "https://ticket.fany.lol/event/detail/4600/16406?utm_medium=schedule&utm_source=shibuya_manzaigekijyo&utm_campaign=JORDAN"
   - date: "2025-09-22"
     open: "18:30"
     start: "18:45"
