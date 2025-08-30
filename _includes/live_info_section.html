@@ -1,9 +1,47 @@
 {% assign today_date = "now" | date: "%Y-%m-%d" %}
 {% assign seven_days_in_seconds = 60 | times: 60 | times: 24 | times: 7 %}
 {% assign limit_date = "now" | date: "%s" | plus: seven_days_in_seconds | date: "%Y-%m-%d" %}
-{% assign sorted_lives = site.data.lives | sort: "date" %}
+
+{%- comment -%}
+date と time_start を結合して "2025-09-08T16:30" のようなキーを作成
+{%- endcomment -%}
+{%- comment -%}
+  Part 1: ソートキーだけの配列を作成する
+{%- endcomment -%}
+{%- comment -%}
+  Part 1: ソートキーだけの配列を作成する
+{%- endcomment -%}
+{% assign sort_keys = "" | split: "" %}
+{% for live in site.data.lives %}
+  {% if live.date and live.time_start %}
+    {% assign key = live.date | append: "T" | append: live.time_start %}
+    {% assign sort_keys = sort_keys | push: key %}
+  {% endif %}
+{% endfor %}
+
+{%- comment -%}
+  Part 2: ソートキーの配列をソートする
+{%- endcomment -%}
+{% assign sorted_keys = sort_keys | sort | uniq %}
+
+{%- comment -%}
+  Part 3: ソート済みのキーを元に、新しいライブ情報の配列を正しい順序で作成する
+{%- endcomment -%}
+{% assign sorted_lives = "" | split: "" %}
+{% for key in sorted_keys %}
+  {% for live_item in site.data.lives %}
+    {% if live_item.date and live_item.time_start %}
+      {% assign live_key = live_item.date | append: "T" | append: live_item.time_start %}
+      {% if live_key == key %}
+        {% assign sorted_lives = sorted_lives | push: live_item %}
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+{% endfor %}
+
 {% assign todays_lives = sorted_lives | where_exp: "item", "item.date == today_date" %}
 {% assign upcoming_lives = sorted_lives | where_exp: "item", "item.date > today_date" | where_exp: "item", "item.date <= limit_date" %}
+
 
 <section id="live-info" class="content-section">
   <div class="live-info-wrapper">
