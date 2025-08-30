@@ -10,7 +10,8 @@
     {% assign live_start_seconds = live.date | date: "%s" | plus: 0 %}
 
     {% if live.streaming_end_date %}
-      {% assign live_end_seconds = live.streaming_end_date | date: "%s" | plus: eight_days_seconds | minus: 1 | plus: 0 %}
+      {% assign end_of_day_string = live.streaming_end_date | append: " 23:59:59" %}
+      {% assign live_end_seconds = end_of_day_string | date: "%s" | plus: 0 %}
     {% else %}
       {% assign live_end_seconds = live_start_seconds | plus: eight_days_seconds | plus: 0 %}
     {% endif %}
