@@ -3,12 +3,6 @@
 {% assign limit_date = "now" | date: "%s" | plus: seven_days_in_seconds | date: "%Y-%m-%d" %}
 
 {%- comment -%}
-date と time_start を結合して "2025-09-08T16:30" のようなキーを作成
-{%- endcomment -%}
-{%- comment -%}
-  Part 1: ソートキーだけの配列を作成する
-{%- endcomment -%}
-{%- comment -%}
   Part 1: ソートキーだけの配列を作成する
 {%- endcomment -%}
 {% assign sort_keys = "" | split: "" %}
