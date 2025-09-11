@@ -261,9 +261,10 @@
 - date: "2025-10-30"
   title: "積"
   venue: "武蔵野芸能劇場"
-  time_open: "-"
+  time_open: "19:45"
   time_start: "20:00"
   time_end: "21:10"
+  url: "https://passmarket.yahoo.co.jp/event/show/detail/02vi71fdm7p41.html#detail"
 
 - date: "2025-09-23"
   title: "【渋谷】トーキョーマンゲキフェス2025 渋神ジェネレーション ～第2部～"
@@ -318,3 +319,11 @@
   time_start: "13:00"
   time_end: "15:00"
   url: "https://tiget.net/events/428375"
+
+- date: "2025-10-02"
+  title: "言の葉の寄席"
+  venue: "新宿バッシュ!!"
+  time_open: "19:05"
+  time_start: "19:15"
+  time_end: "20:15"
+  url: "https://tiget.net/events/428575"
