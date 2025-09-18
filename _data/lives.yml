@@ -253,10 +253,11 @@
 
 - date: "2025-09-21"
   title: "幸福の漫才"
-  venue: "-"
-  time_open: "-"
+  venue: "シアターミネルヴァ"
+  time_open: "21:50"
   time_start: "22:00"
   time_end: "23:00"
+  url: "https://x.gd/0eJl5"
 
 - date: "2025-10-30"
   title: "積"
@@ -267,8 +268,8 @@
   url: "https://passmarket.yahoo.co.jp/event/show/detail/02vi71fdm7p41.html#detail"
 
 - date: "2025-09-23"
-  title: "【渋谷】トーキョーマンゲキフェス2025 渋神ジェネレーション ～第2部～"
-  venue: "渋谷よしもと漫才劇場"
+  title: "トーキョーマンゲキフェス2025 渋神ジェネレーション"
+  venue: "渋谷よしもと漫才劇場・神保町よしもと漫才劇場"
   time_open: "15:40"
   time_start: "16:00"
 
@@ -343,3 +344,11 @@
   time_start: "20:30"
   time_end: "22:00"
   url: "https://x.gd/3GKGR"
+
+- date: "2025-10-09"
+  title: "下北沢寅会"
+  venue: "下北ZAWAZAWA"
+  time_open: "21:05"
+  time_start: "21:15"
+  time_end: "22:15"
+  url: "https://x.gd/PtZKw"
