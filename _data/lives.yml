@@ -512,3 +512,21 @@
   time_start: "19:00"
   time_end: ""
   url: "https://x.gd/6FfvU"
+
+- date: "2025-10-03"
+  title: "渋谷Kiwami極LIVEプラス＋"
+  venue: "渋谷よしもと漫才劇場"
+  time_open: "16:15"
+  time_start: "16:30"
+  time_end: "17:30"
+  url: "https://x.gd/UIhgO"
+
+  streaming_url: "https://x.gd/ph4JA"
+
+- date: "2025-10-27"
+  title: "ナユタの漫才ライブ"
+  venue: "セシオン杉並ホール"
+  time_open: "19:30"
+  time_start: "19:45"
+  time_end: ""
+  url: "https://x.gd/DvrDI"

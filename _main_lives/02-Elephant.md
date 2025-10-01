@@ -12,11 +12,6 @@ summary:
     - "インテイク"
 
 next_events:
-  - date: "2025-09-14"
-    open: "18:15"
-    start: "18:30"
-    url: "https://ticket.fany.lol/event/detail/5417/18275?utm_medium=schedule&utm_source=jimbocho_manzaigekijyo&utm_campaign=Elephant"
-    note: "コーナー担当：鈴木バイダン"
 ---
 
 毎月開催されている鈴木さん主催のライブです。<br>
