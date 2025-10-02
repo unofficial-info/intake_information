@@ -51,7 +51,7 @@
         <div class="live-card">
             <h3>{{ live.title }}</h3>
             <p><i class="fa-regular fa-calendar-alt"></i>  {{ live.date|date:"%Y" }}年{{ live.date|date:"%m" }}月{{ live.date|date:"%d" }}日</p>
-            <p><i class="fa-regular fa-clock"></i> 開場 {{ live.time_open }} ｜ 開演 {{ live.time_start }}</p>
+            <p><i class="fa-regular fa-clock"></i> 開場 {{ live.time_open }} ｜ 開演 {{ live.time_start }}{{ if live.time_end }}｜終演 {{ live.time_end }}</p>
             <p><i class="fa-solid fa-location-dot"></i> {{ live.venue }} </p>
             <div class="card-footer">
                 <a href="{{ live.url }}" class="button">詳細を見る</a>
@@ -77,7 +77,7 @@
         <div class="live-card">
             <h3>{{ live.title }}</h3>
             <p><i class="fa-regular fa-calendar-alt"></i> {{ live.date|date:"%Y" }}年{{ live.date|date:"%m" }}月{{ live.date|date:"%d" }}日</p>
-            <p><i class="fa-regular fa-clock"></i> 開場 {{ live.time_open }} ｜ 開演 {{ live.time_start }}</p>
+            <p><i class="fa-regular fa-clock"></i> 開場 {{ live.time_open }} ｜ 開演 {{ live.time_start }}{{ if live.time_end }}｜終演 {{ live.time_end }}</p>
             <p><i class="fa-solid fa-location-dot"></i> {{ live.venue }}</p>
             <div class="card-footer">
                 <a href="{{ live.url }}" class="button">詳細を見る</a>
