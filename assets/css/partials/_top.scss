@@ -289,6 +289,75 @@
   background-color: var(--white);
 }
 
+/* --- NEWSリストのスタイル --- */
+.news-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.news-list-item {
+  border-bottom: 1px solid var(--color-border, #eee);
+}
+
+.news-link-block {
+  display: block;
+  padding: 20px 10px;
+  text-decoration: none;
+  color: var(--white);
+  transition: background-color 0.2s;
+}
+.news-link-block:hover {
+  background-color: var(--white);
+  color: var(--gray);
+}
+
+.news-list .date {
+  font-size: 0.9rem;
+  color: #888;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.news-item-line-2 {
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.news-list .category-tag {
+    margin-right: 20px;
+    background-color: #222;
+    color: var(--white);
+    font-size: 0.8rem;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+.news-list .title {
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.view-more {
+    text-align: center;
+    margin-top: 40px;
+}
+.button {
+    display: inline-block;
+    padding: 12px 40px;
+    border: 1px solid #fff;
+    color: var(--white);
+    text-decoration: none;
+    font-family: var(--font-main);
+    letter-spacing: 0.1em;
+    transition: all 0.3s;
+}
+.button:hover {
+    background-color: var(--white);
+    color: var(--gray);
+}
+
 /* --- 埋め込みカレンダーのラッパー --- */
 .calendar-wrapper {
   max-width: 500px; /* カレンダーの最大の横幅を800pxに指定 */

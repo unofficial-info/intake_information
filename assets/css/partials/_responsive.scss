@@ -1,89 +1,30 @@
-
-
-
-
-/* --- NEWSリストのスタイル --- */
-.news-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.news-list-item {
-  border-bottom: 1px solid var(--color-border, #eee);
-}
-
-.news-link-block {
-  display: block;
-  padding: 20px 10px;
-  text-decoration: none;
-  color: var(--white);
-  transition: background-color 0.2s;
-}
-.news-link-block:hover {
-  background-color: var(--white);
-  color: var(--gray);
-}
-
-.news-list .date {
-  font-size: 0.9rem;
-  color: #888;
-  font-family: 'Montserrat', sans-serif;
-}
-
-.news-item-line-2 {
-  display: flex;
-  align-items: center;
-  margin-top: 8px;
-}
-
-.news-list .category-tag {
-    margin-right: 20px;
-    background-color: #222;
-    color: var(--white);
-    font-size: 0.8rem;
-    padding: 2px 8px;
-    border-radius: 4px;
-}
-
-.news-list .title {
-  font-weight: bold;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.view-more {
-    text-align: center;
-    margin-top: 40px;
-}
-.button {
-    display: inline-block;
-    padding: 12px 40px;
-    border: 1px solid #fff;
-    color: var(--white);
-    text-decoration: none;
-    font-family: var(--font-main);
-    letter-spacing: 0.1em;
-    transition: all 0.3s;
-}
-.button:hover {
-    background-color: var(--white);
-    color: var(--gray);
-}
-
-
-
-
-
-
-
-
-
-
-
-
 /* スマホ表示（画面幅が768px未満）の時の調整 */
 @media (max-width: 767px) {
+  /* トップページ */
+  .logo a {
+    font-size: 1.2rem;
+  }
+  .hero {
+    height: 50vh;
+  }
+  .hero-text h1 {
+    font-size: 2.5rem;
+  }
+  .hero-text p {
+    font-size: 1rem;
+  }
+  .live-info-wrapper {
+    /* 左右の余白を確保 */
+    /*padding: 0 15px;*/
+    overflow: clip; 
+    flex-direction: column;
+  }
+  .live-info-box {
+    /*min-width: 0; PC用のmin-widthをリセット */
+    width: 100%;   /*ボックスの幅を親要素の100%に強制する*/
+  }
+
+  /* liveページ */
   .live-date {
     width: 70px;
     padding-right: 10px;
@@ -94,68 +35,6 @@
   .live-title {
     font-size: 0.9rem;
   }
-}
-
-
-
-
-
-
-
-/* --- Coming Soon ページのスタイル --- */
-.content-section.text-center {
-  text-align: center;
-  padding-top: 80px;
-  padding-bottom: 80px;
-}
-.coming-soon-icon {
-  font-size: 4rem; /* アイコンの大きさ */
-  color: #ccc;
-  margin-bottom: 30px;
-}
-.coming-soon-title {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 2.5rem;
-  letter-spacing: 0.1em;
-  margin-bottom: 20px;
-  color: var(--text-dark, #333);
-}
-.content-section.text-center p {
-  line-height: 1.8;
-  color: #555;
-  margin-bottom: 40px;
-}
-
-/* =================================================================
-   スマートフォン表示用のスタイル (画面幅が767px以下で適用)
-   ================================================================= */
-@media (max-width: 767px) {
-  .logo a {
-    font-size: 1.2rem; /* スマホではロゴの文字サイズを少し小さくする */
-  }
-
-  /* --- 問題2：トップ写真と文字の見切れを調整 --- */
-  .hero {
-    height: 50vh; /* 写真の高さを画面の高さの80%に調整 */
-  }
-  .hero-text h1 {
-    font-size: 2.5rem; /* トップの文字サイズをスマホ用に小さくする */
-  }
-  .hero-text p {
-    font-size: 1rem;
-  }
-  .live-info-wrapper {
-    /* 左右の余白を確保 */
-    /*padding: 0 15px;*/
-    overflow: clip; 
-    flex-direction: column;
-
-  }
-  .live-info-box {
-    /*min-width: 0; PC用のmin-widthをリセット */
-    width: 100%;   /*ボックスの幅を親要素の100%に強制する*/
-  }
-
   .live-meta {
     font-size: 0.8rem; /* 文字サイズを少し小さくして一行に収める */
   }
@@ -189,20 +68,13 @@
     padding-bottom: 12px;
   }
 
-
-}
-
-
-
-
-/* スマホ表示の調整 */
-@media (max-width: 767px) {
+  /* profile ページ */
   .duo-profile-section{
     flex-direction: column;
     text-align: center;
   }
   .member-card {
-    flex-direction: raw;
+    flex-direction: row;
     text-align: center;
   }
   .duo-links, .social-links {
@@ -211,12 +83,7 @@
   .member-profile-section {
     grid-template-columns: 1fr;
   }
-}
 
-
-
-/* スマホ表示の調整 */
-@media (max-width: 767px) {
   .live-details-sidebar {
     border-left: none;
     padding-left: 0;

@@ -44,3 +44,27 @@ hr.line2{
   border:none;
   border-top: double 3px #999;
 }
+
+/* --- Coming Soon ページのスタイル --- */
+.content-section.text-center {
+  text-align: center;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+.coming-soon-icon {
+  font-size: 4rem; /* アイコンの大きさ */
+  color: #ccc;
+  margin-bottom: 30px;
+}
+.coming-soon-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5rem;
+  letter-spacing: 0.1em;
+  margin-bottom: 20px;
+  color: var(--text-dark, #333);
+}
+.content-section.text-center p {
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 40px;
+}
