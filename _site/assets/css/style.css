@@ -291,7 +291,7 @@ hr.line2 {
 /* --- コンテンツセクション --- */
 .content-section {
   max-width: 900px;
-  margin: 80px auto;
+  margin: 50px auto;
   padding: 10px;
   background-color: var(--gray);
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
