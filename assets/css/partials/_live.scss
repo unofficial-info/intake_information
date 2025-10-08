@@ -13,7 +13,7 @@
 .live-link-block {
   display: flex;
   align-items: center;
-  padding: 15px 15px;
+  padding: 5px 15px;
   text-decoration: none;
   color: var(--white);
   transition: background-color 0.2s;
@@ -175,12 +175,19 @@
 }
 
 .streaming-info {
-  margin-top: 10px;
+  margin-top: 5px;
   margin-bottom: 10px;
-  text-align: center;
+  text-align: right;
 }
 
-.streaming-button:hover {
+.streaming-button.button{
+  background: linear-gradient(70deg,#364d45, #598072,#7db39f);
+  color: var(--white);
+  font-size: 0.8rem;
+  padding: 8px 8px;
+  border-radius: 12px;
+}
+.click-streaming:hover {
   background-color: var(--white);
   color: var(--gray);
 }

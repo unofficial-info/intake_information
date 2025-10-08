@@ -301,7 +301,7 @@ hr.line2 {
   font-family: var(--font-heading);
   font-size: 2.5rem;
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 10px;
   letter-spacing: 0.1em;
 }
 
@@ -538,7 +538,7 @@ hr.line2 {
 .live-link-block {
   display: flex;
   align-items: center;
-  padding: 15px 15px;
+  padding: 5px 15px;
   text-decoration: none;
   color: var(--white);
   transition: background-color 0.2s;
@@ -708,12 +708,20 @@ hr.line2 {
 }
 
 .streaming-info {
-  margin-top: 10px;
+  margin-top: 5px;
   margin-bottom: 10px;
-  text-align: center;
+  text-align: right;
 }
 
-.streaming-button:hover {
+.streaming-button.button {
+  background: linear-gradient(70deg, #364d45, #598072, #7db39f);
+  color: var(--white);
+  font-size: 0.8rem;
+  padding: 8px 8px;
+  border-radius: 12px;
+}
+
+.click-streaming:hover {
   background-color: var(--white);
   color: var(--gray);
 }
