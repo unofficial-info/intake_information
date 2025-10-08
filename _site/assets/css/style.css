@@ -309,14 +309,14 @@ hr.line2 {
 .live-info-wrapper {
   display: flex;
   flex-wrap: wrap;
-  gap: 30px;
-  flex-direction: column;
+  gap: 20px;
+  flex-direction: row;
 }
 
 .live-info-box {
   flex: 1;
-  /* min-width: 0px; */
-  padding: 25px;
+  min-width: 0px;
+  padding: 10px 10px 10px 10px;
   border-radius: 8px;
   display: flex;
   flex-direction: column;
@@ -327,8 +327,8 @@ hr.line2 {
   justify-content: space-between;
   align-items: center;
   border-bottom: 2px solid;
-  padding-bottom: 10px;
-  margin-bottom: 20px;
+  /*padding-bottom: 5px;*/
+  margin-bottom: 15px;
 }
 
 .live-info-box h2 {
@@ -343,36 +343,22 @@ hr.line2 {
   font-family: var(--font-heading);
   font-size: 1.1rem;
   font-weight: bold;
-}
-
-.todays-live .scroller-pagination {
-  color: rgba(255, 255, 255, 0.7);
-}
-
-.upcoming-lives .scroller-pagination {
   color: var(--white);
-}
-
-.live-card p {
-  font-size: 0.9rem;
 }
 
 .live-details {
   display: flex;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
+  /*-webkit-overflow-scrolling: touch;*/
   scrollbar-width: none;
 }
 
-.live-details::-webkit-scrollbar {
-  display: none;
-}
-
+/*.live-details::-webkit-scrollbar { display: none; }*/
 .live-details .live-card {
   flex: 0 0 100%;
   scroll-snap-align: center;
-  padding-right: 20px;
+  /*padding-right: 20px;*/
 }
 
 .live-details .live-card:last-child {
@@ -384,29 +370,94 @@ hr.line2 {
 }
 
 .live-details .button {
-  margin-top: 15px;
+  margin-top: 5px;
 }
 
+.card-body {
+  display: flex;
+  padding: 0px 0px 0px 0px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.live-card p {
+  font-size: 0.9rem;
+  color: rgba(255, 254, 246, 0.8156862745);
+}
+
+.live-card h3 {
+  margin: 0;
+  padding: 0;
+  border: none;
+  letter-spacing: 1px;
+}
+
+.card-swipe-prompt-r {
+  font-size: 1rem;
+  transform: scale(0.5, 2);
+  font-family: "Montserrat", sans-serif;
+  opacity: 0.5;
+}
+
+.card-swipe-prompt-l {
+  font-size: 1rem;
+  transform: scale(0.5, 2);
+  font-family: "Montserrat", sans-serif;
+  opacity: 0.5;
+}
+
+.card-swipe-prompt .fa-solid {
+  margin-right: 5px;
+}
+
+/* スクロールできない時は、スワイプ表示を隠す */
+.live-details.is-not-scrollable .card-swipe-prompt-r {
+  opacity: 0;
+}
+
+.live-card:last-child .card-swipe-prompt-r {
+  opacity: 0;
+}
+
+.live-card:first-child .card-swipe-prompt-l {
+  opacity: 0;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.card-footer .button {
+  color: var(--white);
+  font-size: 0.8rem;
+  padding: 8px 15px;
+  border-radius: 10px;
+}
+
+/*
+.card-footer {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}*/
 /* --- TODAY'S LIVE の個別スタイル --- */
 .todays-live {
   background-color: #555;
   color: var(--white);
-}
-
+} /*
 .todays-live .scroller-header {
   border-color: rgba(255, 255, 255, 0.5);
-}
-
+}*/
 /* --- UPCOMING LIVES の個別スタイル --- */
 .upcoming-lives {
   background-color: #444;
   color: var(--white);
-}
-
+} /*
 .upcoming-lives .scroller-header {
   border-color: var(--color-border, #eee);
-}
-
+}*/
 /* --- 配信中セクションのスタイル --- */
 .now-streaming {
   background: linear-gradient(70deg, #364d45, #598072, #7db39f);
@@ -424,33 +475,6 @@ hr.line2 {
 
 .now-streaming .live-card p {
   font-size: 0.9rem;
-}
-
-/* --- カードフッターとスワイプ表示のスタイル --- */
-.card-footer {
-  margin-top: 15px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.card-swipe-prompt {
-  font-size: 0.9rem;
-  font-family: "Montserrat", sans-serif;
-  opacity: 0.5;
-}
-
-.card-swipe-prompt .fa-solid {
-  margin-right: 5px;
-}
-
-/* スクロールできない時は、スワイプ表示を隠す */
-.live-details.is-not-scrollable .card-swipe-prompt {
-  display: none;
-}
-
-.live-card:last-child .card-swipe-prompt {
-  display: none;
 }
 
 /* --- トップページのスライダー --- */

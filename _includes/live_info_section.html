@@ -49,13 +49,18 @@
         {% if todays_lives.size > 0 %}
         {% for live in todays_lives %}
         <div class="live-card">
-            <h3>{{ live.title }}</h3>
-            <p><i class="fa-regular fa-calendar-alt"></i>  {{ live.date|date:"%Y" }}年{{ live.date|date:"%m" }}月{{ live.date|date:"%d" }}日</p>
-            <p><i class="fa-regular fa-clock"></i> 開場 {{ live.time_open }} ｜ 開演 {{ live.time_start }}{{ if live.time_end }}｜終演 {{ live.time_end }}</p>
-            <p><i class="fa-solid fa-location-dot"></i> {{ live.venue }} </p>
+            <div class="card-body">
+              <span class="card-swipe-prompt-l"><i class="fas fa-angle-double-left"></i></span>
+              <div class="card-detail">
+                <h3>{{ live.title }}</h3>
+                <p><i class="fa-regular fa-calendar-alt"></i> {{ live.date|date:"%Y" }}年{{ live.date|date:"%m" }}月{{ live.date|date:"%d" }}日</p>
+                <p><i class="fa-regular fa-clock"></i> 開場 {{ live.time_open }} ｜ 開演 {{ live.time_start }}{{ if live.time_end }}｜終演 {{ live.time_end }}</p>
+                <p><i class="fa-solid fa-location-dot"></i> {{ live.venue }}</p>
+              </div>
+              <span class="card-swipe-prompt-r"><i class="fas fa-angle-double-right"></i></span>
+            </div>
             <div class="card-footer">
                 <a href="{{ live.url }}" class="button">詳細を見る</a>
-                <span class="card-swipe-prompt"><i class="fas fa-angle-double-right"></i> swipe</span>
             </div>
         </div>
         {% endfor %}
@@ -73,15 +78,21 @@
         <div class="scroller-pagination" id="upcoming-lives-pagination"></div>
       </div>
       <div class="live-details" id="upcoming-lives-scroller">
-        {% if upcoming_lives.size > 0 %}{% for live in upcoming_lives %}
+        {% if upcoming_lives.size > 0 %}
+        {% for live in upcoming_lives %}
         <div class="live-card">
-            <h3>{{ live.title }}</h3>
-            <p><i class="fa-regular fa-calendar-alt"></i> {{ live.date|date:"%Y" }}年{{ live.date|date:"%m" }}月{{ live.date|date:"%d" }}日</p>
-            <p><i class="fa-regular fa-clock"></i> 開場 {{ live.time_open }} ｜ 開演 {{ live.time_start }}{{ if live.time_end }}｜終演 {{ live.time_end }}</p>
-            <p><i class="fa-solid fa-location-dot"></i> {{ live.venue }}</p>
+            <div class="card-body">
+              <span class="card-swipe-prompt-l"><i class="fas fa-angle-double-left"></i></span>
+              <div class="card-detail">
+                <h3>{{ live.title }}</h3>
+                <p><i class="fa-regular fa-calendar-alt"></i> {{ live.date|date:"%Y" }}年{{ live.date|date:"%m" }}月{{ live.date|date:"%d" }}日</p>
+                <p><i class="fa-regular fa-clock"></i> 開場 {{ live.time_open }} ｜ 開演 {{ live.time_start }}{{ if live.time_end }}｜終演 {{ live.time_end }}</p>
+                <p><i class="fa-solid fa-location-dot"></i> {{ live.venue }}</p>
+              </div>
+              <span class="card-swipe-prompt-r"><i class="fas fa-angle-double-right"></i></span>
+            </div>
             <div class="card-footer">
                 <a href="{{ live.url }}" class="button">詳細を見る</a>
-                <span class="card-swipe-prompt"><i class="fas fa-angle-double-right"></i> swipe</span>
             </div>
         </div>
         {% endfor %}

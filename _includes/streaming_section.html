@@ -33,24 +33,27 @@
     <div class="live-details" id="streaming-now-scroller">
       {% for live in streaming_now %}
         <div class="live-card">
-          <h3>{{ live.title }}</h3>
+          <div class="card-body">
+              <span class="card-swipe-prompt-l"><i class="fas fa-angle-double-left"></i></span>
+              <div class="card-detail">
+                <h3>{{ live.title }}</h3>
           
-          {% if live.streaming_end_date %}
-            {% assign end_date_formatted = live.streaming_end_date | date: "%Y年%m月%d日" %}
-            <p><i class="fa-solid fa-clock"></i> 視聴終了: {{ end_date_formatted }} 23:59</p>
-            <p><i class="fa-solid fa-ticket"></i> 販売終了: {{ end_date_formatted }} 23:59</p>
-          {% else %}
-            {% assign end_date_seconds = live.date | date: "%s" | plus: seven_days_seconds %}
-            {% assign end_date_formatted = end_date_seconds | date: "%Y年%m月%d日" %}
-            <p><i class="fa-solid fa-clock"></i> 視聴終了: {{ end_date_formatted }} 23:59</p>
-            <p><i class="fa-solid fa-ticket"></i> 販売終了: {{ end_date_formatted }} 12:00</p>
-          {% endif %}
-          
-          <div class="card-footer">
-            <a href="{{ live.streaming_url }}" class="button streaming-button" target="_blank" rel="noopener noreferrer">
-              <i class="fa-solid fa-tower-broadcast"></i> 配信はこちら
-            </a>
-            <span class="card-swipe-prompt"><i class="fa-solid fa-hand-point-right"></i> swipe</span>
+                {% if live.streaming_end_date %}
+                  {% assign end_date_formatted = live.streaming_end_date | date: "%Y年%m月%d日" %}
+                  <p><i class="fa-solid fa-clock"></i> 視聴終了: {{ end_date_formatted }} 23:59</p>
+                  <p><i class="fa-solid fa-ticket"></i> 販売終了: {{ end_date_formatted }} 23:59</p>
+                {% else %}
+                  {% assign end_date_seconds = live.date | date: "%s" | plus: seven_days_seconds %}
+                  {% assign end_date_formatted = end_date_seconds | date: "%Y年%m月%d日" %}
+                  <p><i class="fa-solid fa-clock"></i> 視聴終了: {{ end_date_formatted }} 23:59</p>
+                  <p><i class="fa-solid fa-ticket"></i> 販売終了: {{ end_date_formatted }} 12:00</p>
+                {% endif %}
+              </div>
+              <span class="card-swipe-prompt-r"><i class="fas fa-angle-double-right"></i></span>
+            </div>
+            <div class="card-footer">
+                <a href="{{ live.url }}" class="button">配信はこちら</a>
+            </div>
           </div>
         </div>
       {% endfor %}
