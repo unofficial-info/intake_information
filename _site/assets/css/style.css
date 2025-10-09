@@ -1556,14 +1556,15 @@ hr.line2 {
     width: 100%; /*ボックスの幅を親要素の100%に強制する*/
   }
   .live-card p {
-    font-size: 0.7rem;
     color: rgba(255, 254, 246, 0.8156862745);
+    font-size: 0.8rem;
   }
   .live-card h3 {
     margin: 0;
     padding: 0;
     border: none;
-    letter-spacing: 0.7px;
+    letter-spacing: 0.8px;
+    font-size: 15px;
   }
   /* liveページ */
   .live-date {
