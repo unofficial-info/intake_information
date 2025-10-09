@@ -33,7 +33,7 @@
       {% for live in streaming_now %}
         <div class="live-card">
           <div class="card-body">
-              <span class="card-swipe-prompt-l"><i class="fas fa-angle-double-left"></i></span>
+            <span class="card-swipe-prompt-l"><i class="fas fa-angle-double-left"></i></span>
               <div class="card-detail">
                 <h3>{{ live.title }}</h3>
           
@@ -49,10 +49,9 @@
                 {% endif %}
               </div>
               <span class="card-swipe-prompt-r"><i class="fas fa-angle-double-right"></i></span>
-            </div>
-            <div class="card-footer">
-                <a href="{{ live.url }}" class="button">配信はこちら</a>
-            </div>
+          </div>
+          <div class="card-footer">
+              <a href="{{ live.url }}" class="button">配信はこちら</a>
           </div>
         </div>
       {% endfor %}

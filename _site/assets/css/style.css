@@ -333,7 +333,8 @@ hr.line2 {
   letter-spacing: 0.1em;
 }
 
-/* --- カード共通のスタイル --- */
+/* --- ライブカード --- */
+/* カード共通のデザイン */
 .live-info-wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -370,6 +371,7 @@ hr.line2 {
   right: -25px;
 }
 
+/* カードのヘッダー部分 */
 .scroller-header {
   position: absolute;
   top: 40%;
@@ -393,22 +395,28 @@ hr.line2 {
   letter-spacing: 1px;
 }
 
+/*
 .scroller-pagination {
   font-family: var(--font-heading);
   font-size: 1.1rem;
   font-weight: bold;
-  color: var(--white);
-}
-
+  color:var(--white);
+}*/
+/* カードの中身詳細 */
 .live-details {
   display: flex;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   /*-webkit-overflow-scrolling: touch;*/
   scrollbar-width: none;
+  width: 100%;
 }
 
-/*.live-details::-webkit-scrollbar { display: none; }*/
+/* スクロールバーを見えなくする */
+.live-details::-webkit-scrollbar {
+  display: none;
+}
+
 .live-details .live-card {
   flex: 0 0 100%;
   scroll-snap-align: center;
@@ -427,13 +435,7 @@ hr.line2 {
   margin-top: 5px;
 }
 
-.card-body {
-  display: flex;
-  padding: 0px 0px 0px 0px;
-  justify-content: space-between;
-  align-items: center;
-}
-
+/* それぞれのライブの詳細 */
 .live-card p {
   font-size: 0.9rem;
   color: rgba(255, 254, 246, 0.8156862745);
@@ -446,35 +448,74 @@ hr.line2 {
   letter-spacing: 1px;
 }
 
+.card-body {
+  display: flex;
+  padding: 0px 0px 0px 0px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* swipeを促すアイコン */
 .card-swipe-prompt-r {
   font-size: 1rem;
   transform: scale(0.5, 2);
   font-family: "Montserrat", sans-serif;
-  opacity: 0.5;
+  color: #999;
+  animation: slide-fade-in-r 1.5s ease-out infinite;
 }
 
 .card-swipe-prompt-l {
   font-size: 1rem;
   transform: scale(0.5, 2);
   font-family: "Montserrat", sans-serif;
-  opacity: 0.5;
+  opacity: #999;
+  animation: slide-fade-in-l 1.5s ease-out infinite;
 }
 
 .card-swipe-prompt .fa-solid {
   margin-right: 5px;
 }
 
+@keyframes slide-fade-in-r {
+  0% {
+    opacity: 0;
+    transform: translateX(-15px);
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(10px);
+  }
+}
+@keyframes slide-fade-in-l {
+  0% {
+    opacity: 0;
+    transform: translateX(15px);
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+}
 /* スクロールできない時は、スワイプ表示を隠す */
 .live-details.is-not-scrollable .card-swipe-prompt-r {
   opacity: 0;
+  visibility: hidden;
 }
 
 .live-card:last-child .card-swipe-prompt-r {
   opacity: 0;
+  visibility: hidden;
 }
 
 .live-card:first-child .card-swipe-prompt-l {
   opacity: 0;
+  visibility: hidden;
 }
 
 /* 詳細ボタン */
@@ -549,21 +590,21 @@ hr.line2 {
 }
 
 .swiper-slide {
-  /* 要望3: 中の画像を中央揃えにするための準備 */
+  /* 中の画像を中央揃えにするための準備 */
   text-align: center;
 }
 
 .swiper-slide img {
   display: block;
   height: auto;
-  /* 要望3: 画像の最大幅をコンテナの90%に制限し、少し小さくする */
+  /* 画像の最大幅をコンテナの90%に制限し、少し小さくする */
   max-width: 90%;
-  /* 要望3: 画像を左右中央に配置する */
+  /* 画像を左右中央に配置する */
   margin: 0 auto;
   border-radius: 8px; /* 画像の角を少し丸めるとお洒落です */
 }
 
-/* 要望1: 点々の位置を調整 */
+/* 点々の位置を調整 */
 .swiper-pagination {
   /* 位置をコンテナの下端から10px上に指定 */
   bottom: 10px;
