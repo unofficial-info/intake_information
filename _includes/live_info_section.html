@@ -37,7 +37,8 @@
 {% assign upcoming_lives = sorted_lives | where_exp: "item", "item.date > today_date" | where_exp: "item", "item.date <= limit_date" %}
 
 
-<section id="live-info" class="content-section">
+<section id="live-info" class="content-section animate-on-scroll">
+  <h2 class="section-title">LIVE</h2>
   <div class="live-info-wrapper">
 
     <div class="live-info-box todays-live animate-on-scroll">

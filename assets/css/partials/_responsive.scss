@@ -23,6 +23,16 @@
     /*min-width: 0; PC用のmin-widthをリセット */
     width: 100%;   /*ボックスの幅を親要素の100%に強制する*/
   }
+  .live-card p {
+  font-size: 0.7rem;
+  color:#fffef6d0;
+}
+.live-card h3 {
+  margin: 0; 
+  padding: 0; 
+  border: none;
+  letter-spacing: 0.7px;
+}
 
   /* liveページ */
   .live-date {

@@ -582,7 +582,7 @@ hr.line2 {
   width: 100%;
   /* 要望2: バナーの上に30pxの余白を追加 */
   margin-top: 30px;
-  margin-bottom: 40px;
+  margin-bottom: 0px;
   /* 要望1: 点々の位置を正しくするために、コンテナを位置の基準にする */
   position: relative;
   /* 点々を表示するためのスペースをコンテナの下に確保 */
@@ -1509,6 +1509,16 @@ hr.line2 {
   .live-info-box {
     /*min-width: 0; PC用のmin-widthをリセット */
     width: 100%; /*ボックスの幅を親要素の100%に強制する*/
+  }
+  .live-card p {
+    font-size: 0.7rem;
+    color: rgba(255, 254, 246, 0.8156862745);
+  }
+  .live-card h3 {
+    margin: 0;
+    padding: 0;
+    border: none;
+    letter-spacing: 0.7px;
   }
   /* liveページ */
   .live-date {
