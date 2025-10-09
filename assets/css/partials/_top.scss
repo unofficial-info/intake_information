@@ -78,6 +78,7 @@
     padding: 10px;
     background-color: var(--gray); 
     box-shadow: 0 0 15px rgba(0,0,0,0.05);
+    overflow: hidden; 
 }
 .section-title {
     font-family: var(--font-heading);
@@ -97,18 +98,42 @@
 .live-info-box {
   flex: 1;
   min-width: 0px;
-  padding: 10px 10px 10px 10px;
+  padding: 10px 10px 10px 80px;
   border-radius: 8px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 }
+.live-info-box::before,
+.live-info-box::after {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-color: var(--gray);
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.live-info-box::before {
+  left: -25px;
+}
+.live-info-box::after {
+  right: -25px; 
+}
+
 .scroller-header {
+  position: absolute;
+  top: 40%;
+  left: -30px;
+  height: 30px;
+  width:150px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  border-bottom: 2px solid;
+  border-bottom: 1px dashed;
   /*padding-bottom: 5px;*/
   margin-bottom: 15px;
+  transform: rotate(270deg); 
 }
 .live-info-box h2 {
   margin: 0; 
@@ -190,6 +215,7 @@
   opacity: 0;
 }
 
+/* 詳細ボタン */
 .card-footer{
   display: flex;
   justify-content:flex-end;
@@ -234,6 +260,9 @@
   border: none;
 }
 .now-streaming .scroller-header {
+  left: -11px;
+  width:120px;
+  font-size:13px;
   border-color: rgba(255, 255, 255, 0.5);
 }
 .now-streaming .scroller-pagination {
