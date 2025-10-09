@@ -410,11 +410,68 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
-
+/*
 .view-more {
-    text-align: center;
-    margin-top: 40px;
+    text-align: right;
+    margin-top: 20px;
 }
+.view-more a{
+  color: var(--white);
+}*/
+
+/* MOREリンクのコンテナ。文字を右側に配置します */
+.view-more {
+  text-align: right;
+  margin-top: 20px;
+  /* overflow: hidden; を親要素に追加するとより安全です */
+}
+
+/* MOREリンクの基準となる設定 */
+.view-more a {
+  color: var(--white);
+  font-family: var(--font-heading);
+  position: relative;      /* 下線（::after）の位置の基準にする */
+  display: inline-block;   /* overflowを適用し、基準とするため */
+  padding-bottom: 5px;     /* 文字と下線の間の余白 */
+  text-decoration: none;
+  overflow: hidden;        /* これが重要！はみ出た下線を隠す */
+}
+
+/* アニメーションする下線本体（疑似要素） */
+.view-more a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px; /* 下線の太さ */
+  background-color: var(--white); /* 下線の色 */
+  
+  /* アニメーションを適用 */
+  animation: slide-in 2.5s ease-out infinite;
+}
+
+/* --- アニメーションの動きを定義 --- */
+@keyframes slide-in {
+  /* 開始時 */
+  0% {
+    transform: translateX(-100%); /* 要素の幅分、完全に左に隠す */
+    opacity: 0;
+  }
+  
+  /* アニメーション中間（表示のピーク） */
+  50% {
+    transform: translateX(0);    /* 本来の位置に表示 */
+    opacity: 1;
+  }
+  
+  /* 終了時 */
+  100% {
+    transform: translateX(100%);  /* 要素の幅分、完全に右に隠す */
+    opacity: 0;
+  }
+}
+
 .button {
     display: inline-block;
     padding: 12px 40px;
