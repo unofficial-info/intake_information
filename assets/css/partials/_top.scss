@@ -208,13 +208,14 @@
   font-size: 1.0rem;
   transform: scale(0.5, 2.0); 
   font-family: 'Montserrat', sans-serif;
-  opacity: #999;
+  color: #999;
   animation: slide-fade-in-l 1.5s ease-out infinite;
 }
 .card-swipe-prompt .fa-solid {
   margin-right: 5px;
 }
 
+/* スワイプを促すアニメーション */
 @keyframes slide-fade-in-r {
   0% {
     opacity: 0; 

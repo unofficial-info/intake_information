@@ -468,7 +468,7 @@ hr.line2 {
   font-size: 1rem;
   transform: scale(0.5, 2);
   font-family: "Montserrat", sans-serif;
-  opacity: #999;
+  color: #999;
   animation: slide-fade-in-l 1.5s ease-out infinite;
 }
 
@@ -476,6 +476,7 @@ hr.line2 {
   margin-right: 5px;
 }
 
+/* スワイプを促すアニメーション */
 @keyframes slide-fade-in-r {
   0% {
     opacity: 0;
