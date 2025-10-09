@@ -52,7 +52,7 @@
 }
 .scroll-down span {
     position: relative;
-    padding-right: 20px;
+    padding-right: 2px;
 }
 .scroll-down span::after {
     content: '';
@@ -410,16 +410,8 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
-/*
-.view-more {
-    text-align: right;
-    margin-top: 20px;
-}
-.view-more a{
-  color: var(--white);
-}*/
 
-/* MOREリンクのコンテナ。文字を右側に配置します */
+/* MOREリンク */
 .view-more {
   text-align: right;
   margin-top: 20px;
@@ -432,7 +424,7 @@
   font-family: var(--font-heading);
   position: relative;      /* 下線（::after）の位置の基準にする */
   display: inline-block;   /* overflowを適用し、基準とするため */
-  padding-bottom: 5px;     /* 文字と下線の間の余白 */
+  padding-bottom: 3px;     /* 文字と下線の間の余白 */
   text-decoration: none;
   overflow: hidden;        /* これが重要！はみ出た下線を隠す */
 }
@@ -444,7 +436,7 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 2px; /* 下線の太さ */
+  height: 1px; /* 下線の太さ */
   background-color: var(--white); /* 下線の色 */
   
   /* アニメーションを適用 */
@@ -472,6 +464,7 @@
   }
 }
 
+/* TOPページ共通のボタンスタイル */
 .button {
     display: inline-block;
     padding: 12px 40px;
