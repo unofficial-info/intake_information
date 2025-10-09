@@ -345,12 +345,14 @@ hr.line2 {
 .live-info-box {
   flex: 1;
   min-width: 0px;
+  min-height: 175px;
   padding: 10px 10px 10px 80px;
   border-radius: 8px;
   display: flex;
   flex-direction: row;
 }
 
+/* チケットの形にする　*/
 .live-info-box::before,
 .live-info-box::after {
   content: "";
@@ -559,13 +561,9 @@ hr.line2 {
 .now-streaming {
   background: linear-gradient(70deg, #364d45, #598072, #7db39f);
   color: var(--white);
-  border: none;
 }
 
 .now-streaming .scroller-header {
-  left: -11px;
-  width: 120px;
-  font-size: 13px;
   border-color: rgba(255, 255, 255, 0.5);
 }
 
