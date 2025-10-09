@@ -581,8 +581,8 @@ hr.line2 {
 .swiper-container {
   width: 100%;
   /* 要望2: バナーの上に30pxの余白を追加 */
-  margin-top: 30px;
-  margin-bottom: 0px;
+  margin-top: 50px;
+  margin-bottom: 30px;
   /* 要望1: 点々の位置を正しくするために、コンテナを位置の基準にする */
   position: relative;
   /* 点々を表示するためのスペースをコンテナの下に確保 */
