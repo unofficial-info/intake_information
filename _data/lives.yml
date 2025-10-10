@@ -292,14 +292,13 @@
   time_start: "19:00"
   url: "https://x.gd/6FfvU"
 
-- date: "2025-10-05"
+- date: "2025-10-03"
   title: "渋谷Kiwami極LIVEプラス＋"
   venue: "渋谷よしもと漫才劇場"
   time_open: "16:15"
   time_start: "16:30"
   time_end: "17:30"
   url: "https://x.gd/UIhgO"
-
   streaming_url: "https://x.gd/ph4JA"
 
 - date: "2025-10-27"
@@ -340,3 +339,11 @@
   time_open: "10:30"
   time_start: "11:00"
   url: ""
+
+- date: "2025-10-26"
+  title: "神保町お題ネタバトル"
+  venue: "神保町よしもと漫才劇場"
+  time_open: "17:45"
+  time_start: "18:00"
+  time_end: "19:30"
+  url: "https://x.gd/P5oUd"
