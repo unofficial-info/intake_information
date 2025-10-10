@@ -269,6 +269,7 @@
   color: var(--white);
   font-size: 0.8rem ;
   padding: 8px 15px; 
+  margin-right: 25px;
   border-radius:10px;
 }
 /*
@@ -279,7 +280,7 @@
   align-items: center;
 }*/
 
-/* --- TODAY'S LIVE の個別スタイル --- */
+/* TODAY個別スタイル */
 .todays-live {
   background-color: #555;
   color: var(--white);
@@ -289,28 +290,16 @@
 }*/
 
 
-/* --- UPCOMING LIVES の個別スタイル --- */
+/* UPCOMING個別スタイル */
 .upcoming-lives {
   background-color: #444;
   color:var(--white);
-}/*
-.upcoming-lives .scroller-header {
-  border-color: var(--color-border, #eee);
-}*/
+}
 
-/* --- 配信中セクションのスタイル --- */
+/* STREAMING個別スタイル*/
 .now-streaming {
   background: linear-gradient(70deg,#364d45, #598072,#7db39f);
   color: var(--white);
-}
-.now-streaming .scroller-header {
-  border-color: rgba(255, 255, 255, 0.5);
-}
-.now-streaming .scroller-pagination {
-  color: rgba(255, 255, 255, 0.7);
-}
-.now-streaming .live-card p {
-  font-size: 0.9rem;
 }
 
 
