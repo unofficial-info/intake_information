@@ -155,7 +155,7 @@
   color:var(--white);
 }*/
 
-/* カードの中身詳細 */
+/*　全てのカードについて */
 .live-details {
   display: flex;
   overflow-x: auto;
@@ -178,7 +178,7 @@
 
 .live-details .button { margin-top: 5px; }
 
-/* それぞれのライブの詳細 */
+/* カードの中身の書体 */
 .live-card p {
   font-size: 0.9rem;
   color:#fffef6d0;
@@ -196,7 +196,6 @@
   justify-content: space-between;
   align-items: center;
 }
-
 
 /* swipeを促すアイコン */
 .card-swipe-prompt-r {
@@ -306,8 +305,6 @@
 /* --- トップページのスライダー --- */
 .swiper-container {
   width: 100%;
-  
-  /* 要望2: バナーの上に30pxの余白を追加 */
   margin-top: 50px;
   margin-bottom: 30px;
   
@@ -472,4 +469,49 @@
   max-width: 500px; /* カレンダーの最大の横幅を800pxに指定 */
   margin: 40px auto;   /* 上下に40pxの余白、左右は中央に配置 */
   padding: 0 15px;  /* スマホ表示で左右に余白を持たせる */
+}
+
+/* --- 動画タブ全体のコンテナ --- */
+.video-tab-container {
+  max-width: 600px; /* 横幅はお好みで調整 */
+  margin: 30px auto;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+/* --- タブ部分のスタイル --- */
+.video-tabs {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-bottom: 1px solid #ddd;
+}
+.tab-item {
+  padding: 12px 20px;
+  cursor: pointer;
+  color: #888;
+  font-size: 15px;
+  transition: all 0.2s ease;
+  flex: 1; /* タブの幅を均等にする */
+  text-align: center;
+}
+/* アクティブなタブのスタイル */
+.tab-item.is-active {
+  color: var(--gray);
+  font-weight: bold;
+  border-bottom: 3px solid #0d8882; /* アクティブなタブの下線 */
+  background-color: var(--white);
+}
+
+/* --- パネル部分のスタイル --- */
+.video-panels {
+  padding: 20px;
+}
+.panel-item {
+  display: none; /* デフォルトで非表示 */
+}
+/* 表示するパネルのスタイル */
+.panel-item.is-visible {
+  display: block;
 }

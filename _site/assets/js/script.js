@@ -145,3 +145,29 @@ liveCardHeaders.forEach((header) => {
 
 // 新しい「配信中」スライダーにも、同じセットアップ関数を呼び出す
 setupPaginationIndicator("streaming-now-scroller");
+
+// すべてのタブ要素とパネル要素を取得
+const tabs = document.querySelectorAll(".tab-item");
+const panels = document.querySelectorAll(".panel-item");
+
+// 各タブにクリックイベントを設定
+tabs.forEach((tab) => {
+  tab.addEventListener("click", () => {
+    // 1. すべてのタブからis-activeクラスを削除
+    tabs.forEach((item) => item.classList.remove("is-active"));
+    // 2. クリックされたタブにis-activeクラスを追加
+    tab.classList.add("is-active");
+
+    // 3. 表示するパネルのIDを取得
+    const targetPanelId = tab.getAttribute("data-tab");
+
+    // 4. すべてのパネルを非表示にし、対象のパネルだけを表示
+    panels.forEach((panel) => {
+      if (panel.id === targetPanelId) {
+        panel.classList.add("is-visible");
+      } else {
+        panel.classList.remove("is-visible");
+      }
+    });
+  });
+});
