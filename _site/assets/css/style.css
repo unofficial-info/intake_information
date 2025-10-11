@@ -562,6 +562,18 @@ hr.line2 {
   color: var(--white);
 }
 
+.ticket {
+  background: rgb(144, 144, 93);
+  color: var(--white);
+}
+
+.live-card p.sale_date {
+  background-color: rgb(58, 81, 58);
+  color: var(--white);
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
 /* --- トップページのスライダー --- */
 .swiper-container {
   width: 100%;

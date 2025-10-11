@@ -331,6 +331,9 @@
   time_open: "19:45"
   time_start: "20:00"
   time_end: "21:30"
+  preSale_start: "2025-10-12T11:00:00"
+  preSale_end: "2025-10-14T11:00:00"
+  general: "2025-10-16T10:00:00"
   url: "https://x.gd/nymBD"
 
 - date: "2025-10-15"
@@ -338,6 +341,7 @@
   venue: "雷5656会館ときわホール"
   time_open: "10:30"
   time_start: "11:00"
+  general: "2025-10-11T10:00:00"
   url: "https://x.gd/hfCVw"
 
 - date: "2025-10-26"
@@ -346,4 +350,5 @@
   time_open: "17:45"
   time_start: "18:00"
   time_end: "19:30"
+  general: "2025-10-11T10:00:00"
   url: "https://x.gd/P5oUd"

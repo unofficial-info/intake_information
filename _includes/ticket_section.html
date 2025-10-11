@@ -1,0 +1,89 @@
+{% assign current_timestamp = "now" | date: "%s" | plus: 0 %}
+{% assign one_day_in_seconds = 86400 %}
+{% assign ticket_sort_keys = "" | split: "" %}
+
+{% for live in site.data.lives %}
+  {% if live.date and live.time_start %}
+
+    {%- comment -%} 各ライブを識別するための一意なIDを作成 {%- endcomment -%}
+    {% assign live_id = live.date | append: "T" | append: live.time_start %}
+
+    {%- comment -%} 条件A: 先行販売終了が未来か？ {%- endcomment -%}
+    {% if live.preSale_end %}
+      {% assign presale_end_ts = live.preSale_end | date: "%s" | plus: 0 %}
+      {% if presale_end_ts >= current_timestamp %}
+        {% assign key = live.preSale_end | append: "|" | append: live_id %}
+        {% assign ticket_sort_keys = ticket_sort_keys | push: key %}
+      {% endif %}
+    {% endif %}
+
+    {%- comment -%} 条件B: 一般発売+24時間が未来か？ {%- endcomment -%}
+    {% if live.general %}
+      {% assign general_ts = live.general | date: "%s" | plus: 0 %}
+      {% assign general_cutoff_ts = general_ts | plus: one_day_in_seconds %}
+      {% if general_cutoff_ts >= current_timestamp %}
+        {% assign key = live.general | append: "|" | append: live_id %}
+        {% assign ticket_sort_keys = ticket_sort_keys | push: key %}
+      {% endif %}
+    {% endif %}
+
+  {% endif %}
+{% endfor %}
+
+{%- comment -%} 3. 作成した複合キーを文字列としてソート {%- endcomment -%}
+{% assign sorted_ticket_keys = ticket_sort_keys | sort | uniq %}
+
+{%- comment -%} 4. ソート済みのキーを元に、ライブ情報を正しい順序で再構築 {%- endcomment -%}
+{% assign ticket_lives_sorted = "" | split: "" %}
+{% for key in sorted_ticket_keys %}
+  {% assign key_parts = key | split: "|" %}
+  {% assign target_live_id = key_parts[1] %}
+  {% for live_item in site.data.lives %}
+    {% if live_item.date and live_item.time_start %}
+      {% assign live_item_id = live_item.date | append: "T" | append: live_item.time_start %}
+      {% if live_item_id == target_live_id %}
+        {% assign ticket_lives_sorted = ticket_lives_sorted | push: live_item %}
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+{% endfor %}
+
+{%- comment -%} 5. 重複するライブ情報を削除 {%- endcomment -%}
+{% assign ticket_lives = ticket_lives_sorted | uniq %}
+
+{% if ticket_lives.size > 0 %}
+<section class="content-section animate-on-scroll">
+  <div class="live-info-box ticket animate-on-scroll">
+    <div class="scroller-header">
+      <h2>TICKET</h2>
+    </div>
+    <div class="live-details" id="streaming-now-scroller">
+      {% for live in ticket_lives %}
+        <div class="live-card">
+          <div class="card-body">
+            <span class="card-swipe-prompt-l"><i class="fas fa-angle-double-left"></i></span>
+              <div class="card-detail">
+                {% assign presale_end_ts = live.preSale_end | date: "%s" | plus: 0 %}
+
+                {% if presale_end_ts >= current_timestamp %}
+                <p class="sale_date">先行：{{ live.preSale_start | date: "%-m/%-d %H:%M" }} ~ {{ live.preSale_end | date: "%-m/%-d %H:%M" }}</p>
+                {% else %}
+                <p class="sale_date">一般発売：{{ live.general | date: "%-m/%-d %H:%M" }}</p>
+                {% endif %}
+                <h3>{{ live.title }}</h3>
+                <p><i class="fa-regular fa-calendar-alt"></i> {{ live.date|date:"%Y" }}年{{ live.date|date:"%m" }}月{{ live.date|date:"%d" }}日</p>
+                <p><i class="fa-regular fa-clock"></i> 開場 {{ live.time_open }}｜開演 {{ live.time_start }}{% if live.time_end %}｜終演 {{ live.time_end }}{% endif %}</p>
+                <p><i class="fa-solid fa-location-dot"></i> {{ live.venue }}</p>
+               
+              </div>
+              <span class="card-swipe-prompt-r"><i class="fas fa-angle-double-right"></i></span>
+          </div>
+          <div class="card-footer">
+              <a href="{{ live.url }}" class="button">詳細</a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
