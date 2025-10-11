@@ -17,10 +17,6 @@ summary:
     - "ゲスト"
 
 next_events:
-  - date: "2025/09/13"
-    open: "20:45"
-    start: "21:00"
-    url: "https://ticket.fany.lol/event/detail/5424/18194?utm_medium=schedule&utm_source=shibuya_manzaigekijyo&utm_campaign=%E7%B5%B6%E5%AF%BE%E6%BC%AB%E6%89%8D%EF%BC%81"
 ---
 
 毎月開催されている、漫才師たちによる熱いバトルライブです。<br>

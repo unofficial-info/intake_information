@@ -14,10 +14,20 @@ summary:
     - "ゼロカラン"
 
 next_events:
-  - date: "2025/09/17"
+  - date: "2025-10-29"
+    title: "スマイルキング"
+    venue: "渋谷よしもと漫才劇場"
     open: "20:45"
     start: "21:00"
-    url: "https://ticket.fany.lol/event/detail/5436/18192?utm_medium=schedule&utm_source=shibuya_manzaigekijyo&utm_campaign=%E3%82%B9%E3%83%9E%E3%82%A4%E3%83%AB%E3%82%AD%E3%83%B3%E3%82%B0"
+    end: "22:00"
+    url: "https://x.gd/N0CfT"
+  - date: "2025-11-26"
+    title: "スマイルキング"
+    venue: "渋谷よしもと漫才劇場"
+    open: "20:45"
+    start: "21:00"
+    end: "22:00"
+    url: "https://x.gd/nyCk4"
 ---
 
 毎月開催されている実力派揃いのライブです。<br>
