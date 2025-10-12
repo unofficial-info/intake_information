@@ -563,12 +563,12 @@ hr.line2 {
 }
 
 .ticket {
-  background: rgb(144, 144, 93);
+  background: linear-gradient(70deg, #737347, #a1a061, #e4e294);
   color: var(--white);
 }
 
 .live-card p.sale_date {
-  background-color: rgb(58, 81, 58);
+  background-color: rgb(97, 125, 112);
   color: var(--white);
   padding: 2px 8px;
   border-radius: 4px;

@@ -1,5 +1,5 @@
 {% assign current_timestamp = "now" | date: "%s" | plus: 0 %}
-{% assign one_day_in_seconds = 86400 %}
+{% assign today_date = "now" | date: "%Y-%m-%d" %}
 {% assign ticket_sort_keys = "" | split: "" %}
 
 {% for live in site.data.lives %}
@@ -17,11 +17,10 @@
       {% endif %}
     {% endif %}
 
-    {%- comment -%} 条件B: 一般発売+24時間が未来か？ {%- endcomment -%}
+    {%- comment -%} 条件B: 一般発売が未来か？ {%- endcomment -%}
     {% if live.general %}
-      {% assign general_ts = live.general | date: "%s" | plus: 0 %}
-      {% assign general_cutoff_ts = general_ts | plus: one_day_in_seconds %}
-      {% if general_cutoff_ts >= current_timestamp %}
+      {% assign general_date = live.general | date: "%Y-%m-%d"  %} 
+      {% if general_date >= today_date %}
         {% assign key = live.general | append: "|" | append: live_id %}
         {% assign ticket_sort_keys = ticket_sort_keys | push: key %}
       {% endif %}
