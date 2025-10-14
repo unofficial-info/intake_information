@@ -67,7 +67,7 @@
                 {% if presale_end_ts >= current_timestamp %}
                 <p class="sale_date">先行：{{ live.preSale_start | date: "%-m/%-d %H:%M" }} ~ {{ live.preSale_end | date: "%-m/%-d %H:%M" }}</p>
                 {% else %}
-                <p class="sale_date">一般発売：{{ live.general | date: "%-m/%-d %H:%M" }}</p>
+                <p class="sale_date">一般発売：{{ live.general | date: "%-m/%-d %H:%M" }}~</p>
                 {% endif %}
                 <h3>{{ live.title }}</h3>
                 <p><i class="fa-regular fa-calendar-alt"></i> {{ live.date|date:"%Y" }}年{{ live.date|date:"%m" }}月{{ live.date|date:"%d" }}日</p>
