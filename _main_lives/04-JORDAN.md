@@ -28,6 +28,13 @@ next_events:
     start: "21:00"
     end: "22:00"
     url: "https://x.gd/FTqw8"
+  - date: "2025-12-18"
+    title: "JORDAN"
+    venue: "渋谷よしもと漫才劇場"
+    open: "18:30"
+    start: "18:45"
+    end: "19:45"
+    url: "https://x.gd/bVjFe"
 ---
 
 毎月開催されている東京 NSC23 期（大阪 NSC40 期）による同期ライブです。<br>

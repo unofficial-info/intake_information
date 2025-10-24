@@ -17,6 +17,13 @@ summary:
     - "ゲスト"
 
 next_events:
+  - date: "2025-12-09"
+    title: "絶対漫才！"
+    venue: "渋谷よしもと漫才劇場"
+    open: "20:45"
+    start: "21:00"
+    end: "22:00"
+    url: "https://x.gd/PrHyU"
 ---
 
 毎月開催されている、漫才師たちによる熱いバトルライブです。<br>
