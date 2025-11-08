@@ -109,6 +109,7 @@ function setupPaginationIndicator(scrollerId) {
 setupPaginationIndicator("todays-live-scroller");
 setupPaginationIndicator("upcoming-lives-scroller");
 
+/*
 // --- トップページのスライダー設定 ---
 if (document.querySelector(".swiper-container")) {
   const swiper = new Swiper(".swiper-container", {
@@ -122,7 +123,7 @@ if (document.querySelector(".swiper-container")) {
       clickable: true,
     },
   });
-}
+}*/
 
 // --- 主なライブページの開閉機能 ---
 const liveCardHeaders = document.querySelectorAll(".main-live-header");
@@ -171,3 +172,65 @@ tabs.forEach((tab) => {
     });
   });
 });
+
+// --- おすすめ動画スライダーの設定 ---
+document.querySelectorAll(".pickup-swiper").forEach(function (container) {
+  new Swiper(container, {
+    loop: true,
+
+    // 自動再生を無効化
+    // autoplay: false,
+
+    pagination: {
+      el: container.querySelector(".swiper-pagination"),
+      clickable: true,
+    },
+    navigation: {
+      nextEl: container.querySelector(".swiper-button-next"),
+      prevEl: container.querySelector(".swiper-button-prev"),
+    },
+
+    slidesPerView: 1,
+    spaceBetween: 20,
+    breakpoints: {
+      768: {
+        slidesPerView: 2,
+      },
+      1024: {
+        slidesPerView: 3,
+      },
+    },
+  });
+});
+
+// --- トップページのスライダー設定 ---
+// (操作対象を ".banner-slider" に限定)
+if (document.querySelector(".banner-slider")) {
+  const swiper = new Swiper(".banner-slider", {
+    loop: true,
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".banner-pagination", // (これは前回修正済み)
+      clickable: true,
+    },
+  });
+}
+
+/*
+// --- おすすめ動画スライダーの設定 ---
+// (操作対象を ".video-slider" に限定)
+if (document.querySelector(".video-slider")) {
+  const videoSwiper = new Swiper(".video-slider", {
+    loop: true,
+
+    // (ここには autoplay の設定は一切書かない)
+
+    navigation: {
+      nextEl: ".video-slider-button-next", // (これは前回修正済み)
+      prevEl: ".video-slider-button-prev",
+    },
+  });
+}*/

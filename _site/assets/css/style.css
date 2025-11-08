@@ -786,6 +786,28 @@ hr.line2 {
   display: block;
 }
 
+/* --- おすすめ動画スライダーの矢印スタイル --- */
+.pickup-swiper {
+  width: 100%;
+}
+
+.pickup-swiper .swiper-button-prev,
+.pickup-swiper .swiper-button-next {
+  /* 矢印の色（あなたのサイトのテーマに合わせて調整してください） */
+  color: var(--white);
+  /* スマホでも押しやすいように、背景を付けて少し大きくする */
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+}
+
+/* 矢印アイコンのサイズを調整 */
+.pickup-swiper .swiper-button-prev::after,
+.pickup-swiper .swiper-button-next::after {
+  font-size: 1.5rem;
+}
+
 /* --- LIVEページリストのスタイル --- */
 .professional-live-list {
   list-style: none;

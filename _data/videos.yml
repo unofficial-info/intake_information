@@ -1,0 +1,22 @@
+# 崎食あそ美
+
+# まえかずのよろずやちゃんねる
+
+# おすすめ動画
+recommend:
+  - id: "pb_sR9mRJUM?si=3Ok0kgpcN443CcvD"
+    title: "インテイクネタ動画"
+    comment: "[2025/5/3]最新ネタ動画"
+
+  - id: "I6OtsSOkpY4?si=ijr_sefaFs8hSOCM"
+    title: "ノンスタ石田さん"
+    comment: "[2025/5/9]真剣話"
+
+  - id: "a_ftQZhUt6k?si=Z51ZOLU3t_0oD6c5"
+    title: "質問トーク"
+    comment: "[2023/2/8]仲良し①"
+
+  - id: "tpygAQeVgCs?si=FiwHcZAEenyDv8FO"
+    title: "コンビ愛"
+    comment: "[2024/8/24]仲良し②"
+# ここに、YouTube動画のURLの "embed/" の後ろにあるIDを追加していきます
