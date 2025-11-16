@@ -14,13 +14,6 @@ summary:
     - "ゼロカラン"
 
 next_events:
-  - date: "2025-10-29"
-    title: "スマイルキング"
-    venue: "渋谷よしもと漫才劇場"
-    open: "20:45"
-    start: "21:00"
-    end: "22:00"
-    url: "https://x.gd/N0CfT"
   - date: "2025-11-26"
     title: "スマイルキング"
     venue: "渋谷よしもと漫才劇場"
@@ -28,6 +21,13 @@ next_events:
     start: "21:00"
     end: "22:00"
     url: "https://x.gd/nyCk4"
+  - date: "2025-12-10"
+    title: "スマイルキング"
+    venue: "渋谷よしもと漫才劇場"
+    open: "20:45"
+    start: "21:00"
+    end: "22:00"
+    url: "https://x.gd/siNUk"
 ---
 
 毎月開催されている実力派揃いのライブです。<br>

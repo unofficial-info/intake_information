@@ -14,13 +14,6 @@ summary:
     - "MC:令和ロマン 松井ケムリ"
 
 next_events:
-  - date: "2025-10-31"
-    title: "JORDAN"
-    venue: "渋谷よしもと漫才劇場"
-    open: "18:30"
-    start: "18:45"
-    end: "19:45"
-    url: "https://x.gd/4o5Kr"
   - date: "2025-11-23"
     title: "JORDAN"
     venue: "渋谷よしもと漫才劇場"
