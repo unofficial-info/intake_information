@@ -424,6 +424,7 @@
   preSale_end: "2025-10-28T11:00:00"
   general: "2025-11-05T10:00:00"
   url: "https://x.gd/ajwzO"
+  streaming_url: "https://x.gd/YF6tL"
 
 - date: "2025-12-07"
   title: "神保町よしもとお笑いライブ"
@@ -435,6 +436,7 @@
   preSale_end: "2025-10-28T11:00:00"
   general: "2025-11-05T10:00:00"
   url: "https://x.gd/cUVAI"
+  
 
 - date: "2025-12-07"
   title: "神保町よしもとお笑いライブ"
@@ -446,6 +448,7 @@
   preSale_end: "2025-10-28T11:00:00"
   general: "2025-11-05T10:00:00"
   url: "https://x.gd/XSLCP"
+  
 
 - date: "2025-12-07"
   title: "神保町よしもとお笑いライブ"
@@ -457,17 +460,19 @@
   preSale_end: "2025-10-28T11:00:00"
   general: "2025-11-05T10:00:00"
   url: "https://x.gd/GxcWz"
+  
 
 - date: "2025-12-08"
   title: "時事ネタ漫才NEWS38"
   venue: "渋谷よしもと漫才劇場"
   time_open: "20:30"
   time_start: "20:45"
-
+  
   preSale_start: "2025-10-25T11:00:00"
   preSale_end: "2025-10-28T11:00:00"
   general: "2025-11-05T10:00:00"
   url: "https://x.gd/iolTs"
+  
 
 - date: "2025-12-09"
   title: "絶対漫才！"
@@ -479,6 +484,7 @@
   preSale_end: "2025-10-28T11:00:00"
   general: "2025-11-05T10:00:00"
   url: "https://x.gd/PrHyU"
+  streaming_url: "https://x.gd/4Mcxo"
 
 - date: "2025-12-10"
   title: "スマイルキング"
@@ -490,6 +496,7 @@
   preSale_end: "2025-11-05T11:00:00"
   general: "2025-11-15T10:00:00"
   url: "https://x.gd/siNUk"
+  streaming_url: "https://x.gd/R2L6q"
 
 - date: "2025-12-11"
   title: "Elephant"
@@ -501,6 +508,7 @@
   preSale_end: "2025-10-28T11:00:00"
   general: "2025-11-05T10:00:00"
   url: "https://x.gd/XGoZz"
+  
 
 - date: "2025-12-12"
   title: "渋谷Kiwami極LIVEプラス＋"
@@ -512,6 +520,7 @@
   preSale_end: "2025-10-28T11:00:00"
   general: "2025-11-05T10:00:00"
   url: "https://x.gd/kKVKb"
+  streaming_url: "https://x.gd/pHL4d"
 
 - date: "2025-12-13"
   title: "グランドバトルEAST 第二部"
@@ -523,6 +532,7 @@
   preSale_end: "2025-10-28T11:00:00"
   general: "2025-11-05T10:00:00"
   url: "https://x.gd/AA9h7"
+  streaming_url: "https://x.gd/33Wpp"
 
 - date: "2025-12-18"
   title: "JORDAN"
@@ -534,6 +544,7 @@
   preSale_end: "2025-10-28T11:00:00"
   general: "2025-11-05T10:00:00"
   url: "https://x.gd/bVjFe"
+  streaming_url: "https://x.gd/dmmrQ"
 
 - date: "2025-12-18"
   title: "ペーパーミカボRPG"
@@ -545,6 +556,8 @@
   preSale_end: "2025-10-28T11:00:00"
   general: "2025-11-05T10:00:00"
   url: "https://x.gd/m5MxF"
+  streaming_url: "https://x.gd/9vbJZ"
+
 
 - date: "2025-12-19"
   title: "神保町Kakeru翔SP"
@@ -730,3 +743,11 @@
   time_open: "16:30"
   time_start: "17:00" 
   url: "https://x.gd/VxkDG"
+
+- date: "2025-11-26"
+  title: "渋谷Kiwami極LIVE"
+  venue: "渋谷よしもと漫才劇場"
+  time_open: "16:15"
+  time_start: "16:30"
+  time_end: "17:30" 
+  url: "https://x.gd/FY5Uu"
