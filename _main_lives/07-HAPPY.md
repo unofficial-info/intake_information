@@ -12,6 +12,13 @@ summary:
     - インテイク
 
 next_events:
+  - date: "2025-11-29"
+    title: "幸福の漫才"
+    venue: "シアターミネルヴァ"
+    open: "21:50"
+    start: "22:00"
+    end: "23:00"
+    url: "https://x.gd/IZBa0"
 ---
 
 4 組による新ネタ 2 本ずつのライブです。<br>
