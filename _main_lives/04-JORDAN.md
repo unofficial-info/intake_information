@@ -14,13 +14,6 @@ summary:
     - "MC:令和ロマン 松井ケムリ"
 
 next_events:
-  - date: "2025-11-23"
-    title: "JORDAN"
-    venue: "渋谷よしもと漫才劇場"
-    open: "20:45"
-    start: "21:00"
-    end: "22:00"
-    url: "https://x.gd/FTqw8"
   - date: "2025-12-18"
     title: "JORDAN"
     venue: "渋谷よしもと漫才劇場"
@@ -28,6 +21,13 @@ next_events:
     start: "18:45"
     end: "19:45"
     url: "https://x.gd/bVjFe"
+  - date: "2026-01-22"
+    title: "JORDAN"
+    venue: "渋谷よしもと漫才劇場"
+    open: "19:00"
+    start: "19:15"
+    end: "20:15"
+    url: "https://x.gd/yowng"
 ---
 
 毎月開催されている東京 NSC23 期（大阪 NSC40 期）による同期ライブです。<br>
