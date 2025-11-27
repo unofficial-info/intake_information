@@ -11,13 +11,13 @@ summary:
     - "ストレッチーズ"
 
 next_events:
-  - date: "2025-11-21"
+  - date: "2025-12-16"
     title: "積"
     venue: "武蔵野芸能劇場"
     open: "19:45"
     start: "20:00"
     end: "21:10"
-    url: "https://x.gd/fSd9L"
+    url: "https://x.gd/z48h3"
 ---
 
 毎月開催しているインテイクと TC クラクションとストレッチーズのスリーマンライブです。<br>
