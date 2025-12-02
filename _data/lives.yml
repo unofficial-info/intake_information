@@ -1076,3 +1076,37 @@
   time_end: "20:00"
   general: "2025-11-28T22:50:00"
   url: "https://x.gd/0aA6C"
+
+
+- date: "2025-12-04"
+  title: "セカンドロット新ネタライブ「全マシ」"
+  venue: "神保町よしもと漫才劇場"
+  time_open: "18:45"
+  time_start: "19:00"
+  time_end: "20:15"
+  url: "https://x.gd/Hd5E3"
+  streaming_url: "https://x.gd/fAw2k"
+
+- date: "2025-12-31"
+  title: "渋神大晦日2025 紅白カウントダウンパーティー ～渋谷第一部～"
+  venue: "渋谷よしもと漫才劇場"
+  time_open: "12:45"
+  time_start: "13:00"
+  time_end: "15:00"
+  preSale_start: "2025-12-01T11:00:00"
+  preSale_end: "2025-12-03T11:00:00"
+  general: "2025-12-20T10:00:00"
+  url: "https://x.gd/DJWE3"
+  
+
+- date: "2025-12-31"
+  title: "渋神大晦日2025 紅白カウントダウンパーティー ～渋谷第三部～"
+  venue: "渋谷よしもと漫才劇場"
+  time_open: "18:45"
+  time_start: "19:00"
+  time_end: "21:00"
+  preSale_start: "2025-12-01T11:00:00"
+  preSale_end: "2025-12-03T11:00:00"
+  general: "2025-12-20T10:00:00"
+  url: "https://x.gd/fPvA8"
+  
