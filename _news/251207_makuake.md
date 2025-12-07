@@ -8,7 +8,7 @@ url: "#"
 
 # 幕明け漫才 2026<br>
 
-<i class="fa-regular fa-calendar-alt"></i> 2025/1/7(火)<br>
+<i class="fa-regular fa-calendar-alt"></i> 2026/1/7(火)<br>
 <i class="fa-regular fa-clock"></i> 開場 20:45 ｜開演 21:00 ｜終演 22:30 <br>
 <i class="fa-solid fa-location-dot"></i> 高円寺ジュンジョー<br>
 <i class="fa-solid fa-ticket"></i> 前売 ¥2,500 ｜当日 ¥3,000<br>
