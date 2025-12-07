@@ -1151,3 +1151,35 @@
   
   general: "2025-12-06T10:00:00"
   url: "https://x.gd/ZYwh7"
+
+- date: "2025-12-26"
+  title: "BEST OF マンザイチーノ2025 ~今年1番のネタをするライブ~"
+  venue: "新宿バッシュ"
+  time_open: "10:50"
+  time_start: "11:00"
+  time_end: "12:00"
+  
+  general: "2025-12-08T22:30:00"
+  url: "https://x.gd/NZ67I"
+  
+
+- date: "2025-12-22"
+  title: "アケガラスのネタライブ Spit!Spit!Spit!"
+  venue: "シアラーミネルヴァ"
+  time_open: "21:50"
+  time_start: "22:00"
+  time_end: "23:00"
+  
+  general: "2025-12-08T22:45:00"
+  url: "https://x.gd/nCzqx"
+  
+
+- date: "2025-01-07"
+  title: "幕明け漫才2026"
+  venue: "高円寺ジュンジョー"
+  time_open: "20:45"
+  time_start: "21:00"
+  time_end: "22:30"
+  
+  general: "2025-12-08T22:45:00"
+  url: "https://x.gd/xaZct"
