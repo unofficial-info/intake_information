@@ -1423,3 +1423,25 @@
   
   general: "2025-12-28T22:45:00"
   url: "https://x.gd/OIb34"
+
+- date: "2026-01-14"
+  title: "小夜漫才〜THE LAST NIGHT〜"
+  venue: "高円寺ジュンジョー"
+  time_open: "18:50"
+  time_start: "19:00"
+  time_end: "20:15"
+  
+  
+  url: "https://x.gd/iSr3S"
+  
+
+- date: "2026-01-27"
+  title: "タモンズ寄席「三鷹多聞会」"
+  venue: "武蔵野芸能劇場　小劇場"
+  time_open: "19:10"
+  time_start: "19:30"
+  
+  preSale_start: "2026-01-01T11:00:00"
+  preSale_end: "2026-01-08T11:00:00"
+  general: "2026-01-10T10:00:00"
+  url: "https://x.gd/zpuhH"
