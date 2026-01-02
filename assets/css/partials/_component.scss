@@ -68,3 +68,29 @@ hr.line2{
   color: #555;
   margin-bottom: 40px;
 }
+
+.btn-calendar {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background-color: #4285f4; /* Googleブルー */
+  color: white !important;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: bold;
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &.ticket {
+    background-color: #ea4335; /* チケット用は赤系など */
+  }
+  
+  i {
+    font-size: 1.1rem;
+  }
+}

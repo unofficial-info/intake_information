@@ -12,6 +12,25 @@ layout: default
       </div>
     </header>
 
+    <!-- カレンダーに追加ボタン -->
+    <div class="calendar-actions" style="margin-top: 20px; display: flex; gap: 10px; flex-wrap: wrap;">
+
+      {% if page.live_start %}
+        {% assign start_fmt = page.live_start | date: "%Y%m%dT%H%M%S" %}
+        {% if page.live_end %}
+          {% assign end_fmt = page.live_end | date : "%Y%m%dT%H%M%S" %}
+        {% else %}
+          {% assign end_fmt = start_fmt %}
+        {% endif %}
+        <a href="https://www.google.com/calendar/render?action=TEMPLATE&text={{ page.live_title | url_encode }}&dates={{ start_fmt }}/{{ end_fmt }}&location={{ page.venue | url_encode }}" 
+          target="_blank" class="btn-calendar">
+          <i class="fa-solid fa-calendar-check"></i> googleカレンダーに追加
+        </a>
+      {% endif %}
+
+    </div>
+
+
     <div class="post-content">
       {{ content }}
     </div>
