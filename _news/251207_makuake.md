@@ -6,6 +6,10 @@ title: "【1/7】幕明け漫才2026【出演決定】"
 url: "#"
 ---
 
+<a href="https://www.google.com/calendar/render?action=TEMPLATE&text=幕明け漫才2026&dates=20260107T210000/20260107T223000&location=高円寺ジュンジョー" target="_blank" class="btn-calendar">
+<i class="fa-solid fa-calendar-check"></i> Googleカレンダーに追加
+</a>
+
 # 幕明け漫才 2026<br>
 
 <i class="fa-regular fa-calendar-alt"></i> 2026/1/7(火)<br>

@@ -6,6 +6,10 @@ title: "【1/12】バティオスで#ワイガヤ《1部》【出演決定】"
 url: "#"
 ---
 
+<a href="https://www.google.com/calendar/render?action=TEMPLATE&text=バティオスで#ワイガヤ《1部》&dates=20260112T130000/20260112T150000&location=新宿バティオス" target="_blank" class="btn-calendar">
+<i class="fa-solid fa-calendar-check"></i> Googleカレンダーに追加
+</a>
+
 # バティオスで#ワイガヤ《1 部》<br>
 
 <i class="fa-regular fa-calendar-alt"></i> 2026/1/12(月)<br>

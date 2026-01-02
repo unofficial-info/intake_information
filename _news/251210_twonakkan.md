@@ -6,6 +6,10 @@ title: "【1/4】ツーナッカンno寄席【出演決定】"
 url: "#"
 ---
 
+<a href="https://www.google.com/calendar/render?action=TEMPLATE&text=ツーナッカンno寄席&dates=20260104T193000/20260104T193000&location=新宿バッシュ!!" target="_blank" class="btn-calendar">
+<i class="fa-solid fa-calendar-check"></i> Googleカレンダーに追加
+</a>
+
 # ツーナッカン no 寄席<br>
 
 <i class="fa-regular fa-calendar-alt"></i> 2026/1/4(日)<br>
