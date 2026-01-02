@@ -3,8 +3,11 @@ layout: post
 date: 2025-12-24 18:00:00 + 0900
 category: "LIVE"
 title: "【1/25】みんなの出囃子ライブ　ジャンク編【出演決定】"
-url: "#"
 ---
+
+<a href="https://www.google.com/calendar/render?action=TEMPLATE&text=みんなの出囃子ライブ　ジャンク編&dates=20260125T163000/20260125T180000&location=高円寺ジュンジョー" target="_blank" class="btn-calendar">
+<i class="fa-solid fa-calendar-check"></i> Googleカレンダーに追加
+</a>
 
 # みんなの出囃子ライブ　ジャンク編<br>
 

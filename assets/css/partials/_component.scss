@@ -77,7 +77,7 @@ hr.line2{
   background-color: #4285f4; /* Googleブルー */
   color: white !important;
   border-radius: 6px;
-  text-decoration: none;
+  text-decoration: none !important;
   font-size: 0.9rem;
   font-weight: bold;
   transition: opacity 0.2s;
@@ -85,11 +85,6 @@ hr.line2{
   &:hover {
     opacity: 0.8;
   }
-
-  &.ticket {
-    background-color: #ea4335; /* チケット用は赤系など */
-  }
-  
   i {
     font-size: 1.1rem;
   }
