@@ -1,9 +1,12 @@
+
 - date: "2025-10-12"
   title: "グランドバトルEAST 第六部"
   venue: "渋谷よしもと漫才劇場"
   time_open: "15:35"
   time_start: "15:50"
   time_end: "17:30"
+  
+  
   url: "https://x.gd/gDTSA"
   streaming_url: "https://x.gd/TtC6n"
 
@@ -13,7 +16,10 @@
   time_open: "11:15"
   time_start: "11:30"
   time_end: "13:00"
+  
+  
   url: "https://x.gd/mx6Th"
+  
 
 - date: "2025-10-13"
   title: "渋谷よしもとお笑いライブ"
@@ -21,7 +27,10 @@
   time_open: "13:30"
   time_start: "13:45"
   time_end: "15:15"
+  
+  
   url: "https://x.gd/dFq27"
+  
 
 - date: "2025-10-13"
   title: "渋谷よしもとお笑いライブ"
@@ -29,7 +38,10 @@
   time_open: "15:45"
   time_start: "16:00"
   time_end: "17:30"
+  
+  
   url: "https://x.gd/tCQE0"
+  
 
 - date: "2025-10-18"
   title: "神保町よしもとお笑いライブ"
@@ -37,7 +49,10 @@
   time_open: "10:45"
   time_start: "11:00"
   time_end: "12:30"
+  
+  
   url: "https://x.gd/XLIQR"
+  
 
 - date: "2025-10-18"
   title: "神保町よしもとお笑いライブ"
@@ -45,7 +60,10 @@
   time_open: "13:00"
   time_start: "13:15"
   time_end: "14:45"
+  
+  
   url: "https://x.gd/U2mdd"
+  
 
 - date: "2025-10-18"
   title: "神保町よしもとお笑いライブ"
@@ -53,7 +71,10 @@
   time_open: "15:15"
   time_start: "15:30"
   time_end: "17:00"
+  
+  
   url: "https://x.gd/6tEC8"
+  
 
 - date: "2025-10-22"
   title: "神保町Kakeru翔SPプラス＋"
@@ -61,41 +82,10 @@
   time_open: "16:45"
   time_start: "17:00"
   time_end: "18:00"
+  
+  
   url: "https://x.gd/Ayzai"
   streaming_url: "https://x.gd/p0NB8"
-
-- date: "2025-10-29"
-  title: "渋谷Kiwami極LIVE"
-  venue: "渋谷よしもと漫才劇場"
-  time_open: "16:15"
-  time_start: "16:30"
-  time_end: "17:30"
-  url: "https://x.gd/kvHLco"
-
-- date: "2025-10-29"
-  title: "スマイルキング"
-  venue: "渋谷よしもと漫才劇場"
-  time_open: "20:45"
-  time_start: "21:00"
-  time_end: "22:00"
-  url: "https://x.gd/N0CfT"
-  streaming_url: "https://x.gd/WHQhF"
-
-- date: "2025-10-31"
-  title: "渋谷Kiwami極LIVE"
-  venue: "渋谷よしもと漫才劇場"
-  time_open: "16:15"
-  time_start: "16:30"
-  time_end: "17:30"
-  url: "https://x.gd/qrEO4"
-
-- date: "2025-10-31"
-  title: "JORDAN"
-  venue: "渋谷よしもと漫才劇場"
-  time_open: "18:30"
-  time_start: "18:45"
-  time_end: "19:45"
-  url: "https://x.gd/4o5Kr"
 
 - date: "2025-10-22"
   title: "Elephant"
@@ -103,15 +93,10 @@
   time_open: "18:45"
   time_start: "19:00"
   time_end: "20:00"
+  
+  
   url: "https://x.gd/m7KbZ"
-
-- date: "2025-10-30"
-  title: "積"
-  venue: "武蔵野芸能劇場"
-  time_open: "19:45"
-  time_start: "20:00"
-  time_end: "21:10"
-  url: "https://passmarket.yahoo.co.jp/event/show/detail/02vi71fdm7p41.html#detail"
+  
 
 - date: "2025-10-25"
   title: "V-1で#ワイガヤ《1部》"
@@ -119,7 +104,87 @@
   time_open: "12:40"
   time_start: "13:00"
   time_end: "15:00"
-  url: "https://tiget.net/events/428375"
+  
+  
+  url: "https://x.gd/q4sDm"
+  
+
+- date: "2025-10-29"
+  title: "渋谷Kiwami極LIVE"
+  venue: "渋谷よしもと漫才劇場"
+  time_open: "16:15"
+  time_start: "16:30"
+  time_end: "17:30"
+  
+  
+  url: "https://x.gd/kvHLco"
+  
+
+- date: "2025-10-29"
+  title: "スマイルキング"
+  venue: "渋谷よしもと漫才劇場"
+  time_open: "20:45"
+  time_start: "21:00"
+  time_end: "22:00"
+  
+  
+  url: "https://x.gd/N0CfT"
+  streaming_url: "https://x.gd/WHQhF"
+
+- date: "2025-10-30"
+  title: "積"
+  venue: "武蔵野芸能劇場"
+  time_open: "19:45"
+  time_start: "20:00"
+  time_end: "21:10"
+  
+  
+  url: "https://x.gd/p3Frz"
+  
+
+- date: "2025-10-31"
+  title: "渋谷Kiwami極LIVE"
+  venue: "渋谷よしもと漫才劇場"
+  time_open: "16:15"
+  time_start: "16:30"
+  time_end: "17:30"
+  
+  
+  url: "https://x.gd/qrEO4"
+  
+
+- date: "2025-10-31"
+  title: "JORDAN"
+  venue: "渋谷よしもと漫才劇場"
+  time_open: "18:30"
+  time_start: "18:45"
+  time_end: "19:45"
+  
+  
+  url: "https://x.gd/4o5Kr"
+  streaming_url: "https://x.gd/xGS7a"
+
+- date: "2025-10-02"
+  title: "言の葉の寄席"
+  venue: "新宿バッシュ!!"
+  time_open: "19:05"
+  time_start: "19:15"
+  time_end: "20:15"
+  
+  
+  url: "https://x.gd/j0B9LF"
+  
+
+- date: "2025-10-04"
+  title: "渋谷3分漫才ナイト"
+  venue: "渋谷よしもと漫才劇場"
+  time_open: "20:15"
+  time_start: "20:30"
+  time_end: "22:00"
+  
+  
+  url: "https://x.gd/iQNSm"
+  
 
 - date: "2025-10-09"
   title: "下北沢寅会"
@@ -127,7 +192,11 @@
   time_open: "21:05"
   time_start: "21:15"
   time_end: "22:15"
-  url: "https://x.gd/PtZKw"
+  
+  
+  url: "https://x.gd/PtZKw
+"
+  
 
 - date: "2025-10-08"
   title: "人生　～生き様を感じるネタライブ～"
@@ -135,7 +204,10 @@
   time_open: "18:50"
   time_start: "19:00"
   time_end: "20:00"
+  
+  
   url: "https://x.gd/n9OcO"
+  
 
 - date: "2025-11-02"
   title: "神保町よしもとお笑いライブ"
@@ -143,7 +215,10 @@
   time_open: "10:45"
   time_start: "11:00"
   time_end: "12:30"
+  
+  
   url: "https://x.gd/JaGzR"
+  
 
 - date: "2025-11-02"
   title: "神保町よしもとお笑いライブ"
@@ -151,7 +226,10 @@
   time_open: "13:00"
   time_start: "13:15"
   time_end: "14:45"
+  
+  
   url: "https://x.gd/3hXcF"
+  
 
 - date: "2025-11-02"
   title: "神保町よしもとお笑いライブ"
@@ -159,7 +237,10 @@
   time_open: "15:15"
   time_start: "15:30"
   time_end: "17:00"
+  
+  
   url: "https://x.gd/mIKvk"
+  
 
 - date: "2025-11-07"
   title: "出張！渋谷Kiwami極LIVE in YOSHIMOTO ROPPONGI THEATER"
@@ -167,7 +248,10 @@
   time_open: "15:45"
   time_start: "16:00"
   time_end: "17:00"
+  
+  
   url: "https://x.gd/CKkLL"
+  
 
 - date: "2025-11-09"
   title: "出張！渋谷よしもと漫才劇場寄席 in YOSHIMOTO ROPPONGI THEATER"
@@ -175,7 +259,10 @@
   time_open: "10:45"
   time_start: "11:00"
   time_end: "12:00"
+  
+  
   url: "https://x.gd/YeCQC"
+  
 
 - date: "2025-11-09"
   title: "出張！渋谷よしもと漫才劇場寄席 in YOSHIMOTO ROPPONGI THEATER"
@@ -183,7 +270,10 @@
   time_open: "12:30"
   time_start: "12:45"
   time_end: "13:45"
+  
+  
   url: "https://x.gd/w3ikb"
+  
 
 - date: "2025-11-14"
   title: "出張！渋谷Kiwami極LIVEプラス＋ in YOSHIMOTO ROPPONGI THEATER"
@@ -191,6 +281,8 @@
   time_open: "15:45"
   time_start: "16:00"
   time_end: "17:00"
+  
+  
   url: "https://x.gd/MPTQC"
   streaming_url: "https://x.gd/sZcN7"
 
@@ -200,6 +292,8 @@
   time_open: "16:45"
   time_start: "17:00"
   time_end: "18:00"
+  
+  
   url: "https://x.gd/2qqkX"
   streaming_url: "https://x.gd/w2QXY"
 
@@ -209,7 +303,10 @@
   time_open: "18:45"
   time_start: "19:00"
   time_end: "20:00"
+  
+  
   url: "https://x.gd/qZOVw"
+  
 
 - date: "2025-11-23"
   title: "渋谷よしもとお笑いライブ"
@@ -217,7 +314,10 @@
   time_open: "11:15"
   time_start: "11:30"
   time_end: "13:00"
+  
+  
   url: "https://x.gd/gDWu4"
+  
 
 - date: "2025-11-23"
   title: "渋谷よしもとお笑いライブ"
@@ -225,7 +325,10 @@
   time_open: "13:30"
   time_start: "13:45"
   time_end: "15:15"
+  
+  
   url: "https://x.gd/pI6zD"
+  
 
 - date: "2025-11-23"
   title: "渋谷よしもとお笑いライブ"
@@ -233,7 +336,10 @@
   time_open: "15:45"
   time_start: "16:00"
   time_end: "17:30"
+  
+  
   url: "https://x.gd/MMQr9"
+  
 
 - date: "2025-11-23"
   title: "JORDAN"
@@ -241,6 +347,8 @@
   time_open: "20:45"
   time_start: "21:00"
   time_end: "22:00"
+  
+  
   url: "https://x.gd/FTqw8"
   streaming_url: "https://x.gd/EDKs9"
 
@@ -250,6 +358,8 @@
   time_open: "20:45"
   time_start: "21:00"
   time_end: "22:00"
+  
+  
   url: "https://x.gd/nyCk4"
   streaming_url: "https://x.gd/6IEGT"
 
@@ -259,7 +369,10 @@
   time_open: "11:15"
   time_start: "11:30"
   time_end: "13:00"
+  
+  
   url: "https://x.gd/VoA3r"
+  
 
 - date: "2025-10-05"
   title: "渋谷よしもとお笑いライブ"
@@ -267,7 +380,10 @@
   time_open: "13:30"
   time_start: "13:45"
   time_end: "15:15"
+  
+  
   url: "https://x.gd/FAiq5"
+  
 
 - date: "2025-10-05"
   title: "渋谷よしもとお笑いライブ"
@@ -275,7 +391,10 @@
   time_open: "15:45"
   time_start: "16:00"
   time_end: "17:30"
+  
+  
   url: "https://x.gd/c3Ddw"
+  
 
 - date: "2025-10-13"
   title: "漫ドリル"
@@ -283,21 +402,30 @@
   time_open: "20:00"
   time_start: "20:15"
   time_end: "21:15"
+  
+  
   url: "https://x.gd/2OFIl"
+  
 
 - date: "2025-10-24"
   title: "インテイク　トークするブプレェ〜　inオペラガルニエ"
   venue: "中野Vスタジオ"
   time_open: "18:45"
   time_start: "19:00"
+  
+  
+  
   url: "https://x.gd/6FfvU"
+  
 
 - date: "2025-10-03"
   title: "渋谷Kiwami極LIVEプラス＋"
-  venue: "渋谷よしもと漫才劇場"
+  venue: "渋谷よしもと漫才劇場（東京都）"
   time_open: "16:15"
   time_start: "16:30"
   time_end: "17:30"
+  
+  
   url: "https://x.gd/UIhgO"
   streaming_url: "https://x.gd/ph4JA"
 
@@ -306,8 +434,11 @@
   venue: "セシオン杉並ホール"
   time_open: "19:30"
   time_start: "19:45"
-  time_end: ""
+  
+  
+  
   url: "https://x.gd/DvrDI"
+  
 
 - date: "2025-10-04"
   title: "神保町よしもとお笑いライブ"
@@ -315,7 +446,10 @@
   time_open: "13:00"
   time_start: "13:15"
   time_end: "14:45"
+  
+  
   url: "https://x.gd/JnN1Y"
+  
 
 - date: "2025-10-04"
   title: "神保町よしもとお笑いライブ"
@@ -323,7 +457,10 @@
   time_open: "15:15"
   time_start: "15:30"
   time_end: "17:00"
+  
+  
   url: "https://x.gd/KEBna"
+  
 
 - date: "2025-11-24"
   title: "神保町お題ネタバトル"
@@ -342,8 +479,11 @@
   venue: "雷5656会館ときわホール"
   time_open: "10:30"
   time_start: "11:00"
+  
+  
   general: "2025-10-11T10:00:00"
   url: "https://x.gd/hfCVw"
+  
 
 - date: "2025-10-26"
   title: "神保町お題ネタバトル"
@@ -351,6 +491,7 @@
   time_open: "17:45"
   time_start: "18:00"
   time_end: "19:30"
+  
   general: "2025-10-11T10:00:00"
   url: "https://x.gd/P5oUd"
   streaming_url: "https://x.gd/uWB5d"
@@ -360,8 +501,11 @@
   venue: "シアターミネルヴァ"
   time_open: "21:50"
   time_start: "22:00"
+  
+  
   general: "2025-10-12T10:00:00"
   url: "https://x.gd/lZEvU"
+  
 
 - date: "2025-10-19"
   title: "幕張土日祝ネタSP12時"
@@ -369,7 +513,10 @@
   time_open: "11:30"
   time_start: "12:00"
   time_end: "13:00"
+  
+  
   url: "https://x.gd/hVRLz"
+  
 
 - date: "2025-10-19"
   title: "幕張土日祝ネタSP14時"
@@ -377,15 +524,21 @@
   time_open: "13:30"
   time_start: "14:00"
   time_end: "15:00"
+  
+  
   url: "https://x.gd/Rt7fa"
+  
 
 - date: "2025-10-19"
-  title: "幕張土日祝ネタSP16時"
+  title: "幕張土日祝ネタSP1時"
   venue: "よしもと幕張イオンモール劇場"
   time_open: "15:30"
   time_start: "16:00"
   time_end: "17:00"
+  
+  
   url: "https://x.gd/phlHf"
+  
 
 - date: "2025-11-03"
   title: "バティオスで#ワイガヤ《2部》"
@@ -393,8 +546,10 @@
   time_open: "15:50"
   time_start: "16:10"
   time_end: "18:10"
+  
   general: "2025-10-15T21:10:00"
   url: "https://x.gd/SF11g"
+  
 
 - date: "2025-11-24"
   title: "バティオスで#ワイガヤ《2部》"
@@ -402,8 +557,10 @@
   time_open: "15:50"
   time_start: "16:10"
   time_end: "18:10"
+  
   general: "2025-10-15T22:20:00"
   url: "https://x.gd/00U7z"
+  
 
 - date: "2025-11-21"
   title: "積"
@@ -411,8 +568,10 @@
   time_open: "19:45"
   time_start: "20:00"
   time_end: "21:10"
+  
   general: "2025-10-17T23:15:00"
   url: "https://x.gd/fSd9L"
+  
 
 - date: "2025-12-06"
   title: "ゼロカランたいがpresents「俳優への道」"
@@ -558,7 +717,6 @@
   url: "https://x.gd/m5MxF"
   streaming_url: "https://x.gd/9vbJZ"
 
-
 - date: "2025-12-19"
   title: "神保町Kakeru翔SP"
   venue: "神保町よしもと漫才劇場"
@@ -569,22 +727,29 @@
   preSale_end: "2025-10-28T11:00:00"
   general: "2025-11-05T10:00:00"
   url: "https://x.gd/1pEH9"
+  
 
 - date: "2025-11-01"
   title: "R-1グランプリ東京1回戦（鈴木さん）"
   venue: "シダックスカルチャーホール"
   time_open: "11:40"
   time_start: "12:00"
+  
+  
   general: "2025-11-01T11:40:00"
   url: "https://x.gd/BuxWv"
+  
 
 - date: "2025-11-11"
   title: "蜘蛛の糸ライブ ～GET A CHANCE! Vol.15～"
   venue: "大塚ドリームシアター"
   time_open: "19:15"
   time_start: "19:30"
+  
+  
   general: "2025-10-27T10:00:00"
   url: "https://x.gd/N84Tu"
+  
 
 - date: "2025-11-15"
   title: "強炭酸漫才祭"
@@ -592,8 +757,10 @@
   time_open: "17:50"
   time_start: "18:00"
   time_end: "19:00"
+  
   general: "2025-10-27T22:10:00"
   url: "https://x.gd/zXcS2"
+  
 
 - date: "2025-11-15"
   title: "ワラヤキTV～テレビみたいなこと全部やるパート2～"
@@ -601,27 +768,32 @@
   time_open: "19:50"
   time_start: "20:00"
   time_end: "21:30"
+  
   general: "2025-10-27T22:20:00"
   url: "https://x.gd/odDZl"
-
-  general: "2025-10-27T22:20:00"
-  url: "https://x.gd/odDZl"
+  
 
 - date: "2025-11-25"
   title: "R対策ライブ"
   venue: "大塚ドリームシアター"
   time_open: "20:15"
   time_start: "20:30"
-
+  
+  
   general: "2025-10-28T10:00:00"
   url: "https://x.gd/BTCOi"
+  
 
 - date: "2025-11-04"
   title: "M-1グランプリ2025 3回戦"
   venue: "KANDA SQUARE HALL"
   time_open: "16:30"
   time_start: "17:00"
+  
+  
+  
   url: "https://x.gd/vyzHz"
+  
 
 - date: "2025-11-03"
   title: "神保町よしもとお笑いライブ"
@@ -629,7 +801,10 @@
   time_open: "10:45"
   time_start: "11:00"
   time_end: "12:30"
+  
+  
   url: "https://x.gd/DZbCd"
+  
 
 - date: "2025-12-30"
   title: "神保町よしもと漫才劇場 年末寄席SP"
@@ -637,7 +812,10 @@
   time_open: "10:45"
   time_start: "11:00"
   time_end: "12:30"
+  
+  
   url: "https://x.gd/HAOiD"
+  
 
 - date: "2025-12-30"
   title: "神保町よしもと漫才劇場 年末寄席SP"
@@ -645,7 +823,10 @@
   time_open: "13:00"
   time_start: "13:15"
   time_end: "14:45"
+  
+  
   url: "https://x.gd/z4es2"
+  
 
 - date: "2025-12-30"
   title: "神保町よしもと漫才劇場 年末寄席SP"
@@ -653,7 +834,10 @@
   time_open: "15:15"
   time_start: "15:30"
   time_end: "17:00"
+  
+  
   url: "https://x.gd/mrWKL"
+  
 
 - date: "2026-01-03"
   title: "神保町よしもとお笑いライブ お正月SP"
@@ -661,7 +845,10 @@
   time_open: "10:45"
   time_start: "11:00"
   time_end: "12:30"
+  
+  
   url: "https://x.gd/UgN1t"
+  
 
 - date: "2026-01-03"
   title: "神保町よしもとお笑いライブ お正月SP"
@@ -669,7 +856,10 @@
   time_open: "13:00"
   time_start: "13:15"
   time_end: "14:45"
+  
+  
   url: "https://x.gd/CQaUU"
+  
 
 - date: "2026-01-03"
   title: "神保町よしもとお笑いライブ お正月SP"
@@ -677,7 +867,10 @@
   time_open: "15:15"
   time_start: "15:30"
   time_end: "17:00"
+  
+  
   url: "https://x.gd/laMZr"
+  
 
 - date: "2025-12-25"
   title: "渋谷Kiwami極LIVE　冬休みSP"
@@ -685,7 +878,10 @@
   time_open: "15:45"
   time_start: "16:00"
   time_end: "17:30"
+  
+  
   url: "https://x.gd/0gcdR"
+  
 
 - date: "2026-01-01"
   title: "渋谷よしもと漫才劇場 元旦特別寄席"
@@ -693,7 +889,10 @@
   time_open: "10:45"
   time_start: "11:00"
   time_end: "12:00"
+  
+  
   url: "https://x.gd/hpLmO"
+  
 
 - date: "2026-01-01"
   title: "渋谷よしもと漫才劇場 元旦特別寄席"
@@ -701,7 +900,10 @@
   time_open: "12:30"
   time_start: "12:45"
   time_end: "13:45"
+  
+  
   url: "https://x.gd/1G8te"
+  
 
 - date: "2026-01-01"
   title: "渋谷よしもと漫才劇場 元旦特別寄席"
@@ -709,7 +911,10 @@
   time_open: "14:15"
   time_start: "14:30"
   time_end: "15:30"
+  
+  
   url: "https://x.gd/svgUF"
+  
 
 - date: "2026-01-01"
   title: "渋谷よしもと漫才劇場 元旦特別寄席"
@@ -717,7 +922,10 @@
   time_open: "16:00"
   time_start: "16:15"
   time_end: "17:15"
+  
+  
   url: "https://x.gd/Vnqlw"
+  
 
 - date: "2025-11-10"
   title: "FLASH"
@@ -725,14 +933,18 @@
   time_open: "19:45"
   time_start: "20:00"
   time_end: "21:30"
+  
+  
   url: "https://x.gd/eElEeS"
+  
 
 - date: "2025-12-02"
   title: "野方区民ホールで#ワイガヤ vol.9"
   venue: "中野区野方区民ホール"
   time_open: "19:10"
   time_start: "19:30"
-  time_end: "21:30" 
+  time_end: "21:30"
+  
   general: "2025-11-15T22:00:00"
   url: "https://x.gd/vvaxe"
   
@@ -741,25 +953,34 @@
   title: "M-1グランプリ2025 準々決勝"
   venue: "ルミネtheよしもと"
   time_open: "16:30"
-  time_start: "17:00" 
+  time_start: "17:00"
+  
+  
+  
   url: "https://x.gd/VxkDG"
+  
 
 - date: "2025-11-26"
   title: "渋谷Kiwami極LIVE"
   venue: "渋谷よしもと漫才劇場"
   time_open: "16:15"
   time_start: "16:30"
-  time_end: "17:30" 
+  time_end: "17:30"
+  
+  
   url: "https://x.gd/FY5Uu"
+  
 
 - date: "2025-11-29"
   title: "幸福の漫才"
   venue: "シアターミネルヴァ"
   time_open: "21:50"
   time_start: "22:00"
-  time_end: "23:00"  
+  time_end: "23:00"
+  
   general: "2025-11-22T10:00:00"
   url: "https://x.gd/IZBa0"
+  
 
 - date: "2025-11-22"
   title: "神保町よしもとお笑いライブ"
@@ -767,6 +988,8 @@
   time_open: "10:45"
   time_start: "11:00"
   time_end: "12:30"
+  
+  
   url: "https://x.gd/FHR0Z"
   
 
@@ -776,14 +999,21 @@
   time_open: "13:00"
   time_start: "13:15"
   time_end: "14:45"
+  
+  
   url: "https://x.gd/1dRaR"
+  
 
 - date: "2025-11-28"
   title: "ラ・ママ新人コント大会"
   venue: "渋谷La.mama"
   time_open: "18:30"
   time_start: "19:00"
+  
+  
+  
   url: "https://x.gd/m8akx"
+  
 
 - date: "2025-11-30"
   title: "渋谷よしもとお笑いライブ"
@@ -805,13 +1035,18 @@
   
   
   url: "https://x.gd/70uFQ"
+  
 
 - date: "2025-12-08"
   title: "R-1グランプリ東京1回戦（まえかずさん）"
   venue: "南大塚ホール"
   time_open: "11:40"
   time_start: "12:00"
+  
+  
+  
   url: "https://x.gd/UrQIY"
+  
 
 - date: "2026-01-06"
   title: "Elephant"
@@ -847,7 +1082,7 @@
   preSale_end: "2025-11-28T11:00:00"
   general: "2025-12-05T10:00:00"
   url: "https://x.gd/EIxhb"
-  
+  streaming_url: "https://x.gd/4WgAO"
 
 - date: "2026-01-10"
   title: "渋谷よしもとお笑いライブ"
@@ -895,7 +1130,7 @@
   preSale_end: "2025-11-28T11:00:00"
   general: "2025-12-05T10:00:00"
   url: "https://x.gd/L6PXz"
-  
+  streaming_url: "https://x.gd/rCm8m"
 
 - date: "2026-01-17"
   title: "神保町よしもとお笑いライブ"
@@ -943,7 +1178,7 @@
   preSale_end: "2025-11-28T11:00:00"
   general: "2025-12-05T10:00:00"
   url: "https://x.gd/LzMru"
-  
+  streaming_url: "https://x.gd/j39YE"
 
 - date: "2026-01-22"
   title: "渋谷Kiwami極LIVE"
@@ -967,7 +1202,7 @@
   preSale_end: "2025-11-28T11:00:00"
   general: "2025-12-05T10:00:00"
   url: "https://x.gd/yowng"
-  
+  streaming_url: "https://x.gd/mM3Nj"
 
 - date: "2026-01-24"
   title: "渋谷よしもとお笑いライブ"
@@ -1015,6 +1250,7 @@
   preSale_end: "2025-11-28T11:00:00"
   general: "2025-12-05T10:00:00"
   url: "https://x.gd/PCRo0"
+  streaming_url: "https://x.gd/uFBFm"
 
 - date: "2026-01-06"
   title: "漫才参拝"
@@ -1026,14 +1262,18 @@
   preSale_end: "2025-11-28T11:00:00"
   general: "2025-12-05T10:00:00"
   url: "https://x.gd/Gfmqy"
+  streaming_url: "https://x.gd/T5BpC"
 
 - date: "2025-11-29"
   title: "福岡よしもとお笑いライブ"
   venue: "よしもと福岡劇場"
   time_open: "11:15"
   time_start: "11:30"
-  time_end: "13:05"  
+  time_end: "13:05"
+  
+  
   url: "https://x.gd/DGl3Q"
+  
 
 - date: "2025-11-29"
   title: "福岡よしもとお笑いライブ"
@@ -1041,7 +1281,10 @@
   time_open: "13:25"
   time_start: "13:40"
   time_end: "15:15"
+  
+  
   url: "https://x.gd/ydwkk"
+  
 
 - date: "2025-11-29"
   title: "福岡よしもとお笑いライブ"
@@ -1049,21 +1292,29 @@
   time_open: "15:35"
   time_start: "15:50"
   time_end: "17:25"
+  
+  
   url: "https://x.gd/tCyGD"
+  
 
 - date: "2025-12-06"
   title: "銀河ゆめゆめ坂田トークライブ「喉が燃えている」"
   venue: "池袋西口GEKIBA"
   time_open: "11:45"
   time_start: "12:00"
+  
+  
+  
   url: "https://x.gd/rO1u1"
+  
 
 - date: "2025-12-16"
   title: "積"
   venue: "武蔵野芸能劇場"
   time_open: "19:45"
   time_start: "20:00"
-  time_end: "21:10" 
+  time_end: "21:10"
+  
   general: "2025-11-28T23:00:00"
   url: "https://x.gd/z48h3"
   
@@ -1074,9 +1325,10 @@
   time_open: "18:50"
   time_start: "19:00"
   time_end: "20:00"
+  
   general: "2025-11-28T22:50:00"
   url: "https://x.gd/0aA6C"
-
+  
 
 - date: "2025-12-04"
   title: "セカンドロット新ネタライブ「全マシ」"
@@ -1084,6 +1336,8 @@
   time_open: "18:45"
   time_start: "19:00"
   time_end: "20:15"
+  
+  
   url: "https://x.gd/Hd5E3"
   streaming_url: "https://x.gd/fAw2k"
 
@@ -1097,7 +1351,7 @@
   preSale_end: "2025-12-03T11:00:00"
   general: "2025-12-20T10:00:00"
   url: "https://x.gd/DJWE3"
-  
+  streaming_url: "https://x.gd/zQoUh"
 
 - date: "2025-12-31"
   title: "渋神大晦日2025 紅白カウントダウンパーティー ～渋谷第三部～"
@@ -1109,7 +1363,8 @@
   preSale_end: "2025-12-03T11:00:00"
   general: "2025-12-20T10:00:00"
   url: "https://x.gd/fPvA8"
-  
+  streaming_url: "https://x.gd/apKSJ"
+
 - date: "2025-12-21"
   title: "渋谷よしもとお笑いライブ"
   venue: "渋谷よしもと漫才劇場"
@@ -1141,6 +1396,7 @@
   
   
   url: "https://x.gd/R1Hob"
+  
 
 - date: "2025-12-21"
   title: "プレミアム神保町～会場だけの60分～"
@@ -1151,6 +1407,7 @@
   
   general: "2025-12-06T10:00:00"
   url: "https://x.gd/ZYwh7"
+  
 
 - date: "2025-12-26"
   title: "BEST OF マンザイチーノ2025 ~今年1番のネタをするライブ~"
@@ -1173,7 +1430,6 @@
   general: "2025-12-09T22:50:00"
   url: "https://x.gd/nCzqx"
   
-  
 
 - date: "2026-01-07"
   title: "幕明け漫才2026"
@@ -1184,6 +1440,7 @@
   
   general: "2025-12-08T22:45:00"
   url: "https://x.gd/xaZct"
+  
 
 - date: "2025-12-26"
   title: "ヨネダ2000の「こたつdeおでんOne Night Carnivalライブ　〜卵 meets 大根〜おでんの神様、この具でしょうか？」"
@@ -1194,6 +1451,7 @@
   
   general: "2025-12-09T10:00:00"
   url: "https://x.gd/7cn4m"
+  
 
 - date: "2026-01-04"
   title: "ツーナッカンno寄席"
@@ -1204,21 +1462,29 @@
   
   general: "2025-12-10T10:00:00"
   url: "https://x.gd/uD9OQ"
+  
 
 - date: "2025-12-25"
   title: "極立漫才都市 25"
   venue: "座・高円寺2"
   time_open: "18:30"
   time_start: "19:00"
-  time_end: "21:00" 
+  time_end: "21:00"
+  
+  
   url: "https://x.gd/Z60Fhh"
+  
 
-- date: "2025-01-17"
+- date: "2026-01-17"
   title: "インテイク×十九人ツーマンライブ「龍虎相打」"
   venue: "北沢タウンホール"
   time_open: "19:30"
   time_start: "20:00"
+  
+  
+  
   url: "https://x.gd/OiZ0vu"
+  streaming_url: "https://x.gd/peI3l"
 
 - date: "2026-01-26"
   title: "積"
@@ -1226,8 +1492,10 @@
   time_open: "19:45"
   time_start: "20:00"
   time_end: "21:10"
+  
   general: "2025-12-20T22:40:00"
   url: "https://x.gd/RutdO"
+  
 
 - date: "2026-01-18"
   title: "狂育"
@@ -1235,7 +1503,10 @@
   time_open: "13:45"
   time_start: "14:00"
   time_end: "15:10"
+  
+  
   url: "https://x.gd/e0Rc6"
+  
 
 - date: "2025-12-21"
   title: "マンゲキクリスマスパーティー2025"
@@ -1243,6 +1514,8 @@
   time_open: "20:30"
   time_start: "20:45"
   time_end: "21:45"
+  
+  
   url: "https://x.gd/QKBdh"
   streaming_url: "https://x.gd/3blfR"
 
@@ -1252,8 +1525,11 @@
   time_open: "12:40"
   time_start: "13:00"
   time_end: "15:00"
+  
+  
   url: "https://x.gd/kpImt"
   
+
 - date: "2026-01-25"
   title: "野方区民ホールで#ワイガヤ《1部》"
   venue: "野方区民ホール"
@@ -1274,6 +1550,18 @@
   
   general: "2025-12-27T10:00:00"
   url: "https://x.gd/oQEXd"
+  
+
+- date: "2026-01-25"
+  title: "みんなの出囃子ライブ　ジャンク編"
+  venue: "高円寺ジュンジョー"
+  time_open: "16:15"
+  time_start: "16:30"
+  time_end: "18:00"
+  
+  general: "2025-12-25T22:35:00"
+  url: "https://x.gd/flmSz"
+  
 
 - date: "2026-02-14"
   title: "神保町よしもとお笑いライブ"
@@ -1283,7 +1571,7 @@
   time_end: "14:45"
   preSale_start: "2025-12-25T11:00:00"
   preSale_end: "2025-12-28T11:00:00"
-  general: "2025-01-05T10:00:00"
+  general: "2026-01-05T10:00:00"
   url: "https://x.gd/etolP"
   
 
@@ -1295,7 +1583,7 @@
   time_end: "17:00"
   preSale_start: "2025-12-25T11:00:00"
   preSale_end: "2025-12-28T11:00:00"
-  general: "2025-01-05T10:00:00"
+  general: "2026-01-05T10:00:00"
   url: "https://x.gd/oTcrH"
   
 
@@ -1307,7 +1595,7 @@
   time_end: "21:30"
   preSale_start: "2025-12-25T11:00:00"
   preSale_end: "2025-12-28T11:00:00"
-  general: "2025-01-05T10:00:00"
+  general: "2026-01-05T10:00:00"
   url: "https://x.gd/zY6bC"
   
 
@@ -1319,7 +1607,7 @@
   time_end: "22:30"
   preSale_start: "2025-12-25T11:00:00"
   preSale_end: "2025-12-28T11:00:00"
-  general: "2025-01-05T10:00:00"
+  general: "2026-01-05T10:00:00"
   url: "https://x.gd/h7s5k"
   
 
@@ -1331,7 +1619,7 @@
   time_end: "20:15"
   preSale_start: "2025-12-25T11:00:00"
   preSale_end: "2025-12-28T11:00:00"
-  general: "2025-01-05T10:00:00"
+  general: "2026-01-05T10:00:00"
   url: "https://x.gd/ExqCI"
   
 
@@ -1343,7 +1631,7 @@
   time_end: "22:00"
   preSale_start: "2025-12-25T11:00:00"
   preSale_end: "2025-12-28T11:00:00"
-  general: "2025-01-05T10:00:00"
+  general: "2026-01-05T10:00:00"
   url: "https://x.gd/u41nH"
   
 
@@ -1355,11 +1643,11 @@
   time_end: "20:15"
   preSale_start: "2025-12-25T11:00:00"
   preSale_end: "2025-12-28T11:00:00"
-  general: "2025-01-05T10:00:00"
+  general: "2026-01-05T10:00:00"
   url: "https://x.gd/3S0Uj"
   
 
-- date: "2026-02-26"
+- date: "2026-02-24"
   title: "渋谷Kiwami極LIVE"
   venue: "渋谷よしもと漫才劇場"
   time_open: "17:00"
@@ -1367,11 +1655,11 @@
   time_end: "18:25"
   preSale_start: "2025-12-25T11:00:00"
   preSale_end: "2025-12-28T11:00:00"
-  general: "2025-01-05T10:00:00"
+  general: "2026-01-05T10:00:00"
   url: "https://x.gd/EwOBY"
   
 
-- date: "2026-02-26"
+- date: "2026-02-24"
   title: "シンクロニシティがトップとトリをやらせていただく寄席"
   venue: "渋谷よしもと漫才劇場"
   time_open: "20:45"
@@ -1379,7 +1667,7 @@
   time_end: "22:00"
   preSale_start: "2025-12-25T11:00:00"
   preSale_end: "2025-12-28T11:00:00"
-  general: "2025-01-05T10:00:00"
+  general: "2026-01-05T10:00:00"
   url: "https://x.gd/UVhgx"
   
 
@@ -1391,18 +1679,9 @@
   time_end: "12:15"
   preSale_start: "2025-12-25T11:00:00"
   preSale_end: "2025-12-28T11:00:00"
-  general: "2025-01-05T10:00:00"
+  general: "2026-01-05T10:00:00"
   url: "https://x.gd/mt2hK"
-
-- date: "2026-01-25"
-  title: "みんなの出囃子ライブ　ジャンク編"
-  venue: "高円寺ジュンジョー"
-  time_open: "16:15"
-  time_start: "16:30"
-  time_end: "18:00"
   
-  general: "2025-12-25T22:35:00"
-  url: "https://x.gd/flmSz"
 
 - date: "2026-01-30"
   title: "漫才師が好きなコント師 コント師が好きな漫才師"
@@ -1414,6 +1693,18 @@
   general: "2025-12-27T22:45:00"
   url: "https://x.gd/B7OTQ"
   
+
+- date: "2026-01-24"
+  title: "生まれてきてくれてありがとう〜芸人さんのお誕生日をお祝いするライブ1月編〜"
+  venue: ""
+  time_open: "19:40"
+  time_start: "19:50"
+  time_end: "21:30"
+  
+  
+  url: ""
+  
+
 - date: "2026-01-12"
   title: "漫ドリル"
   venue: "新宿バッシュ!!"
@@ -1423,6 +1714,7 @@
   
   general: "2025-12-28T22:45:00"
   url: "https://x.gd/OIb34"
+  
 
 - date: "2026-01-14"
   title: "小夜漫才〜THE LAST NIGHT〜"
@@ -1445,3 +1737,15 @@
   preSale_end: "2026-01-08T11:00:00"
   general: "2026-01-10T10:00:00"
   url: "https://x.gd/zpuhH"
+  
+
+- date: "2026-01-15"
+  title: "R-1グランプリ2026東京2回戦"
+  venue: "雷5656会館"
+  time_open: "10:40"
+  time_start: "11:00"
+  
+  
+  
+  url: "https://x.gd/r1rBg"
+  
