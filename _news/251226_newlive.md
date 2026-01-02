@@ -5,7 +5,7 @@ category: "LIVE"
 title: "【1/30】漫才師が好きなコント師 コント師が好きな漫才師【出演決定】"
 ---
 
-<a href="https://www.google.com/calendar/render?action=TEMPLATE&text=漫才師が好きなコント師 コント師が好きな漫才師&dates=20260130T191500/20260130T2015~3000&location=高円寺ジュンジョー" target="_blank" class="btn-calendar">
+<a href="https://www.google.com/calendar/render?action=TEMPLATE&text=漫才師が好きなコント師 コント師が好きな漫才師&dates=20260130T191500/20260130T201500&location=高円寺ジュンジョー" target="_blank" class="btn-calendar">
 <i class="fa-solid fa-calendar-check"></i> Googleカレンダーに追加
 </a>
 

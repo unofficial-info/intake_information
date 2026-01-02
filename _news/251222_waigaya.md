@@ -6,7 +6,7 @@ title: "【1/25】野方区民ホールで#ワイガヤ《1部》【出演決定
 url: "#"
 ---
 
-<a href="https://www.google.com/calendar/render?action=TEMPLATE&text=野方区民ホールで#ワイガヤ《1部》&dates=20260125T130000/20260125T150000&location=野方区民ホール" target="_blank" class="btn-calendar">
+<a href="https://www.google.com/calendar/render?action=TEMPLATE&text=野方区民ホールで%23ワイガヤ《1部》&dates=20260125T130000/20260125T150000&location=野方区民ホール" target="_blank" class="btn-calendar">
 <i class="fa-solid fa-calendar-check"></i> Googleカレンダーに追加
 </a>
 
