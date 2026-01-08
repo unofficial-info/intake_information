@@ -1779,3 +1779,48 @@
   
   general: "2026-01-08T22:55:00"
   url: "https://x.gd/0RcPM"
+
+
+- date: "2026-02-18"
+  title: "ネタタタタン vol.80"
+  venue: "GINZA ART BOX 7"
+  time_open: "21:10"
+  time_start: "21:20"
+  time_end: "22:30"
+  
+  general: "2026-01-09T22:35:00"
+  url: "https://x.gd/ynXnF"
+  
+
+- date: "2026-02-03"
+  title: "野方区民ホールで#ワイガヤ vol.12"
+  venue: "中野区野方区民ホール"
+  time_open: "19:10"
+  time_start: "19:30"
+  time_end: "21:30"
+  
+  general: "2026-01-09T21:00:00"
+  url: "https://x.gd/5eT2o"
+  
+
+- date: "2026-02-15"
+  title: "神速ティッド寄席"
+  venue: "大宮ラクーンよしもと劇場"
+  time_open: "12:15"
+  time_start: "12:30"
+  time_end: "13:30"
+  
+  general: "2026-01-11T10:00:00"
+  url: "https://x.gd/rAqWM"
+  
+
+- date: "2026-02-15"
+  title: "神速ティッドコーナー"
+  venue: "大宮ラクーンよしもと劇場"
+  time_open: "13:45"
+  time_start: "14:00"
+  time_end: "15:00"
+  
+  general: "2026-01-11T10:00:00"
+  url: "https://x.gd/BOvKc"
+  
