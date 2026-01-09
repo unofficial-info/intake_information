@@ -1824,3 +1824,56 @@
   general: "2026-01-11T10:00:00"
   url: "https://x.gd/BOvKc"
   
+- date: "2026-01-24"
+  title: "めざまし寄席"
+  venue: "ルミネtheよしもと"
+  time_open: "9:00"
+  time_start: "9:15"
+  time_end: "10:15"
+  
+  
+  url: "https://x.gd/ozKmU"
+  
+
+- date: "2026-01-11"
+  title: "神保町よしもとお笑いライブ"
+  venue: "神保町よしもと漫才劇場"
+  time_open: "10:45"
+  time_start: "11:00"
+  time_end: "12:30"
+  
+  
+  url: "https://x.gd/Zo5ZO"
+  
+
+- date: "2026-01-11"
+  title: "神保町よしもとお笑いライブ"
+  venue: "神保町よしもと漫才劇場"
+  time_open: "13:00"
+  time_start: "13:15"
+  time_end: "14:45"
+  
+  
+  url: "https://x.gd/kuOud"
+  
+
+- date: "2026-02-21"
+  title: "V-1で#ワイガヤ《2部》"
+  venue: "ハイジアV-1"
+  time_open: "15:50"
+  time_start: "16:10"
+  time_end: "18:10"
+  
+  general: "2026-01-11T22:40:00"
+  url: "https://x.gd/OI7xl"
+  
+
+- date: "2026-02-08"
+  title: "バティオスで#ワイガヤ《2部》"
+  venue: "新宿バティオス"
+  time_open: "15:50"
+  time_start: "16:10"
+  time_end: "18:10"
+  
+  general: "2026-01-11T22:10:00"
+  url: "https://x.gd/Ua5Fk"

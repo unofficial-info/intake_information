@@ -5,7 +5,7 @@ category: "LIVE"
 title: "【2/3】野方区民ホールで#ワイガヤ vol.12【出演決定】"
 ---
 
-<a href="https://www.google.com/calendar/render?action=TEMPLATE&text=野方区民ホールで#ワイガヤ vol.12&dates=20260203T193000/20260203T213000&location=中野区野方区民ホール" target="_blank" class="btn-calendar">
+<a href="https://www.google.com/calendar/render?action=TEMPLATE&text=野方区民ホールで%23ワイガヤ vol.12&dates=20260203T193000/20260203T213000&location=中野区野方区民ホール" target="_blank" class="btn-calendar">
 <i class="fa-solid fa-calendar-check"></i> Googleカレンダーに追加
 </a>
 
