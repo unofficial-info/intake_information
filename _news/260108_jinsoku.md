@@ -18,6 +18,9 @@ title: "【2/15】神速ティッドライブ【出演決定】"
 <i class="fa-solid fa-users"></i> タモンズ／ゴング／きっと君はくるさ／デニス／インテイク
 
 一般：1/11(日) 10:00
+<a href="https://www.google.com/calendar/render?action=TEMPLATE&text=【チケ発】神速ティッド寄席&dates=20260111T100000/20260111T100000&location=https://x.gd/rAqWM" target="_blank" class="btn-calendar">
+<i class="fa-solid fa-calendar-check"></i>
+</a>
 
 チケットの購入は<a href="https://x.gd/rAqWM" target="_blank">こちら</a>
 
@@ -36,6 +39,9 @@ title: "【2/15】神速ティッドライブ【出演決定】"
 <i class="fa-solid fa-users"></i> タモンズ／ゴング／きっと君はくるさ／デニス／インテイク
 
 一般：1/11(日) 10:00
+<a href="https://www.google.com/calendar/render?action=TEMPLATE&text=【チケ発】神速ティッドコーナー&dates=20260111T100000/20260111T100000&location=https://x.gd/BOvKc" target="_blank" class="btn-calendar">
+<i class="fa-solid fa-calendar-check"></i>
+</a>
 
 チケットの購入は<a href="https://x.gd/BOvKc" target="_blank">こちら</a>
 

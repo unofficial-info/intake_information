@@ -18,5 +18,8 @@ title: "【2/8】バティオスで#ワイガヤ《2部》【出演決定】"
 <i class="fa-solid fa-users"></i> あなたとネ / 井上鬼塚 / インテイク / カフカノ / ぎょねこ / 狛犬 / サノライブ / さんだる / ジャンク / スパイシーガーリック / 寺田寛明 / 徳原旅行 / フランツ / 豆鉄砲 / まんじゅう大帝国 / ライオンロック / 香呑
 
 一般：1/11(日) 22:10
+<a href="https://www.google.com/calendar/render?action=TEMPLATE&text=【チケ発】バティオスで%23ワイガヤ《2部》&dates=20260111T221000/20260111T221000&location=https://x.gd/Ua5Fk" target="_blank" class="btn-calendar">
+<i class="fa-solid fa-calendar-check"></i>
+</a>
 
 チケットの購入は<a href="https://x.gd/Ua5Fk" target="_blank">こちら</a>

@@ -18,5 +18,8 @@ title: "【2/1】竹内が呼んでいる【出演決定】"
 <i class="fa-solid fa-users"></i> オッパショ石、めぞん、インテイク、ナチョス。、まんじゅう大帝国 竹内一希
 
 一般：1/10(土) 23:00
+<a href="https://www.google.com/calendar/render?action=TEMPLATE&text=【チケ発】竹内が呼んでいる&dates=20260110T230000/20260110T230000&location=https://x.gd/lanc0" target="_blank" class="btn-calendar">
+<i class="fa-solid fa-calendar-check"></i>
+</a>
 
 チケットの購入は<a href="https://x.gd/lanc0" target="_blank">こちら</a>
