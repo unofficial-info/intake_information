@@ -1980,3 +1980,35 @@
   
   general: "2026-01-16T12:30:00"
   url: "https://x.gd/MwLzY"
+
+- date: "2026-02-03"
+  title: "チーノの「偏見がスゴい人が出てくるネタ」ライブ"
+  venue: "新宿バッシュ"
+  time_open: "21:00"
+  time_start: "21:15"
+  time_end: "22:15"
+  
+  general: "2026-01-18T22:40:00"
+  url: "https://x.gd/Ju8XC"
+  
+
+- date: "2026-02-10"
+  title: "マンザイチーノ"
+  venue: "新宿バティオス"
+  time_open: "18:45"
+  time_start: "19:00"
+  time_end: "20:30"
+  
+  general: "2026-01-18T23:00:00"
+  url: "https://x.gd/3iLiU"
+  
+
+- date: "2026-02-10"
+  title: "チーノの浴衣de漫才"
+  venue: "新宿バティオス"
+  time_open: "20:45"
+  time_start: "21:00"
+  time_end: "22:00"
+  
+  general: "2026-01-18T23:10:00"
+  url: "https://x.gd/eRr5w"
