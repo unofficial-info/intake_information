@@ -2044,7 +2044,7 @@
   general: "2026-01-23T22:45:00"
   url: "https://x.gd/Odszn"
 
-  - date: "2026-02-13"
+- date: "2026-02-13"
   title: "積"
   venue: "方南会館"
   time_open: "19:45"
@@ -2071,8 +2071,7 @@
   venue: "高円寺ジュンジョー"
   time_open: "21:05"
   time_start: "21:25"
-  time_end: "22:15"
-  
+  time_end: "22:15" 
   general: "2026-01-24T22:50:00"
   url: "https://x.gd/l71P0"
   
