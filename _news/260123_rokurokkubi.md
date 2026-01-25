@@ -2,7 +2,7 @@
 layout: post
 date: 2026-01-23 20:00:00 + 0900
 category: "LIVE"
-title: "【2/26】ろくろっ首【出演決定】"
+title: "【2/26】ろくろっ首【新ユニットライブ開催決定】"
 ---
 
 <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=ろくろっ首&dates=20260226T220000/20260226T230000&location=シアターミネルヴァ" target="_blank" class="btn-calendar">
