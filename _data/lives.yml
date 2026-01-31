@@ -2203,3 +2203,25 @@
   
   general: "2026-01-26T22:45:00"
   url: "https://x.gd/VVfFh"
+
+- date: "2026-02-13"
+  title: "渋谷Kiwami極LIVE"
+  venue: "渋谷よしもと漫才劇場"
+  time_open: "17:00"
+  time_start: "17:15"
+  time_end: "18:25"
+  
+  
+  url: "https://x.gd/7vCQD"
+  
+
+- date: "2026-02-15"
+  title: "9番ちゃんを喜ばせたい！～ずっとボケてるなかむらしゅんとゲラな低音ツッコミ京極の嬉しそうな顔を沢山見たい人の為のライブ～"
+  venue: "大宮ラクーンよしもと劇場"
+  time_open: "17:15"
+  time_start: "17:30"
+  time_end: "18:30"
+  
+  
+  url: "https://x.gd/9TzuH"
+  streaming_url: "https://x.gd/xfxIi"
