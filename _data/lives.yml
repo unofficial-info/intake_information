@@ -1023,3 +1023,29 @@
   time_end: "15:45"
 
   url: "https://x.gd/f4FYw"
+- date: "2026-03-14"
+  title: "渋谷よしもとお笑いライブ"
+  venue: "渋谷よしもと漫才劇場"
+  time_open: "10:45"
+  time_start: "11:00"
+  time_end: "12:15"
+
+  url: "https://x.gd/1owVM"
+
+- date: "2026-03-14"
+  title: "渋谷よしもとお笑いライブ"
+  venue: "渋谷よしもと漫才劇場"
+  time_open: "12:30"
+  time_start: "12:45"
+  time_end: "14:00"
+
+  url: "https://x.gd/r7cfB"
+
+- date: "2026-03-14"
+  title: "渋谷よしもとお笑いライブ"
+  venue: "渋谷よしもと漫才劇場"
+  time_open: "14:15"
+  time_start: "14:30"
+  time_end: "15:45"
+
+  url: "https://x.gd/WSiWW"
