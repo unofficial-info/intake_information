@@ -1165,3 +1165,33 @@
   time_start: "19:00"
 
   url: "https://x.gd/SfnXg"
+
+- date: "2026-04-16"
+  title: "神速ティッド寄席"
+  venue: "大宮ラクーンよしもと劇場"
+  time_open: "18:50"
+  time_start: "19:00"
+  time_end: "20:00"
+
+  general: "2026-03-11T10:00:00"
+  url: "https://x.gd/SBEDN"
+
+- date: "2026-04-16"
+  title: "神速ティッドコーナー"
+  venue: "大宮ラクーンよしもと劇場"
+  time_open: "20:20"
+  time_start: "20:30"
+  time_end: "21:30"
+
+  general: "2026-03-11T10:00:00"
+  url: "https://x.gd/dTqhS"
+
+- date: "2026-03-25"
+  title: "言の葉の寄席"
+  venue: "高円寺ジュンジョー"
+  time_open: "19:00"
+  time_start: "19:15"
+  time_end: "20:15"
+
+  general: "2026-03-08T22:50:00"
+  url: "https://x.gd/k34Nr"
