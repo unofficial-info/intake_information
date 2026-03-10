@@ -1,0 +1,17 @@
+---
+layout: default
+---
+
+<div class="content-section">
+  <h1 class="section-title">NEWS - {{ page.category }}</h1>
+
+  {% include category_links.html %}
+
+  <ul class="news-list">
+    {% for item in paginator.posts %}
+      {% include news_item.html item=item %}
+    {% endfor %}
+  </ul>
+
+  {% include pagination.html %}
+</div>

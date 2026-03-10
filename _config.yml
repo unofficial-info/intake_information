@@ -25,7 +25,17 @@ pagination:
   sort_field: "date"
   sort_reverse: true
   permalink: "/news/page/:num/"
+
 # autopages: のブロックは、このファイルから完全に削除する
+autopages:
+  enabled: true
+  categories:
+    enabled: true
+    slugify_mode: "ascii"
+    permalink: "/news/category/:cat/"
+    layouts:
+      - "news_by_category.html"
+    title: ":cat - NEWS"
 
 # --- 日付が変わったことの判定を東京基準で行う　--- #
 timezone: Asia/Tokyo
