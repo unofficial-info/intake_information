@@ -18,6 +18,26 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Fetch latest video IDs from YouTube API
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+        run: |
+          SAKITABE_ID=$(curl -s "https://www.googleapis.com/youtube/v3/search?key=${YOUTUBE_API_KEY}&channelId=UC_UeGVVguLN0Kl9mXc5r81g&part=snippet&order=date&maxResults=1&type=video" | python3 -c "import sys,json; print(json.load(sys.stdin)['items'][0]['id']['videoId'])")
+          MEKZ_ID=$(curl -s "https://www.googleapis.com/youtube/v3/search?key=${YOUTUBE_API_KEY}&channelId=UCp8g7yFGOAJzIYD2F10ycHQ&part=snippet&order=date&maxResults=1&type=video" | python3 -c "import sys,json; print(json.load(sys.stdin)['items'][0]['id']['videoId'])")
+
+          python3 << EOF
+          import os, re
+          sakitabe_id = "$SAKITABE_ID"
+          mekz_id = "$MEKZ_ID"
+          with open("_includes/video_section.html", "r", encoding="utf-8") as f:
+              content = f.read()
+          content = re.sub(r'(id="sakitabe".*?<iframe[^>]*src="https://www\.youtube\.com/embed/)[^?]+(\?[^"]*")', lambda m: m.group(1) + sakitabe_id + m.group(2), content, flags=re.DOTALL)
+          content = re.sub(r'(id="mekz".*?<iframe[^>]*src="https://www\.youtube\.com/embed/)[^?]+(\?[^"]*")', lambda m: m.group(1) + mekz_id + m.group(2), content, flags=re.DOTALL)
+          with open("_includes/video_section.html", "w", encoding="utf-8") as f:
+              f.write(content)
+          print(f"Updated: sakitabe={sakitabe_id}, mekz={mekz_id}")
+          EOF
+
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
