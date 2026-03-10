@@ -22,7 +22,7 @@ title: "【3/28】神保町よしもとお笑いライブ【出演決定】"
 <i class="fa-solid fa-calendar-check"></i>
 </a>
 
-チケットの購入は<a href="https://x.gd/83H8s" target="_blank">こちら</a>
+チケットの購入は<a href="https://x.gd/6rUWu" target="_blank">こちら</a>
 
 <hr class="line1">
 
