@@ -13,7 +13,7 @@ title: "【4/22】ネタタタタン vol.89【出演決定】"
 
 <i class="fa-regular fa-calendar-alt"></i> 2026/4/22(水)<br>
 <i class="fa-regular fa-clock"></i> 開場 21:10 ｜開演 21:20 ｜終演 22:30 <br>
-<i class="fa-solid fa-location-dot"></i> <br>
+<i class="fa-solid fa-location-dot"></i> GINZA ART BOX 7<br>
 <i class="fa-solid fa-ticket"></i> 当日現金支払 ¥2,000<br>
 <i class="fa-solid fa-users"></i> 井上鬼塚 / インテイク / オフローズ / カフカノ / それもまた一興 / ド桜 / 破壊ありがとう / ぺ / 百恵 / リバーマン
 
