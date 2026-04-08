@@ -2478,7 +2478,7 @@
   preSale_end: "2026-02-27T11:00:00"
   general: "2026-03-05T10:00:00"
   url: "https://x.gd/GgAqr"
-  
+  streaming_url: "https://x.gd/PS6xX"
 
 - date: "2026-04-05"
   title: "神保町マンゲキお笑いライブ"
@@ -2526,7 +2526,7 @@
   preSale_end: "2026-02-27T11:00:00"
   general: "2026-03-05T10:00:00"
   url: "https://x.gd/racd9b"
-  
+  streaming_url: "https://x.gd/74Pq5"
 
 - date: "2026-04-09"
   title: "JORDAN"
@@ -2538,7 +2538,7 @@
   preSale_end: "2026-02-27T11:00:00"
   general: "2026-03-05T10:00:00"
   url: "https://x.gd/y01KZ"
-  
+  streaming_url: "https://x.gd/gRXyf"
 
 - date: "2026-04-10"
   title: "ウルトラ漫"
@@ -2550,7 +2550,7 @@
   preSale_end: "2026-02-27T11:00:00"
   general: "2026-03-05T10:00:00"
   url: "https://x.gd/ZZ72V"
-  
+  streaming_url: "https://x.gd/xRA7W"
 
 - date: "2026-04-19"
   title: "神保町マンゲキお笑いライブ"
@@ -2610,7 +2610,7 @@
   preSale_end: "2026-02-27T11:00:00"
   general: "2026-03-05T10:00:00"
   url: "https://x.gd/c27l1"
-  
+  streaming_url: "https://x.gd/TnwNR"
 
 - date: "2026-04-26"
   title: "スマイルキング"
@@ -2622,7 +2622,7 @@
   preSale_end: "2026-02-27T11:00:00"
   general: "2026-03-05T10:00:00"
   url: "https://x.gd/AFQC4"
-  
+  streaming_url: "https://x.gd/OjeO3"
 
 - date: "2026-04-26"
   title: "Elephant"
@@ -2646,7 +2646,7 @@
   preSale_end: "2026-03-02T11:00"
   general: "2026-03-07T10:00:00"
   url: "https://x.gd/85myN"
-  
+  streaming_url: "https://x.gd/KHZ9s"
 
 - date: "2026-04-29"
   title: "渋谷マンゲキお笑いライブ ゴールデンウィークSP"
@@ -2880,7 +2880,7 @@
   
   general: "2026-03-11T10:00:00"
   url: "https://x.gd/SBEDN"
-  
+  streaming_url: "https://x.gd/52pQh"
 
 - date: "2026-04-16"
   title: "神速ティッドコーナー"
@@ -2891,7 +2891,7 @@
   
   general: "2026-03-11T10:00:00"
   url: "https://x.gd/dTqhS"
-  
+  streaming_url: "https://x.gd/Lo8ez"
 
 - date: "2026-03-25"
   title: "言の葉の寄席"
@@ -2925,6 +2925,7 @@
   general: "2026-03-10T22:50:00"
   url: "https://x.gd/G5yvBG"
   
+
 - date: "2026-03-28"
   title: "神保町よしもとお笑いライブ"
   venue: "神保町よしもと漫才劇場"
@@ -2948,7 +2949,7 @@
   
 
 - date: "2026-04-12"
-  title: "(出演キャンセル)バティオスで#ワイガヤ《3部》"
+  title: "バティオスで#ワイガヤ《3部》"
   venue: "新宿バティオス"
   time_open: "19:00"
   time_start: "19:20"
@@ -2957,6 +2958,7 @@
   general: "2026-03-11T22:20:00"
   url: "https://x.gd/hKxEf"
   
+
 - date: "2026-03-22"
   title: "幕張土日祝ネタ１２時"
   venue: "よしもと幕張イオンモール劇場"
@@ -2989,7 +2991,8 @@
   preSale_end: "2026-03-16T11:00:00"
   general: "2026-03-18T10:00:00"
   url: "https://x.gd/ssV8X"
-  
+  streaming_url: "https://x.gd/mirA0"
+
 - date: "2026-03-25"
   title: "その噺、凶暴につき"
   venue: "ハイジアV-1"
@@ -3011,6 +3014,7 @@
   
   url: "https://x.gd/1d9BS"
   
+
 - date: "2026-04-04"
   title: "グレイモヤβ Special"
   venue: "座・高円寺2"
@@ -3021,6 +3025,7 @@
   
   url: "https://x.gd/luCZo"
   
+
 - date: "2026-04-11"
   title: "まぐろ兄弟の荒波漁船　第六夜"
   venue: "シアターミネルヴァ"
@@ -3030,6 +3035,7 @@
   
   general: "2026-03-17T21:30:00"
   url: "https://x.gd/Y550x"
+  
 
 - date: "2026-04-28"
   title: "囲碁将棋のオマエらには負けねえから！～後輩漫才師たちとガチネタバトル～"
@@ -3074,6 +3080,7 @@
   general: "2026-03-18T23:15:00"
   url: "https://x.gd/D17Fx"
   
+
 - date: "2026-03-31"
   title: "たのしいトークライブ アトラスオオカブト"
   venue: "シアターミネルヴァ"
@@ -3084,6 +3091,7 @@
   general: "2026-03-22T23:00:00"
   url: "https://x.gd/HvUuK"
   
+
 - date: "2026-04-20"
   title: "イワサキトークライブ～やめな？～"
   venue: "高円寺ジュンジョー"
@@ -3136,7 +3144,7 @@
   venue: "渋谷よしもと漫才劇場"
   time_open: "14:15"
   time_start: "14:30"
-  time_end: "15:45"
+  time_end: "15;45"
   preSale_start: "2026-03-25T11:00:00"
   preSale_end: "2026-03-28T11:00:00"
   general: "2026-04-05T10:00:00"
@@ -3357,6 +3365,7 @@
   general: "2026-03-25T22:40:00"
   url: "https://x.gd/No71E"
   
+
 - date: "2026-04-02"
   title: "渋谷Kiwami極LIVEプラス＋"
   venue: "渋谷よしもと漫才劇場"
@@ -3377,6 +3386,7 @@
   
   general: "2026-03-29T22:45:00"
   url: "https://x.gd/LVqye"
+  
 
 - date: "2026-05-27"
   title: "スマイルキング"
@@ -3389,6 +3399,7 @@
   general: "2026-04-05T10:00:00"
   url: "https://x.gd/N3mlZ"
   
+
 - date: "2026-05-01"
   title: "怒り 七怒目"
   venue: "としま区民センター　多目的ホール"
@@ -3409,6 +3420,7 @@
   
   general: "2026-04-03T23:00:00"
   url: "https://x.gd/XNrQA4"
+  
 
 - date: "2026-04-17"
   title: "渋谷Kiwami極LIVE"
@@ -3419,6 +3431,7 @@
   
   
   url: "https://x.gd/tt5hw"
+  
 
 - date: "2026-05-06"
   title: "ろくろっ首"
@@ -3429,3 +3442,15 @@
   
   general: "2026-04-08T23:00:00"
   url: "https://x.gd/477jW"
+  
+
+- date: "2026-05-13"
+  title: "渋谷よしもと漫才劇場　寄席SP"
+  venue: "渋谷よしもと漫才劇場"
+  time_open: "16:45"
+  time_start: "17:00"
+  time_end: "18:15"
+  
+  
+  url: "https://x.gd/nGLLI"
+  
