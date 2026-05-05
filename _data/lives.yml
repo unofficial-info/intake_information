@@ -3812,4 +3812,25 @@
   
   general: "2026-05-06T10:00:00"
   url: "https://x.gd/8YKbG"
+
+- date: "2026-06-28"
+  title: "ろくろっ首"
+  venue: "シアターミネルヴァ"
+  time_open: "21:45"
+  time_start: "22:00"
+  time_end: "23:00"
+  
+  general: "2026-05-06T23:00:00"
+  url: "https://x.gd/Yw4mn"
+  
+
+- date: "2026-06-15"
+  title: "積"
+  venue: "武蔵野芸能劇場"
+  time_open: "19:45"
+  time_start: "20:00"
+  time_end: "21:10"
+  
+  general: "2026-05-06T22:40:00"
+  url: "https://x.gd/NvVOa"
   
