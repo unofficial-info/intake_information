@@ -1,5 +1,5 @@
 ---
-layout: main_live_post
+# layout: main_live_post
 title: "絶対漫才！"
 
 summary:

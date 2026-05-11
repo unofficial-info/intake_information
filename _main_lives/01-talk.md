@@ -1,5 +1,4 @@
 ---
-layout: main_live_post
 title: "トークするブプレェ〜"
 
 summary:

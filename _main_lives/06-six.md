@@ -1,5 +1,5 @@
 ---
-layout: main_live_post
+# layout: main_live_post
 title: "ろくろっ首"
 
 summary:
