@@ -23,18 +23,10 @@ layout: default
   </div>
 
   <div class="main-live-details-box">
-    <h3><i class="fa-solid fa-ticket"></i> 次回の開催予定</h3>
-    {% if page.next_events.size > 0 %}
-      <div class="next-event-list">
-        {% for event in page.next_events %}
-          <a href="{{ event.url }}" class="button primary-action" target="_blank" rel="noopener noreferrer">
-            {{ event.date | date: "%Y年%m月%d日" }} のチケット情報
-          </a>
-        {% endfor %}
-      </div>
-    {% else %}
-      <p>次回の開催予定は未定です。</p>
-    {% endif %}
+    <h3><i class="fa-solid fa-ticket"></i> 今後の開催予定</h3>
+    <div class="next-event-list">
+      {% include upcoming_events.html include_title=page.summary.title %}
+    </div>
   </div>
 
   <div style="text-align: center; margin-top: 40px;">

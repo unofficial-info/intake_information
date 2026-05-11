@@ -7,8 +7,6 @@ summary:
   venue: "外箱"
   performers:
     - "インテイク"
-
-next_events:
 ---
 
 インテイクのトークライブです。<br>

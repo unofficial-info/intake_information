@@ -1,0 +1,27 @@
+{% assign current_date_num = "now" | date: "%Y%m%d" | plus: 0 %}
+{% assign has_upcoming = false %}
+
+{% for event in site.data.lives %}
+  {% if event.title == include_title %}
+    {% assign event_date_num = event.date | remove: "-" | plus: 0 %}
+    {% if event_date_num >= current_date_num %}
+      {% assign has_upcoming = true %}
+      <div class="upcoming-event-item" style="margin-bottom: 15px;">
+        <p style="margin-bottom: 5px;">
+          <strong>{{ event.date | date: "%Y年%m月%d日" }}</strong><br>
+          {{ event.time_start }} 開演（{{ event.venue }}）
+        </p>
+        <a href="{{ event.url }}" class="button primary-action" target="_blank" rel="noopener noreferrer">
+          チケット情報
+        </a>
+        {% if event.streaming_url %}
+          <a href="{{ event.streaming_url }}" class="button" target="_blank">配信チケット</a>
+        {% endif %}
+      </div>
+    {% endif %}
+  {% endif %}
+{% endfor %}
+
+{% unless has_upcoming %}
+  <p>次回の開催予定は未定です。</p>
+{% endunless %}
