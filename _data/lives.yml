@@ -3843,4 +3843,58 @@
   
   
   url: "https://x.gd/VoNxA"
+
+- date: "2026-05-15"
+  title: "幕張平日ネタＳＰ１４時"
+  venue: "よしもと幕張イオンモール劇場"
+  time_open: "13:30"
+  time_start: "14:00"
+  time_end: "15:00"
+  
+  
+  url: "https://x.gd/UghYi"
+  
+
+- date: "2026-05-15"
+  title: "幕張平日ネタＳＰ１６時"
+  venue: "よしもと幕張イオンモール劇場"
+  time_open: "15:30"
+  time_start: "16:00"
+  time_end: "17:00"
+  
+  
+  url: "https://x.gd/vBD5V"
+  
+
+- date: "2026-06-29"
+  title: "MANZAI寄席"
+  venue: "なかのZERO　小ホール"
+  time_open: "16:00"
+  time_start: "16:30"
+  
+  
+  general: "2026-05-14T10:00:00"
+  url: "https://x.gd/mY9tO"
+  
+
+- date: "2026-06-08"
+  title: "ほやほや〜新ネタ限定ライブ〜"
+  venue: "なかの芸能小劇場"
+  time_open: "19:30"
+  time_start: "19:45"
+  time_end: "21:20"
+  
+  general: "2026-05-13T22:30:00"
+  url: "https://x.gd/1Flwx"
+  
+
+- date: "2026-06-09"
+  title: "武蔵野芸能劇場で#ワイガヤ〜ネタ祭り〜"
+  venue: "武蔵野芸能劇場"
+  time_open: "19:10"
+  time_start: "19:30"
+  time_end: "21:30"
+  
+  general: "2026-06-09T19:10:00"
+  url: "https://x.gd/FufGO"
   
