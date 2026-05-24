@@ -1,4 +1,5 @@
 ---
+# layout: main_live_post
 title: "トークするブプレェ〜"
 
 summary:
@@ -6,6 +7,11 @@ summary:
   venue: "外箱"
   performers:
     - "インテイク"
+  tags:
+    objective:
+      - トーク
+    subjective:
+      - アットホーム
 ---
 
 インテイクのトークライブです。<br>
