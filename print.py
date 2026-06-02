@@ -159,9 +159,13 @@ mainlive_template = """
 # ─────────────────────────────────────────────
 
 def generate_calendar_html(lives_data):
-    """lives.ymlのデータからカレンダーHTMLを生成"""
+    """lives.ymlのデータからカレンダーHTMLを生成（今月以降のみ）"""
+    import calendar, json
 
-    # 月ごとにグループ化
+    now        = datetime.now()
+    this_month = (now.year, now.month)
+
+    # 月ごとにグループ化（今月以降のみ）
     months = {}
     for live in lives_data:
         date_str = live.get("date", "")
@@ -169,44 +173,87 @@ def generate_calendar_html(lives_data):
             continue
         try:
             d = datetime.strptime(str(date_str), "%Y-%m-%d")
-        except:
+        except Exception:
             continue
         key = (d.year, d.month)
+        if key < this_month:
+            continue
         months.setdefault(key, []).append((d, live))
 
-    # 月ソート
     sorted_months = sorted(months.keys())
+    WEEKDAYS_JP   = ["月", "火", "水", "木", "金", "土", "日"]
 
-    # 月ごとのカレンダーブロック
+    # JS用ライブデータ（日付 → ライブ詳細リスト）
+    # Python側で time_start 昇順ソート（安定ソート → 同時刻は追加順を維持）
+    event_map = {}
+    for (year, month), day_lives in months.items():
+        for d, live in day_lives:
+            key_str = d.strftime("%Y-%m-%d")
+            event_map.setdefault(key_str, []).append({
+                "title":           live.get("title", ""),
+                "venue":           live.get("venue", ""),
+                "time_open":       live.get("time_open", ""),
+                "time_start":      live.get("time_start", ""),
+                "time_end":        live.get("time_end", ""),
+                "advance":         live.get("advance", ""),
+                "door":            live.get("door", ""),
+                "url":             live.get("url", "#"),
+                "streaming_url":   live.get("streaming_url", ""),
+                "streaming_price": live.get("streaming_price", ""),
+            })
+
+    # time_start で昇順ソート（安定ソートなので同時刻は追加順）
+    for key_str in event_map:
+        event_map[key_str].sort(key=lambda x: x.get("time_start", "") or "")
+
     month_blocks = []
-    WEEKDAYS_JP = ["月", "火", "水", "木", "金", "土", "日"]
-
     for (year, month) in sorted_months:
-        import calendar
-        cal = calendar.monthcalendar(year, month)
-        day_events = {}
+        cal       = calendar.monthcalendar(year, month)
+        day_lives = {}
         for d, live in months[(year, month)]:
-            day_events.setdefault(d.day, []).append(live)
+            day_lives.setdefault(d.day, []).append(live)
 
-        rows = []
-        for week in cal:
-            cells = []
+        rows_html = ""
+        for week_idx, week in enumerate(cal):
+            week_id = f"{year}-{month:02d}-w{week_idx}"
+            cells   = []
+
             for i, day in enumerate(week):
                 is_sat = (i == 5)
                 is_sun = (i == 6)
                 if day == 0:
                     cells.append('<td class="empty"></td>')
                 else:
-                    day_class = "saturday" if is_sat else ("sunday" if is_sun else "")
-                    events_html = ""
-                    for live in day_events.get(day, []):
-                        title = live.get("title", "")
-                        url = live.get("url", "#")
-                        time_start = live.get("time_start", "")
-                        streaming = "🎥" if live.get("streaming_url") else ""
-                        events_html += f'<a href="{url}" target="_blank" class="event-pill">{streaming}{time_start} {title}</a>'
-                    cells.append(f'<td class="{day_class}"><span class="day-num">{day}</span>{events_html}</td>')
-            rows.append("<tr>" + "".join(cells) + "</tr>")
+                    day_class   = "saturday" if is_sat else ("sunday" if is_sun else "")
+                    lives_today = day_lives.get(day, [])
+                    date_id     = f"{year}-{month:02d}-{day:02d}"
+                    has_event   = "has-event" if lives_today else ""
+
+                    # ピル（time_start昇順はevent_map側で済んでいるがday_livesも揃える）
+                    sorted_today = sorted(lives_today, key=lambda x: x.get("time_start","") or "")
+                    pills_html   = ""
+                    for live in sorted_today:
+                        t = live.get("time_start", "")
+                        n = live.get("title", "")
+                        s = "🎥 " if live.get("streaming_url") else ""
+                        pills_html += f'<span class="event-pill">{s}{t} {n}</span>'
+
+                    click = (f'onclick="toggleDetail(\'{date_id}\',\'{week_id}\')"'
+                             if lives_today else "")
+                    cells.append(
+                        f'<td class="{day_class} {has_event}" {click} data-week="{week_id}">'
+                        f'<span class="day-num">{day}</span>'
+                        f'{pills_html}'
+                        f'</td>'
+                    )
+
+            # 週行 + その直後に詳細パネル行（週ごと）
+            rows_html += "<tr>" + "".join(cells) + "</tr>\n"
+            rows_html += (
+                f'<tr class="detail-row" id="detail-{week_id}">'
+                f'<td colspan="7"><div class="detail-panel"><div class="detail-inner"></div></div></td>'
+                f'</tr>\n'
+            )
 
         month_label = f"{year}年{month}月"
         month_blocks.append(f"""
@@ -219,12 +266,13 @@ def generate_calendar_html(lives_data):
       </tr>
     </thead>
     <tbody>
-      {''.join(rows)}
+      {rows_html}
     </tbody>
   </table>
 </div>""")
 
     all_months_html = "\n".join(month_blocks)
+    event_map_json  = json.dumps(event_map, ensure_ascii=False)
 
     html = f"""<!DOCTYPE html>
 <html lang="ja">
@@ -248,6 +296,7 @@ def generate_calendar_html(lives_data):
     --sun: #ff6b7a;
     --event-bg: #1e2a14;
     --event-border: #3a5a18;
+    --detail-bg: #12181e;
   }}
 
   * {{ box-sizing: border-box; margin: 0; padding: 0; }}
@@ -260,7 +309,6 @@ def generate_calendar_html(lives_data):
     padding: 2rem 1rem 4rem;
   }}
 
-  /* ノイズテクスチャ */
   body::before {{
     content: '';
     position: fixed;
@@ -307,13 +355,11 @@ def generate_calendar_html(lives_data):
     gap: 3rem;
   }}
 
-  .month-block {{
-    animation: fadeUp 0.4s ease both;
-  }}
+  .month-block {{ animation: fadeUp 0.4s ease both; }}
 
   @keyframes fadeUp {{
     from {{ opacity: 0; transform: translateY(16px); }}
-    to {{ opacity: 1; transform: translateY(0); }}
+    to   {{ opacity: 1; transform: translateY(0); }}
   }}
 
   .month-title {{
@@ -323,11 +369,11 @@ def generate_calendar_html(lives_data):
     font-family: 'DM Mono', monospace;
     letter-spacing: 0.12em;
     margin-bottom: 0.75rem;
-    padding-left: 0.25rem;
     border-left: 3px solid var(--accent2);
     padding-left: 0.75rem;
   }}
 
+  /* ── テーブル ── */
   .cal-table {{
     width: 100%;
     border-collapse: collapse;
@@ -357,13 +403,17 @@ def generate_calendar_html(lives_data):
     transition: background 0.15s;
   }}
 
-  .cal-table tbody td:hover {{
-    background: #1c1c22;
+  .cal-table tbody td.has-event {{ cursor: pointer; }}
+  .cal-table tbody td.has-event:hover {{ background: #1c1c22; }}
+  .cal-table tbody td.active-day {{
+    background: #1a2010;
+    border-color: var(--accent);
   }}
 
   .cal-table tbody td.empty {{
     background: var(--bg);
     border-color: #1a1a1f;
+    cursor: default;
   }}
 
   .cal-table tbody td.saturday .day-num {{ color: var(--sat); }}
@@ -374,32 +424,124 @@ def generate_calendar_html(lives_data):
     font-family: 'DM Mono', monospace;
     font-size: 0.72rem;
     color: var(--muted);
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.35rem;
     font-weight: 500;
   }}
 
+  .has-event .day-num {{ color: var(--text); }}
+
+  /* ── イベントピル ── */
   .event-pill {{
     display: block;
-    font-size: 0.65rem;
-    line-height: 1.4;
+    font-size: 0.62rem;
+    line-height: 1.5;
     color: var(--accent);
     background: var(--event-bg);
-    border: 1px solid var(--event-border);
-    border-radius: 3px;
-    padding: 0.15rem 0.35rem;
-    margin-bottom: 0.25rem;
-    text-decoration: none;
+    border-left: 2px solid var(--accent);
+    border-radius: 2px;
+    padding: 0.1rem 0.3rem;
+    margin-bottom: 0.2rem;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    transition: background 0.15s, border-color 0.15s;
   }}
 
-  .event-pill:hover {{
-    background: #2a3d18;
-    border-color: var(--accent);
-    color: #d8ff70;
+  /* ── 詳細パネル行（週ごと） ── */
+  .detail-row td {{
+    padding: 0 !important;
+    border: none !important;
+    background: transparent !important;
   }}
+
+  /* max-height アニメーション: JS が scrollHeight をセットする */
+  .detail-panel {{
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.38s ease;
+    background: var(--detail-bg);
+    border-left: 1px solid var(--border);
+    border-right: 1px solid var(--border);
+    border-top: 2px solid var(--accent);
+    border-bottom: 1px solid var(--border);
+    border-radius: 0 0 6px 6px;
+  }}
+
+  .detail-inner {{
+    padding: 1.25rem 1.5rem 1.5rem;
+  }}
+
+  .detail-date-label {{
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--accent2);
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+  }}
+
+  .detail-cards {{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }}
+
+  .detail-card {{
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1rem 1.25rem;
+  }}
+
+  .detail-card-title {{
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+  }}
+
+  .detail-card-row {{
+    font-size: 0.78rem;
+    color: var(--text);
+    line-height: 2;
+    display: flex;
+    gap: 0.5rem;
+  }}
+
+  .detail-card-row .label {{
+    color: var(--muted);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    min-width: 4em;
+    padding-top: 0.15em;
+  }}
+
+  .detail-card-link {{
+    display: inline-block;
+    margin-top: 0.75rem;
+    font-size: 0.75rem;
+    color: var(--accent2);
+    text-decoration: none;
+    border: 1px solid var(--accent2);
+    border-radius: 3px;
+    padding: 0.2rem 0.6rem;
+    transition: background 0.15s;
+  }}
+
+  .detail-card-link:hover {{ background: rgba(96,200,240,0.12); }}
+
+  .detail-card-stream {{
+    display: inline-block;
+    margin-top: 0.5rem;
+    margin-left: 0.5rem;
+    font-size: 0.75rem;
+    color: #f0c060;
+    text-decoration: none;
+    border: 1px solid #f0c060;
+    border-radius: 3px;
+    padding: 0.2rem 0.6rem;
+    transition: background 0.15s;
+  }}
+
+  .detail-card-stream:hover {{ background: rgba(240,192,96,0.12); }}
 
   footer {{
     max-width: 1100px;
@@ -415,8 +557,9 @@ def generate_calendar_html(lives_data):
 
   @media (max-width: 700px) {{
     .cal-table {{ font-size: 0.55rem; }}
-    .event-pill {{ font-size: 0.55rem; }}
+    .event-pill {{ font-size: 0.5rem; }}
     header h1 {{ font-size: 1.4rem; }}
+    .detail-inner {{ padding: 0.75rem 1rem 1rem; }}
   }}
 </style>
 </head>
@@ -429,6 +572,92 @@ def generate_calendar_html(lives_data):
 {all_months_html}
 </div>
 <footer>generated by print.py · {datetime.now().strftime('%Y-%m-%d %H:%M')}</footer>
+
+<script>
+const EVENT_MAP = {event_map_json};
+let activeDate  = null;   // 現在開いている日付
+let activeWeek  = null;   // 現在開いている週ID
+
+function toggleDetail(dateId, weekId) {{
+  const panelRow  = document.getElementById('detail-' + weekId);
+  const panel     = panelRow ? panelRow.querySelector('.detail-panel') : null;
+  const inner     = panel   ? panel.querySelector('.detail-inner')     : null;
+  const clickedTd = document.querySelector(`[data-week="${{weekId}}"][onclick*="${{dateId}}"]`);
+
+  // ── 同じ日をもう一度 → 閉じる ──
+  if (activeDate === dateId) {{
+    closePanel(panel, clickedTd);
+    activeDate = activeWeek = null;
+    return;
+  }}
+
+  // ── 別パネルが開いていたら閉じる ──
+  if (activeWeek && activeWeek !== weekId) {{
+    const prevRow = document.getElementById('detail-' + activeWeek);
+    const prevPanel = prevRow ? prevRow.querySelector('.detail-panel') : null;
+    if (prevPanel) closePanel(prevPanel, null);
+  }}
+  document.querySelectorAll('.active-day').forEach(td => td.classList.remove('active-day'));
+
+  // ── コンテンツを書き込む ──
+  const lives = EVENT_MAP[dateId] || [];
+  if (!lives.length || !inner) return;
+
+  const [year, month, day] = dateId.split('-');
+  const d  = new Date(year, month - 1, day);
+  const wd = ['日','月','火','水','木','金','土'][d.getDay()];
+  const label = `${{parseInt(year)}}/${{parseInt(month)}}/${{parseInt(day)}}(${{wd}})`;
+
+  let cards = '';
+  lives.forEach(live => {{
+    const ticketInfo = live.advance && live.door
+      ? `前売 ¥${{live.advance}} ｜ 当日 ¥${{live.door}}`
+      : live.advance ? `前売 ¥${{live.advance}}`
+      : live.door    ? `当日 ¥${{live.door}}`
+      : '';
+
+    const timeStr = live.time_open
+      ? `開場 ${{live.time_open}} ｜ 開演 ${{live.time_start}}${{live.time_end ? ' ｜ 終演 ' + live.time_end : ''}}`
+      : `開演 ${{live.time_start}}${{live.time_end ? ' ｜ 終演 ' + live.time_end : ''}}`;
+
+    const streamBtn = live.streaming_url
+      ? `<a href="${{live.streaming_url}}" target="_blank" class="detail-card-stream">🎥 配信${{live.streaming_price ? ' ¥' + live.streaming_price : ''}}</a>`
+      : '';
+
+    cards += `
+<div class="detail-card">
+  <div class="detail-card-title">${{live.title}}</div>
+  <div class="detail-card-row"><span class="label">時間</span>${{timeStr}}</div>
+  <div class="detail-card-row"><span class="label">会場</span>${{live.venue}}</div>
+  ${{ticketInfo ? `<div class="detail-card-row"><span class="label">料金</span>${{ticketInfo}}</div>` : ''}}
+  <a href="${{live.url}}" target="_blank" class="detail-card-link">🎫 チケット</a>
+  ${{streamBtn}}
+</div>`;
+  }});
+
+  inner.innerHTML = `
+    <div class="detail-date-label">${{label}}</div>
+    <div class="detail-cards">${{cards}}</div>`;
+
+  // ── 高さを scrollHeight で動的に設定してアニメーション ──
+  openPanel(panel, clickedTd);
+  activeDate = dateId;
+  activeWeek = weekId;
+}}
+
+function openPanel(panel, td) {{
+  if (!panel) return;
+  // 一瞬 auto にして scrollHeight を取得 → max-height にセット
+  panel.style.maxHeight = panel.querySelector('.detail-inner').scrollHeight + 'px';
+  td && td.classList.add('active-day');
+}}
+
+function closePanel(panel, td) {{
+  if (!panel) return;
+  panel.style.maxHeight = '0';
+  td && td.classList.remove('active-day');
+}}
+</script>
 </body>
 </html>"""
     return html

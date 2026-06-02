@@ -20,6 +20,7 @@
     --sun: #ff6b7a;
     --event-bg: #1e2a14;
     --event-border: #3a5a18;
+    --detail-bg: #12181e;
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -32,7 +33,6 @@
     padding: 2rem 1rem 4rem;
   }
 
-  /* ノイズテクスチャ */
   body::before {
     content: '';
     position: fixed;
@@ -79,13 +79,11 @@
     gap: 3rem;
   }
 
-  .month-block {
-    animation: fadeUp 0.4s ease both;
-  }
+  .month-block { animation: fadeUp 0.4s ease both; }
 
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(16px); }
-    to { opacity: 1; transform: translateY(0); }
+    to   { opacity: 1; transform: translateY(0); }
   }
 
   .month-title {
@@ -95,11 +93,11 @@
     font-family: 'DM Mono', monospace;
     letter-spacing: 0.12em;
     margin-bottom: 0.75rem;
-    padding-left: 0.25rem;
     border-left: 3px solid var(--accent2);
     padding-left: 0.75rem;
   }
 
+  /* ── テーブル ── */
   .cal-table {
     width: 100%;
     border-collapse: collapse;
@@ -129,13 +127,17 @@
     transition: background 0.15s;
   }
 
-  .cal-table tbody td:hover {
-    background: #1c1c22;
+  .cal-table tbody td.has-event { cursor: pointer; }
+  .cal-table tbody td.has-event:hover { background: #1c1c22; }
+  .cal-table tbody td.active-day {
+    background: #1a2010;
+    border-color: var(--accent);
   }
 
   .cal-table tbody td.empty {
     background: var(--bg);
     border-color: #1a1a1f;
+    cursor: default;
   }
 
   .cal-table tbody td.saturday .day-num { color: var(--sat); }
@@ -146,32 +148,124 @@
     font-family: 'DM Mono', monospace;
     font-size: 0.72rem;
     color: var(--muted);
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.35rem;
     font-weight: 500;
   }
 
+  .has-event .day-num { color: var(--text); }
+
+  /* ── イベントピル ── */
   .event-pill {
     display: block;
-    font-size: 0.65rem;
-    line-height: 1.4;
+    font-size: 0.62rem;
+    line-height: 1.5;
     color: var(--accent);
     background: var(--event-bg);
-    border: 1px solid var(--event-border);
-    border-radius: 3px;
-    padding: 0.15rem 0.35rem;
-    margin-bottom: 0.25rem;
-    text-decoration: none;
+    border-left: 2px solid var(--accent);
+    border-radius: 2px;
+    padding: 0.1rem 0.3rem;
+    margin-bottom: 0.2rem;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    transition: background 0.15s, border-color 0.15s;
   }
 
-  .event-pill:hover {
-    background: #2a3d18;
-    border-color: var(--accent);
-    color: #d8ff70;
+  /* ── 詳細パネル行（週ごと） ── */
+  .detail-row td {
+    padding: 0 !important;
+    border: none !important;
+    background: transparent !important;
   }
+
+  /* max-height アニメーション: JS が scrollHeight をセットする */
+  .detail-panel {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.38s ease;
+    background: var(--detail-bg);
+    border-left: 1px solid var(--border);
+    border-right: 1px solid var(--border);
+    border-top: 2px solid var(--accent);
+    border-bottom: 1px solid var(--border);
+    border-radius: 0 0 6px 6px;
+  }
+
+  .detail-inner {
+    padding: 1.25rem 1.5rem 1.5rem;
+  }
+
+  .detail-date-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--accent2);
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+  }
+
+  .detail-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .detail-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1rem 1.25rem;
+  }
+
+  .detail-card-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+  }
+
+  .detail-card-row {
+    font-size: 0.78rem;
+    color: var(--text);
+    line-height: 2;
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .detail-card-row .label {
+    color: var(--muted);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    min-width: 4em;
+    padding-top: 0.15em;
+  }
+
+  .detail-card-link {
+    display: inline-block;
+    margin-top: 0.75rem;
+    font-size: 0.75rem;
+    color: var(--accent2);
+    text-decoration: none;
+    border: 1px solid var(--accent2);
+    border-radius: 3px;
+    padding: 0.2rem 0.6rem;
+    transition: background 0.15s;
+  }
+
+  .detail-card-link:hover { background: rgba(96,200,240,0.12); }
+
+  .detail-card-stream {
+    display: inline-block;
+    margin-top: 0.5rem;
+    margin-left: 0.5rem;
+    font-size: 0.75rem;
+    color: #f0c060;
+    text-decoration: none;
+    border: 1px solid #f0c060;
+    border-radius: 3px;
+    padding: 0.2rem 0.6rem;
+    transition: background 0.15s;
+  }
+
+  .detail-card-stream:hover { background: rgba(240,192,96,0.12); }
 
   footer {
     max-width: 1100px;
@@ -187,129 +281,18 @@
 
   @media (max-width: 700px) {
     .cal-table { font-size: 0.55rem; }
-    .event-pill { font-size: 0.55rem; }
+    .event-pill { font-size: 0.5rem; }
     header h1 { font-size: 1.4rem; }
+    .detail-inner { padding: 0.75rem 1rem 1rem; }
   }
 </style>
 </head>
 <body>
 <header>
   <h1>ライブスケジュール</h1>
-  <span class="subtitle">LIVE SCHEDULE — 2026.05.29 更新</span>
+  <span class="subtitle">LIVE SCHEDULE — 2026.06.01 更新</span>
 </header>
 <div class="calendar-wrapper">
-
-<div class="month-block">
-  <h2 class="month-title">2025年10月</h2>
-  <table class="cal-table">
-    <thead>
-      <tr>
-        <th class="">月</th><th class="">火</th><th class="">水</th><th class="">木</th><th class="">金</th><th class="saturday">土</th><th class="sunday">日</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td class="empty"></td><td class="empty"></td><td class=""><span class="day-num">1</span></td><td class=""><span class="day-num">2</span><a href="https://x.gd/j0B9LF" target="_blank" class="event-pill">19:15 言の葉の寄席</a></td><td class=""><span class="day-num">3</span><a href="https://x.gd/UIhgO" target="_blank" class="event-pill">🎥16:30 渋谷Kiwami極LIVEプラス＋</a></td><td class="saturday"><span class="day-num">4</span><a href="https://x.gd/iQNSm" target="_blank" class="event-pill">20:30 渋谷3分漫才ナイト</a><a href="https://x.gd/JnN1Y" target="_blank" class="event-pill">13:15 神保町よしもとお笑いライブ</a><a href="https://x.gd/KEBna" target="_blank" class="event-pill">15:30 神保町よしもとお笑いライブ</a></td><td class="sunday"><span class="day-num">5</span><a href="https://x.gd/VoA3r" target="_blank" class="event-pill">11:30 渋谷よしもとお笑いライブ</a><a href="https://x.gd/FAiq5" target="_blank" class="event-pill">13:45 渋谷よしもとお笑いライブ</a><a href="https://x.gd/c3Ddw" target="_blank" class="event-pill">16:00 渋谷よしもとお笑いライブ</a></td></tr><tr><td class=""><span class="day-num">6</span></td><td class=""><span class="day-num">7</span></td><td class=""><span class="day-num">8</span><a href="https://x.gd/n9OcO" target="_blank" class="event-pill">19:00 人生　～生き様を感じるネタライブ～</a></td><td class=""><span class="day-num">9</span><a href="https://x.gd/PtZKw " target="_blank" class="event-pill">21:15 下北沢寅会</a><a href="https://x.gd/PtZKw " target="_blank" class="event-pill">21:15 下北沢寅会</a><a href="https://x.gd/PtZKw " target="_blank" class="event-pill">21:15 下北沢寅会</a></td><td class=""><span class="day-num">10</span></td><td class="saturday"><span class="day-num">11</span></td><td class="sunday"><span class="day-num">12</span><a href="https://x.gd/gDTSA" target="_blank" class="event-pill">🎥15:50 グランドバトルEAST 第六部</a></td></tr><tr><td class=""><span class="day-num">13</span><a href="https://x.gd/mx6Th" target="_blank" class="event-pill">11:30 渋谷よしもとお笑いライブ</a><a href="https://x.gd/dFq27" target="_blank" class="event-pill">13:45 渋谷よしもとお笑いライブ</a><a href="https://x.gd/tCQE0" target="_blank" class="event-pill">16:00 渋谷よしもとお笑いライブ</a><a href="https://x.gd/2OFIl" target="_blank" class="event-pill">20:15 漫ドリル</a></td><td class=""><span class="day-num">14</span></td><td class=""><span class="day-num">15</span><a href="https://x.gd/hfCVw" target="_blank" class="event-pill">11:00 M-1グランプリ2025 2回戦</a></td><td class=""><span class="day-num">16</span></td><td class=""><span class="day-num">17</span></td><td class="saturday"><span class="day-num">18</span><a href="https://x.gd/XLIQR" target="_blank" class="event-pill">11:00 神保町よしもとお笑いライブ</a><a href="https://x.gd/U2mdd" target="_blank" class="event-pill">13:15 神保町よしもとお笑いライブ</a><a href="https://x.gd/6tEC8" target="_blank" class="event-pill">15:30 神保町よしもとお笑いライブ</a></td><td class="sunday"><span class="day-num">19</span><a href="https://x.gd/lZEvU" target="_blank" class="event-pill">22:00 幸福の漫才</a><a href="https://x.gd/hVRLz" target="_blank" class="event-pill">12:00 幕張土日祝ネタSP12時</a><a href="https://x.gd/Rt7fa" target="_blank" class="event-pill">14:00 幕張土日祝ネタSP14時</a><a href="https://x.gd/phlHf" target="_blank" class="event-pill">16:00 幕張土日祝ネタSP1時</a></td></tr><tr><td class=""><span class="day-num">20</span></td><td class=""><span class="day-num">21</span></td><td class=""><span class="day-num">22</span><a href="https://x.gd/Ayzai" target="_blank" class="event-pill">🎥17:00 神保町Kakeru翔SPプラス＋</a><a href="https://x.gd/m7KbZ" target="_blank" class="event-pill">19:00 Elephant</a></td><td class=""><span class="day-num">23</span></td><td class=""><span class="day-num">24</span><a href="https://x.gd/6FfvU" target="_blank" class="event-pill">19:00 インテイク　トークするブプレェ〜　inオペラガルニエ</a></td><td class="saturday"><span class="day-num">25</span><a href="https://x.gd/q4sDm" target="_blank" class="event-pill">13:00 V-1で#ワイガヤ《1部》</a></td><td class="sunday"><span class="day-num">26</span><a href="https://x.gd/P5oUd" target="_blank" class="event-pill">🎥18:00 神保町お題ネタバトル</a></td></tr><tr><td class=""><span class="day-num">27</span><a href="https://x.gd/DvrDI" target="_blank" class="event-pill">19:45 ナユタの漫才ライブ</a></td><td class=""><span class="day-num">28</span></td><td class=""><span class="day-num">29</span><a href="https://x.gd/kvHLco" target="_blank" class="event-pill">16:30 渋谷Kiwami極LIVE</a><a href="https://x.gd/N0CfT" target="_blank" class="event-pill">🎥21:00 スマイルキング</a></td><td class=""><span class="day-num">30</span><a href="https://x.gd/p3Frz" target="_blank" class="event-pill">20:00 積</a></td><td class=""><span class="day-num">31</span><a href="https://x.gd/qrEO4" target="_blank" class="event-pill">16:30 渋谷Kiwami極LIVE</a><a href="https://x.gd/4o5Kr" target="_blank" class="event-pill">🎥18:45 JORDAN</a></td><td class="empty"></td><td class="empty"></td></tr>
-    </tbody>
-  </table>
-</div>
-
-<div class="month-block">
-  <h2 class="month-title">2025年11月</h2>
-  <table class="cal-table">
-    <thead>
-      <tr>
-        <th class="">月</th><th class="">火</th><th class="">水</th><th class="">木</th><th class="">金</th><th class="saturday">土</th><th class="sunday">日</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td class="empty"></td><td class="empty"></td><td class="empty"></td><td class="empty"></td><td class="empty"></td><td class="saturday"><span class="day-num">1</span><a href="https://x.gd/BuxWv" target="_blank" class="event-pill">12:00 R-1グランプリ東京1回戦（鈴木さん）</a></td><td class="sunday"><span class="day-num">2</span><a href="https://x.gd/JaGzR" target="_blank" class="event-pill">11:00 神保町よしもとお笑いライブ</a><a href="https://x.gd/3hXcF" target="_blank" class="event-pill">13:15 神保町よしもとお笑いライブ</a><a href="https://x.gd/mIKvk" target="_blank" class="event-pill">15:30 神保町よしもとお笑いライブ</a></td></tr><tr><td class=""><span class="day-num">3</span><a href="https://x.gd/SF11g" target="_blank" class="event-pill">16:10 バティオスで#ワイガヤ《2部》</a><a href="https://x.gd/DZbCd" target="_blank" class="event-pill">11:00 神保町よしもとお笑いライブ</a></td><td class=""><span class="day-num">4</span><a href="https://x.gd/vyzHz" target="_blank" class="event-pill">17:00 M-1グランプリ2025 3回戦</a></td><td class=""><span class="day-num">5</span></td><td class=""><span class="day-num">6</span></td><td class=""><span class="day-num">7</span><a href="https://x.gd/CKkLL" target="_blank" class="event-pill">16:00 出張！渋谷Kiwami極LIVE in YOSHIMOTO ROPPONGI THEATER</a></td><td class="saturday"><span class="day-num">8</span></td><td class="sunday"><span class="day-num">9</span><a href="https://x.gd/YeCQC" target="_blank" class="event-pill">11:00 出張！渋谷よしもと漫才劇場寄席 in YOSHIMOTO ROPPONGI THEATER</a><a href="https://x.gd/w3ikb" target="_blank" class="event-pill">12:45 出張！渋谷よしもと漫才劇場寄席 in YOSHIMOTO ROPPONGI THEATER</a></td></tr><tr><td class=""><span class="day-num">10</span><a href="https://x.gd/eElEeS" target="_blank" class="event-pill">20:00 FLASH</a></td><td class=""><span class="day-num">11</span><a href="https://x.gd/N84Tu" target="_blank" class="event-pill">19:30 蜘蛛の糸ライブ ～GET A CHANCE! Vol.15～</a></td><td class=""><span class="day-num">12</span></td><td class=""><span class="day-num">13</span></td><td class=""><span class="day-num">14</span><a href="https://x.gd/MPTQC" target="_blank" class="event-pill">🎥16:00 出張！渋谷Kiwami極LIVEプラス＋ in YOSHIMOTO ROPPONGI THEATER</a></td><td class="saturday"><span class="day-num">15</span><a href="https://x.gd/zXcS2" target="_blank" class="event-pill">18:00 強炭酸漫才祭</a><a href="https://x.gd/odDZl" target="_blank" class="event-pill">20:00 ワラヤキTV～テレビみたいなこと全部やるパート2～</a></td><td class="sunday"><span class="day-num">16</span></td></tr><tr><td class=""><span class="day-num">17</span><a href="https://x.gd/VxkDG" target="_blank" class="event-pill">17:00 M-1グランプリ2025 準々決勝</a></td><td class=""><span class="day-num">18</span></td><td class=""><span class="day-num">19</span><a href="https://x.gd/2qqkX" target="_blank" class="event-pill">🎥17:00 神保町Kakeru翔SPプラス＋</a><a href="https://x.gd/qZOVw" target="_blank" class="event-pill">19:00 Elephant</a></td><td class=""><span class="day-num">20</span></td><td class=""><span class="day-num">21</span><a href="https://x.gd/fSd9L" target="_blank" class="event-pill">20:00 積</a></td><td class="saturday"><span class="day-num">22</span><a href="https://x.gd/FHR0Z" target="_blank" class="event-pill">11:00 神保町よしもとお笑いライブ</a><a href="https://x.gd/1dRaR" target="_blank" class="event-pill">13:15 神保町よしもとお笑いライブ</a></td><td class="sunday"><span class="day-num">23</span><a href="https://x.gd/gDWu4" target="_blank" class="event-pill">11:30 渋谷よしもとお笑いライブ</a><a href="https://x.gd/pI6zD" target="_blank" class="event-pill">13:45 渋谷よしもとお笑いライブ</a><a href="https://x.gd/MMQr9" target="_blank" class="event-pill">16:00 渋谷よしもとお笑いライブ</a><a href="https://x.gd/FTqw8" target="_blank" class="event-pill">🎥21:00 JORDAN</a></td></tr><tr><td class=""><span class="day-num">24</span><a href="https://x.gd/nymBD" target="_blank" class="event-pill">🎥20:00 神保町お題ネタバトル</a><a href="https://x.gd/00U7z" target="_blank" class="event-pill">16:10 バティオスで#ワイガヤ《2部》</a></td><td class=""><span class="day-num">25</span><a href="https://x.gd/BTCOi" target="_blank" class="event-pill">20:30 R対策ライブ</a></td><td class=""><span class="day-num">26</span><a href="https://x.gd/nyCk4" target="_blank" class="event-pill">🎥21:00 スマイルキング</a><a href="https://x.gd/FY5Uu" target="_blank" class="event-pill">16:30 渋谷Kiwami極LIVE</a></td><td class=""><span class="day-num">27</span></td><td class=""><span class="day-num">28</span><a href="https://x.gd/m8akx" target="_blank" class="event-pill">19:00 ラ・ママ新人コント大会</a></td><td class="saturday"><span class="day-num">29</span><a href="https://x.gd/IZBa0" target="_blank" class="event-pill">22:00 幸福の漫才</a><a href="https://x.gd/DGl3Q" target="_blank" class="event-pill">11:30 福岡よしもとお笑いライブ</a><a href="https://x.gd/ydwkk" target="_blank" class="event-pill">13:40 福岡よしもとお笑いライブ</a><a href="https://x.gd/tCyGD" target="_blank" class="event-pill">15:50 福岡よしもとお笑いライブ</a></td><td class="sunday"><span class="day-num">30</span><a href="https://x.gd/hmINa" target="_blank" class="event-pill">11:30 渋谷よしもとお笑いライブ</a><a href="https://x.gd/70uFQ" target="_blank" class="event-pill">16:00 渋谷よしもとお笑いライブ</a></td></tr>
-    </tbody>
-  </table>
-</div>
-
-<div class="month-block">
-  <h2 class="month-title">2025年12月</h2>
-  <table class="cal-table">
-    <thead>
-      <tr>
-        <th class="">月</th><th class="">火</th><th class="">水</th><th class="">木</th><th class="">金</th><th class="saturday">土</th><th class="sunday">日</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td class=""><span class="day-num">1</span></td><td class=""><span class="day-num">2</span><a href="https://x.gd/vvaxe" target="_blank" class="event-pill">19:30 野方区民ホールで#ワイガヤ vol.9</a></td><td class=""><span class="day-num">3</span></td><td class=""><span class="day-num">4</span><a href="https://x.gd/Hd5E3" target="_blank" class="event-pill">🎥19:00 セカンドロット新ネタライブ「全マシ」</a></td><td class=""><span class="day-num">5</span></td><td class="saturday"><span class="day-num">6</span><a href="https://x.gd/ajwzO" target="_blank" class="event-pill">🎥16:15 ゼロカランたいがpresents「俳優への道」</a><a href="https://x.gd/rO1u1" target="_blank" class="event-pill">12:00 銀河ゆめゆめ坂田トークライブ「喉が燃えている」</a></td><td class="sunday"><span class="day-num">7</span><a href="https://x.gd/cUVAI" target="_blank" class="event-pill">11:00 神保町よしもとお笑いライブ</a><a href="https://x.gd/XSLCP" target="_blank" class="event-pill">13:15 神保町よしもとお笑いライブ</a><a href="https://x.gd/GxcWz" target="_blank" class="event-pill">15:30 神保町よしもとお笑いライブ</a></td></tr><tr><td class=""><span class="day-num">8</span><a href="https://x.gd/iolTs" target="_blank" class="event-pill">20:45 時事ネタ漫才NEWS38</a><a href="https://x.gd/UrQIY" target="_blank" class="event-pill">12:00 R-1グランプリ東京1回戦（まえかずさん）</a></td><td class=""><span class="day-num">9</span><a href="https://x.gd/PrHyU" target="_blank" class="event-pill">🎥21:00 絶対漫才！</a></td><td class=""><span class="day-num">10</span><a href="https://x.gd/siNUk" target="_blank" class="event-pill">🎥21:00 スマイルキング</a></td><td class=""><span class="day-num">11</span><a href="https://x.gd/XGoZz" target="_blank" class="event-pill">19:00 Elephant</a></td><td class=""><span class="day-num">12</span><a href="https://x.gd/kKVKb" target="_blank" class="event-pill">🎥16:30 渋谷Kiwami極LIVEプラス＋</a></td><td class="saturday"><span class="day-num">13</span><a href="https://x.gd/AA9h7" target="_blank" class="event-pill">🎥13:25 グランドバトルEAST 第二部</a></td><td class="sunday"><span class="day-num">14</span></td></tr><tr><td class=""><span class="day-num">15</span></td><td class=""><span class="day-num">16</span><a href="https://x.gd/z48h3" target="_blank" class="event-pill">20:00 積</a></td><td class=""><span class="day-num">17</span></td><td class=""><span class="day-num">18</span><a href="https://x.gd/bVjFe" target="_blank" class="event-pill">🎥18:45 JORDAN</a><a href="https://x.gd/m5MxF" target="_blank" class="event-pill">🎥21:00 ペーパーミカボRPG</a></td><td class=""><span class="day-num">19</span><a href="https://x.gd/1pEH9" target="_blank" class="event-pill">17:00 神保町Kakeru翔SP</a></td><td class="saturday"><span class="day-num">20</span></td><td class="sunday"><span class="day-num">21</span><a href="https://x.gd/QJpG6" target="_blank" class="event-pill">11:30 渋谷よしもとお笑いライブ</a><a href="https://x.gd/RW4KM" target="_blank" class="event-pill">13:45 渋谷よしもとお笑いライブ</a><a href="https://x.gd/R1Hob" target="_blank" class="event-pill">16:00 渋谷よしもとお笑いライブ</a><a href="https://x.gd/ZYwh7" target="_blank" class="event-pill">18:30 プレミアム神保町～会場だけの60分～</a><a href="https://x.gd/QKBdh" target="_blank" class="event-pill">🎥20:45 マンゲキクリスマスパーティー2025</a></td></tr><tr><td class=""><span class="day-num">22</span><a href="https://x.gd/nCzqx" target="_blank" class="event-pill">22:00 アケガラスのネタライブ Spit!Spit!Spit!</a></td><td class=""><span class="day-num">23</span><a href="https://x.gd/0aA6C" target="_blank" class="event-pill">19:00 なかよぴ寄席</a></td><td class=""><span class="day-num">24</span></td><td class=""><span class="day-num">25</span><a href="https://x.gd/0gcdR" target="_blank" class="event-pill">16:00 渋谷Kiwami極LIVE　冬休みSP</a><a href="https://x.gd/Z60Fhh" target="_blank" class="event-pill">19:00 極立漫才都市 25</a></td><td class=""><span class="day-num">26</span><a href="https://x.gd/NZ67I" target="_blank" class="event-pill">11:00 BEST OF マンザイチーノ2025 ~今年1番のネタをするライブ~</a><a href="https://x.gd/7cn4m" target="_blank" class="event-pill">19:00 ヨネダ2000の「こたつdeおでんOne Night Carnivalライブ　〜卵 meets 大根〜おでんの神様、この具でしょうか？」</a></td><td class="saturday"><span class="day-num">27</span></td><td class="sunday"><span class="day-num">28</span></td></tr><tr><td class=""><span class="day-num">29</span></td><td class=""><span class="day-num">30</span><a href="https://x.gd/HAOiD" target="_blank" class="event-pill">11:00 神保町よしもと漫才劇場 年末寄席SP</a><a href="https://x.gd/z4es2" target="_blank" class="event-pill">13:15 神保町よしもと漫才劇場 年末寄席SP</a><a href="https://x.gd/mrWKL" target="_blank" class="event-pill">15:30 神保町よしもと漫才劇場 年末寄席SP</a></td><td class=""><span class="day-num">31</span><a href="https://x.gd/DJWE3" target="_blank" class="event-pill">🎥13:00 渋神大晦日2025 紅白カウントダウンパーティー ～渋谷第一部～</a><a href="https://x.gd/fPvA8" target="_blank" class="event-pill">🎥19:00 渋神大晦日2025 紅白カウントダウンパーティー ～渋谷第三部～</a></td><td class="empty"></td><td class="empty"></td><td class="empty"></td><td class="empty"></td></tr>
-    </tbody>
-  </table>
-</div>
-
-<div class="month-block">
-  <h2 class="month-title">2026年1月</h2>
-  <table class="cal-table">
-    <thead>
-      <tr>
-        <th class="">月</th><th class="">火</th><th class="">水</th><th class="">木</th><th class="">金</th><th class="saturday">土</th><th class="sunday">日</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td class="empty"></td><td class="empty"></td><td class="empty"></td><td class=""><span class="day-num">1</span><a href="https://x.gd/hpLmO" target="_blank" class="event-pill">11:00 渋谷よしもと漫才劇場 元旦特別寄席</a><a href="https://x.gd/1G8te" target="_blank" class="event-pill">12:45 渋谷よしもと漫才劇場 元旦特別寄席</a><a href="https://x.gd/svgUF" target="_blank" class="event-pill">14:30 渋谷よしもと漫才劇場 元旦特別寄席</a><a href="https://x.gd/Vnqlw" target="_blank" class="event-pill">16:15 渋谷よしもと漫才劇場 元旦特別寄席</a></td><td class=""><span class="day-num">2</span></td><td class="saturday"><span class="day-num">3</span><a href="https://x.gd/UgN1t" target="_blank" class="event-pill">11:00 神保町よしもとお笑いライブ お正月SP</a><a href="https://x.gd/CQaUU" target="_blank" class="event-pill">13:15 神保町よしもとお笑いライブ お正月SP</a><a href="https://x.gd/laMZr" target="_blank" class="event-pill">15:30 神保町よしもとお笑いライブ お正月SP</a></td><td class="sunday"><span class="day-num">4</span><a href="https://x.gd/uD9OQ" target="_blank" class="event-pill">19:30 ツーナッカンno寄席</a><a href="https://x.gd/oQEXd" target="_blank" class="event-pill">20:00 ツーナッカンno寄席〜第二部〜</a></td></tr><tr><td class=""><span class="day-num">5</span></td><td class=""><span class="day-num">6</span><a href="https://x.gd/QXOzP" target="_blank" class="event-pill">21:00 Elephant</a><a href="https://x.gd/Gfmqy" target="_blank" class="event-pill">🎥19:15 漫才参拝</a></td><td class=""><span class="day-num">7</span><a href="https://x.gd/xaZct" target="_blank" class="event-pill">21:00 幕明け漫才2026</a></td><td class=""><span class="day-num">8</span><a href="https://x.gd/rpJeO" target="_blank" class="event-pill">17:00 神保町Kakeru翔SP 新春SP</a><a href="https://x.gd/EIxhb" target="_blank" class="event-pill">🎥19:15 聞け！ ～インテイク×デニスツーマンライブ～</a></td><td class=""><span class="day-num">9</span></td><td class="saturday"><span class="day-num">10</span><a href="https://x.gd/HeVDN" target="_blank" class="event-pill">11:30 渋谷よしもとお笑いライブ</a><a href="https://x.gd/yd4tg" target="_blank" class="event-pill">13:45 渋谷よしもとお笑いライブ</a><a href="https://x.gd/htfkt" target="_blank" class="event-pill">16:00 渋谷よしもとお笑いライブ</a><a href="https://x.gd/L6PXz" target="_blank" class="event-pill">🎥18:45 別府no寄席</a></td><td class="sunday"><span class="day-num">11</span><a href="https://x.gd/Zo5ZO" target="_blank" class="event-pill">11:00 神保町よしもとお笑いライブ</a><a href="https://x.gd/kuOud" target="_blank" class="event-pill">13:15 神保町よしもとお笑いライブ</a></td></tr><tr><td class=""><span class="day-num">12</span><a href="https://x.gd/kpImt" target="_blank" class="event-pill">13:00 バティオスで#ワイガヤ《1部》</a><a href="https://x.gd/OIb34" target="_blank" class="event-pill">21:30 漫ドリル</a><a href="https://x.gd/7YdKx" target="_blank" class="event-pill">🎥19:00 大宮寅会</a><a href="https://x.gd/dXQPo" target="_blank" class="event-pill">22:00 幸福の漫才</a></td><td class=""><span class="day-num">13</span></td><td class=""><span class="day-num">14</span><a href="https://x.gd/iSr3S" target="_blank" class="event-pill">19:00 小夜漫才〜THE LAST NIGHT〜</a><a href="https://x.gd/V4nKV" target="_blank" class="event-pill">20:00 マンザイチーノ</a></td><td class=""><span class="day-num">15</span><a href="https://x.gd/r1rBg" target="_blank" class="event-pill">11:00 R-1グランプリ2026東京2回戦</a></td><td class=""><span class="day-num">16</span></td><td class="saturday"><span class="day-num">17</span><a href="https://x.gd/E0wkg" target="_blank" class="event-pill">11:00 神保町よしもとお笑いライブ</a><a href="https://x.gd/58Lcu" target="_blank" class="event-pill">13:15 神保町よしもとお笑いライブ</a><a href="https://x.gd/9eiX6" target="_blank" class="event-pill">15:30 神保町よしもとお笑いライブ</a><a href="https://x.gd/OiZ0vu" target="_blank" class="event-pill">🎥20:00 インテイク×十九人ツーマンライブ「龍虎相打」</a></td><td class="sunday"><span class="day-num">18</span><a href="https://x.gd/e0Rc6" target="_blank" class="event-pill">14:00 狂育</a><a href="https://x.gd/LwDbx" target="_blank" class="event-pill">16:00 渋谷よしもとお笑いライブ</a></td></tr><tr><td class=""><span class="day-num">19</span></td><td class=""><span class="day-num">20</span></td><td class=""><span class="day-num">21</span><a href="https://x.gd/LzMru" target="_blank" class="event-pill">🎥21:00 新ネタピュートライブ</a></td><td class=""><span class="day-num">22</span><a href="https://x.gd/V8S1Q" target="_blank" class="event-pill">17:15 渋谷Kiwami極LIVE</a><a href="https://x.gd/yowng" target="_blank" class="event-pill">🎥19:15 JORDAN</a></td><td class=""><span class="day-num">23</span></td><td class="saturday"><span class="day-num">24</span><a href="https://x.gd/R0NSv" target="_blank" class="event-pill">11:30 渋谷よしもとお笑いライブ</a><a href="https://x.gd/PMIc2" target="_blank" class="event-pill">13:45 渋谷よしもとお笑いライブ</a><a href="https://x.gd/Unr91" target="_blank" class="event-pill">16:00 渋谷よしもとお笑いライブ</a><a href="https://x.gd/KLOns" target="_blank" class="event-pill">19:50 生まれてきてくれてありがとう〜芸人さんのお誕生日をお祝いするライブ1月編〜</a><a href="https://x.gd/ozKmU" target="_blank" class="event-pill">9:15 めざまし寄席</a></td><td class="sunday"><span class="day-num">25</span><a href="https://x.gd/16ktd" target="_blank" class="event-pill">13:00 野方区民ホールで#ワイガヤ《1部》</a><a href="https://x.gd/flmSz" target="_blank" class="event-pill">16:30 みんなの出囃子ライブ　ジャンク編</a><a href="https://x.gd/3thTtQ" target="_blank" class="event-pill">20:00 漫願</a></td></tr><tr><td class=""><span class="day-num">26</span><a href="https://x.gd/RutdO" target="_blank" class="event-pill">20:00 積</a></td><td class=""><span class="day-num">27</span><a href="https://x.gd/zpuhH" target="_blank" class="event-pill">19:30 タモンズ寄席「三鷹多聞会」</a></td><td class=""><span class="day-num">28</span><a href="https://x.gd/PCRo0" target="_blank" class="event-pill">🎥19:15 スマイルキング</a></td><td class=""><span class="day-num">29</span></td><td class=""><span class="day-num">30</span><a href="https://x.gd/B7OTQ" target="_blank" class="event-pill">19:15 漫才師が好きなコント師 コント師が好きな漫才師</a></td><td class="saturday"><span class="day-num">31</span><a href="https://x.gd/0RcPM" target="_blank" class="event-pill">17:30 ハイオモ vol.52</a></td><td class="empty"></td></tr>
-    </tbody>
-  </table>
-</div>
-
-<div class="month-block">
-  <h2 class="month-title">2026年2月</h2>
-  <table class="cal-table">
-    <thead>
-      <tr>
-        <th class="">月</th><th class="">火</th><th class="">水</th><th class="">木</th><th class="">金</th><th class="saturday">土</th><th class="sunday">日</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td class="empty"></td><td class="empty"></td><td class="empty"></td><td class="empty"></td><td class="empty"></td><td class="empty"></td><td class="sunday"><span class="day-num">1</span><a href="https://x.gd/lanc0" target="_blank" class="event-pill">10:00 竹内が呼んでいる</a><a href="https://x.gd/vQIFB" target="_blank" class="event-pill">13:00 バティオスで#ワイガヤ《1部》</a></td></tr><tr><td class=""><span class="day-num">2</span></td><td class=""><span class="day-num">3</span><a href="https://x.gd/5eT2o" target="_blank" class="event-pill">19:30 野方区民ホールで#ワイガヤ vol.12</a><a href="https://x.gd/Ju8XC" target="_blank" class="event-pill">21:15 チーノの「偏見がスゴい人が出てくるネタ」ライブ</a></td><td class=""><span class="day-num">4</span><a href="https://x.gd/uM1LN" target="_blank" class="event-pill">19:00 ぐわん</a></td><td class=""><span class="day-num">5</span></td><td class=""><span class="day-num">6</span><a href="https://x.gd/l71P0" target="_blank" class="event-pill">21:15 舌鋒説法</a><a href="https://x.gd/vUk7V" target="_blank" class="event-pill">19:15 アークのネタコナ 4</a></td><td class="saturday"><span class="day-num">7</span></td><td class="sunday"><span class="day-num">8</span><a href="https://x.gd/Ua5Fk" target="_blank" class="event-pill">16:10 バティオスで#ワイガヤ《2部》</a></td></tr><tr><td class=""><span class="day-num">9</span></td><td class=""><span class="day-num">10</span><a href="https://x.gd/3iLiU" target="_blank" class="event-pill">19:00 マンザイチーノ</a><a href="https://x.gd/eRr5w" target="_blank" class="event-pill">21:00 チーノの浴衣de漫才</a></td><td class=""><span class="day-num">11</span><a href="https://x.gd/8JGJT" target="_blank" class="event-pill">19:30 グレイモヤβ</a><a href="https://x.gd/zgsrL" target="_blank" class="event-pill">15:35 ハイオモ vol.54</a><a href="https://x.gd/T367N" target="_blank" class="event-pill">13:20 （本気の）バレンタイン寄席</a></td><td class=""><span class="day-num">12</span><a href="https://x.gd/VVfFh" target="_blank" class="event-pill">19:15 魂叫 ～たまさけ～</a></td><td class=""><span class="day-num">13</span><a href="https://x.gd/YnipI" target="_blank" class="event-pill">20:00 積</a><a href="https://x.gd/7vCQD" target="_blank" class="event-pill">17:15 渋谷Kiwami極LIVE</a></td><td class="saturday"><span class="day-num">14</span><a href="https://x.gd/etolP" target="_blank" class="event-pill">13:15 神保町よしもとお笑いライブ</a><a href="https://x.gd/oTcrH" target="_blank" class="event-pill">15:30 神保町よしもとお笑いライブ</a><a href="https://x.gd/zY6bC" target="_blank" class="event-pill">20:30 Elephant</a><a href="https://x.gd/VLuoG" target="_blank" class="event-pill">11:00 神保町よしもとお笑いライブ</a></td><td class="sunday"><span class="day-num">15</span><a href="https://x.gd/h7s5k" target="_blank" class="event-pill">🎥20:45 グランドバトルEAST 第六部</a><a href="https://x.gd/rAqWM" target="_blank" class="event-pill">🎥12:30 神速ティッド寄席</a><a href="https://x.gd/BOvKc" target="_blank" class="event-pill">🎥14:00 神速ティッドコーナー</a><a href="https://x.gd/9TzuH" target="_blank" class="event-pill">🎥17:30 9番ちゃんを喜ばせたい！～ずっとボケてるなかむらしゅんとゲラな低音ツッコミ京極の嬉しそうな顔を沢山見たい人の為のライブ～</a></td></tr><tr><td class=""><span class="day-num">16</span><a href="https://x.gd/Xdwpr" target="_blank" class="event-pill">🎥20:45 神保町お題ネタバトル</a></td><td class=""><span class="day-num">17</span></td><td class=""><span class="day-num">18</span><a href="https://x.gd/ynXnF" target="_blank" class="event-pill">21:20 ネタタタタン vol.80</a></td><td class=""><span class="day-num">19</span><a href="https://x.gd/Odszn" target="_blank" class="event-pill">19:00 ネタタタタン vol.81</a></td><td class=""><span class="day-num">20</span><a href="https://x.gd/ExqCI" target="_blank" class="event-pill">🎥19:15 JORDAN</a><a href="https://x.gd/u41nH" target="_blank" class="event-pill">🎥21:00 スマイルキング</a><a href="https://x.gd/4JkEG" target="_blank" class="event-pill">🎥17:15 渋谷Kiwami極LIVEプラス＋</a></td><td class="saturday"><span class="day-num">21</span><a href="https://x.gd/OI7xl" target="_blank" class="event-pill">16:10 V-1で#ワイガヤ《2部》</a><a href="https://x.gd/MwLzY" target="_blank" class="event-pill">19:15 ABCツギクル対策ライブ</a></td><td class="sunday"><span class="day-num">22</span><a href="https://x.gd/UOnta" target="_blank" class="event-pill">18:30 チーノネタフェスティバル</a></td></tr><tr><td class=""><span class="day-num">23</span></td><td class=""><span class="day-num">24</span><a href="https://x.gd/3S0Uj" target="_blank" class="event-pill">🎥19:15 今年の運勢をポンゴにガチでみてもらうライブ</a></td><td class=""><span class="day-num">25</span></td><td class=""><span class="day-num">26</span><a href="https://x.gd/EwOBY" target="_blank" class="event-pill">17:15 渋谷Kiwami極LIVE</a><a href="https://x.gd/UVhgx" target="_blank" class="event-pill">🎥21:00 シンクロニシティがトップとトリをやらせていただく寄席</a><a href="https://x.gd/85KVQ" target="_blank" class="event-pill">22:00 ろくろっ首</a></td><td class=""><span class="day-num">27</span><a href="https://x.gd/gWZ97" target="_blank" class="event-pill">17:30 神保町Kakeru翔SP</a></td><td class="saturday"><span class="day-num">28</span><a href="https://x.gd/mt2hK" target="_blank" class="event-pill">11:00 渋谷よしもとお笑いライブ</a><a href="https://x.gd/1kAvl" target="_blank" class="event-pill">16:10 V-1で#ワイガヤ《2部》</a></td><td class="empty"></td></tr>
-    </tbody>
-  </table>
-</div>
-
-<div class="month-block">
-  <h2 class="month-title">2026年3月</h2>
-  <table class="cal-table">
-    <thead>
-      <tr>
-        <th class="">月</th><th class="">火</th><th class="">水</th><th class="">木</th><th class="">金</th><th class="saturday">土</th><th class="sunday">日</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td class="empty"></td><td class="empty"></td><td class="empty"></td><td class="empty"></td><td class="empty"></td><td class="empty"></td><td class="sunday"><span class="day-num">1</span><a href="https://x.gd/AL9UU" target="_blank" class="event-pill">15:30 メタル狩り　～レアなネタが見られるライブ～</a><a href="https://x.gd/MTtLJ" target="_blank" class="event-pill">19:20 野方区民ホールで#ワイガヤ《3部》</a></td></tr><tr><td class=""><span class="day-num">2</span><a href="https://x.gd/zg8uz" target="_blank" class="event-pill">21:45 無限漫才</a></td><td class=""><span class="day-num">3</span><a href="https://x.gd/S3zPT" target="_blank" class="event-pill">21:20 ネタタタタン vol.82</a></td><td class=""><span class="day-num">4</span><a href="https://x.gd/rd8MK" target="_blank" class="event-pill">🎥17:15 渋谷Kiwami極LIVEプラス＋</a><a href="https://x.gd/EXVL0" target="_blank" class="event-pill">🎥19:15 絶対漫才！</a></td><td class=""><span class="day-num">5</span><a href="https://x.gd/URVuf" target="_blank" class="event-pill">🎥19:15 ウルトラ漫</a></td><td class=""><span class="day-num">6</span><a href="https://x.gd/WoD9i" target="_blank" class="event-pill">18:30 沼ツーマン×2</a><a href="https://x.gd/ZkzwJ" target="_blank" class="event-pill">20:00 推し活のススメ</a></td><td class="saturday"><span class="day-num">7</span><a href="https://x.gd/f4FYw" target="_blank" class="event-pill">14:30 渋谷よしもとお笑いライブ</a></td><td class="sunday"><span class="day-num">8</span></td></tr><tr><td class=""><span class="day-num">9</span><a href="https://x.gd/6Ng1E" target="_blank" class="event-pill">19:15 ABCツギクル対策ライブ</a><a href="https://x.gd/F1F9i" target="_blank" class="event-pill">21:30 漫ドリル</a><a href="https://x.gd/TRPZw" target="_blank" class="event-pill">20:30 マンザイチーノSPECIAL</a></td><td class=""><span class="day-num">10</span></td><td class=""><span class="day-num">11</span><a href="https://x.gd/HEAZS" target="_blank" class="event-pill">🎥19:15 JORDAN</a><a href="https://x.gd/2kF3H1" target="_blank" class="event-pill">22:00 幸福の漫才</a></td><td class=""><span class="day-num">12</span><a href="https://x.gd/xFFsL" target="_blank" class="event-pill">🎥19:00 オタ活勧誘大戦〜君が進むのは二次元か、三次元か〜ネタとトーク編</a><a href="https://x.gd/LUTR7" target="_blank" class="event-pill">🎥20:30 オタ活勧誘大戦〜君が進むのは二次元か、三次元か〜コーナー編</a></td><td class=""><span class="day-num">13</span><a href="https://x.gd/Qveh1" target="_blank" class="event-pill">19:15 アークのネタコナ 8</a></td><td class="saturday"><span class="day-num">14</span><a href="https://x.gd/1owVM" target="_blank" class="event-pill">11:00 渋谷よしもとお笑いライブ</a><a href="https://x.gd/r7cfB" target="_blank" class="event-pill">12:45 渋谷よしもとお笑いライブ</a><a href="https://x.gd/WSiWW" target="_blank" class="event-pill">14:30 渋谷よしもとお笑いライブ</a></td><td class="sunday"><span class="day-num">15</span><a href="https://x.gd/p755G" target="_blank" class="event-pill">11:00 神保町よしもとお笑いライブ</a><a href="https://x.gd/RAYNu" target="_blank" class="event-pill">13:15 神保町よしもとお笑いライブ</a><a href="https://x.gd/VIfR2" target="_blank" class="event-pill">15:30 神保町よしもとお笑いライブ</a><a href="https://x.gd/gXL5J" target="_blank" class="event-pill">🎥18:00 金属バットとEXIT、芸風の全く違う２組が若手のネタを見てアドバイス！？するライブ</a></td></tr><tr><td class=""><span class="day-num">16</span><a href="https://x.gd/anMhY" target="_blank" class="event-pill">19:15 Elephant</a><a href="https://x.gd/lwgoQ" target="_blank" class="event-pill">17:00 渋谷よしもと漫才劇場　寄席SP</a></td><td class=""><span class="day-num">17</span></td><td class=""><span class="day-num">18</span></td><td class=""><span class="day-num">19</span><a href="https://x.gd/MpdyAS" target="_blank" class="event-pill">21:30 ろくろっ首</a><a href="https://x.gd/SfnXg" target="_blank" class="event-pill">19:00 ケイダッシュゴールドライブ</a></td><td class=""><span class="day-num">20</span></td><td class="saturday"><span class="day-num">21</span><a href="https://x.gd/TAefs" target="_blank" class="event-pill">14:15 BLACK BOX</a><a href="https://x.gd/Zfu7x" target="_blank" class="event-pill">20:00 2×2×3×1　ニカケルニカケルサンカケルイチ</a><a href="https://x.gd/uv84D" target="_blank" class="event-pill">16:00 鶴亀主催ライブ『千年漫年』</a></td><td class="sunday"><span class="day-num">22</span><a href="https://x.gd/62ECq" target="_blank" class="event-pill">12:00 幕張土日祝ネタ１２時</a><a href="https://x.gd/9lDoc" target="_blank" class="event-pill">14:00 幕張土日祝ネタ14時</a></td></tr><tr><td class=""><span class="day-num">23</span><a href="https://x.gd/4EEnt" target="_blank" class="event-pill">20:00 積</a></td><td class=""><span class="day-num">24</span><a href="https://x.gd/Qbd1b" target="_blank" class="event-pill">19:30 野方区民ホールで#ワイガヤ vol.15</a></td><td class=""><span class="day-num">25</span><a href="https://x.gd/BYmJY" target="_blank" class="event-pill">17:30 神保町Kakeru翔SP</a><a href="https://x.gd/k34Nr" target="_blank" class="event-pill">19:15 言の葉の寄席</a><a href="https://x.gd/LLU8e" target="_blank" class="event-pill">20:00 その噺、凶暴につき</a></td><td class=""><span class="day-num">26</span><a href="https://x.gd/m5YHh" target="_blank" class="event-pill">🎥19:15 スマイルキング</a></td><td class=""><span class="day-num">27</span><a href="https://x.gd/oWVoM" target="_blank" class="event-pill">19:30 チーノライブ雅「漫才」</a><a href="https://x.gd/N3uty" target="_blank" class="event-pill">21:15 チーノの「持論がすごい人が出てくるネタ」ライブ</a></td><td class="saturday"><span class="day-num">28</span><a href="https://x.gd/6rUWu" target="_blank" class="event-pill">11:00 神保町よしもとお笑いライブ</a><a href="https://x.gd/OAAzX" target="_blank" class="event-pill">13:15 神保町よしもとお笑いライブ</a></td><td class="sunday"><span class="day-num">29</span></td></tr><tr><td class=""><span class="day-num">30</span><a href="https://x.gd/4oMVo" target="_blank" class="event-pill">20:00 【3月】フランツ新ネタバトルファイト</a></td><td class=""><span class="day-num">31</span><a href="https://x.gd/fD6u3" target="_blank" class="event-pill">19:00 ネタタタタン vol.86</a><a href="https://x.gd/HvUuK" target="_blank" class="event-pill">22:00 たのしいトークライブ アトラスオオカブト</a></td><td class="empty"></td><td class="empty"></td><td class="empty"></td><td class="empty"></td><td class="empty"></td></tr>
-    </tbody>
-  </table>
-</div>
-
-<div class="month-block">
-  <h2 class="month-title">2026年4月</h2>
-  <table class="cal-table">
-    <thead>
-      <tr>
-        <th class="">月</th><th class="">火</th><th class="">水</th><th class="">木</th><th class="">金</th><th class="saturday">土</th><th class="sunday">日</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td class="empty"></td><td class="empty"></td><td class=""><span class="day-num">1</span></td><td class=""><span class="day-num">2</span><a href="https://x.gd/QT0uq" target="_blank" class="event-pill">🎥17:15 渋谷Kiwami極LIVEプラス＋</a></td><td class=""><span class="day-num">3</span><a href="https://x.gd/TunVQ" target="_blank" class="event-pill">17:30 神保町Kakeru翔SP</a></td><td class="saturday"><span class="day-num">4</span><a href="https://x.gd/GgAqr" target="_blank" class="event-pill">🎥11:00 渋谷よしもと漫才劇場 1周年記念ﾌﾟﾚﾐｱﾑﾈﾀﾌｪｽﾃｨﾊﾞﾙ～第一部～</a><a href="https://x.gd/luCZo" target="_blank" class="event-pill">17:30 グレイモヤβ Special</a></td><td class="sunday"><span class="day-num">5</span><a href="https://x.gd/JXqdx" target="_blank" class="event-pill">11:00 神保町マンゲキお笑いライブ</a><a href="https://x.gd/CqENb" target="_blank" class="event-pill">13:00 神保町マンゲキお笑いライブ</a><a href="https://x.gd/fD6Up" target="_blank" class="event-pill">15:00 神保町マンゲキお笑いライブ</a></td></tr><tr><td class=""><span class="day-num">6</span></td><td class=""><span class="day-num">7</span><a href="https://x.gd/dJJJZ" target="_blank" class="event-pill">20:00 マンザイチーノ</a><a href="https://x.gd/u25OEl" target="_blank" class="event-pill">19:30 ろくろっ首</a><a href="https://x.gd/XNrQA4" target="_blank" class="event-pill">22:00 幸福の漫才</a></td><td class=""><span class="day-num">8</span></td><td class=""><span class="day-num">9</span><a href="https://x.gd/racd9b" target="_blank" class="event-pill">🎥17:15 渋谷Kiwami極LIVE＋</a><a href="https://x.gd/y01KZ" target="_blank" class="event-pill">🎥19:15 JORDAN</a></td><td class=""><span class="day-num">10</span><a href="https://x.gd/ZZ72V" target="_blank" class="event-pill">🎥21:15 ウルトラ漫</a></td><td class="saturday"><span class="day-num">11</span><a href="https://x.gd/Y550x" target="_blank" class="event-pill">22:00 まぐろ兄弟の荒波漁船　第六夜</a></td><td class="sunday"><span class="day-num">12</span><a href="https://x.gd/hKxEf" target="_blank" class="event-pill">19:20 【キャンセル】バティオスで#ワイガヤ《3部》</a><a href="https://x.gd/u21aQ" target="_blank" class="event-pill">16:10 バティオスで#ワイガヤ《2部》</a><a href="https://x.gd/hKxEf" target="_blank" class="event-pill">19:20 バティオスで#ワイガヤ《3部》</a></td></tr><tr><td class=""><span class="day-num">13</span><a href="https://x.gd/ssV8X" target="_blank" class="event-pill">🎥19:15 渡辺銀次30分漫談、小橋共作30分小橋</a></td><td class=""><span class="day-num">14</span><a href="https://x.gd/G5yvBG" target="_blank" class="event-pill">20:00 積</a></td><td class=""><span class="day-num">15</span></td><td class=""><span class="day-num">16</span><a href="https://x.gd/SBEDN" target="_blank" class="event-pill">🎥19:00 神速ティッド寄席</a><a href="https://x.gd/dTqhS" target="_blank" class="event-pill">🎥20:30 神速ティッドコーナー</a></td><td class=""><span class="day-num">17</span><a href="https://x.gd/tt5hw" target="_blank" class="event-pill">17:15 渋谷Kiwami極LIVE</a></td><td class="saturday"><span class="day-num">18</span></td><td class="sunday"><span class="day-num">19</span><a href="https://x.gd/xH0AZ" target="_blank" class="event-pill">11:00 神保町マンゲキお笑いライブ</a><a href="https://x.gd/bu9kXf" target="_blank" class="event-pill">13:00 神保町マンゲキお笑いライブ</a><a href="https://x.gd/anPEc" target="_blank" class="event-pill">15:00 神保町マンゲキお笑いライブ</a><a href="https://x.gd/EmthH" target="_blank" class="event-pill">18:00 グランドバトルEAST 第五部</a></td></tr><tr><td class=""><span class="day-num">20</span><a href="https://x.gd/z072y" target="_blank" class="event-pill">20:30 イワサキトークライブ～やめな？～</a></td><td class=""><span class="day-num">21</span></td><td class=""><span class="day-num">22</span><a href="https://x.gd/1kL1l" target="_blank" class="event-pill">21:20 ネタタタタン vol.89</a></td><td class=""><span class="day-num">23</span><a href="https://x.gd/1d9BS" target="_blank" class="event-pill">20:00 FLASH</a><a href="https://x.gd/D17Fx" target="_blank" class="event-pill">19:00 ネタタタタン vol.90</a></td><td class=""><span class="day-num">24</span><a href="https://x.gd/c27l1" target="_blank" class="event-pill">🎥17:15 渋谷Kiwami極LIVEプラス＋</a></td><td class="saturday"><span class="day-num">25</span><a href="https://x.gd/Ah5a8" target="_blank" class="event-pill">19:00 トークライブ 第一部</a><a href="https://x.gd/PS6RR" target="_blank" class="event-pill">20:45 トークライブ　第二部</a></td><td class="sunday"><span class="day-num">26</span><a href="https://x.gd/AFQC4" target="_blank" class="event-pill">🎥19:00 スマイルキング</a><a href="https://x.gd/8ydhne" target="_blank" class="event-pill">21:00 Elephant</a><a href="https://x.gd/4qqby" target="_blank" class="event-pill">11:00 渋谷マンゲキお笑いライブ ゴールデンウィークSP</a><a href="https://x.gd/RYphX" target="_blank" class="event-pill">12:45 渋谷マンゲキお笑いライブ ゴールデンウィークSP</a><a href="https://x.gd/IBlDF" target="_blank" class="event-pill">14:30 渋谷マンゲキお笑いライブ ゴールデンウィークSP</a></td></tr><tr><td class=""><span class="day-num">27</span><a href="https://x.gd/85myN" target="_blank" class="event-pill">🎥17:00 渋谷Kiwami極LIVEプラス＋ ゴールデンウィークSP</a><a href="https://x.gd/LVqye" target="_blank" class="event-pill">20:30 アークのとっておき GW直前SP</a></td><td class=""><span class="day-num">28</span><a href="https://x.gd/r9ywz" target="_blank" class="event-pill">🎥19:30 囲碁将棋のオマエらには負けねえから！～後輩漫才師たちとガチネタバトル～</a></td><td class=""><span class="day-num">29</span><a href="https://x.gd/foPDp" target="_blank" class="event-pill">11:00 渋谷マンゲキお笑いライブ ゴールデンウィークSP</a><a href="https://x.gd/tgIUn" target="_blank" class="event-pill">12:45 渋谷マンゲキお笑いライブ ゴールデンウィークSP</a><a href="https://x.gd/D7iVQ" target="_blank" class="event-pill">14:30 渋谷マンゲキお笑いライブ ゴールデンウィークSP</a><a href="https://x.gd/No71E" target="_blank" class="event-pill">16:30 三八迷宮案内</a></td><td class=""><span class="day-num">30</span></td><td class="empty"></td><td class="empty"></td><td class="empty"></td></tr>
-    </tbody>
-  </table>
-</div>
-
-<div class="month-block">
-  <h2 class="month-title">2026年5月</h2>
-  <table class="cal-table">
-    <thead>
-      <tr>
-        <th class="">月</th><th class="">火</th><th class="">水</th><th class="">木</th><th class="">金</th><th class="saturday">土</th><th class="sunday">日</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td class="empty"></td><td class="empty"></td><td class="empty"></td><td class="empty"></td><td class=""><span class="day-num">1</span><a href="https://x.gd/43vfH" target="_blank" class="event-pill">🎥19:15 怒り 七怒目</a></td><td class="saturday"><span class="day-num">2</span><a href="https://x.gd/xwKSi" target="_blank" class="event-pill">16:30 新宿寅会</a></td><td class="sunday"><span class="day-num">3</span><a href="https://x.gd/W5Zoh" target="_blank" class="event-pill">18:30 絶対漫才！</a></td></tr><tr><td class=""><span class="day-num">4</span><a href="https://x.gd/R40Oe" target="_blank" class="event-pill">11:00 渋谷マンゲキお笑いライブ ゴールデンウィークSP</a><a href="https://x.gd/6EjJ0" target="_blank" class="event-pill">12:45 渋谷マンゲキお笑いライブ ゴールデンウィークSP</a><a href="https://x.gd/st6WE" target="_blank" class="event-pill">14:30 渋谷マンゲキお笑いライブ ゴールデンウィークSP</a><a href="https://x.gd/tH3H5" target="_blank" class="event-pill">19:00 渋谷マンゲキよるの寄席ライブ</a></td><td class=""><span class="day-num">5</span></td><td class=""><span class="day-num">6</span><a href="https://x.gd/59E4s" target="_blank" class="event-pill">11:00 渋谷マンゲキお笑いライブ ゴールデンウィークSP</a><a href="https://x.gd/Hgyz9" target="_blank" class="event-pill">12:45 渋谷マンゲキお笑いライブ ゴールデンウィークSP</a><a href="https://x.gd/8nzQ4" target="_blank" class="event-pill">14:30 渋谷マンゲキお笑いライブ ゴールデンウィークSP</a><a href="https://x.gd/Q5wH8" target="_blank" class="event-pill">19:00 JORDAN</a><a href="https://x.gd/477jW" target="_blank" class="event-pill">16:00 ろくろっ首</a></td><td class=""><span class="day-num">7</span></td><td class=""><span class="day-num">8</span></td><td class="saturday"><span class="day-num">9</span></td><td class="sunday"><span class="day-num">10</span><a href="https://x.gd/VoNxA" target="_blank" class="event-pill">22:00 幸福の漫才</a></td></tr><tr><td class=""><span class="day-num">11</span><a href="https://x.gd/bdmyv" target="_blank" class="event-pill">19:15 ウルトラ漫</a></td><td class=""><span class="day-num">12</span></td><td class=""><span class="day-num">13</span><a href="https://x.gd/WLcFh" target="_blank" class="event-pill">19:15 くらげ新ネタライブ「浮遊」</a><a href="https://x.gd/nGLLI" target="_blank" class="event-pill">17:00 渋谷よしもと漫才劇場　寄席SP</a><a href="https://x.gd/TpHyT" target="_blank" class="event-pill">🎥20:30 神保町お題ネタバトル</a></td><td class=""><span class="day-num">14</span><a href="https://x.gd/WwqbF" target="_blank" class="event-pill">17:15 渋谷Kiwami極LIVEプラス＋</a></td><td class=""><span class="day-num">15</span><a href="https://x.gd/UghYi" target="_blank" class="event-pill">14:00 幕張平日ネタＳＰ１４時</a><a href="https://x.gd/vBD5V" target="_blank" class="event-pill">16:00 幕張平日ネタＳＰ１６時</a></td><td class="saturday"><span class="day-num">16</span><a href="https://x.gd/byWgT" target="_blank" class="event-pill">11:00 神保町マンゲキお笑いライブ</a><a href="https://x.gd/1pPvI" target="_blank" class="event-pill">13:00 神保町マンゲキお笑いライブ</a><a href="https://x.gd/9w33L" target="_blank" class="event-pill">15:00 神保町マンゲキお笑いライブ</a></td><td class="sunday"><span class="day-num">17</span></td></tr><tr><td class=""><span class="day-num">18</span></td><td class=""><span class="day-num">19</span><a href="https://x.gd/EcNsa" target="_blank" class="event-pill">20:00 積</a></td><td class=""><span class="day-num">20</span><a href="https://x.gd/4ImBD" target="_blank" class="event-pill">21:00 Elephant</a></td><td class=""><span class="day-num">21</span><a href="https://x.gd/tJ6cT" target="_blank" class="event-pill">19:30 野方区民ホールで#ワイガヤ vol.18〜ネタ祭り〜</a><a href="https://x.gd/CupuW" target="_blank" class="event-pill">19:30 FLASH PART2</a></td><td class=""><span class="day-num">22</span></td><td class="saturday"><span class="day-num">23</span><a href="https://x.gd/G8A9B" target="_blank" class="event-pill">18:30 チーノのネタと企画「芸人VSお笑いファン」</a></td><td class="sunday"><span class="day-num">24</span><a href="https://x.gd/AyPPv" target="_blank" class="event-pill">11:00 神保町マンゲキお笑いライブ</a><a href="https://x.gd/iFbLE" target="_blank" class="event-pill">13:00 神保町マンゲキお笑いライブ</a><a href="https://x.gd/kuUD4" target="_blank" class="event-pill">15:00 神保町マンゲキお笑いライブ</a></td></tr><tr><td class=""><span class="day-num">25</span></td><td class=""><span class="day-num">26</span></td><td class=""><span class="day-num">27</span><a href="https://x.gd/30DnA" target="_blank" class="event-pill">17:30 神保町Kakeru翔SP</a><a href="https://x.gd/cqXb5" target="_blank" class="event-pill">19:15 必殺漫才</a><a href="https://x.gd/N3mlZ" target="_blank" class="event-pill">15:15 スマイルキング</a></td><td class=""><span class="day-num">28</span><a href="https://x.gd/VqEbo" target="_blank" class="event-pill">17:15 渋谷Kiwami極LIVEプラス＋</a></td><td class=""><span class="day-num">29</span></td><td class="saturday"><span class="day-num">30</span><a href="https://x.gd/H8si8" target="_blank" class="event-pill">11:00 渋谷マンゲキお笑いライブ</a><a href="https://x.gd/89QMW" target="_blank" class="event-pill">12:45 渋谷マンゲキお笑いライブ</a><a href="https://x.gd/3B9FQ" target="_blank" class="event-pill">14:30 渋谷マンゲキお笑いライブ</a></td><td class="sunday"><span class="day-num">31</span></td></tr>
-    </tbody>
-  </table>
-</div>
 
 <div class="month-block">
   <h2 class="month-title">2026年6月</h2>
@@ -320,7 +303,17 @@
       </tr>
     </thead>
     <tbody>
-      <tr><td class=""><span class="day-num">1</span><a href="https://x.gd/8YKbG" target="_blank" class="event-pill">19:30 DELICIOUS MANZAI DELICIOUS CONTE</a></td><td class=""><span class="day-num">2</span><a href="https://x.gd/9EcZ9" target="_blank" class="event-pill">🎥19:15 JORDAN</a><a href="https://x.gd/rgDMM" target="_blank" class="event-pill">🎥17:15 渋谷Kiwami極LIVEプラス＋</a></td><td class=""><span class="day-num">3</span><a href="https://x.gd/npurq" target="_blank" class="event-pill">🎥19:15 シンクロニシティとインテイクが25分前後の漫才を1本ずつやるライブ</a></td><td class=""><span class="day-num">4</span></td><td class=""><span class="day-num">5</span></td><td class="saturday"><span class="day-num">6</span><a href="https://x.gd/Tzfu9" target="_blank" class="event-pill">🎥17:15 おい！なんかカーネーションさんが呼んでるぞ！</a><a href="https://x.gd/ePgs4" target="_blank" class="event-pill">11:00 渋谷マンゲキお笑いライブ</a><a href="https://x.gd/JAnDN" target="_blank" class="event-pill">12:45 渋谷マンゲキお笑いライブ</a><a href="https://x.gd/QuH7K" target="_blank" class="event-pill">14:30 渋谷マンゲキお笑いライブ</a></td><td class="sunday"><span class="day-num">7</span><a href="https://x.gd/CIxEm" target="_blank" class="event-pill">🎥20:45 芸人になって得た知見</a><a href="https://x.gd/a6VmE" target="_blank" class="event-pill">11:00 神保町マンゲキお笑いライブ</a><a href="https://x.gd/6U4JD" target="_blank" class="event-pill">13:00 神保町マンゲキお笑いライブ</a><a href="https://x.gd/dJgHg" target="_blank" class="event-pill">15:00 神保町マンゲキお笑いライブ</a></td></tr><tr><td class=""><span class="day-num">8</span><a href="https://x.gd/1Flwx" target="_blank" class="event-pill">19:45 ほやほや〜新ネタ限定ライブ〜</a></td><td class=""><span class="day-num">9</span><a href="https://x.gd/FufGO" target="_blank" class="event-pill">19:30 武蔵野芸能劇場で#ワイガヤ〜ネタ祭り〜</a></td><td class=""><span class="day-num">10</span></td><td class=""><span class="day-num">11</span></td><td class=""><span class="day-num">12</span><a href="https://x.gd/3D6TV" target="_blank" class="event-pill">19:00 渋谷マンゲキよる寄席</a><a href="https://x.gd/sjLyq" target="_blank" class="event-pill">19:00 渋谷マンゲキよる寄席</a></td><td class="saturday"><span class="day-num">13</span></td><td class="sunday"><span class="day-num">14</span><a href="https://x.gd/a4Kkh" target="_blank" class="event-pill">20:45 Elephant</a><a href="https://x.gd/KqtMv" target="_blank" class="event-pill">15:15 グランドバトルEAST 第四部</a></td></tr><tr><td class=""><span class="day-num">15</span><a href="https://x.gd/NvVOa" target="_blank" class="event-pill">20:00 積</a></td><td class=""><span class="day-num">16</span></td><td class=""><span class="day-num">17</span></td><td class=""><span class="day-num">18</span><a href="https://x.gd/VxR5Z" target="_blank" class="event-pill">🎥15:15 スマイルキング</a><a href="https://x.gd/R0oqu" target="_blank" class="event-pill">🎥17:15 渋谷Kiwami極LIVEプラス＋</a></td><td class=""><span class="day-num">19</span></td><td class="saturday"><span class="day-num">20</span><a href="https://x.gd/kIc9q" target="_blank" class="event-pill">11:00 渋谷マンゲキお笑いライブ</a><a href="https://x.gd/00P2C" target="_blank" class="event-pill">12:45 渋谷マンゲキお笑いライブ</a><a href="https://x.gd/aw02r" target="_blank" class="event-pill">14:30 渋谷マンゲキお笑いライブ</a></td><td class="sunday"><span class="day-num">21</span></td></tr><tr><td class=""><span class="day-num">22</span><a href="https://x.gd/ZcHrJ" target="_blank" class="event-pill">🎥17:30 神保町Kakeru翔SPプラス+</a></td><td class=""><span class="day-num">23</span><a href="https://x.gd/vJF5f" target="_blank" class="event-pill">17:15 渋谷Kiwami極LIVE</a></td><td class=""><span class="day-num">24</span><a href="https://x.gd/ybZ29" target="_blank" class="event-pill">19:30 THE M</a></td><td class=""><span class="day-num">25</span></td><td class=""><span class="day-num">26</span><a href="https://x.gd/cb6yt" target="_blank" class="event-pill">19:30 漫腹〜まんぷく〜</a></td><td class="saturday"><span class="day-num">27</span><a href="https://x.gd/LgCVX" target="_blank" class="event-pill">17:30 漫開</a></td><td class="sunday"><span class="day-num">28</span><a href="https://x.gd/Yw4mn" target="_blank" class="event-pill">22:00 ろくろっ首</a></td></tr><tr><td class=""><span class="day-num">29</span><a href="https://x.gd/mY9tO" target="_blank" class="event-pill">16:30 MANZAI寄席</a></td><td class=""><span class="day-num">30</span><a href="https://x.gd/g6osn" target="_blank" class="event-pill">20:00 最強で最高 vol.24</a></td><td class="empty"></td><td class="empty"></td><td class="empty"></td><td class="empty"></td><td class="empty"></td></tr>
+      <tr><td class=" has-event" onclick="toggleDetail('2026-06-01','2026-06-w0')" data-week="2026-06-w0"><span class="day-num">1</span><span class="event-pill">19:30 DELICIOUS MANZAI DELICIOUS CONTE</span></td><td class=" has-event" onclick="toggleDetail('2026-06-02','2026-06-w0')" data-week="2026-06-w0"><span class="day-num">2</span><span class="event-pill">🎥 17:15 渋谷Kiwami極LIVEプラス＋</span><span class="event-pill">🎥 19:15 JORDAN</span></td><td class=" has-event" onclick="toggleDetail('2026-06-03','2026-06-w0')" data-week="2026-06-w0"><span class="day-num">3</span><span class="event-pill">🎥 19:15 シンクロニシティとインテイクが25分前後の漫才を1本ずつやるライブ</span></td><td class=" "  data-week="2026-06-w0"><span class="day-num">4</span></td><td class=" "  data-week="2026-06-w0"><span class="day-num">5</span></td><td class="saturday has-event" onclick="toggleDetail('2026-06-06','2026-06-w0')" data-week="2026-06-w0"><span class="day-num">6</span><span class="event-pill">11:00 渋谷マンゲキお笑いライブ</span><span class="event-pill">12:45 渋谷マンゲキお笑いライブ</span><span class="event-pill">14:30 渋谷マンゲキお笑いライブ</span><span class="event-pill">🎥 17:15 おい！なんかカーネーションさんが呼んでるぞ！</span></td><td class="sunday has-event" onclick="toggleDetail('2026-06-07','2026-06-w0')" data-week="2026-06-w0"><span class="day-num">7</span><span class="event-pill">11:00 神保町マンゲキお笑いライブ</span><span class="event-pill">13:00 神保町マンゲキお笑いライブ</span><span class="event-pill">15:00 神保町マンゲキお笑いライブ</span><span class="event-pill">🎥 20:45 芸人になって得た知見</span></td></tr>
+<tr class="detail-row" id="detail-2026-06-w0"><td colspan="7"><div class="detail-panel"><div class="detail-inner"></div></div></td></tr>
+<tr><td class=" has-event" onclick="toggleDetail('2026-06-08','2026-06-w1')" data-week="2026-06-w1"><span class="day-num">8</span><span class="event-pill">19:45 ほやほや〜新ネタ限定ライブ〜</span></td><td class=" has-event" onclick="toggleDetail('2026-06-09','2026-06-w1')" data-week="2026-06-w1"><span class="day-num">9</span><span class="event-pill">19:30 武蔵野芸能劇場で#ワイガヤ〜ネタ祭り〜</span></td><td class=" "  data-week="2026-06-w1"><span class="day-num">10</span></td><td class=" "  data-week="2026-06-w1"><span class="day-num">11</span></td><td class=" has-event" onclick="toggleDetail('2026-06-12','2026-06-w1')" data-week="2026-06-w1"><span class="day-num">12</span><span class="event-pill">19:00 渋谷マンゲキよる寄席</span></td><td class="saturday "  data-week="2026-06-w1"><span class="day-num">13</span></td><td class="sunday has-event" onclick="toggleDetail('2026-06-14','2026-06-w1')" data-week="2026-06-w1"><span class="day-num">14</span><span class="event-pill">15:15 グランドバトルEAST 第四部</span><span class="event-pill">20:45 Elephant</span></td></tr>
+<tr class="detail-row" id="detail-2026-06-w1"><td colspan="7"><div class="detail-panel"><div class="detail-inner"></div></div></td></tr>
+<tr><td class=" has-event" onclick="toggleDetail('2026-06-15','2026-06-w2')" data-week="2026-06-w2"><span class="day-num">15</span><span class="event-pill">20:00 積</span></td><td class=" "  data-week="2026-06-w2"><span class="day-num">16</span></td><td class=" "  data-week="2026-06-w2"><span class="day-num">17</span></td><td class=" has-event" onclick="toggleDetail('2026-06-18','2026-06-w2')" data-week="2026-06-w2"><span class="day-num">18</span><span class="event-pill">🎥 15:15 スマイルキング</span><span class="event-pill">🎥 17:15 渋谷Kiwami極LIVEプラス＋</span></td><td class=" "  data-week="2026-06-w2"><span class="day-num">19</span></td><td class="saturday has-event" onclick="toggleDetail('2026-06-20','2026-06-w2')" data-week="2026-06-w2"><span class="day-num">20</span><span class="event-pill">11:00 渋谷マンゲキお笑いライブ</span><span class="event-pill">12:45 渋谷マンゲキお笑いライブ</span><span class="event-pill">14:30 渋谷マンゲキお笑いライブ</span></td><td class="sunday "  data-week="2026-06-w2"><span class="day-num">21</span></td></tr>
+<tr class="detail-row" id="detail-2026-06-w2"><td colspan="7"><div class="detail-panel"><div class="detail-inner"></div></div></td></tr>
+<tr><td class=" has-event" onclick="toggleDetail('2026-06-22','2026-06-w3')" data-week="2026-06-w3"><span class="day-num">22</span><span class="event-pill">🎥 17:30 神保町Kakeru翔SPプラス+</span></td><td class=" has-event" onclick="toggleDetail('2026-06-23','2026-06-w3')" data-week="2026-06-w3"><span class="day-num">23</span><span class="event-pill">17:15 渋谷Kiwami極LIVE</span></td><td class=" has-event" onclick="toggleDetail('2026-06-24','2026-06-w3')" data-week="2026-06-w3"><span class="day-num">24</span><span class="event-pill">19:30 THE M</span></td><td class=" "  data-week="2026-06-w3"><span class="day-num">25</span></td><td class=" has-event" onclick="toggleDetail('2026-06-26','2026-06-w3')" data-week="2026-06-w3"><span class="day-num">26</span><span class="event-pill">19:30 漫腹〜まんぷく〜</span></td><td class="saturday has-event" onclick="toggleDetail('2026-06-27','2026-06-w3')" data-week="2026-06-w3"><span class="day-num">27</span><span class="event-pill">17:30 漫開</span><span class="event-pill">19:40 昭和 vs 平成！チーム対抗ネタ合戦！</span></td><td class="sunday has-event" onclick="toggleDetail('2026-06-28','2026-06-w3')" data-week="2026-06-w3"><span class="day-num">28</span><span class="event-pill">22:00 ろくろっ首</span></td></tr>
+<tr class="detail-row" id="detail-2026-06-w3"><td colspan="7"><div class="detail-panel"><div class="detail-inner"></div></div></td></tr>
+<tr><td class=" has-event" onclick="toggleDetail('2026-06-29','2026-06-w4')" data-week="2026-06-w4"><span class="day-num">29</span><span class="event-pill">16:30 MANZAI寄席</span></td><td class=" has-event" onclick="toggleDetail('2026-06-30','2026-06-w4')" data-week="2026-06-w4"><span class="day-num">30</span><span class="event-pill">20:00 最強で最高 vol.24</span></td><td class="empty"></td><td class="empty"></td><td class="empty"></td><td class="empty"></td><td class="empty"></td></tr>
+<tr class="detail-row" id="detail-2026-06-w4"><td colspan="7"><div class="detail-panel"><div class="detail-inner"></div></div></td></tr>
+
     </tbody>
   </table>
 </div>
@@ -334,11 +327,107 @@
       </tr>
     </thead>
     <tbody>
-      <tr><td class="empty"></td><td class="empty"></td><td class=""><span class="day-num">1</span><a href="https://x.gd/qaNmE" target="_blank" class="event-pill">17:15 渋谷Kiwami極LIVE</a><a href="https://x.gd/8V8vH" target="_blank" class="event-pill">19:15 JORDAN</a></td><td class=""><span class="day-num">2</span></td><td class=""><span class="day-num">3</span></td><td class="saturday"><span class="day-num">4</span><a href="https://x.gd/gdq3r" target="_blank" class="event-pill">11:00 神保町マンゲキお笑いライブ</a><a href="https://x.gd/oqKvs" target="_blank" class="event-pill">12:45 神保町マンゲキお笑いライブ</a><a href="https://x.gd/wLQ02" target="_blank" class="event-pill">14:30 神保町マンゲキお笑いライブ</a></td><td class="sunday"><span class="day-num">5</span></td></tr><tr><td class=""><span class="day-num">6</span></td><td class=""><span class="day-num">7</span><a href="https://x.gd/mX6HF" target="_blank" class="event-pill">17:30 神保町Kakeru翔SP</a><a href="https://x.gd/9rugf" target="_blank" class="event-pill">21:15 Elephant</a></td><td class=""><span class="day-num">8</span><a href="https://x.gd/BFK1W" target="_blank" class="event-pill">19:15 絶対漫才！</a></td><td class=""><span class="day-num">9</span></td><td class=""><span class="day-num">10</span></td><td class="saturday"><span class="day-num">11</span></td><td class="sunday"><span class="day-num">12</span></td></tr><tr><td class=""><span class="day-num">13</span><a href="https://x.gd/wdJT7" target="_blank" class="event-pill">17:15 渋谷Kiwami極LIVE</a><a href="https://x.gd/BQF2EC" target="_blank" class="event-pill">19:15 ウルトラ漫</a></td><td class=""><span class="day-num">14</span></td><td class=""><span class="day-num">15</span></td><td class=""><span class="day-num">16</span></td><td class=""><span class="day-num">17</span><a href="https://x.gd/t1ZrL" target="_blank" class="event-pill">19:15 まんざい</a><a href="https://x.gd/6tiXc" target="_blank" class="event-pill">21:00 石田クラス</a></td><td class="saturday"><span class="day-num">18</span></td><td class="sunday"><span class="day-num">19</span></td></tr><tr><td class=""><span class="day-num">20</span><a href="https://x.gd/JvcPs" target="_blank" class="event-pill">11:00 渋谷マンゲキお笑いライブ</a><a href="https://x.gd/USlu3" target="_blank" class="event-pill">12:45 渋谷マンゲキお笑いライブ</a><a href="https://x.gd/dnv9t" target="_blank" class="event-pill">14:30 渋谷マンゲキお笑いライブ</a></td><td class=""><span class="day-num">21</span></td><td class=""><span class="day-num">22</span><a href="https://x.gd/cPPam" target="_blank" class="event-pill">15:15 スマイルキング</a><a href="https://x.gd/Wnyvw" target="_blank" class="event-pill">17:15 渋谷Kiwami極LIVE</a></td><td class=""><span class="day-num">23</span></td><td class=""><span class="day-num">24</span></td><td class="saturday"><span class="day-num">25</span><a href="https://x.gd/EfMlIk" target="_blank" class="event-pill">11:00 渋谷マンゲキお笑いライブ</a><a href="https://x.gd/feasG" target="_blank" class="event-pill">12:45 渋谷マンゲキお笑いライブ</a><a href="https://x.gd/l64lM" target="_blank" class="event-pill">14:30 渋谷マンゲキお笑いライブ</a></td><td class="sunday"><span class="day-num">26</span></td></tr><tr><td class=""><span class="day-num">27</span></td><td class=""><span class="day-num">28</span></td><td class=""><span class="day-num">29</span></td><td class=""><span class="day-num">30</span></td><td class=""><span class="day-num">31</span></td><td class="empty"></td><td class="empty"></td></tr>
+      <tr><td class="empty"></td><td class="empty"></td><td class=" has-event" onclick="toggleDetail('2026-07-01','2026-07-w0')" data-week="2026-07-w0"><span class="day-num">1</span><span class="event-pill">17:15 渋谷Kiwami極LIVE</span><span class="event-pill">19:15 JORDAN</span></td><td class=" "  data-week="2026-07-w0"><span class="day-num">2</span></td><td class=" "  data-week="2026-07-w0"><span class="day-num">3</span></td><td class="saturday has-event" onclick="toggleDetail('2026-07-04','2026-07-w0')" data-week="2026-07-w0"><span class="day-num">4</span><span class="event-pill">11:00 神保町マンゲキお笑いライブ</span><span class="event-pill">12:45 神保町マンゲキお笑いライブ</span><span class="event-pill">14:30 神保町マンゲキお笑いライブ</span></td><td class="sunday "  data-week="2026-07-w0"><span class="day-num">5</span></td></tr>
+<tr class="detail-row" id="detail-2026-07-w0"><td colspan="7"><div class="detail-panel"><div class="detail-inner"></div></div></td></tr>
+<tr><td class=" "  data-week="2026-07-w1"><span class="day-num">6</span></td><td class=" has-event" onclick="toggleDetail('2026-07-07','2026-07-w1')" data-week="2026-07-w1"><span class="day-num">7</span><span class="event-pill">17:30 神保町Kakeru翔SP</span><span class="event-pill">21:15 Elephant</span></td><td class=" has-event" onclick="toggleDetail('2026-07-08','2026-07-w1')" data-week="2026-07-w1"><span class="day-num">8</span><span class="event-pill">19:15 絶対漫才！</span></td><td class=" "  data-week="2026-07-w1"><span class="day-num">9</span></td><td class=" "  data-week="2026-07-w1"><span class="day-num">10</span></td><td class="saturday "  data-week="2026-07-w1"><span class="day-num">11</span></td><td class="sunday "  data-week="2026-07-w1"><span class="day-num">12</span></td></tr>
+<tr class="detail-row" id="detail-2026-07-w1"><td colspan="7"><div class="detail-panel"><div class="detail-inner"></div></div></td></tr>
+<tr><td class=" has-event" onclick="toggleDetail('2026-07-13','2026-07-w2')" data-week="2026-07-w2"><span class="day-num">13</span><span class="event-pill">17:15 渋谷Kiwami極LIVE</span><span class="event-pill">19:15 ウルトラ漫</span></td><td class=" "  data-week="2026-07-w2"><span class="day-num">14</span></td><td class=" "  data-week="2026-07-w2"><span class="day-num">15</span></td><td class=" "  data-week="2026-07-w2"><span class="day-num">16</span></td><td class=" has-event" onclick="toggleDetail('2026-07-17','2026-07-w2')" data-week="2026-07-w2"><span class="day-num">17</span><span class="event-pill">19:15 まんざい</span><span class="event-pill">21:00 石田クラス</span></td><td class="saturday "  data-week="2026-07-w2"><span class="day-num">18</span></td><td class="sunday "  data-week="2026-07-w2"><span class="day-num">19</span></td></tr>
+<tr class="detail-row" id="detail-2026-07-w2"><td colspan="7"><div class="detail-panel"><div class="detail-inner"></div></div></td></tr>
+<tr><td class=" has-event" onclick="toggleDetail('2026-07-20','2026-07-w3')" data-week="2026-07-w3"><span class="day-num">20</span><span class="event-pill">11:00 渋谷マンゲキお笑いライブ</span><span class="event-pill">12:45 渋谷マンゲキお笑いライブ</span><span class="event-pill">14:30 渋谷マンゲキお笑いライブ</span></td><td class=" "  data-week="2026-07-w3"><span class="day-num">21</span></td><td class=" has-event" onclick="toggleDetail('2026-07-22','2026-07-w3')" data-week="2026-07-w3"><span class="day-num">22</span><span class="event-pill">15:15 スマイルキング</span><span class="event-pill">17:15 渋谷Kiwami極LIVE</span></td><td class=" "  data-week="2026-07-w3"><span class="day-num">23</span></td><td class=" "  data-week="2026-07-w3"><span class="day-num">24</span></td><td class="saturday has-event" onclick="toggleDetail('2026-07-25','2026-07-w3')" data-week="2026-07-w3"><span class="day-num">25</span><span class="event-pill">11:00 渋谷マンゲキお笑いライブ</span><span class="event-pill">12:45 渋谷マンゲキお笑いライブ</span><span class="event-pill">14:30 渋谷マンゲキお笑いライブ</span></td><td class="sunday "  data-week="2026-07-w3"><span class="day-num">26</span></td></tr>
+<tr class="detail-row" id="detail-2026-07-w3"><td colspan="7"><div class="detail-panel"><div class="detail-inner"></div></div></td></tr>
+<tr><td class=" "  data-week="2026-07-w4"><span class="day-num">27</span></td><td class=" "  data-week="2026-07-w4"><span class="day-num">28</span></td><td class=" "  data-week="2026-07-w4"><span class="day-num">29</span></td><td class=" "  data-week="2026-07-w4"><span class="day-num">30</span></td><td class=" "  data-week="2026-07-w4"><span class="day-num">31</span></td><td class="empty"></td><td class="empty"></td></tr>
+<tr class="detail-row" id="detail-2026-07-w4"><td colspan="7"><div class="detail-panel"><div class="detail-inner"></div></div></td></tr>
+
     </tbody>
   </table>
 </div>
 </div>
-<footer>generated by print.py · 2026-05-29 02:41</footer>
+<footer>generated by print.py · 2026-06-01 12:04</footer>
+
+<script>
+const EVENT_MAP = {"2026-06-02": [{"title": "渋谷Kiwami極LIVEプラス＋", "venue": "渋谷よしもと漫才劇場", "time_open": "17:00", "time_start": "17:15", "time_end": "18:25", "advance": "", "door": "", "url": "https://x.gd/rgDMM", "streaming_url": "https://x.gd/PUJVC", "streaming_price": ""}, {"title": "JORDAN", "venue": "渋谷よしもと漫才劇場", "time_open": "19:00", "time_start": "19:15", "time_end": "20:15", "advance": "", "door": "", "url": "https://x.gd/9EcZ9", "streaming_url": "https://x.gd/WRwG8", "streaming_price": ""}], "2026-06-06": [{"title": "渋谷マンゲキお笑いライブ", "venue": "渋谷よしもと漫才劇場", "time_open": "10:45", "time_start": "11:00", "time_end": "12:15", "advance": "", "door": "", "url": "https://x.gd/ePgs4", "streaming_url": "", "streaming_price": ""}, {"title": "渋谷マンゲキお笑いライブ", "venue": "渋谷よしもと漫才劇場", "time_open": "12:30", "time_start": "12:45", "time_end": "14:00", "advance": "", "door": "", "url": "https://x.gd/JAnDN", "streaming_url": "", "streaming_price": ""}, {"title": "渋谷マンゲキお笑いライブ", "venue": "渋谷よしもと漫才劇場", "time_open": "14:15", "time_start": "14:30", "time_end": "15:45", "advance": "", "door": "", "url": "https://x.gd/QuH7K", "streaming_url": "", "streaming_price": ""}, {"title": "おい！なんかカーネーションさんが呼んでるぞ！", "venue": "神保町よしもと漫才劇場", "time_open": "17:00", "time_start": "17:15", "time_end": "18:15", "advance": "", "door": "", "url": "https://x.gd/Tzfu9", "streaming_url": "https://x.gd/dVigy", "streaming_price": ""}], "2026-06-07": [{"title": "神保町マンゲキお笑いライブ", "venue": "神保町よしもと漫才劇場", "time_open": "10:45", "time_start": "11:00", "time_end": "12:15", "advance": "", "door": "", "url": "https://x.gd/a6VmE", "streaming_url": "", "streaming_price": ""}, {"title": "神保町マンゲキお笑いライブ", "venue": "神保町よしもと漫才劇場", "time_open": "12:45", "time_start": "13:00", "time_end": "14:15", "advance": "", "door": "", "url": "https://x.gd/6U4JD", "streaming_url": "", "streaming_price": ""}, {"title": "神保町マンゲキお笑いライブ", "venue": "神保町よしもと漫才劇場", "time_open": "14:45", "time_start": "15:00", "time_end": "16:15", "advance": "", "door": "", "url": "https://x.gd/dJgHg", "streaming_url": "", "streaming_price": ""}, {"title": "芸人になって得た知見", "venue": "神保町よしもと漫才劇場", "time_open": "20:30", "time_start": "20:45", "time_end": "21:45", "advance": "", "door": "", "url": "https://x.gd/CIxEm", "streaming_url": "https://x.gd/m6ct6", "streaming_price": ""}], "2026-06-14": [{"title": "グランドバトルEAST 第四部", "venue": "渋谷よしもと漫才劇場", "time_open": "15:00", "time_start": "15:15", "time_end": "17:00", "advance": "", "door": "", "url": "https://x.gd/KqtMv", "streaming_url": "", "streaming_price": ""}, {"title": "Elephant", "venue": "神保町よしもと漫才劇場", "time_open": "20:30", "time_start": "20:45", "time_end": "21:45", "advance": "", "door": "", "url": "https://x.gd/a4Kkh", "streaming_url": "", "streaming_price": ""}], "2026-06-18": [{"title": "スマイルキング", "venue": "渋谷よしもと漫才劇場", "time_open": "15:00", "time_start": "15:15", "time_end": "16:15", "advance": "", "door": "", "url": "https://x.gd/VxR5Z", "streaming_url": "https://x.gd/J46Rp", "streaming_price": ""}, {"title": "渋谷Kiwami極LIVEプラス＋", "venue": "渋谷よしもと漫才劇場", "time_open": "17:00", "time_start": "17:15", "time_end": "18:25", "advance": "", "door": "", "url": "https://x.gd/R0oqu", "streaming_url": "https://x.gd/ABFNQ", "streaming_price": ""}], "2026-06-03": [{"title": "シンクロニシティとインテイクが25分前後の漫才を1本ずつやるライブ", "venue": "神保町よしもと漫才劇場", "time_open": "19:00", "time_start": "19:15", "time_end": "20:15", "advance": "", "door": "", "url": "https://x.gd/npurq", "streaming_url": "https://x.gd/ssxo6", "streaming_price": ""}], "2026-06-20": [{"title": "渋谷マンゲキお笑いライブ", "venue": "渋谷よしもと漫才劇場", "time_open": "10:45", "time_start": "11:00", "time_end": "12:15", "advance": "", "door": "", "url": "https://x.gd/kIc9q", "streaming_url": "", "streaming_price": ""}, {"title": "渋谷マンゲキお笑いライブ", "venue": "渋谷よしもと漫才劇場", "time_open": "12:30", "time_start": "12:45", "time_end": "14:00", "advance": "", "door": "", "url": "https://x.gd/00P2C", "streaming_url": "", "streaming_price": ""}, {"title": "渋谷マンゲキお笑いライブ", "venue": "渋谷よしもと漫才劇場", "time_open": "14:15", "time_start": "14:30", "time_end": "15:45", "advance": "", "door": "", "url": "https://x.gd/aw02r", "streaming_url": "", "streaming_price": ""}], "2026-06-22": [{"title": "神保町Kakeru翔SPプラス+", "venue": "神保町よしもと漫才劇場", "time_open": "17:15", "time_start": "17:30", "time_end": "18:30", "advance": "", "door": "", "url": "https://x.gd/ZcHrJ", "streaming_url": "https://x.gd/dDhoY", "streaming_price": ""}], "2026-06-23": [{"title": "渋谷Kiwami極LIVE", "venue": "渋谷よしもと漫才劇場", "time_open": "17:00", "time_start": "17:15", "time_end": "18:25", "advance": "", "door": "", "url": "https://x.gd/vJF5f", "streaming_url": "", "streaming_price": ""}], "2026-06-01": [{"title": "DELICIOUS MANZAI DELICIOUS CONTE", "venue": "下北沢ReG", "time_open": "19:10", "time_start": "19:30", "time_end": "21:00", "advance": "", "door": "", "url": "https://x.gd/8YKbG", "streaming_url": "", "streaming_price": ""}], "2026-06-28": [{"title": "ろくろっ首", "venue": "シアターミネルヴァ", "time_open": "21:45", "time_start": "22:00", "time_end": "23:00", "advance": "", "door": "", "url": "https://x.gd/Yw4mn", "streaming_url": "", "streaming_price": ""}], "2026-06-15": [{"title": "積", "venue": "武蔵野芸能劇場", "time_open": "19:45", "time_start": "20:00", "time_end": "21:10", "advance": "", "door": "", "url": "https://x.gd/NvVOa", "streaming_url": "", "streaming_price": ""}], "2026-06-29": [{"title": "MANZAI寄席", "venue": "なかのZERO　小ホール", "time_open": "16:00", "time_start": "16:30", "time_end": "", "advance": "", "door": "", "url": "https://x.gd/mY9tO", "streaming_url": "", "streaming_price": ""}], "2026-06-08": [{"title": "ほやほや〜新ネタ限定ライブ〜", "venue": "なかの芸能小劇場", "time_open": "19:30", "time_start": "19:45", "time_end": "21:20", "advance": "", "door": "", "url": "https://x.gd/1Flwx", "streaming_url": "", "streaming_price": ""}], "2026-06-09": [{"title": "武蔵野芸能劇場で#ワイガヤ〜ネタ祭り〜", "venue": "武蔵野芸能劇場", "time_open": "19:10", "time_start": "19:30", "time_end": "21:30", "advance": "", "door": "", "url": "https://x.gd/FufGO", "streaming_url": "", "streaming_price": ""}], "2026-06-27": [{"title": "漫開", "venue": "雷5656会館　ときわホール", "time_open": "17:00", "time_start": "17:30", "time_end": "", "advance": "", "door": "", "url": "https://x.gd/LgCVX", "streaming_url": "", "streaming_price": ""}, {"title": "昭和 vs 平成！チーム対抗ネタ合戦！", "venue": "新宿ハイジアV-1", "time_open": "19:30", "time_start": "19:40", "time_end": "21:20", "advance": "", "door": "", "url": "https://x.gd/xrfCk", "streaming_url": "", "streaming_price": ""}], "2026-06-26": [{"title": "漫腹〜まんぷく〜", "venue": "中野区野方区民ホール", "time_open": "19:10", "time_start": "19:30", "time_end": "", "advance": "", "door": "", "url": "https://x.gd/cb6yt", "streaming_url": "", "streaming_price": ""}], "2026-06-12": [{"title": "渋谷マンゲキよる寄席", "venue": "渋谷よしもと漫才劇場", "time_open": "18:45", "time_start": "19:00", "time_end": "20:00", "advance": "", "door": "", "url": "https://x.gd/sjLyq", "streaming_url": "", "streaming_price": ""}], "2026-06-24": [{"title": "THE M", "venue": "彩音演ナナシ", "time_open": "19:15", "time_start": "19:30", "time_end": "", "advance": "", "door": "", "url": "https://x.gd/ybZ29", "streaming_url": "", "streaming_price": ""}], "2026-06-30": [{"title": "最強で最高 vol.24", "venue": "高円寺ジュンジョー", "time_open": "19:45", "time_start": "20:00", "time_end": "", "advance": "", "door": "", "url": "https://x.gd/g6osn", "streaming_url": "", "streaming_price": ""}], "2026-07-01": [{"title": "渋谷Kiwami極LIVE", "venue": "渋谷よしもと漫才劇場", "time_open": "17:00", "time_start": "17:15", "time_end": "18:25", "advance": "", "door": "", "url": "https://x.gd/qaNmE", "streaming_url": "", "streaming_price": ""}, {"title": "JORDAN", "venue": "渋谷よしもと漫才劇場", "time_open": "19:00", "time_start": "19:15", "time_end": "20:15", "advance": "", "door": "", "url": "https://x.gd/8V8vH", "streaming_url": "", "streaming_price": ""}], "2026-07-04": [{"title": "神保町マンゲキお笑いライブ", "venue": "渋谷よしもと漫才劇場", "time_open": "10:45", "time_start": "11:00", "time_end": "12:15", "advance": "", "door": "", "url": "https://x.gd/gdq3r", "streaming_url": "", "streaming_price": ""}, {"title": "神保町マンゲキお笑いライブ", "venue": "渋谷よしもと漫才劇場", "time_open": "12:30", "time_start": "12:45", "time_end": "14:00", "advance": "", "door": "", "url": "https://x.gd/oqKvs", "streaming_url": "", "streaming_price": ""}, {"title": "神保町マンゲキお笑いライブ", "venue": "渋谷よしもと漫才劇場", "time_open": "14:15", "time_start": "14:30", "time_end": "15:45", "advance": "", "door": "", "url": "https://x.gd/wLQ02", "streaming_url": "", "streaming_price": ""}], "2026-07-07": [{"title": "神保町Kakeru翔SP", "venue": "神保町よしもと漫才劇場", "time_open": "17:15", "time_start": "17:30", "time_end": "18:30", "advance": "", "door": "", "url": "https://x.gd/mX6HF", "streaming_url": "", "streaming_price": ""}, {"title": "Elephant", "venue": "神保町よしもと漫才劇場", "time_open": "21:00", "time_start": "21:15", "time_end": "22:15", "advance": "", "door": "", "url": "https://x.gd/9rugf", "streaming_url": "", "streaming_price": ""}], "2026-07-08": [{"title": "絶対漫才！", "venue": "渋谷よしもと漫才劇場", "time_open": "19:00", "time_start": "19:15", "time_end": "20:15", "advance": "", "door": "", "url": "https://x.gd/BFK1W", "streaming_url": "", "streaming_price": ""}], "2026-07-13": [{"title": "渋谷Kiwami極LIVE", "venue": "渋谷よしもと漫才劇場", "time_open": "17:00", "time_start": "17:15", "time_end": "18:25", "advance": "", "door": "", "url": "https://x.gd/wdJT7", "streaming_url": "", "streaming_price": ""}, {"title": "ウルトラ漫", "venue": "渋谷よしもと漫才劇場", "time_open": "19:00", "time_start": "19:15", "time_end": "20:15", "advance": "", "door": "", "url": "https://x.gd/BQF2EC", "streaming_url": "", "streaming_price": ""}], "2026-07-17": [{"title": "まんざい", "venue": "神保町よしもと漫才劇場", "time_open": "19:00", "time_start": "19:15", "time_end": "20:15", "advance": "", "door": "", "url": "https://x.gd/t1ZrL", "streaming_url": "", "streaming_price": ""}, {"title": "石田クラス", "venue": "神保町よしもと漫才劇場", "time_open": "20:45", "time_start": "21:00", "time_end": "22:00", "advance": "", "door": "", "url": "https://x.gd/6tiXc", "streaming_url": "", "streaming_price": ""}], "2026-07-20": [{"title": "渋谷マンゲキお笑いライブ", "venue": "渋谷よしもと漫才劇場", "time_open": "10:45", "time_start": "11:00", "time_end": "12:15", "advance": "", "door": "", "url": "https://x.gd/JvcPs", "streaming_url": "", "streaming_price": ""}, {"title": "渋谷マンゲキお笑いライブ", "venue": "渋谷よしもと漫才劇場", "time_open": "12:30", "time_start": "12:45", "time_end": "14:00", "advance": "", "door": "", "url": "https://x.gd/USlu3", "streaming_url": "", "streaming_price": ""}, {"title": "渋谷マンゲキお笑いライブ", "venue": "渋谷よしもと漫才劇場", "time_open": "14:15", "time_start": "14:30", "time_end": "15:45", "advance": "", "door": "", "url": "https://x.gd/dnv9t", "streaming_url": "", "streaming_price": ""}], "2026-07-22": [{"title": "スマイルキング", "venue": "渋谷よしもと漫才劇場", "time_open": "15:00", "time_start": "15:15", "time_end": "16:15", "advance": "", "door": "", "url": "https://x.gd/cPPam", "streaming_url": "", "streaming_price": ""}, {"title": "渋谷Kiwami極LIVE", "venue": "渋谷よしもと漫才劇場", "time_open": "17:00", "time_start": "17:15", "time_end": "18:25", "advance": "", "door": "", "url": "https://x.gd/Wnyvw", "streaming_url": "", "streaming_price": ""}], "2026-07-25": [{"title": "渋谷マンゲキお笑いライブ", "venue": "渋谷よしもと漫才劇場", "time_open": "10:45", "time_start": "11:00", "time_end": "12:15", "advance": "", "door": "", "url": "https://x.gd/EfMlIk", "streaming_url": "", "streaming_price": ""}, {"title": "渋谷マンゲキお笑いライブ", "venue": "渋谷よしもと漫才劇場", "time_open": "12:30", "time_start": "12:45", "time_end": "14:00", "advance": "", "door": "", "url": "https://x.gd/feasG", "streaming_url": "", "streaming_price": ""}, {"title": "渋谷マンゲキお笑いライブ", "venue": "渋谷よしもと漫才劇場", "time_open": "14:15", "time_start": "14:30", "time_end": "15:45", "advance": "", "door": "", "url": "https://x.gd/l64lM", "streaming_url": "", "streaming_price": ""}]};
+let activeDate  = null;   // 現在開いている日付
+let activeWeek  = null;   // 現在開いている週ID
+
+function toggleDetail(dateId, weekId) {
+  const panelRow  = document.getElementById('detail-' + weekId);
+  const panel     = panelRow ? panelRow.querySelector('.detail-panel') : null;
+  const inner     = panel   ? panel.querySelector('.detail-inner')     : null;
+  const clickedTd = document.querySelector(`[data-week="${weekId}"][onclick*="${dateId}"]`);
+
+  // ── 同じ日をもう一度 → 閉じる ──
+  if (activeDate === dateId) {
+    closePanel(panel, clickedTd);
+    activeDate = activeWeek = null;
+    return;
+  }
+
+  // ── 別パネルが開いていたら閉じる ──
+  if (activeWeek && activeWeek !== weekId) {
+    const prevRow = document.getElementById('detail-' + activeWeek);
+    const prevPanel = prevRow ? prevRow.querySelector('.detail-panel') : null;
+    if (prevPanel) closePanel(prevPanel, null);
+  }
+  document.querySelectorAll('.active-day').forEach(td => td.classList.remove('active-day'));
+
+  // ── コンテンツを書き込む ──
+  const lives = EVENT_MAP[dateId] || [];
+  if (!lives.length || !inner) return;
+
+  const [year, month, day] = dateId.split('-');
+  const d  = new Date(year, month - 1, day);
+  const wd = ['日','月','火','水','木','金','土'][d.getDay()];
+  const label = `${parseInt(year)}/${parseInt(month)}/${parseInt(day)}(${wd})`;
+
+  let cards = '';
+  lives.forEach(live => {
+    const ticketInfo = live.advance && live.door
+      ? `前売 ¥${live.advance} ｜ 当日 ¥${live.door}`
+      : live.advance ? `前売 ¥${live.advance}`
+      : live.door    ? `当日 ¥${live.door}`
+      : '';
+
+    const timeStr = live.time_open
+      ? `開場 ${live.time_open} ｜ 開演 ${live.time_start}${live.time_end ? ' ｜ 終演 ' + live.time_end : ''}`
+      : `開演 ${live.time_start}${live.time_end ? ' ｜ 終演 ' + live.time_end : ''}`;
+
+    const streamBtn = live.streaming_url
+      ? `<a href="${live.streaming_url}" target="_blank" class="detail-card-stream">🎥 配信${live.streaming_price ? ' ¥' + live.streaming_price : ''}</a>`
+      : '';
+
+    cards += `
+<div class="detail-card">
+  <div class="detail-card-title">${live.title}</div>
+  <div class="detail-card-row"><span class="label">時間</span>${timeStr}</div>
+  <div class="detail-card-row"><span class="label">会場</span>${live.venue}</div>
+  ${ticketInfo ? `<div class="detail-card-row"><span class="label">料金</span>${ticketInfo}</div>` : ''}
+  <a href="${live.url}" target="_blank" class="detail-card-link">🎫 チケット</a>
+  ${streamBtn}
+</div>`;
+  });
+
+  inner.innerHTML = `
+    <div class="detail-date-label">${label}</div>
+    <div class="detail-cards">${cards}</div>`;
+
+  // ── 高さを scrollHeight で動的に設定してアニメーション ──
+  openPanel(panel, clickedTd);
+  activeDate = dateId;
+  activeWeek = weekId;
+}
+
+function openPanel(panel, td) {
+  if (!panel) return;
+  // 一瞬 auto にして scrollHeight を取得 → max-height にセット
+  panel.style.maxHeight = panel.querySelector('.detail-inner').scrollHeight + 'px';
+  td && td.classList.add('active-day');
+}
+
+function closePanel(panel, td) {
+  if (!panel) return;
+  panel.style.maxHeight = '0';
+  td && td.classList.remove('active-day');
+}
+</script>
 </body>
 </html>
