@@ -2,7 +2,7 @@
 layout: post
 date: 2026-04-20 10:00:00 +0900
 category: "MEDIA"
-title: "【亀裂…！？】仲良しユニット「Elephant」に事件が！？※4/26(日)21時まで限定公開中※"
+title: "Elephantの振り返りトーク※4/26(日)21時まで限定公開中※"
 url: "#"
 ---
 
