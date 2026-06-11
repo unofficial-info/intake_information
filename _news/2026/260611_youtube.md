@@ -1,0 +1,16 @@
+---
+layout: post
+date: 2026-06-05 00:00:00 +0900
+category: "MEDIA"
+title: "「官能小説」"
+url: "#"
+---
+
+まえかずさんが『さや香新山の夢の泉【公式】』に出演されています。
+
+▼視聴はこちら
+
+<div class="video-size">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/k3Lfu_i8MEQ?si=vfkTeytQdCsevUDz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+<a href="https://youtu.be/k3Lfu_i8MEQ?si=vfkTeytQdCsevUDz" target="_blank">"「官能小説」"</a>
