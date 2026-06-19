@@ -2,7 +2,7 @@
 layout: post
 date: 2025-06-27 21:00:00 +0900
 category: "MEDIA"
-title: "劇場公式YouTubeにまえかずさんがご出演"
+title: "劇場公式YouTubeにまえかずさんがご出演" 
 url: "#"
 ---
 
