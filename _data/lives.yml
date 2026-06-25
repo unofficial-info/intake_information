@@ -4509,4 +4509,18 @@
   preSale_end: "2026-06-26T11:00:00"
   general: "2026-07-01T10:00:00"
   url: "https://x.gd/pVky9"
+
+- date: "2026-08-05"
+  title: "〖毎月5日はFANYの日！プレミアムメンバー感謝デー〗渋谷Kiwami極LIVEプラス＋"
+  venue: "渋谷よしもと漫才劇場"
+  advance: "1,500"
+  door: "1,800"
+  time_open: "17:00"
+  time_start: "17:15"
+  time_end: "18:25"
+  preSale_start: "2026-06-25T11:00:00"
+  preSale_end: "2026-06-28T11:00:00"
+  general: "2026-07-05T10:00:00"
+  url: "https://x.gd/xqY32"
   
+  streaming_price: "1,300"

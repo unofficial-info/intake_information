@@ -1,0 +1,696 @@
+<div class="schedule-calendar" data-schedule-calendar data-month-filter="{{ include.month_filter | default: 'all' }}">
+  <script type="application/json" data-schedule-lives>
+{{ site.data.lives | jsonify }}
+  </script>
+  <script type="application/json" data-schedule-extra-events>
+{{ site.data.events | jsonify }}
+  </script>
+
+  <div class="schedule-calendar__months" data-schedule-months></div>
+  <p class="schedule-calendar__empty" data-schedule-empty hidden>表示できるスケジュールがありません。</p>
+</div>
+
+<style>
+  .schedule-calendar {
+    --sc-accent: #cfe6da;
+    --sc-accent-dark: #5f7f70;
+    --sc-event: #f4ead8;
+    --sc-event-dark: #9a7447;
+    --sc-text: #444;
+    --sc-muted: #888;
+    --sc-line: rgba(0, 0, 0, 0.12);
+    --sc-bg: rgba(255, 255, 255, 0.88);
+    --sc-soft: rgba(207, 230, 218, 0.38);
+    --sc-sat: #5f83b8;
+    --sc-sun: #bc7474;
+    --sc-birthday-bg: #f4ead8;
+    --sc-birthday-dark: #9a7447;
+    --sc-media-bg: #eadff6;
+    --sc-media-dark: #7d6099;
+    --sc-radio-bg: #dff0f6;
+    --sc-radio-dark: #5f8494;
+    --sc-info-bg: #e8edf2;
+    --sc-info-dark: #6f7f8f;
+    width: 100%;
+    max-width: 1080px;
+    margin: 0 auto;
+    color: var(--sc-text);
+  }
+
+  .schedule-calendar * {
+    box-sizing: border-box;
+  }
+
+  .schedule-calendar__months {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+  }
+
+  .schedule-calendar__month-title {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0 0 0.7rem;
+    font-size: 1.18rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+  }
+
+  .schedule-calendar__month-title::before {
+    content: "";
+    width: 2.4rem;
+    height: 1px;
+    background: var(--sc-accent-dark);
+  }
+
+  .schedule-calendar__table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .schedule-calendar__table {
+    width: 100%;
+    min-width: 680px;
+    border-collapse: collapse;
+    table-layout: fixed;
+    background: var(--sc-bg);
+  }
+
+  .schedule-calendar__table th,
+  .schedule-calendar__table td {
+    border: 1px solid var(--sc-line);
+  }
+
+  .schedule-calendar__table th {
+    padding: 0.55rem 0.4rem;
+    text-align: left;
+    font-size: 0.72rem;
+    font-weight: 400;
+    color: var(--sc-muted);
+    letter-spacing: 0.12em;
+    background: rgba(255, 255, 255, 0.6);
+  }
+
+  .schedule-calendar__table th.is-sat,
+  .schedule-calendar__day.is-sat .schedule-calendar__day-num {
+    color: var(--sc-sat);
+  }
+
+  .schedule-calendar__table th.is-sun,
+  .schedule-calendar__day.is-sun .schedule-calendar__day-num {
+    color: var(--sc-sun);
+  }
+
+  .schedule-calendar__day {
+    height: 96px;
+    padding: 0.45rem;
+    vertical-align: top;
+    background: rgba(255, 255, 255, 0.72);
+    transition: background 0.18s ease, box-shadow 0.18s ease;
+  }
+
+  .schedule-calendar__day.is-empty {
+    background: rgba(255, 255, 255, 0.28);
+  }
+
+  .schedule-calendar__day.has-event {
+    cursor: pointer;
+  }
+
+  .schedule-calendar__day.has-event:hover,
+  .schedule-calendar__day.is-active {
+    background: var(--sc-soft);
+    box-shadow: inset 0 0 0 1px var(--sc-accent-dark);
+  }
+
+  .schedule-calendar__day-num {
+    display: block;
+    margin-bottom: 0.35rem;
+    font-size: 0.76rem;
+    color: var(--sc-muted);
+  }
+
+  .schedule-calendar__pill {
+    display: block;
+    width: 100%;
+    margin: 0 0 0.22rem;
+    padding: 0.22rem 0.36rem;
+    border: 0;
+    border-left: 3px solid var(--sc-accent-dark);
+    border-radius: 3px;
+    background: var(--sc-accent);
+    color: #4e5f58;
+    font: inherit;
+    font-size: 0.67rem;
+    line-height: 1.35;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .schedule-calendar__pill.is-extra-event {
+    border-left-color: var(--sc-event-dark);
+    background: var(--sc-event);
+    color: #6f5940;
+  }
+
+  .schedule-calendar__pill.is-category-birthday {
+    border-left-color: var(--sc-birthday-dark);
+    background: var(--sc-birthday-bg);
+    color: #6f5940;
+  }
+
+  .schedule-calendar__pill.is-category-media {
+    border-left-color: var(--sc-media-dark);
+    background: var(--sc-media-bg);
+    color: #5f4b73;
+  }
+
+  .schedule-calendar__pill.is-category-radio {
+    border-left-color: var(--sc-radio-dark);
+    background: var(--sc-radio-bg);
+    color: #4d6f7f;
+  }
+
+  .schedule-calendar__pill.is-category-info {
+    border-left-color: var(--sc-info-dark);
+    background: var(--sc-info-bg);
+    color: #596775;
+  }
+
+  .schedule-calendar__detail-row td {
+    padding: 0;
+    border-top: 0;
+    background: transparent;
+  }
+
+  .schedule-calendar__detail-panel {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease;
+    background: rgba(255, 255, 255, 0.92);
+    border-right: 1px solid var(--sc-line);
+    border-left: 1px solid var(--sc-line);
+    border-bottom: 1px solid var(--sc-line);
+  }
+
+  .schedule-calendar__detail-inner {
+    padding: 1rem;
+  }
+
+  .schedule-calendar__date-label {
+    margin: 0 0 0.8rem;
+    color: var(--sc-accent-dark);
+    font-size: 0.86rem;
+    letter-spacing: 0.1em;
+  }
+
+  .schedule-calendar__cards {
+    display: grid;
+    gap: 0.8rem;
+  }
+
+  .schedule-calendar__card {
+    padding: 0.95rem 1rem;
+    border: 1px solid var(--sc-line);
+    border-radius: 10px;
+    background: #fff;
+  }
+
+  .schedule-calendar__card.is-extra-event {
+    background: #fffdf8;
+  }
+
+  .schedule-calendar__card-title {
+    margin: 0 0 0.55rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    font-weight: 600;
+  }
+
+  .schedule-calendar__tag {
+    display: inline-flex;
+    align-items: center;
+    margin: 0 0 0.5rem;
+    padding: 0.16rem 0.48rem;
+    border-radius: 999px;
+    background: var(--sc-event);
+    color: var(--sc-event-dark);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+  }
+
+  .schedule-calendar__row {
+    display: flex;
+    gap: 0.7rem;
+    margin: 0.25rem 0;
+    font-size: 0.86rem;
+    line-height: 1.7;
+  }
+
+  .schedule-calendar__row-label {
+    flex: 0 0 3.2rem;
+    color: var(--sc-muted);
+  }
+
+  .schedule-calendar__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+  }
+
+  .schedule-calendar__link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2rem;
+    padding: 0.32rem 0.72rem;
+    border: 1px solid var(--sc-accent-dark);
+    border-radius: 999px;
+    color: var(--sc-accent-dark);
+    text-decoration: none;
+    font-size: 0.8rem;
+    background: #fff;
+  }
+
+  .schedule-calendar__link:hover {
+    background: var(--sc-soft);
+  }
+
+  .schedule-calendar__empty {
+    margin: 1rem 0 0;
+    color: var(--sc-muted);
+    text-align: center;
+  }
+
+  @media (max-width: 720px) {
+    .schedule-calendar__table {
+      min-width: 500px;
+    }
+
+    .schedule-calendar__day {
+      height: 82px;
+      padding: 0.35rem;
+    }
+
+    .schedule-calendar__pill {
+      font-size: 0.5rem;
+    }
+  }
+</style>
+
+<script>
+(function () {
+  const WEEKDAYS = ['月', '火', '水', '木', '金', '土', '日'];
+
+  document.querySelectorAll('[data-schedule-calendar]:not([data-schedule-rendered])').forEach((root) => {
+    root.setAttribute('data-schedule-rendered', 'true');
+
+    const livesTag = root.querySelector('[data-schedule-lives]');
+    const extraEventsTag = root.querySelector('[data-schedule-extra-events]');
+    const monthsEl = root.querySelector('[data-schedule-months]');
+    const emptyEl = root.querySelector('[data-schedule-empty]');
+    const monthFilter = root.getAttribute('data-month-filter') || 'all';
+
+    const lives = readJsonArray(livesTag, 'lives.yml');
+    const extraEvents = readJsonArray(extraEventsTag, 'events.yml');
+
+    const today = new Date();
+    const thisMonthKey = monthKey(today.getFullYear(), today.getMonth() + 1);
+    const thisYear = today.getFullYear();
+
+    const eventsByDate = {};
+
+    lives
+      .filter((live) => live && live.date)
+      .forEach((live) => {
+        const date = normalizeDate(live.date);
+        if (!date) return;
+        addEvent(eventsByDate, {
+          source: 'live',
+          category: 'LIVE',
+          date,
+          title: value(live.title),
+          venue: value(live.venue),
+          time_open: value(live.time_open),
+          time_start: value(live.time_start),
+          time_end: value(live.time_end),
+          advance: value(live.advance),
+          door: value(live.door),
+          url: value(live.url),
+          streaming_url: value(live.streaming_url),
+          streaming_price: value(live.streaming_price),
+          description: value(live.description)
+        }, thisMonthKey, monthFilter);
+      });
+
+    extraEvents
+      .filter((event) => event && event.date && event.title)
+      .forEach((event) => {
+        expandEventDates(event, thisYear).forEach((date) => {
+          addEvent(eventsByDate, {
+            source: 'event',
+            category: value(event.category || event.type || 'EVENT'),
+            date,
+            title: value(event.title),
+            venue: value(event.venue || event.location),
+            time_open: value(event.time_open),
+            time_start: value(event.time_start || event.time),
+            time_end: value(event.time_end),
+            url: value(event.url),
+            description: value(event.description || event.note),
+            is_all_day: !!event.all_day || !value(event.time_start || event.time)
+          }, thisMonthKey, monthFilter);
+        });
+      });
+
+    Object.keys(eventsByDate).forEach((date) => {
+      eventsByDate[date].sort((a, b) => {
+        const timeA = a.time_start || '00:00';
+        const timeB = b.time_start || '00:00';
+        if (timeA !== timeB) return timeA.localeCompare(timeB);
+        if (a.source !== b.source) return a.source === 'event' ? -1 : 1;
+        return a.title.localeCompare(b.title, 'ja');
+      });
+    });
+
+    const months = Array.from(new Set(Object.keys(eventsByDate).map((date) => date.slice(0, 7)))).sort();
+
+    if (!months.length) {
+      if (emptyEl) emptyEl.hidden = false;
+      return;
+    }
+
+    monthsEl.innerHTML = months.map((key) => renderMonth(key, eventsByDate)).join('');
+
+    let activeDate = null;
+    let activeWeek = null;
+
+    root.addEventListener('click', (event) => {
+      const dayCell = event.target.closest('[data-schedule-date]');
+      if (!dayCell || !root.contains(dayCell)) return;
+
+      const date = dayCell.getAttribute('data-schedule-date');
+      const week = dayCell.getAttribute('data-schedule-week');
+      const itemsOnDate = eventsByDate[date] || [];
+      if (!itemsOnDate.length) return;
+
+      const panel = root.querySelector(`[data-schedule-detail="${week}"] .schedule-calendar__detail-panel`);
+      const inner = panel ? panel.querySelector('.schedule-calendar__detail-inner') : null;
+      if (!panel || !inner) return;
+
+      if (activeDate === date) {
+        closePanel(panel);
+        dayCell.classList.remove('is-active');
+        activeDate = null;
+        activeWeek = null;
+        return;
+      }
+
+      if (activeWeek && activeWeek !== week) {
+        const prevPanel = root.querySelector(`[data-schedule-detail="${activeWeek}"] .schedule-calendar__detail-panel`);
+        if (prevPanel) closePanel(prevPanel);
+      }
+
+      root.querySelectorAll('.schedule-calendar__day.is-active').forEach((el) => el.classList.remove('is-active'));
+
+      inner.innerHTML = renderDetail(date, itemsOnDate);
+      openPanel(panel);
+      dayCell.classList.add('is-active');
+      activeDate = date;
+      activeWeek = week;
+    });
+  });
+
+  function readJsonArray(tag, label) {
+    if (!tag) return [];
+    try {
+      const parsed = JSON.parse(tag.textContent || 'null');
+      return Array.isArray(parsed) ? parsed : [];
+    } catch (error) {
+      console.error(`schedule_calendar: ${label}の読み込みに失敗しました`, error);
+      return [];
+    }
+  }
+
+  function addEvent(eventsByDate, event, thisMonthKey, monthFilter) {
+    const key = normalizeDate(event.date);
+    if (!key) return;
+    const month = key.slice(0, 7);
+    if (month < thisMonthKey) return;
+    if (monthFilter === 'current' && month !== thisMonthKey) return;
+
+    if (!eventsByDate[key]) eventsByDate[key] = [];
+    eventsByDate[key].push({ ...event, date: key });
+  }
+
+  function expandEventDates(event, thisYear) {
+    const rawDate = value(event.date);
+    const repeat = value(event.repeat || event.recurring).toLowerCase();
+    const isYearly = repeat === 'yearly' || repeat === 'annual' || event.yearly === true;
+
+    if (!isYearly) {
+      const normalized = normalizeDate(rawDate);
+      return normalized ? [normalized] : [];
+    }
+
+    const monthDay = rawDate.length === 5 ? rawDate : rawDate.slice(5, 10);
+    if (!/^\d{2}-\d{2}$/.test(monthDay)) return [];
+
+    return [
+      `${thisYear}-${monthDay}`,
+      `${thisYear + 1}-${monthDay}`
+    ];
+  }
+
+  function renderMonth(key, eventsByDate) {
+    const [year, month] = key.split('-').map(Number);
+    const first = new Date(year, month - 1, 1);
+    const lastDate = new Date(year, month, 0).getDate();
+    const firstOffset = (first.getDay() + 6) % 7;
+    const totalCells = Math.ceil((firstOffset + lastDate) / 7) * 7;
+
+    let rows = '';
+    for (let cell = 0; cell < totalCells; cell += 7) {
+      const weekId = `${key}-w${cell / 7}`;
+      let cells = '';
+
+      for (let i = 0; i < 7; i++) {
+        const index = cell + i;
+        const day = index - firstOffset + 1;
+        const isSat = i === 5;
+        const isSun = i === 6;
+
+        if (day < 1 || day > lastDate) {
+          cells += '<td class="schedule-calendar__day is-empty"></td>';
+          continue;
+        }
+
+        const date = `${year}-${pad(month)}-${pad(day)}`;
+        const items = eventsByDate[date] || [];
+        const classes = [
+          'schedule-calendar__day',
+          isSat ? 'is-sat' : '',
+          isSun ? 'is-sun' : '',
+          items.length ? 'has-event' : ''
+        ].filter(Boolean).join(' ');
+
+        const pills = items.map((item) => {
+          // const camera = item.source === 'live' && item.streaming_url ? '🎥 ' : '';
+          const camera = '';
+          const time = item.time_start ? `${escapeHtml(item.time_start)} ` : '';
+          const categoryClass = item.source === 'event'
+            ? ` is-extra-event ${categoryClassName(item.category)}`
+            : '';
+
+          return `<span class="schedule-calendar__pill${categoryClass}">${camera}${time}${escapeHtml(item.title)}</span>`;
+        }).join('');
+
+        cells += `<td class="${classes}" data-schedule-date="${date}" data-schedule-week="${weekId}">
+          <span class="schedule-calendar__day-num">${day}</span>${pills}
+        </td>`;
+      }
+
+      rows += `<tr>${cells}</tr><tr class="schedule-calendar__detail-row" data-schedule-detail="${weekId}"><td colspan="7"><div class="schedule-calendar__detail-panel"><div class="schedule-calendar__detail-inner"></div></div></td></tr>`;
+    }
+
+    const head = WEEKDAYS.map((day, index) => {
+      const cls = index === 5 ? 'is-sat' : index === 6 ? 'is-sun' : '';
+      return `<th class="${cls}">${day}</th>`;
+    }).join('');
+
+    return `<section class="schedule-calendar__month">
+      <h3 class="schedule-calendar__month-title">${year}.${pad(month)}</h3>
+      <div class="schedule-calendar__table-wrap">
+        <table class="schedule-calendar__table">
+          <thead><tr>${head}</tr></thead>
+          <tbody>${rows}</tbody>
+        </table>
+      </div>
+    </section>`;
+  }
+
+  function renderDetail(date, items) {
+    const label = formatDateLabel(date);
+    const cards = items.map((item) => {
+      const isLive = item.source === 'live';
+      const time = isLive
+        ? [
+            item.time_open ? `開場 ${escapeHtml(item.time_open)}` : '',
+            item.time_start ? `開演 ${escapeHtml(item.time_start)}` : '',
+            item.time_end ? `終演 ${escapeHtml(item.time_end)}` : ''
+          ].filter(Boolean).join(' ｜ ')
+        : item.is_all_day
+          ? ''
+          : [
+              item.time_start ? `${escapeHtml(item.time_start)}` : '',
+              item.time_end ? `〜${escapeHtml(item.time_end)}` : ''
+            ].filter(Boolean).join('');
+
+      const price = item.advance && item.door
+        ? `前売 ¥${escapeHtml(item.advance)} ｜ 当日 ¥${escapeHtml(item.door)}`
+        : item.advance
+          ? `前売 ¥${escapeHtml(item.advance)}`
+          : item.door
+            ? `当日 ¥${escapeHtml(item.door)}`
+            : '';
+
+      const mainLinkLabel = isLive ? 'チケット' : '詳細';
+      const mainLink = item.url
+        ? `<a class="schedule-calendar__link" href="${escapeAttr(item.url)}" target="_blank" rel="noopener">${mainLinkLabel}</a>`
+        : '';
+
+      const streamLink = isLive && item.streaming_url
+        ? `<a class="schedule-calendar__link" href="${escapeAttr(item.streaming_url)}" target="_blank" rel="noopener">配信${item.streaming_price ? ' ¥' + escapeHtml(item.streaming_price) : ''}</a>`
+        : '';
+
+      const googleLink = `<a class="schedule-calendar__link" href="${escapeAttr(googleCalendarUrl(item))}" target="_blank" rel="noopener">Googleカレンダーに追加</a>`;
+      const tag = !isLive && item.category ? `<p class="schedule-calendar__tag">${escapeHtml(item.category)}</p>` : '';
+      const cardClass = isLive ? '' : ' is-extra-event';
+
+      return `<article class="schedule-calendar__card${cardClass}">
+        ${tag}
+        <h4 class="schedule-calendar__card-title">${escapeHtml(item.title)}</h4>
+        ${time ? row('時間', time) : ''}
+        ${item.venue ? row(isLive ? '会場' : '場所', escapeHtml(item.venue)) : ''}
+        ${price ? row('料金', price) : ''}
+        ${item.description ? row('詳細', escapeHtml(item.description)) : ''}
+        <div class="schedule-calendar__links">${mainLink}${streamLink}${googleLink}</div>
+      </article>`;
+    }).join('');
+
+    return `<p class="schedule-calendar__date-label">${label}</p><div class="schedule-calendar__cards">${cards}</div>`;
+  }
+
+  function row(label, body) {
+    return `<p class="schedule-calendar__row"><span class="schedule-calendar__row-label">${label}</span><span>${body}</span></p>`;
+  }
+
+  function openPanel(panel) {
+    panel.style.maxHeight = panel.querySelector('.schedule-calendar__detail-inner').scrollHeight + 'px';
+  }
+
+  function closePanel(panel) {
+    panel.style.maxHeight = '0';
+  }
+
+  function googleCalendarUrl(item) {
+    const params = new URLSearchParams({
+      action: 'TEMPLATE',
+      text: item.title || '',
+      location: item.venue || '',
+      details: item.url || item.description || ''
+    });
+
+    if (item.is_all_day || !item.time_start) {
+      params.set('dates', `${googleAllDayDate(item.date)}/${googleAllDayDate(addOneDay(item.date))}`);
+    } else {
+      const start = googleDateTime(item.date, item.time_start);
+      const end = item.time_end ? googleDateTime(item.date, item.time_end) : start;
+      params.set('dates', `${start}/${end}`);
+    }
+
+    return `https://www.google.com/calendar/render?${params.toString()}`;
+  }
+
+  function googleDateTime(date, time) {
+    if (!date || !time) return '';
+    return `${String(date).replaceAll('-', '')}T${String(time).replace(':', '')}00`;
+  }
+
+  function googleAllDayDate(date) {
+    return String(date).replaceAll('-', '');
+  }
+
+  function addOneDay(date) {
+    const [year, month, day] = date.split('-').map(Number);
+    const d = new Date(year, month - 1, day + 1);
+    return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+  }
+
+  function formatDateLabel(date) {
+    const [year, month, day] = date.split('-').map(Number);
+    const d = new Date(year, month - 1, day);
+    const wd = ['日', '月', '火', '水', '木', '金', '土'][d.getDay()];
+    return `${year}/${month}/${day}(${wd})`;
+  }
+
+  function normalizeDate(date) {
+    if (typeof date === 'string') {
+      if (/^\d{4}-\d{2}-\d{2}$/.test(date)) return date;
+      if (/^\d{4}\/\d{1,2}\/\d{1,2}$/.test(date)) {
+        const [y, m, d] = date.split('/');
+        return `${y}-${pad(m)}-${pad(d)}`;
+      }
+      return '';
+    }
+    return '';
+  }
+
+  function monthKey(year, month) {
+    return `${year}-${pad(month)}`;
+  }
+
+  function pad(number) {
+    return String(number).padStart(2, '0');
+  }
+
+  function categoryClassName(category) {
+    const key = value(category).trim().toUpperCase();
+
+    if (key === 'BIRTHDAY' || key === '誕生日') {
+      return 'is-category-birthday';
+    }
+
+    if (key === 'MEDIA' || key === 'メディア') {
+      return 'is-category-media';
+    }
+
+    if (key === 'RADIO' || key === 'ラジオ') {
+      return 'is-category-radio';
+    }
+
+    return 'is-category-info';
+  }
+
+  function value(input) {
+    return input == null ? '' : String(input);
+  }
+
+  function escapeHtml(input) {
+    return value(input)
+      .replaceAll('&', '&amp;')
+      .replaceAll('<', '&lt;')
+      .replaceAll('>', '&gt;')
+      .replaceAll('"', '&quot;')
+      .replaceAll("'", '&#39;');
+  }
+
+  function escapeAttr(input) {
+    return escapeHtml(input);
+  }
+})();
+</script>

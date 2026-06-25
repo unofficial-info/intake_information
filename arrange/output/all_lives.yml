@@ -1,0 +1,31 @@
+# 新規なし
+# ライブ以外の予定をここに追加します。
+# category は BIRTHDAY / RADIO / MEDIA / INFO など好きな名前でOKです。
+
+# 例：誕生日など毎年表示したい予定
+- date: "01-31"
+  title: "鈴木さん 誕生日"
+  category: "BIRTHDAY"
+  repeat: "yearly"
+
+- date: "12-22"
+  title: "まえかずさん 誕生日"
+  category: "BIRTHDAY"
+  repeat: "yearly"
+# 例：ラジオ更新日
+# - date: "2026-06-27"
+#   title: "stand.fm 更新"
+#   category: "RADIO"
+#   time_start: "22:00"
+#   url: "https://stand.fm/channels/6030fcec85b142d0d89e72df"
+#   description: "ラジオ更新"
+
+# # 例：メディア出演
+# - date: "2026-07-01"
+#   title: "メディア出演"
+#   category: "MEDIA"
+#   time_start: "19:00"
+#   time_end: "20:00"
+#   venue: "YouTube"
+#   url: "https://example.com"
+#   description: "出演情報のメモ"
