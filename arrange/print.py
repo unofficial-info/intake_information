@@ -223,7 +223,7 @@ newlive_all  = []
 nextlive_all = []
 yml_new      = []   # 新規追加分のみ
 # calender_all = []
-# news_all     = []
+news_all     = []
 # mainlive_all = []
 new_news_files = []  # 新規追加ライブ（newsファイル生成用）
 
@@ -272,8 +272,8 @@ for row_num, live in enumerate(lives, start=2):
     # 新規のみ: YML追記 & news個別ファイル生成
     if key not in existing_keys:
         yml_new.append(Template(yml_template).render(live))
-        # news_all.append(Template(news_template.replace("%%TODAY%%", today)).render(live))
-        # new_news_files.append(live)
+        news_all.append(Template(news_template.replace("%%TODAY%%", today)).render(live))
+        new_news_files.append(live)
         print(f"  ✅ 新規追加: {live['date']} 『{live['title']}』")
     else:
         print(f"  ─  スキップ: {live['date']} 『{live['title']}』（既存）")
@@ -316,8 +316,8 @@ with open(os.path.join(OUTPUT_DIR, "nextlive.txt"), "w", encoding="utf-8") as f:
 # with open(os.path.join(OUTPUT_DIR, "calender.html"), "w", encoding="utf-8") as f:
 #     f.write("\n".join(calender_all))
 
-# with open(os.path.join(OUTPUT_DIR, "news.html"), "w", encoding="utf-8") as f:
-#     f.write("\n".join(news_all) if news_all else "<!-- 新規なし -->")
+with open(os.path.join(OUTPUT_DIR, "news.html"), "w", encoding="utf-8") as f:
+    f.write("\n".join(news_all) if news_all else "<!-- 新規なし -->")
 
 # with open(os.path.join(OUTPUT_DIR, "mainlive.html"), "w", encoding="utf-8") as f:
 #     f.write("\n".join(mainlive_all))
