@@ -225,7 +225,7 @@ yml_new      = []   # 新規追加分のみ
 # calender_all = []
 news_all     = []
 # mainlive_all = []
-new_news_files = []  # 新規追加ライブ（newsファイル生成用）
+#new_news_files = []  # 新規追加ライブ（newsファイル生成用）
 
 for row_num, live in enumerate(lives, start=2):
     # CSVの列数が多い行では、DictReaderが余った値を None キーに入れる。
@@ -273,7 +273,7 @@ for row_num, live in enumerate(lives, start=2):
     if key not in existing_keys:
         yml_new.append(Template(yml_template).render(live))
         news_all.append(Template(news_template.replace("%%TODAY%%", today)).render(live))
-        new_news_files.append(live)
+        #new_news_files.append(live)
         print(f"  ✅ 新規追加: {live['date']} 『{live['title']}』")
     else:
         print(f"  ─  スキップ: {live['date']} 『{live['title']}』（既存）")
@@ -287,20 +287,20 @@ else:
     print("\n📝 lives.yml: 追記なし（全件既存）")
 
 #── news個別ファイル生成（_news/{year}/YYMMDD_ライブ名.md）──
-for live in new_news_files:
-    # ライブ日付から年を取得してフォルダを決定
-    try:
-        live_year = str(datetime.strptime(live["date"], "%Y-%m-%d").year)
-    except Exception:
-        live_year = datetime.now().strftime("%Y")
-    year_dir = os.path.join(NEWS_BASE, live_year)
-    os.makedirs(year_dir, exist_ok=True)
-    fname = f"{today_file}_{safe_filename(live['title'])}.md"
-    fpath = os.path.join(year_dir, fname)
-    rendered = Template(news_template.replace("%%TODAY%%", today)).render(live)
-    with open(fpath, "w", encoding="utf-8") as f:
-        f.write(rendered)
-    print(f"  📄 _news/{live_year}/{fname}")
+# for live in new_news_files:
+#     # ライブ日付から年を取得してフォルダを決定
+#     try:
+#         live_year = str(datetime.strptime(live["date"], "%Y-%m-%d").year)
+#     except Exception:
+#         live_year = datetime.now().strftime("%Y")
+#     year_dir = os.path.join(NEWS_BASE, live_year)
+#     os.makedirs(year_dir, exist_ok=True)
+#     fname = f"{today_file}_{safe_filename(live['title'])}.md"
+#     fpath = os.path.join(year_dir, fname)
+#     rendered = Template(news_template.replace("%%TODAY%%", today)).render(live)
+#     with open(fpath, "w", encoding="utf-8") as f:
+#         f.write(rendered)
+#     print(f"  📄 _news/{live_year}/{fname}")
 
 # ── 従来の一括出力ファイル ──
 with open(os.path.join(OUTPUT_DIR, "newlive.txt"), "w", encoding="utf-8") as f:

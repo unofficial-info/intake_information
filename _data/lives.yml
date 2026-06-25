@@ -1,5 +1,3 @@
-
-
 - date: "2026-06-02"
   title: "JORDAN"
   venue: "渋谷よしもと漫才劇場"
@@ -57,8 +55,6 @@
   preSale_end: "2026-04-28T11:00:00"
   general: "2026-05-05T10:00:00"
   url: "https://x.gd/a4Kkh"
-  
-  
 
 - date: "2026-06-18"
   title: "スマイルキング"
@@ -94,15 +90,13 @@
   title: "FLASH PART2"
   venue: "新宿バッシュ!!"
   advance: "2,500"
-  
+
   time_open: "19:15"
   time_start: "19:30"
   time_end: "21:00"
-  
+
   general: "2026-04-28T22:40:00"
   url: "https://x.gd/CupuW"
-  
-  
 
 - date: "2026-05-04"
   title: "渋谷マンゲキよるの寄席ライブ"
@@ -112,11 +106,8 @@
   time_open: "18:45"
   time_start: "19:00"
   time_end: "20:00"
-  
-  
+
   url: "https://x.gd/tH3H5"
-  
-  
 
 - date: "2026-06-02"
   title: "渋谷Kiwami極LIVEプラス＋"
@@ -145,8 +136,6 @@
   preSale_end: "2026-05-07T11:00:00"
   general: "2026-05-13T10:00:00"
   url: "https://x.gd/a6VmE"
-  
-  
 
 - date: "2026-06-07"
   title: "神保町マンゲキお笑いライブ"
@@ -160,8 +149,6 @@
   preSale_end: "2026-05-07T11:00:00"
   general: "2026-05-13T10:00:00"
   url: "https://x.gd/6U4JD"
-  
-  
 
 - date: "2026-06-07"
   title: "神保町マンゲキお笑いライブ"
@@ -175,8 +162,6 @@
   preSale_end: "2026-05-07T11:00:00"
   general: "2026-05-13T10:00:00"
   url: "https://x.gd/dJgHg"
-  
-  
 
 - date: "2026-06-14"
   title: "グランドバトルEAST 第四部"
@@ -190,8 +175,6 @@
   preSale_end: "2026-05-07T11:00:00"
   general: "2026-05-13T10:00:00"
   url: "https://x.gd/KqtMv"
-  
-  
 
 - date: "2026-06-18"
   title: "渋谷Kiwami極LIVEプラス＋"
@@ -220,8 +203,6 @@
   preSale_end: "2026-05-07T11:00:00"
   general: "2026-05-13T10:00:00"
   url: "https://x.gd/kIc9q"
-  
-  
 
 - date: "2026-06-20"
   title: "渋谷マンゲキお笑いライブ"
@@ -235,8 +216,6 @@
   preSale_end: "2026-05-07T11:00:00"
   general: "2026-05-13T10:00:00"
   url: "https://x.gd/00P2C"
-  
-  
 
 - date: "2026-06-20"
   title: "渋谷マンゲキお笑いライブ"
@@ -250,8 +229,6 @@
   preSale_end: "2026-05-07T11:00:00"
   general: "2026-05-13T10:00:00"
   url: "https://x.gd/aw02r"
-  
-  
 
 - date: "2026-06-22"
   title: "神保町Kakeru翔SPプラス+"
@@ -280,8 +257,6 @@
   preSale_end: "2026-05-07T11:00:00"
   general: "2026-05-13T10:00:00"
   url: "https://x.gd/vJF5f"
-  
-  
 
 - date: "2026-06-01"
   title: "DELICIOUS MANZAI DELICIOUS CONTE"
@@ -291,53 +266,44 @@
   time_open: "19:10"
   time_start: "19:30"
   time_end: "21:00"
-  
+
   general: "2026-05-06T10:00:00"
   url: "https://x.gd/8YKbG"
-  
-  
 
 - date: "2026-06-28"
   title: "ろくろっ首"
   venue: "シアターミネルヴァ"
   advance: "2,200"
-  
+
   time_open: "21:45"
   time_start: "22:00"
   time_end: "23:00"
-  
+
   general: "2026-05-06T23:00:00"
   url: "https://x.gd/Yw4mn"
-  
-  
 
 - date: "2026-06-15"
   title: "積"
   venue: "武蔵野芸能劇場"
   advance: "2,200"
-  
+
   time_open: "19:45"
   time_start: "20:00"
   time_end: "21:10"
-  
+
   general: "2026-05-06T22:40:00"
   url: "https://x.gd/NvVOa"
-  
-  
 
 - date: "2026-05-10"
   title: "幸福の漫才"
   venue: "シアターミネルヴァ"
-  
+
   door: "2,000"
   time_open: "21:50"
   time_start: "22:00"
   time_end: "23:00"
-  
-  
+
   url: "https://x.gd/VoNxA"
-  
-  
 
 - date: "2026-05-15"
   title: "幕張平日ネタＳＰ１４時"
@@ -347,11 +313,8 @@
   time_open: "13:30"
   time_start: "14:00"
   time_end: "15:00"
-  
-  
+
   url: "https://x.gd/UghYi"
-  
-  
 
 - date: "2026-05-15"
   title: "幕張平日ネタＳＰ１６時"
@@ -361,95 +324,77 @@
   time_open: "15:30"
   time_start: "16:00"
   time_end: "17:00"
-  
-  
+
   url: "https://x.gd/vBD5V"
-  
-  
 
 - date: "2026-06-29"
   title: "MANZAI寄席"
   venue: "なかのZERO　小ホール"
   advance: "2,500"
-  
+
   time_open: "16:00"
   time_start: "16:30"
-  
-  
+
   general: "2026-05-14T10:00:00"
   url: "https://x.gd/mY9tO"
-  
-  
 
 - date: "2026-06-08"
   title: "ほやほや〜新ネタ限定ライブ〜"
   venue: "なかの芸能小劇場"
-  
+
   door: "2,500"
   time_open: "19:30"
   time_start: "19:45"
   time_end: "21:20"
-  
+
   general: "2026-05-13T22:30:00"
   url: "https://x.gd/1Flwx"
-  
-  
 
 - date: "2026-06-09"
   title: "武蔵野芸能劇場で#ワイガヤ〜ネタ祭り〜"
   venue: "武蔵野芸能劇場"
-  
+
   door: "2,500"
   time_open: "19:10"
   time_start: "19:30"
   time_end: "21:30"
-  
+
   general: "2026-05-13T22:40:00"
   url: "https://x.gd/FufGO"
-  
-  
 
 - date: "2026-05-23"
   title: "チーノのネタと企画「芸人VSお笑いファン」"
   venue: "新宿ハイジアV-1"
   advance: "1,700"
-  
+
   time_open: "18:20"
   time_start: "18:30"
   time_end: "19:30"
-  
+
   general: "2026-05-14T22:10:00"
   url: "https://x.gd/G8A9B"
-  
-  
 
 - date: "2026-06-27"
   title: "漫開"
   venue: "雷5656会館　ときわホール"
   advance: "2,800"
-  
+
   time_open: "17:00"
   time_start: "17:30"
-  
-  
+
   general: "2026-05-21T10:00:00"
   url: "https://x.gd/LgCVX"
-  
-  
 
 - date: "2026-06-26"
   title: "漫腹〜まんぷく〜"
   venue: "中野区野方区民ホール"
-  
+
   door: "2,500"
   time_open: "19:10"
   time_start: "19:30"
-  
-  
+
   general: "2026-05-15T22:40:00"
   url: "https://x.gd/cb6yt"
-  
-  
 
 - date: "2026-06-06"
   title: "渋谷マンゲキお笑いライブ"
@@ -459,11 +404,8 @@
   time_open: "10:45"
   time_start: "11:00"
   time_end: "12:15"
-  
-  
+
   url: "https://x.gd/ePgs4"
-  
-  
 
 - date: "2026-06-06"
   title: "渋谷マンゲキお笑いライブ"
@@ -473,11 +415,8 @@
   time_open: "12:30"
   time_start: "12:45"
   time_end: "14:00"
-  
-  
+
   url: "https://x.gd/JAnDN"
-  
-  
 
 - date: "2026-06-06"
   title: "渋谷マンゲキお笑いライブ"
@@ -487,11 +426,8 @@
   time_open: "14:15"
   time_start: "14:30"
   time_end: "15:45"
-  
-  
+
   url: "https://x.gd/QuH7K"
-  
-  
 
 - date: "2026-07-01"
   title: "渋谷Kiwami極LIVE"
@@ -505,8 +441,6 @@
   preSale_end: "2026-05-28T11:00:00"
   general: "2026-06-05T10:00:00"
   url: "https://x.gd/qaNmE"
-  
-  
 
 - date: "2026-07-01"
   title: "JORDAN"
@@ -520,7 +454,7 @@
   preSale_end: "2026-05-28T11:00:00"
   general: "2026-06-05T10:00:00"
   url: "https://x.gd/8V8vH"
-  
+
   streaming_price: "1,300"
 
 - date: "2026-07-04"
@@ -535,8 +469,6 @@
   preSale_end: "2026-05-28T11:00:00"
   general: "2026-06-05T10:00:00"
   url: "https://x.gd/gdq3r"
-  
-  
 
 - date: "2026-07-04"
   title: "神保町マンゲキお笑いライブ"
@@ -550,8 +482,6 @@
   preSale_end: "2026-05-28T11:00:00"
   general: "2026-06-05T10:00:00"
   url: "https://x.gd/oqKvs"
-  
-  
 
 - date: "2026-07-04"
   title: "神保町マンゲキお笑いライブ"
@@ -565,8 +495,6 @@
   preSale_end: "2026-05-28T11:00:00"
   general: "2026-06-05T10:00:00"
   url: "https://x.gd/wLQ02"
-  
-  
 
 - date: "2026-07-07"
   title: "神保町Kakeru翔SP"
@@ -580,8 +508,6 @@
   preSale_end: "2026-05-28T11:00:00"
   general: "2026-06-05T10:00:00"
   url: "https://x.gd/mX6HF"
-  
-  
 
 - date: "2026-07-07"
   title: "Elephant"
@@ -595,8 +521,6 @@
   preSale_end: "2026-05-28T11:00:00"
   general: "2026-06-05T10:00:00"
   url: "https://x.gd/9rugf"
-  
-  
 
 - date: "2026-07-08"
   title: "絶対漫才！"
@@ -610,7 +534,7 @@
   preSale_end: "2026-05-28T11:00:00"
   general: "2026-06-05T10:00:00"
   url: "https://x.gd/BFK1W"
-  
+
   streaming_price: "1,300"
 
 - date: "2026-07-13"
@@ -625,8 +549,6 @@
   preSale_end: "2026-05-28T11:00:00"
   general: "2026-06-05T10:00:00"
   url: "https://x.gd/wdJT7"
-  
-  
 
 - date: "2026-07-13"
   title: "ウルトラ漫"
@@ -640,7 +562,7 @@
   preSale_end: "2026-05-28T11:00:00"
   general: "2026-06-05T10:00:00"
   url: "https://x.gd/BQF2EC"
-  
+
   streaming_price: "1,300"
 
 - date: "2026-07-17"
@@ -655,7 +577,7 @@
   preSale_end: "2026-05-28T11:00:00"
   general: "2026-06-05T10:00:00"
   url: "https://x.gd/t1ZrL"
-  
+
   streaming_price: "1,300"
 
 - date: "2026-07-17"
@@ -670,8 +592,6 @@
   preSale_end: "2026-05-28T11:00:00"
   general: "2026-06-05T10:00:00"
   url: "https://x.gd/6tiXc"
-  
-  
 
 - date: "2026-07-20"
   title: "渋谷マンゲキお笑いライブ"
@@ -685,8 +605,6 @@
   preSale_end: "2026-05-28T11:00:00"
   general: "2026-06-05T10:00:00"
   url: "https://x.gd/JvcPs"
-  
-  
 
 - date: "2026-07-20"
   title: "渋谷マンゲキお笑いライブ"
@@ -700,8 +618,6 @@
   preSale_end: "2026-05-28T11:00:00"
   general: "2026-06-05T10:00:00"
   url: "https://x.gd/USlu3"
-  
-  
 
 - date: "2026-07-20"
   title: "渋谷マンゲキお笑いライブ"
@@ -715,8 +631,6 @@
   preSale_end: "2026-05-28T11:00:00"
   general: "2026-06-05T10:00:00"
   url: "https://x.gd/dnv9t"
-  
-  
 
 - date: "2026-07-22"
   title: "スマイルキング"
@@ -730,7 +644,7 @@
   preSale_end: "2026-05-28T11:00:00"
   general: "2026-06-05T10:00:00"
   url: "https://x.gd/cPPam"
-  
+
   streaming_price: "1,300"
 
 - date: "2026-07-22"
@@ -745,8 +659,6 @@
   preSale_end: "2026-05-28T11:00:00"
   general: "2026-06-05T10:00:00"
   url: "https://x.gd/Wnyvw"
-  
-  
 
 - date: "2026-07-25"
   title: "渋谷マンゲキお笑いライブ"
@@ -760,8 +672,6 @@
   preSale_end: "2026-05-28T11:00:00"
   general: "2026-06-05T10:00:00"
   url: "https://x.gd/EfMlIk"
-  
-  
 
 - date: "2026-07-25"
   title: "渋谷マンゲキお笑いライブ"
@@ -775,8 +685,6 @@
   preSale_end: "2026-05-28T11:00:00"
   general: "2026-06-05T10:00:00"
   url: "https://x.gd/feasG"
-  
-  
 
 - date: "2026-07-25"
   title: "渋谷マンゲキお笑いライブ"
@@ -790,8 +698,6 @@
   preSale_end: "2026-05-28T11:00:00"
   general: "2026-06-05T10:00:00"
   url: "https://x.gd/l64lM"
-  
-  
 
 - date: "2026-06-12"
   title: "渋谷マンゲキよる寄席"
@@ -801,53 +707,42 @@
   time_open: "18:45"
   time_start: "19:00"
   time_end: "20:00"
-  
-  
+
   url: "https://x.gd/sjLyq"
-  
-  
 
 - date: "2026-06-24"
   title: "THE M"
   venue: "彩音演ナナシ"
-  
+
   door: "2,000"
   time_open: "19:15"
   time_start: "19:30"
-  
-  
+
   general: "2026-05-29T18:00:00"
   url: "https://x.gd/ybZ29"
-  
-  
 
 - date: "2026-06-30"
   title: "最強で最高 vol.24"
   venue: "高円寺ジュンジョー"
-  
+
   door: "2,000"
   time_open: "19:45"
   time_start: "20:00"
-  
-  
+
   general: "2026-05-29T23:10:00"
   url: "https://x.gd/g6osn"
-  
-  
 
 - date: "2026-06-27"
   title: "昭和 vs 平成！チーム対抗ネタ合戦！"
   venue: "新宿ハイジアV-1"
   advance: "2,600"
-  
+
   time_open: "19:30"
   time_start: "19:40"
   time_end: "21:20"
-  
+
   general: "2026-06-01T22:40:00"
   url: "https://x.gd/xrfCk"
-  
-  
 
 - date: "2026-07-10"
   title: "ルミネtheよしもと 若手ネタフェスティバル"
@@ -861,8 +756,6 @@
   preSale_end: "2026-06-05T11:00:00"
   general: "2026-06-07T10:00:00"
   url: "https://x.gd/RELmi"
-  
-  
 
 - date: "2026-07-09"
   title: "沼る寄席 #3"
@@ -872,95 +765,80 @@
   time_open: "20:45"
   time_start: "21:00"
   time_end: "22:00"
-  
+
   general: "2026-06-08T23:32:00"
   url: "https://x.gd/QeocU"
-  
-  
 
 - date: "2026-06-16"
   title: "6/16 FLASH"
   venue: "ハイジアV-1"
   advance: "2,500"
-  
+
   time_open: "19:45"
   time_start: "20:00"
   time_end: "21:30"
-  
+
   general: "2026-05-17T23:20:00"
   url: "https://x.gd/geIbx"
-  
-  
 
 - date: "2026-07-03"
   title: "7/3(金) 武蔵野芸能劇場で#ワイガヤ~ネタ祭り~"
   venue: "武蔵野芸能劇場"
   advance: "2,500（当日支払）"
-  
+
   time_open: "19:00"
   time_start: "19:15"
   time_end: "21:15"
-  
-  
+
   url: "https://x.gd/bzWIS"
-  
-  
 
 - date: "2026-07-11"
   title: "7/11(土)バティオスで#ワイガヤ《1部》"
   venue: "新宿バティオス"
   advance: "2,200（当日支払）"
-  
+
   time_open: "12:40"
   time_start: "13:00"
   time_end: "15:00"
-  
+
   general: "2026-06-18T22:00:00"
   url: "https://x.gd/gusRc"
-  
-  
 
 - date: "2026-07-04"
   title: "積"
   venue: "武蔵野芸能劇場"
   advance: "2,200"
-  
+
   time_open: "19:45"
   time_start: "20:00"
   time_end: "21:10"
-  
+
   general: "2026-06-19T23:10:00"
   url: "https://x.gd/ITnyE"
-  
-  
 
 - date: "2026-07-24"
   title: "7/24 その噺、凶暴につき"
   venue: "ハイジアV-1"
   advance: "2,500"
-  
+
   time_open: "19:45"
   time_start: "20:00"
   time_end: "21:30"
-  
+
   general: "2026-06-20T23:10:00"
   url: "https://x.gd/kCuRA"
-  
-  
 
 - date: "2026-07-29"
   title: "7/29 ろくろっ首"
   venue: "高円寺ジュンジョー"
   advance: "2,200"
-  
+
   time_open: "19:15"
   time_start: "19:30"
   time_end: "20:30"
-  
+
   general: "2026-06-20T23:20:00"
   url: "https://x.gd/TSq7E"
-  
-  
 
 - date: "2026-08-28"
   title: "神速ティッド寄席"
@@ -974,7 +852,7 @@
   preSale_end: "2026-06-28T11:00:00"
   general: "2026-07-05T10:00:00"
   url: "https://x.gd/AkrVa"
-  
+
   streaming_price: "1,300"
 
 - date: "2026-08-28"
@@ -989,23 +867,21 @@
   preSale_end: "2026-06-28T11:00:00"
   general: "2026-07-05T10:00:00"
   url: "https://x.gd/AkrVa"
-  
+
   streaming_price: "1,300"
 
 - date: "2026-08-01"
   title: "若手エロゲネタオーディション+前田VSサイダー"
   venue: "新宿シアターモリエール"
   advance: "2,500"
-  
+
   time_open: "15:30"
   time_start: "16:00"
-  
+
   preSale_start: "2026-06-24T11:00:00"
   preSale_end: "2026-06-26T11:00:00"
   general: "2026-07-01T10:00:00"
   url: "https://x.gd/pVky9"
-  
-  
 
 - date: "2026-08-05"
   title: "〖毎月5日はFANYの日！プレミアムメンバー感謝デー〗渋谷Kiwami極LIVEプラス＋"
@@ -1019,7 +895,7 @@
   preSale_end: "2026-06-28T11:00:00"
   general: "2026-07-05T10:00:00"
   url: "https://x.gd/xqY32"
-  
+
   streaming_price: "1,300"
 
 - date: "2026-08-05"
@@ -1034,7 +910,7 @@
   preSale_end: "2026-06-28T11:00:00"
   general: "2026-07-05T10:00:00"
   url: "https://x.gd/jS8Yo"
-  
+
   streaming_price: "1,300"
 
 - date: "2026-08-09"
@@ -1049,8 +925,6 @@
   preSale_end: "2026-06-28T11:00:00"
   general: "2026-07-05T10:00:00"
   url: "https://x.gd/Cb04O"
-  
-  
 
 - date: "2026-08-11"
   title: "渋谷マンゲキお笑いライブ お盆SP"
@@ -1064,8 +938,6 @@
   preSale_end: "2026-06-28T11:00:00"
   general: "2026-07-05T10:00:00"
   url: "https://x.gd/YgYsN"
-  
-  
 
 - date: "2026-08-11"
   title: "渋谷マンゲキお笑いライブ お盆SP"
@@ -1079,8 +951,6 @@
   preSale_end: "2026-06-28T11:00:00"
   general: "2026-07-05T10:00:00"
   url: "https://x.gd/R7xVz"
-  
-  
 
 - date: "2026-08-11"
   title: "渋谷マンゲキお笑いライブ お盆SP"
@@ -1094,8 +964,6 @@
   preSale_end: "2026-06-28T11:00:00"
   general: "2026-07-05T10:00:00"
   url: "https://x.gd/3GZUr"
-  
-  
 
 - date: "2026-08-12"
   title: "神保町Kakeru翔SP 夏休みSP"
@@ -1109,8 +977,6 @@
   preSale_end: "2026-06-28T11:00:00"
   general: "2026-07-05T10:00:00"
   url: "https://x.gd/sva7y"
-  
-  
 
 - date: "2026-08-15"
   title: "ウルトラ漫"
@@ -1124,7 +990,7 @@
   preSale_end: "2026-06-28T11:00:00"
   general: "2026-07-05T10:00:00"
   url: "https://x.gd/D96So"
-  
+
   streaming_price: "1,300"
 
 - date: "2026-08-16"
@@ -1139,8 +1005,6 @@
   preSale_end: "2026-06-28T11:00:00"
   general: "2026-07-05T10:00:00"
   url: "https://x.gd/ACTzM"
-  
-  
 
 - date: "2026-08-16"
   title: "神保町マンゲキお笑いライブ お盆SP"
@@ -1154,8 +1018,6 @@
   preSale_end: "2026-06-28T11:00:00"
   general: "2026-07-05T10:00:00"
   url: "https://x.gd/RKe6x"
-  
-  
 
 - date: "2026-08-16"
   title: "神保町マンゲキお笑いライブ お盆SP"
@@ -1169,8 +1031,6 @@
   preSale_end: "2026-06-28T11:00:00"
   general: "2026-07-05T10:00:00"
   url: "https://x.gd/a8p8S"
-  
-  
 
 - date: "2026-08-16"
   title: "スマイルキング"
@@ -1184,22 +1044,22 @@
   preSale_end: "2026-06-28T11:00:00"
   general: "2026-07-05T10:00:00"
   url: "https://x.gd/YR1bD"
-  
+
   streaming_price: "1,300"
 
-- date: "2026-08-12"
-  title: "渋谷Kiwami極LIVEプラス＋ 夏休みSP"
+- date: "2026-08-21"
+  title: "渋谷Kiwami極LIVEプラス＋"
   venue: "渋谷よしもと漫才劇場"
-  advance: "2,000"
-  door: "2,500"
-  time_open: "16:45"
-  time_start: "17:00"
-  time_end: "18:10"
+  advance: "1,500"
+  door: "1,800"
+  time_open: "17:00"
+  time_start: "17:15"
+  time_end: "18:25"
   preSale_start: "2026-06-25T11:00:00"
   preSale_end: "2026-06-28T11:00:00"
   general: "2026-07-05T10:00:00"
-  url: "https://x.gd/tAoIK"
-  
+  url: "https://x.gd/o57kk"
+
   streaming_price: "1,300"
 
 - date: "2026-08-23"
@@ -1214,8 +1074,6 @@
   preSale_end: "2026-06-28T11:00:00"
   general: "2026-07-05T10:00:00"
   url: "https://x.gd/OBTre"
-  
-  
 
 - date: "2026-08-23"
   title: "神保町マンゲキお笑いライブ"
@@ -1229,8 +1087,6 @@
   preSale_end: "2026-06-28T11:00:00"
   general: "2026-07-05T10:00:00"
   url: "https://x.gd/f13yC"
-  
-  
 
 - date: "2026-08-23"
   title: "神保町マンゲキお笑いライブ"
@@ -1244,22 +1100,21 @@
   preSale_end: "2026-06-28T11:00:00"
   general: "2026-07-05T10:00:00"
   url: "https://x.gd/Ucay5"
-  
-  
 
 - date: "2026-08-25"
   title: "とりせん新ネタライブ「コンセントレーション」"
-  venue: "神保町よ"
-  
-  
+  venue: "神保町よしもと漫才劇場"
+  advance: "1,500"
+  door: "2,000"
   time_open: "20:45"
   time_start: "21:00"
-  
-  
-  
-  url: ""
-  
-  
+  time_end: "22:00"
+  preSale_start: "2026-06-25T11:00:00"
+  preSale_end: "2026-06-28T11:00:00"
+  general: "2026-07-05T10:00:00"
+  url: "https://x.gd/yFKCJ"
+
+  streaming_price: "1,300"
 
 - date: "2026-08-26"
   title: "渋谷Kiwami極LIVE"
@@ -1273,8 +1128,6 @@
   preSale_end: "2026-06-28T11:00:00"
   general: "2026-07-05T10:00:00"
   url: "https://x.gd/mugbt"
-  
-  
 
 - date: "2026-08-26"
   title: "JORDAN"
@@ -1288,7 +1141,7 @@
   preSale_end: "2026-06-28T11:00:00"
   general: "2026-07-05T10:00:00"
   url: "https://x.gd/AaYaY"
-  
+
   streaming_price: "1,300"
 
 - date: "2026-08-29"
@@ -1303,8 +1156,6 @@
   preSale_end: "2026-06-28T11:00:00"
   general: "2026-07-05T10:00:00"
   url: "https://x.gd/mHiAK"
-  
-  
 
 - date: "2026-08-29"
   title: "渋谷マンゲキお笑いライブ"
@@ -1318,8 +1169,6 @@
   preSale_end: "2026-06-28T11:00:00"
   general: "2026-07-05T10:00:00"
   url: "https://x.gd/Sbyue"
-  
-  
 
 - date: "2026-08-29"
   title: "渋谷マンゲキお笑いライブ"
@@ -1333,5 +1182,3 @@
   preSale_end: "2026-06-28T11:00:00"
   general: "2026-07-05T10:00:00"
   url: "https://x.gd/DbkRd"
-  
-  
