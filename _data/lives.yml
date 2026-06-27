@@ -1197,3 +1197,18 @@
   streaming_url: "https://x.gd/uLVDC"
   streaming_price: "1,400"
   streaming_end_date: "2026-08-09T23:59:00"
+
+
+- date: "2026-08-10"
+  title: "月刊ツーナッカン～今夜はスリーマン～"
+  venue: "ハイジアV-1"
+  advance: "2,000"
+  door: "2,500"
+  time_open: "18:30"
+  time_start: "18:45"
+  time_end: "20:00"
+  
+  general: "2026-06-28T10:00:00"
+  url: "https://x.gd/sJBGU"
+  
+  
