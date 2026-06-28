@@ -1212,3 +1212,31 @@
   url: "https://x.gd/sJBGU"
   
   
+
+- date: "2026-07-08"
+  title: "渋谷Kiwami極LIVEプラス＋"
+  venue: "渋谷よしもと漫才劇場"
+  advance: "1,500"
+  door: "1,800"
+  time_open: "17:00"
+  time_start: "17:15"
+  time_end: "18:25"
+  
+  
+  url: "https://x.gd/DDiUo"
+  streaming_url: "https://x.gd/rY7Ti"
+  streaming_price: "1,300"
+
+- date: "2026-07-02"
+  title: "アークのネタコナ 22"
+  venue: "中野の劇場サッチー"
+  advance: "2,200"
+  door: "2,700"
+  time_open: "19:05"
+  time_start: "19:15"
+  time_end: "20:15"
+  
+  general: "2026-06-29T18:00:00"
+  url: "https://x.gd/8zayh"
+  
+  
