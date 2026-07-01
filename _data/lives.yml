@@ -1198,7 +1198,6 @@
   streaming_price: "1,400"
   streaming_end_date: "2026-08-09T23:59:00"
 
-
 - date: "2026-08-10"
   title: "月刊ツーナッカン～今夜はスリーマン～"
   venue: "ハイジアV-1"
@@ -1207,11 +1206,9 @@
   time_open: "18:30"
   time_start: "18:45"
   time_end: "20:00"
-  
+
   general: "2026-06-28T10:00:00"
   url: "https://x.gd/sJBGU"
-  
-  
 
 - date: "2026-07-08"
   title: "渋谷Kiwami極LIVEプラス＋"
@@ -1221,8 +1218,7 @@
   time_open: "17:00"
   time_start: "17:15"
   time_end: "18:25"
-  
-  
+
   url: "https://x.gd/DDiUo"
   streaming_url: "https://x.gd/rY7Ti"
   streaming_price: "1,300"
@@ -1235,8 +1231,66 @@
   time_open: "19:05"
   time_start: "19:15"
   time_end: "20:15"
-  
+
   general: "2026-06-29T18:00:00"
   url: "https://x.gd/8zayh"
+
+
+- date: "2026-08-14"
+  title: "≪8／14通し券≫オールマンゲキTOKYO～大阪マンゲキの日～"
+  venue: "きゅりあん　大ホール"
+  advance: "14,000"
+  
+  time_open: "11:30"
+  time_start: "12:00"
+  time_end: "19:00"
+  preSale_start: "2026-07-01T09:00:00"
+  preSale_end: "2026-07-03T11:00:00"
+  
+  url: "https://x.gd/sluNV"
+  
+  
+
+- date: "2026-08-14"
+  title: "オールマンゲキTOKYO～大阪マンゲキの日～ ＜第一部＞"
+  venue: "きゅりあん　大ホール"
+  advance: "5,000"
+  
+  time_open: "11:30"
+  time_start: "12:00"
+  time_end: "14:30"
+  preSale_start: "2026-07-07T09:00:00"
+  preSale_end: "2026-07-09T11:00:00"
+  general: "2026-07-13T10:00:00"
+  url: "https://x.gd/sluNV"
+  
+  
+
+- date: "2026-08-14"
+  title: "オールマンゲキTOKYO～大阪マンゲキの日～ ＜第二部＞"
+  venue: "きゅりあん　大ホール"
+  advance: "5,000"
+  
+  time_open: "16:00"
+  time_start: "16:30"
+  time_end: "19:00"
+  preSale_start: "2026-07-07T09:00:00"
+  preSale_end: "2026-07-09T11:00:00"
+  general: "2026-07-13T10:00:00"
+  url: "https://x.gd/sluNV"
+  
+  
+
+- date: "2026-08-04"
+  title: "積"
+  venue: "武蔵野芸能劇場"
+  advance: "2,200"
+  
+  time_open: "19:45"
+  time_start: "20:00"
+  time_end: "21:10"
+  
+  general: "2026-07-02T23:00:00"
+  url: "https://x.gd/RlRlG"
   
   
