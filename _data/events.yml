@@ -12,14 +12,19 @@
   title: "🎂まえかずさん 誕生日🎂"
   category: "BIRTHDAY"
   repeat: "yearly"
-# 例：ラジオ更新日
-# - date: "2026-06-27"
-#   title: "stand.fm 更新"
-#   category: "RADIO"
-#   time_start: "22:00"
-#   url: "https://stand.fm/channels/6030fcec85b142d0d89e72df"
-#   description: "ラジオ更新"
 
+# 例：ラジオ更新日
+- date: "2026-07-18"
+  title: "マイナビラフターナイト"
+  category: "RADIO"
+  time_start: "00:00"
+  url: "https://x.gd/uPwnw"
+
+- date: "2026-07-06"
+  title: "バッテリィズのインズバ"
+  category: "RADIO"
+  time_start: "22:00"
+  url: "https://artistspoken.com/share/H9q5k3"
 # # 例：メディア出演
 # - date: "2026-07-01"
 #   title: "メディア出演"
