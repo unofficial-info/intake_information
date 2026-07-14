@@ -77,7 +77,7 @@ nextlive_template = """
 『{{ title }}』
 ⏰ 開場 {{ time_open }}｜開演 {{ time_start }}{% if time_end %}｜終演 {{ time_end }} {% endif %}
 📍 {{ venue }}
-🎫 {% if advance and door %}前売 ¥{{advance}}｜当日 ¥{{door}}{% elif advance %}前売 ¥{{advance}}{% elif door %}当日現金支払 ¥{{door}}{% endif %} {{url}}
+🎫 {% if advance and door %}前売 ¥{{advance}}｜当日 ¥{{door}}{% elif advance %}前売 ¥{{advance}}{% endif %} {{url}}
 {% if streaming_url %}🎥 配信 ¥{{streaming_price}} {{streaming_url}}{% endif %}
 """
 

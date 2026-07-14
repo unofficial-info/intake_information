@@ -1334,17 +1334,28 @@
   general: "2026-07-11T12:00:00"
   url: "https://x.gd/w0iMK"
 
-
 - date: "2026-08-23"
   title: "パタパタママのデスマッチシリーズ"
   venue: "大塚ドリームシアター"
   advance: "3,000"
-  
+
   time_open: "19:45"
   time_start: "20:00"
-  
-  
+
   general: "2026-07-11T10:00:00"
   url: "https://x.gd/OziE0"
+
+
+- date: "2026-08-06"
+  title: "熱血漫才師"
+  venue: "中野の劇場サッチー"
+  advance: "2,500(当日支払)"
+  door: "3,000"
+  time_open: "19:00"
+  time_start: "19:15"
+  time_end: "20:15"
+  
+  general: "2026-07-14T20:30:00"
+  url: "https://x.gd/ugEvo"
   
   
