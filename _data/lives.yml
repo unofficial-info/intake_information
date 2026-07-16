@@ -1345,7 +1345,6 @@
   general: "2026-07-11T10:00:00"
   url: "https://x.gd/OziE0"
 
-
 - date: "2026-08-06"
   title: "熱血漫才師"
   venue: "中野の劇場サッチー"
@@ -1354,25 +1353,21 @@
   time_open: "19:00"
   time_start: "19:15"
   time_end: "20:15"
-  
+
   general: "2026-07-14T20:30:00"
   url: "https://x.gd/ugEvo"
-  
-  
 
 - date: "2026-08-09"
   title: "バティオスで#ワイガヤ《2部》"
   venue: "新宿バティオス"
   advance: "2,200(当日支払)"
-  
+
   time_open: "15:50"
   time_start: "16:10"
   time_end: "18:10"
-  
+
   general: "2026-07-15T22:40:00"
   url: "https://x.gd/NqSgA"
-  
-  
 
 - date: "2026-07-18"
   title: "神保町マンゲキお笑いライブ"
@@ -1382,13 +1377,10 @@
   time_open: "12:45"
   time_start: "13:00"
   time_end: "14:15"
-  
-  
-  url: "https://x.gd/6Q4BM"
-  
-  
 
-- date: "2026/07-18"
+  url: "https://x.gd/6Q4BM"
+
+- date: "2026-07-18"
   title: "神保町マンゲキお笑いライブ"
   venue: "神保町よしもと漫才劇場"
   advance: "2,500"
@@ -1396,8 +1388,5 @@
   time_open: "14:45"
   time_start: "15:00"
   time_end: "16:15"
-  
-  
+
   url: "https://x.gd/GDCDh"
-  
-  
