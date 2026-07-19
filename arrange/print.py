@@ -61,14 +61,13 @@ newlive_template = """
 『{{ title }}』
 
 {{ date_formatted }}
-⏰ 開場 {{ time_open }}｜開演 {{ time_start }}{% if time_end %}｜終演 {{ time_end }}
+⏰ 開場 {{ time_open }}｜開演 {{ time_start }}{% if time_end %}｜終演 {{ time_end }} {% endif %}
 📍 {{ venue }}
 🎫 {% if advance and door %}前売 ¥{{advance}}｜当日 ¥{{door}}{% elif advance %}前売 ¥{{advance}}{% elif door %}当日現金支払 ¥{{door}}{% endif %}　{{ url }}
 {% if streaming_price %}🎥 配信あり {{ streaming_url }}
 {% endif %}{% if preSaleStart %}
 先行：{{ preSaleStart_formatted }} ~ {{ preSaleEnd_formatted }}{% endif %}{% if general %}
 一般：{{ general_formatted }} ~ {% endif %}
-{% endif %}
 """
 
 nextlive_template = """
