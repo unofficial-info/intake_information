@@ -1,8 +1,8 @@
 ---
 layout: post
-date: 2026-07-26 17:00:00 + 0900
+date: 2026-07-265 15:00:00 + 0900
 category: "LIVE"
-title: "【 / 】Elephant【出演決定】"
+title: "【8/12】Elephant【開催決定】"
 ---
 
 <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Elephant&dates=20260812T211500/20260812T221500&location=神保町よしもと漫才劇場" target="_blank" class="btn-calendar">
@@ -14,7 +14,7 @@ title: "【 / 】Elephant【出演決定】"
 <i class="fa-regular fa-calendar-alt"></i> 2026/8/12(水)<br>
 <i class="fa-regular fa-clock"></i> 開場 21:00 ｜開演 21:15 ｜終演 22:15 <br>
 <i class="fa-solid fa-location-dot"></i> 神保町よしもと漫才劇場<br>
-<i class="fa-solid fa-ticket"></i>  前売 ¥ 1,500｜当日 ¥2,000<br>
+<i class="fa-solid fa-ticket"></i> 前売 ¥ 1,500｜当日 ¥2,000<br>
 <i class="fa-solid fa-users"></i> エルフ／バリカタ友情飯／インテイク
 
 先行：7/26(日) 11:00 ~ 7/29(水) 11:00
@@ -23,30 +23,7 @@ title: "【 / 】Elephant【出演決定】"
 </a><br>
 一般：7/31(金) 10:00
 <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=【チケ発】Elephant&dates=20260731T100000/20260731T100000&location=https://x.gd/4BjaE" target="_blank" class="btn-calendar">
-<i class="fa-solid fa-calendar-check"></i> 
+<i class="fa-solid fa-calendar-check"></i>
 </a>
 
 チケットの購入は<a href="https://x.gd/4BjaE" target="_blank">こちら</a>
----
-layout: post
-date: 2026-07-26 17:00:00 + 0900
-category: "LIVE"
-title: "【 / 】江戸のすきま風【出演決定】"
----
-
-<a href="https://www.google.com/calendar/render?action=TEMPLATE&text=江戸のすきま風&dates=20260801T101500/20260801T111500&location=なかの芸能小劇場" target="_blank" class="btn-calendar">
-<i class="fa-solid fa-calendar-check"></i> Googleカレンダーに追加
-</a>
-
-# 江戸のすきま風<br>
-
-<i class="fa-regular fa-calendar-alt"></i> 2026/8/1(土)<br>
-<i class="fa-regular fa-clock"></i> 開場 09:55 ｜開演 10:15 ｜終演 11:15 <br>
-<i class="fa-solid fa-location-dot"></i> なかの芸能小劇場<br>
-<i class="fa-solid fa-ticket"></i>  前売 ¥2,000<br>
-<i class="fa-solid fa-users"></i> まんじゅう大帝国 竹内一希 / インテイク 鈴木龍平
-
-
-
-
-チケットの購入は<a href="https://x.gd/v2Syd" target="_blank">こちら</a>
