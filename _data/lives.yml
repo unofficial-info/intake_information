@@ -1864,3 +1864,45 @@
   url: "https://x.gd/oly3W"
   
   
+
+- date: "2026-07-30"
+  title: "渋谷マンゲキお笑いライブ"
+  venue: "渋谷よしもと漫才劇場"
+  advance: "2,800"
+  door: "3,100"
+  time_open: "10:45"
+  time_start: "11:00"
+  time_end: "12:15"
+  
+  
+  url: "https://x.gd/fT1ck"
+  
+  
+
+- date: "2026-08-29"
+  title: "神保町お題ネタバトル"
+  venue: "神保町よしもと漫才劇場"
+  advance: "2,500"
+  door: "3,000"
+  time_open: "18:45"
+  time_start: "19:00"
+  time_end: "20:30"
+  
+  
+  url: "https://x.gd/1sjyc"
+  streaming_url: "https://x.gd/u7pDs"
+  streaming_price: "1,300"
+
+- date: "2026-08-10"
+  title: "夏祭り"
+  venue: "新宿バティオス"
+  advance: "2,500"
+  door: "3,000"
+  time_open: "20:45"
+  time_start: "21:00"
+  time_end: "22:15"
+  
+  general: "2026-07-30T23:00:00"
+  url: "https://x.gd/smF9J"
+  
+  
