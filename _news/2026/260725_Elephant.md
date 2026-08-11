@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2026-07-265 15:00:00 + 0900
+date: 2026-07-26 15:00:00 + 0900
 category: "LIVE"
 title: "【8/12】Elephant【開催決定】"
 ---
