@@ -1837,20 +1837,16 @@
   general: "2026-07-30T23:00:00"
   url: "https://x.gd/smF9J"
 
-
 - date: "20206-08-06"
   title: "CASUAL"
   venue: "新宿バッシュ!!"
   advance: "2,000"
-  
+
   time_open: "21:20"
   time_start: "21:30"
   time_end: "22:15"
-  
-  
+
   url: ""
-  
-  
 
 - date: "2026-08-06"
   title: "渋谷Kiwami極LIVE"
@@ -1860,53 +1856,41 @@
   time_open: "17:00"
   time_start: "17:15"
   time_end: "18:25"
-  
-  
+
   url: ""
-  
-  
 
 - date: "2026-09-07"
   title: "積"
   venue: "武蔵野芸能劇場"
   advance: "2,200"
-  
+
   time_open: "19:45"
   time_start: "20:00"
   time_end: "21:10"
-  
-  
+
   url: "https://x.gd/S0PC8"
-  
-  
 
 - date: "2026-09-13"
   title: "雄弁は金"
   venue: "銀座お笑いPLACE"
   advance: "1,800(当日支払)"
-  
+
   time_open: "18:45"
   time_start: "19:00"
   time_end: "20:00"
-  
-  
+
   url: "https://x.gd/NQoLr"
-  
-  
 
 - date: "2026-09-09"
   title: "ろくろっ首"
   venue: "高円寺ジュンジョー"
   advance: "2,200"
-  
+
   time_open: "21:15"
   time_start: "21:30"
   time_end: "22:30"
-  
-  
+
   url: "https://x.gd/VDqPY"
-  
-  
 
 - date: "2026-08-24"
   title: "漫ドリル"
@@ -1916,11 +1900,8 @@
   time_open: "18:15"
   time_start: "18:30"
   time_end: "19:45"
-  
-  
+
   url: "https://x.gd/1bQI4"
-  
-  
 
 - date: "2026-09-03"
   title: "Mの３っぽいとこでM"
@@ -1930,11 +1911,8 @@
   time_open: "19:00"
   time_start: "19:15"
   time_end: "21:00"
-  
-  
+
   url: "https://x.gd/1j79j"
-  
-  
 
 - date: "2026-09-18"
   title: "グリーンランプの戦友づくり～まずは遊んで、次は漫才～"
@@ -1944,11 +1922,9 @@
   time_open: "19:15"
   time_start: "19:30"
   time_end: "20:45"
-  
+
   general: "2026-08-12T22:00:00"
   url: "https://x.gd/4zNCk"
-  
-  
 
 - date: "2026-08-15"
   title: "渋谷マンゲキお笑いライブ お盆SP"
@@ -1958,8 +1934,73 @@
   time_open: "14:15"
   time_start: "14:30"
   time_end: "15:45"
-  
-  
+
   url: "https://x.gd/Ni8qp"
-  
-  
+
+- date: "2026-09-24"
+  title: "揃(そろい)"
+  venue: "シアターミネルヴァ"
+  advance: "2,000(当日支払い)"
+
+  time_open: "21:45"
+  time_start: "22:00"
+  time_end: "23:00"
+
+  url: "https://x.gd/IjMPW"
+
+- date: "2026-09-19"
+  title: "トーキョーマンゲキフェス2026ー渋神三世代決戦ー"
+  venue: "LINE CUBE SHIBUYA"
+  advance: "【SS席】12,000 【S席】10,000 【A席】8,000 【B席】7,000"
+
+  time_open: "14:30"
+  time_start: "15:30"
+
+  preSale_start: "2026-08-21T11:00:00"
+  preSale_end: "2026-08-24T22:00:00"
+
+  url: "https://x.gd/Sx7QU"
+
+- date: "2026-08-20"
+  title: "幕張平日ネタSP14時"
+  venue: "よしもと幕張イオンモール劇場"
+  advance: "2,500"
+  door: "3,000"
+  time_open: "13:30"
+  time_start: "14:00"
+  time_end: "15:00"
+
+  url: "https://x.gd/1A5wS"
+
+- date: "2026-08-20"
+  title: "幕張平日ネタSP16時"
+  venue: "よしもと幕張イオンモール劇場"
+  advance: "2,500"
+  door: "3,000"
+  time_open: "15:30"
+  time_start: "16:00"
+  time_end: "17:00"
+
+  url: "https://x.gd/5uX59"
+
+- date: "2026-09-28"
+  title: "幕張平日ネタSP14時"
+  venue: "よしもと幕張イオンモール劇場"
+  advance: "2,500"
+  door: "3,000"
+  time_open: "13:30"
+  time_start: "14:00"
+  time_end: "15:00"
+
+  url: "https://x.gd/zjRcT"
+
+- date: "2026-09-28"
+  title: "幕張平日ネタSP16時"
+  venue: "よしもと幕張イオンモール劇場"
+  advance: "2,500"
+  door: "3,000"
+  time_open: "15:30"
+  time_start: "16:00"
+  time_end: "17:00"
+
+  url: "https://x.gd/XlGJf"
