@@ -2638,3 +2638,437 @@
   url: "https://x.gd/9oA0R"
   
   
+
+- date: "2026-11-01"
+  title: "神保町マンゲキお笑いライブ"
+  venue: "神保町よしもと漫才劇場"
+  advance: "2,500"
+  door: "2,800"
+  time_open: "10:45"
+  time_start: "11:00"
+  time_end: "12:15"
+  
+  general: "2026-10-05T10:00:00"
+  url: "https://x.gd/nPe2T"
+  
+  
+
+- date: "2026-11-01"
+  title: "神保町マンゲキお笑いライブ"
+  venue: "神保町よしもと漫才劇場"
+  advance: "2,500"
+  door: "2,800"
+  time_open: "12:45"
+  time_start: "13:00"
+  time_end: "14:15"
+  
+  general: "2026-10-05T10:00:00"
+  url: "https://x.gd/CxNRv"
+  
+  
+
+- date: "2026-11-01"
+  title: "神保町マンゲキお笑いライブ"
+  venue: "神保町よしもと漫才劇場"
+  advance: "2,500"
+  door: "2,800"
+  time_open: "14:45"
+  time_start: "15:00"
+  time_end: "16:15"
+  
+  general: "2026-10-05T10:00:00"
+  url: "https://x.gd/PSP6o"
+  
+  
+
+- date: "2026-11-04"
+  title: "神保町Kakeru翔SP"
+  venue: "神保町よしもと漫才劇場"
+  advance: "1,500"
+  door: "1,800"
+  time_open: "17:15"
+  time_start: "17:30"
+  time_end: "18:30"
+  
+  general: "2026-10-05T10:00:00"
+  url: "https://x.gd/7hGeW"
+  
+  
+
+- date: "2026-11-04"
+  title: "ただならぬ刀肝入り『ゴリラパンチ』"
+  venue: "神保町よしもと漫才劇場"
+  advance: "1,500"
+  door: "2,000"
+  time_open: "19:00"
+  time_start: "19:15"
+  time_end: "20:15"
+  
+  general: "2026-10-05T10:00:00"
+  url: "https://x.gd/6HC2q"
+  
+  streaming_price: "1,300"
+
+- date: "2026-11-05"
+  title: "神保町Kakeru翔SP"
+  venue: "神保町よしもと漫才劇場"
+  advance: "1,500"
+  door: "1,800"
+  time_open: "16:45"
+  time_start: "17:00"
+  time_end: "18:00"
+  
+  general: "2026-10-05T10:00:00"
+  url: "https://x.gd/cX5v6"
+  
+  
+
+- date: "2026-11-07"
+  title: "渋谷マンゲキお笑いライブ"
+  venue: "渋谷よしもと漫才劇場"
+  advance: "2,800"
+  door: "3,100"
+  time_open: "10:45"
+  time_start: "11:00"
+  time_end: "12:15"
+  
+  general: "2026-10-05T10:00:00"
+  url: "https://x.gd/zzZ9b"
+  
+  
+
+- date: "2026-11-07"
+  title: "渋谷マンゲキお笑いライブ"
+  venue: "渋谷よしもと漫才劇場"
+  advance: "2,800"
+  door: "3,100"
+  time_open: "12:30"
+  time_start: "12:45"
+  time_end: "13:00"
+  
+  general: "2026-10-05T10:00:00"
+  url: "https://x.gd/fNc5u"
+  
+  
+
+- date: "2026-11-07"
+  title: "渋谷マンゲキお笑いライブ"
+  venue: "渋谷よしもと漫才劇場"
+  advance: "2,800"
+  door: "3,100"
+  time_open: "14:15"
+  time_start: "14:30"
+  time_end: "15:45"
+  
+  general: "2026-10-05T10:00:00"
+  url: "https://x.gd/Xlgrw"
+  
+  
+
+- date: "2026-11-09"
+  title: "神保町翔KakeruSP"
+  venue: "神保町よしもと漫才劇場"
+  advance: "1,500"
+  door: "1,800"
+  time_open: "17:15"
+  time_start: "17:30"
+  time_end: "18:30"
+  
+  general: "2026-10-05T10:00:00"
+  url: "https://x.gd/iEHCs"
+  
+  
+
+- date: "2026-11-09"
+  title: "ウルトラ漫"
+  venue: "渋谷よしもと漫才劇場"
+  advance: "2,000"
+  door: "2,500"
+  time_open: "19:00"
+  time_start: "19:15"
+  time_end: "20:15"
+  
+  general: "2026-10-05T10:00:00"
+  url: "https://x.gd/7P5k0"
+  
+  streaming_price: "1,300"
+
+- date: "2026-11-09"
+  title: "Elephant"
+  venue: "神保町よしもと漫才劇場"
+  advance: "1,500"
+  door: "1,800"
+  time_open: "20:45"
+  time_start: "21:00"
+  time_end: "22:00"
+  
+  general: "2026-10-05T10:00:00"
+  url: "https://x.gd/46jfp"
+  
+  
+
+- date: "2026-11-12"
+  title: "渋谷Kiwami極LIVEプラス＋"
+  venue: "渋谷よしもと漫才劇場"
+  advance: "1,500"
+  door: "1,800"
+  time_open: "17:00"
+  time_start: "17:15"
+  time_end: "18:25"
+  
+  general: "2026-10-05T10:00:00"
+  url: "https://x.gd/zsoKF"
+  
+  streaming_price: "1,300"
+
+- date: "2026-11-15"
+  title: "スマイルキング"
+  venue: "渋谷よしもと漫才劇場"
+  advance: "2,000"
+  door: "2,500"
+  time_open: "20:45"
+  time_start: "21:00"
+  time_end: "22:00"
+  
+  general: "2026-10-05T10:00:00"
+  url: "https://x.gd/Japao"
+  
+  streaming_price: "1,300"
+
+- date: "2026-11-18"
+  title: "渋谷Kiwami極LIVEプラス＋"
+  venue: "渋谷よしもと漫才劇場"
+  advance: "1,500"
+  door: "1,800"
+  time_open: "17:00"
+  time_start: "17:15"
+  time_end: "18:25"
+  
+  general: "2026-10-05T10:00:00"
+  url: "https://x.gd/YfILa"
+  
+  streaming_price: "1,300"
+
+- date: "2026-11-18"
+  title: "JORDAN"
+  venue: "渋谷よしもと漫才劇場"
+  advance: "2,000"
+  door: "2,500"
+  time_open: "19:00"
+  time_start: "19:15"
+  time_end: "20:15"
+  
+  general: "2026-10-05T10:00:00"
+  url: "https://x.gd/MmnN9"
+  
+  streaming_price: "1,300"
+
+- date: "2026-11-18"
+  title: "絶対漫才！"
+  venue: "渋谷よしもと漫才劇場"
+  advance: "2,000"
+  door: "2,500"
+  time_open: "20:45"
+  time_start: "21:00"
+  time_end: "22:00"
+  
+  general: "2026-10-05T10:00:00"
+  url: "https://x.gd/UMyGe"
+  
+  streaming_price: "1,300"
+
+- date: "2026-11-21"
+  title: "神保町マンゲキお笑いライブ"
+  venue: "神保町よしもと漫才劇場"
+  advance: "2,500"
+  door: "2,800"
+  time_open: "10:45"
+  time_start: "11:00"
+  time_end: "12:15"
+  
+  general: "2026-10-05T10:00:00"
+  url: "https://x.gd/GAlzx"
+  
+  
+
+- date: "2026-11-21"
+  title: "神保町マンゲキお笑いライブ"
+  venue: "神保町よしもと漫才劇場"
+  advance: "2,500"
+  door: "2,800"
+  time_open: "12:45"
+  time_start: "13:00"
+  time_end: "14:15"
+  
+  general: "2026-10-05T10:00:00"
+  url: "https://x.gd/1oe07k"
+  
+  
+
+- date: "2026-11-21"
+  title: "神保町マンゲキお笑いライブ"
+  venue: "神保町よしもと漫才劇場"
+  advance: "2,500"
+  door: "2,800"
+  time_open: "14:45"
+  time_start: "15:00"
+  time_end: "16:15"
+  
+  general: "2026-10-05T10:00:00"
+  url: "https://x.gd/dYnmd"
+  
+  
+
+- date: "2026-11-28"
+  title: "渋谷マンゲキお笑いライブ"
+  venue: "渋谷よしもと漫才劇場"
+  advance: "2,800"
+  door: "3,100"
+  time_open: "10:45"
+  time_start: "11:00"
+  time_end: "12:15"
+  
+  general: "2026-10-05T10:00:00"
+  url: "https://x.gd/wyhmZ"
+  
+  
+
+- date: "2026-11-28"
+  title: "渋谷マンゲキお笑いライブ"
+  venue: "渋谷よしもと漫才劇場"
+  advance: "2,800"
+  door: "3,100"
+  time_open: "12:30"
+  time_start: "12:45"
+  time_end: "14:00"
+  
+  general: "2026-10-05T10:00:00"
+  url: "https://x.gd/qnxv8"
+  
+  
+
+- date: "2026-11-28"
+  title: "渋谷マンゲキお笑いライブ"
+  venue: "渋谷よしもと漫才劇場"
+  advance: "2,800"
+  door: "3,100"
+  time_open: "14:15"
+  time_start: "14:30"
+  time_end: "15:45"
+  
+  general: "2026-10-05T10:00:00"
+  url: "https://x.gd/0BsoX"
+  
+  
+
+- date: "2026-10-28"
+  title: "神保町お題ネタバトル"
+  venue: "神保町よしもと漫才劇場"
+  advance: "2,500"
+  door: "3,000"
+  time_open: "18:15"
+  time_start: "18:30"
+  time_end: "20:00"
+  
+  
+  url: "https://x.gd/yVpxJ"
+  streaming_url: "https://x.gd/3DGGN"
+  streaming_price: "1,300"
+
+- date: "2026-10-12"
+  title: "大宮よしもとネタライブ"
+  venue: "大宮ラクーンよしもと劇場"
+  advance: "2,000"
+  door: "2,500"
+  time_open: "12:15"
+  time_start: "12:30"
+  time_end: "13:30"
+  
+  
+  url: "https://x.gd/3FiwmO"
+  
+  
+
+- date: "2026-10-10"
+  title: "渋谷3分漫才ナイト"
+  venue: "渋谷よしもと漫才劇場"
+  advance: "2,000"
+  door: "2,500"
+  time_open: "18:45"
+  time_start: "19:00"
+  time_end: "20:00"
+  
+  
+  url: "https://x.gd/H3bIS"
+  
+  
+
+- date: "2026-10-14"
+  title: "漫腹〜まんぷく〜"
+  venue: "杉並公会堂"
+  advance: "2,500(当日払い)"
+  
+  time_open: "19:00"
+  time_start: "19:20"
+  time_end: "21:20"
+  
+  
+  url: "https://x.gd/60Mya"
+  
+  
+
+- date: "2026-09-30"
+  title: "幸福の漫才"
+  venue: "シアターミネルヴァ"
+  advance: "2,000(当日払い)"
+  
+  time_open: "21:40"
+  time_start: "21:50"
+  time_end: "23:00"
+  
+  
+  url: "https://x.gd/6OohB"
+  
+  
+
+- date: "2026-10-26"
+  title: "杉並公会堂で＃ワイガヤ"
+  venue: "杉並公会堂"
+  advance: "2,500(当日払い)"
+  
+  time_open: "19:00"
+  time_start: "19:20"
+  time_end: "21:20"
+  
+  
+  url: "https://x.gd/mFLpo"
+  
+  
+
+- date: "2026-10-31"
+  title: "幕張土日祝ネタSP14時"
+  venue: "よしもと幕張イオンモール劇場"
+  advance: "3,500"
+  door: "4,000"
+  time_open: "13:30"
+  time_start: "14:00"
+  time_end: "15:00"
+  
+  
+  url: "https://x.gd/7unPd"
+  
+  
+
+- date: "2026-10-31"
+  title: "幕張土日祝ネタSP16時"
+  venue: "よしもと幕張イオンモール劇場"
+  advance: "3,500"
+  door: "4,000"
+  time_open: "15:30"
+  time_start: "16:00"
+  time_end: "17:00"
+  
+  
+  url: "https://x.gd/otYbJ"
+  
+  
