@@ -26,11 +26,16 @@
   time_start: "22:00"
   url: "https://artistspoken.com/share/H9q5k3"
 
-- date: "2026-09-06"
+- date: "2026-09-05"
   title: "おみあいがっちゃんこ（インテイク×ただならぬ刀）"
   category: "RADIO"
-  time_start: "02:00"
-  url: "https://artistspoken.com/share/H9q5k3"
+  time_start: "22:00"
+
+- date: "2026-10-13"
+  title: "M-1グランプリ2回戦"
+  category: "CONTEST"
+  time_start: "11:00"
+  url: "https://www.m-1gp.com/schedule/detail.html?id=865"
 # # 例：メディア出演
 # - date: "2026-07-01"
 #   title: "メディア出演"
