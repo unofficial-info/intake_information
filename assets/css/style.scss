@@ -12,8 +12,3 @@
 @use "partials/profile";
 @use "partials/mainlive";
 @use "partials/responsive";
-
-
-
-// もし、スマートフォン用のスタイルも分割した場合は、最後に読み込む
-// @import "partials/responsive";

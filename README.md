@@ -1,88 +1,122 @@
-# インテイク非公式 information について
+# インテイク非公式 information
 
-Jekyll と GitHub Actions を利用して構築・運用されている、お笑いコンビ「インテイク」の非公式情報サイトです。
+お笑いコンビ「インテイク」のライブ・チケット・配信・ニュースをまとめる非公式情報サイトです。Jekyll で静的ページを生成し、GitHub Actions から GitHub Pages に公開しています。
 
-## 主な技術・機能
+[公開サイト](https://unofficial-info.github.io/intake_information/)
 
-- **Jekyll:** 静的サイトジェネレーターとして、サイト全体の構造を管理します。
-- **GitHub Actions:** `main`ブランチへの`push`時、および毎日深夜 0 時（日本時間）に、サイトを自動でビルド・公開します。
-- **Swiper.js:** トップページのバナーで、自動再生スライダーを実現しています。
-- **Liquid:** Jekyll のテンプレート言語。`if`文による条件分岐や`for`ループによる繰り返し処理で、動的なページ生成を可能にしています。
-- **レスポンシブデザイン:** PC・スマートフォンの両方の画面サイズに対応しています。
+## ローカルで確認する
 
-## 主要なファイルとフォルダの役割
+Ruby と Bundler が必要です。GitHub Actions では Ruby 3.1 を使用しています。依存 gem のバージョンは `Gemfile.lock` で管理しています。
 
-### `_config.yml`
+```sh
+bundle install
+bundle exec jekyll serve
+```
 
-サイト全体の設定ファイル。サイトのタイトルや URL、タイムゾーン（`Asia/Tokyo`）、使用する Jekyll プラグイン、コレクションの定義などを記述します。
+ブラウザで <http://127.0.0.1:4000/intake_information/> を開きます。終了は `Ctrl + C` です。
 
-### `_data` フォルダ
+公開用ファイルの生成だけを行う場合：
 
-サイトで使う構造化されたデータ（YAML ファイル）を置く場所です。
+```sh
+bundle exec jekyll build
+```
 
-- **`lives.yml`**: LIVE ページに表示される、全てのライブ情報の一覧データです。
-- **`profiles.yml`**: プロフィールページに表示される、コンビと各メンバーの情報です。
-- **`banners.yml`**: トップページのスライダーに表示される、バナー画像とリンク先のデータです。
+生成先は `_site/` です。直接編集せず、元の HTML・Markdown・YAML・SCSS を修正してください。`_config.yml` の変更後はサーバーを再起動します。今日のライブやチケット発売情報などはビルド時刻を使うため、日付や時刻が変わった状態を確認する場合も再ビルドしてください。タイムゾーンは `Asia/Tokyo` です。
 
-### `_includes` フォルダ
+## 更新したい内容と編集先
 
-サイトの様々な場所で使い回す「部品」となる HTML ファイルを置く場所です。
+| 内容 | 編集先 |
+| --- | --- |
+| ライブ日程・会場・料金・チケット・配信 | `arrange/lives.csv`（変換で `_data/lives.yml` を生成） |
+| ニュース記事 | `_news/年/` 内の Markdown |
+| 「主なライブ」の紹介・開催情報 | `_main_lives/` 内の Markdown |
+| コンビ・メンバーのプロフィール | `_data/profiles.yml` |
+| カレンダーのライブ以外の予定 | `_data/events.yml` |
+| おすすめ動画 | `_data/videos.yml` |
+| バナー画像とリンク | `_data/banners.yml`、`assets/images/` |
+| トップページのラジオ・最終手動更新日 | `index.html` |
+| 動画タブの埋め込み | `_includes/video_section.html` |
 
-- **`header.html`**: 全ページ共通のヘッダー（ロゴやメニュー）です。
-- **`live_info_section.html`**: トップページに表示される「TODAY'S LIVE」「UPCOMING LIVES」のセクションです。
-- **`news_section.html`**: トップページに表示される最新 NEWS のセクションです。
-- **`news_item.html`**: NEWS 一覧で使われる、ニュース 1 件分の表示部品です。
-- **`profile.html`**: プロフィールページに表示される、コンビとメンバーのプロフィール全体の部品です。
-- **`banner_slider.html`**: トップページのスライダーの HTML 構造です。
-- **`category_links.html`**: NEWS ページで使われるカテゴリリンクの一覧です。
-- **`pagenation.html`**: NEWS ページで使われるページ送りをする部品です。
+バナー部品は `_includes/banner_slider.html` にありますが、現在のトップページでは読み込まれていません。データだけ変更してもトップページには表示されません。
 
-### `_layouts` フォルダ
+### ライブを追加する
 
-サイト全体の「設計図」となる HTML ファイルを置く場所です。
+`arrange/lives.csv` に行を追加し、次のコマンドを1回実行します。
 
-- **`default.html`**: 全てのページの基本となる骨格（`<head>`タグ、ヘッダー、フッターなど）です。
-- **`post.html`**: NEWS の個別記事ページ用の設計図です。
-- **`category.html`**: （手動生成方式の）カテゴリ別 NEWS 一覧ページ用の設計図です。
-- **`main_live_post.html`**: 「主なライブ」の個別詳細ページ用の設計図です。
+```sh
+.venv/bin/python arrange/print.py
+```
 
-### `_news` フォルダ
+新規行の `live_id`・`news_date` は空欄で構いません。初回実行時にIDと日本時間の当日が補完され、`_data/lives.yml` と個別NEWSが生成されます。既存行の修正では `live_id` を変更しないでください。生成済みNEWSは当時の記録として保持されます。NEWSを作らない場合は `news_date` に `-` を入力します。
 
-NEWS 記事の本体となる Markdown (`.md`) ファイルを一つずつ格納します。`_config.yml`の`sort_by: date`設定に基づき、Jekyll が自動で時系列に並び替えます。
+初回セットアップと詳しい運用は [IMPLEMENTATION_NOTES.md](IMPLEMENTATION_NOTES.md) を参照してください。
 
-### `_main_lives` フォルダ
+### NEWS を追加する
 
-「主なライブ」の詳細ページを生成するための Markdown (`.md`) ファイルを格納します。ファイル名の先頭の数字で表示順をコントロールします。
+`_news/2026/261001_記事名.md` のように年別フォルダへ作成します。表示順はファイル名ではなく、冒頭の `date` が基準です。
 
-### `assets` フォルダ
-
-CSS、JavaScript、画像といった、サイトを構成する「素材」ファイルを置く場所です。
-
-### `category` フォルダ
-
-各カテゴリページを生成するための、トリガーとなる`.md`ファイル（例: `release.md`）を格納します。
-
-### ルートにある `.html` ファイル
-
-`index.html`, `live.html`, `news.html`, `profile.html`, `main-lives.html` など、サイトの各メインページ本体となるファイルです。
-
-### `.github/workflows/jekyll.yml`
-
-GitHub Actions の指示書です。サイトのビルド方法や、毎日深夜 0 時に自動更新するスケジュールなどが定義されています。
-
+```markdown
+---
+layout: post
+date: 2026-10-01 12:00:00 +0900
+category: "LIVE"
+title: "【10/20】ライブ名【出演決定】"
 ---
 
-## サイトの更新方法
+ここに本文を記入します。
+```
 
-- **NEWS を追加したい時:** `_news` フォルダに `YYMMDD-番号.md` の形式で新しいファイルを追加します。
-- **LIVE 情報を追加したい時:** `_data/lives.yml` ファイルに新しいライブ情報を追記します。
-- **「主なライブ」を追加・編集したい時:** `_main_lives` フォルダの中の `.md` ファイルを編集、または新しく作成します。
-- **プロフィールを更新したい時:** `_data/profiles.yml` を編集します。
-- **トップページのバナーを変更したい時:** `_data/banners.yml` を編集し、画像ファイルを `assets/images` に追加します。
+既存のカテゴリは `LIVE`・`TICKET`・`MEDIA`・`CONTEST` です。新規ライブの出演告知はCSVから自動生成します。上記の手動作成は、それ以外のお知らせや訂正記事で使用します。
 
-## ローカル環境での確認方法
+### 主なライブを編集する
 
-1.  ターミナルでこのプロジェクトフォルダに移動します。
-2.  `bundle exec jekyll serve` を実行します。
-3.  ブラウザで `http://127.0.0.1:4000/intake_information/` を開きます。
-4.  **注意：** 日付が変わった日や、`_config.yml` を編集した後は、一度 `Ctrl + C` でサーバーを停止し、再度起動し直してください。
+`_main_lives/` の Markdown に紹介文と `summary` を記入します。ファイル名の先頭の番号で一覧順を管理します。現在は `output: false` のため、個別ページは生成せず `main-lives.html` の開閉式カードに表示します。
+
+## ファイル構成
+
+| ファイル・フォルダ | 役割 |
+| --- | --- |
+| `index.html` | トップページ |
+| `live.html` | ライブ一覧・絞り込み・並び替え |
+| `news.html`、`news/` | NEWS 一覧、手動カテゴリページ |
+| `profile.html`、`main-lives.html`、`schedule.html` | プロフィール、主なライブ、カレンダー |
+| `_config.yml` | URL・タイムゾーン・コレクション・ページ送りの設定 |
+| `_data/` | 各ページで共有する YAML データ |
+| `_includes/` | ヘッダー、各セクション、記事表示、`pagination.html` などの部品 |
+| `_layouts/` | 共通の骨格、記事・カテゴリ一覧などのレイアウト |
+| `assets/css/style.scss` | SCSS の入口。Jekyll が `style.css` に変換 |
+| `assets/css/partials/` | 基本・共通部品・ページ別・スマートフォン向けのスタイル |
+| `assets/js/script.js` | メニュー、表示アニメーション、開閉、動画タブ、Swiper の制御 |
+| `assets/images/` | 写真・バナー・アイコン |
+| `arrange/` | CSV から更新用データや告知原稿を作る補助ツール |
+| `.github/workflows/jekyll.yml` | ビルド・動画更新・公開のワークフロー |
+
+CSS は `style.scss` に記載した順番で読み込み、最後の `_responsive.scss` で幅 767px 以下の表示を調整します。同じセレクタやプロパティを整理する際は、後勝ちの上書きや詳細度を確認してください。カレンダーや LIVE 一覧など、一部のスタイル・スクリプトは各 HTML 内にもあります。
+
+## 自動更新と公開
+
+- `main` ブランチへの push、毎日 **日本時間 0:10**（UTC 15:10）、Actions の手動実行が契機です。定期実行は遅れる場合があります。
+- YouTube API から最新動画 ID を取得し、ビルド用の `_includes/video_section.html` を更新します。リポジトリの Secret `YOUTUBE_API_KEY` が必要です。この変更は元ファイルへコミットされません。
+- Jekyll で `_site/` を生成し、GitHub Pages に公開します。
+- フォント、Font Awesome、Swiper、埋め込み動画などは外部サービスから読み込みます。
+
+## CSV 補助ツール
+
+`arrange/print.py` はCSVからライブ一覧を同期し、新規ライブのNEWSを自動作成します。SNS原稿・確認用HTML・TimeTree CSVも `arrange/output/` に出力します。TimeTree CSVはその回の新規追加分のみで、新規なしの再実行時はヘッダーだけになります。Python 3.9以上が必要です。
+
+```sh
+python3 -m venv .venv
+.venv/bin/pip install -r arrange/requirements.txt
+.venv/bin/python arrange/print.py
+```
+
+CSV・YAML・新規NEWS・補助出力の差分を確認し、まとめてコミットしてください。GitHub Actionsは生成済みデータをビルドする既存の流れを維持しています。CSV変換はpush前にローカルで実行します。
+
+## 現在の確認事項
+
+ビルドは完了しますが、既存のページ生成設定には以下の警告があります。
+
+- 自動生成用の `autopage_collection` レイアウトが存在しません。
+- `news/` の手動カテゴリページと AutoPages が一部の同じ URL に出力しています。
+
+生成ページやページ送りの仕様に関わるため、整理時は公開ページへの影響を確認してから変更してください。

@@ -31,22 +31,6 @@
   font-size: 1.5rem;
 }
 
-.social-links {
-  margin-top: 20px;
-}
-.social-links a {
-  display: inline-block;
-  margin: 0 15px; /* アイコン同士の間隔 */
-  color: var(--white); /* アイコンの色*/
-  font-size: 2rem; /* アイコンの大きさ (1rem = 約16px) */
-  transition: transform 0.2s, color 0.2s; /* ホバー時のアニメーション設定 */
-}
-.social-links a:hover {
-  color: var(--gray); /* ホバーした時の色 */
-  transform: scale(1.1); /* ホバーした時に少しだけ大きくする */
-}
-
-
 /* --- プロフィールページ --- */
 .duo-profile-section {
   display: flex;
@@ -159,12 +143,15 @@
   margin: 0 0 15px 0;
 }
 .social-links {
+  margin-top: 20px;
   display: flex;
   gap: 0px;
 }
 .social-links a {
-  font-size: 1.5rem;
+  display: inline-block;
+  margin: 0 15px;
   color: #555;
+  font-size: 1.5rem;
   transition: color 0.2s, transform 0.2s;
 }
 .social-links a:hover {

@@ -21,7 +21,7 @@
     z-index: 1;
 }
 .hero-text h1 {
-    font-family: var(--font-heading); ;
+    font-family: var(--font-heading);
     font-size: 4rem;
     font-weight: 500;
     letter-spacing: 0.15em;
@@ -147,14 +147,6 @@
   letter-spacing: 1px;
 }
 
-/*
-.scroller-pagination {
-  font-family: var(--font-heading);
-  font-size: 1.1rem;
-  font-weight: bold;
-  color:var(--white);
-}*/
-
 /*　全てのカードについて */
 .live-details {
   display: flex;
@@ -271,23 +263,12 @@
   margin-right: 25px;
   border-radius:10px;
 }
-/*
-.card-footer {
-  margin-top: 15px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}*/
 
 /* TODAY個別スタイル */
 .todays-live {
   background-color: #555;
   color: var(--white);
-}/*
-.todays-live .scroller-header {
-  border-color: rgba(255, 255, 255, 0.5);
-}*/
-
+}
 
 /* UPCOMING個別スタイル */
 .upcoming-lives {
@@ -459,8 +440,9 @@
   }
 }
 
-/* TOPページ共通のボタンスタイル */
+/* サイト共通のボタンスタイル（ページ別の指定より先に読み込む） */
 .button {
+    font-size: 0.8rem;
     display: inline-block;
     padding: 12px 40px;
     border: 1px solid #fff;

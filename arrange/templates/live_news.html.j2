@@ -1,0 +1,19 @@
+<a href="{{ calendar_url }}" target="_blank" class="btn-calendar">
+<i class="fa-solid fa-calendar-check"></i> Googleカレンダーに追加
+</a>
+
+<h1>{{ title }}</h1>
+
+<i class="fa-regular fa-calendar-alt"></i> {{ date_formatted }}<br>
+<i class="fa-regular fa-clock"></i> 開場 {{ time_open }} ｜開演 {{ time_start }}{% if time_end %} ｜終演 {{ time_end }}{% endif %}<br>
+<i class="fa-solid fa-location-dot"></i> {{ venue }}<br>
+<i class="fa-solid fa-ticket"></i> {% if advance %}前売 ¥{{ advance }}{% endif %}{% if advance and door %}｜{% endif %}{% if door %}当日 ¥{{ door }}{% endif %}<br>
+{% if performer %}<i class="fa-solid fa-users"></i> {{ performer }}<br>{% endif %}
+
+{% if preSaleStart %}先行：{{ preSaleStart_formatted }}{% if preSaleEnd %} ~ {{ preSaleEnd_formatted }}{% endif %}
+<a href="{{ presale_calendar_url }}" target="_blank" class="btn-calendar"><i class="fa-solid fa-calendar-check"></i></a><br>{% endif %}
+{% if general %}一般：{{ general_formatted }}
+<a href="{{ general_calendar_url }}" target="_blank" class="btn-calendar"><i class="fa-solid fa-calendar-check"></i></a><br>{% endif %}
+
+{% if url %}チケットの購入は<a href="{{ url }}" target="_blank">こちら</a><br>{% endif %}
+{% if streaming_url %}配信：{% if streaming_price %}¥{{ streaming_price }} {% endif %}<a href="{{ streaming_url }}" target="_blank">こちら</a>{% elif streaming_price %}配信：¥{{ streaming_price }}{% endif %}

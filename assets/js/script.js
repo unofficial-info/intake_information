@@ -1,6 +1,5 @@
 // --- スクロールでふわっと表示させるアニメーション ---
 
-// ↓↓↓ 監視対象を新しいクラス名に変更
 const animatedTargets = document.querySelectorAll(".animate-on-scroll");
 
 // Intersection Observerのオプション設定
@@ -18,7 +17,6 @@ const options = {
 
 const observer = new IntersectionObserver(handleIntersect, options);
 
-// ↓↓↓ 変数名を変更
 animatedTargets.forEach((target) => {
   observer.observe(target);
 });
@@ -109,22 +107,6 @@ function setupPaginationIndicator(scrollerId) {
 setupPaginationIndicator("todays-live-scroller");
 setupPaginationIndicator("upcoming-lives-scroller");
 
-/*
-// --- トップページのスライダー設定 ---
-if (document.querySelector(".swiper-container")) {
-  const swiper = new Swiper(".swiper-container", {
-    loop: true,
-    autoplay: {
-      delay: 4000,
-      disableOnInteraction: false,
-    },
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-  });
-}*/
-
 // --- 主なライブページの開閉機能 ---
 const liveCardHeaders = document.querySelectorAll(".main-live-header");
 
@@ -204,7 +186,6 @@ document.querySelectorAll(".pickup-swiper").forEach(function (container) {
 });
 
 // --- トップページのスライダー設定 ---
-// (操作対象を ".banner-slider" に限定)
 if (document.querySelector(".banner-slider")) {
   const swiper = new Swiper(".banner-slider", {
     loop: true,
@@ -213,24 +194,8 @@ if (document.querySelector(".banner-slider")) {
       disableOnInteraction: false,
     },
     pagination: {
-      el: ".banner-pagination", // (これは前回修正済み)
+      el: ".banner-pagination",
       clickable: true,
     },
   });
 }
-
-/*
-// --- おすすめ動画スライダーの設定 ---
-// (操作対象を ".video-slider" に限定)
-if (document.querySelector(".video-slider")) {
-  const videoSwiper = new Swiper(".video-slider", {
-    loop: true,
-
-    // (ここには autoplay の設定は一切書かない)
-
-    navigation: {
-      nextEl: ".video-slider-button-next", // (これは前回修正済み)
-      prevEl: ".video-slider-button-prev",
-    },
-  });
-}*/

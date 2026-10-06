@@ -179,12 +179,6 @@ body {
   border: none; /* フレームの枠線を消す */
 }
 
-.button {
-  color: var(--white);
-  font-size: 0.8rem; /* 文字サイズを小さくする */
-  padding: 8px 15px;
-}
-
 hr.line1 {
   border: none;
   border-top: 1px dashed var(--white);
@@ -417,13 +411,6 @@ hr.line2 {
   letter-spacing: 1px;
 }
 
-/*
-.scroller-pagination {
-  font-family: var(--font-heading);
-  font-size: 1.1rem;
-  font-weight: bold;
-  color:var(--white);
-}*/
 /*　全てのカードについて */
 .live-details {
   display: flex;
@@ -555,21 +542,12 @@ hr.line2 {
   border-radius: 10px;
 }
 
-/*
-.card-footer {
-  margin-top: 15px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}*/
 /* TODAY個別スタイル */
 .todays-live {
   background-color: #555;
   color: var(--white);
-} /*
-.todays-live .scroller-header {
-  border-color: rgba(255, 255, 255, 0.5);
-}*/
+}
+
 /* UPCOMING個別スタイル */
 .upcoming-lives {
   background-color: #444;
@@ -733,8 +711,9 @@ hr.line2 {
     opacity: 0;
   }
 }
-/* TOPページ共通のボタンスタイル */
+/* サイト共通のボタンスタイル（ページ別の指定より先に読み込む） */
 .button {
+  font-size: 0.8rem;
   display: inline-block;
   padding: 12px 40px;
   border: 1px solid #fff;
@@ -1290,23 +1269,6 @@ hr.line2 {
   font-size: 1.5rem;
 }
 
-.social-links {
-  margin-top: 20px;
-}
-
-.social-links a {
-  display: inline-block;
-  margin: 0 15px; /* アイコン同士の間隔 */
-  color: var(--white); /* アイコンの色*/
-  font-size: 2rem; /* アイコンの大きさ (1rem = 約16px) */
-  transition: transform 0.2s, color 0.2s; /* ホバー時のアニメーション設定 */
-}
-
-.social-links a:hover {
-  color: var(--gray); /* ホバーした時の色 */
-  transform: scale(1.1); /* ホバーした時に少しだけ大きくする */
-}
-
 /* --- プロフィールページ --- */
 .duo-profile-section {
   display: flex;
@@ -1432,13 +1394,16 @@ hr.line2 {
 }
 
 .social-links {
+  margin-top: 20px;
   display: flex;
   gap: 0px;
 }
 
 .social-links a {
-  font-size: 1.5rem;
+  display: inline-block;
+  margin: 0 15px;
   color: #555;
+  font-size: 1.5rem;
   transition: color 0.2s, transform 0.2s;
 }
 
@@ -1463,23 +1428,6 @@ hr.line2 {
   height: 100%; /* 親のグリッドと同じ高さに伸ばす */
 }
 
-.main-live-header h2 {
-  background: var(--gray);
-  color: var(--white);
-  padding: 15px 25px;
-  margin: 0;
-  font-size: 1.3rem;
-  font-family: var(--font-main);
-  border-radius: 8px 8px 0 0; /* 上の角だけ丸める */
-}
-
-.main-live-content {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 25px;
-  flex-grow: 1; /* 残りの高さを全て使う */
-}
-
 /* --- 主なライブページの開閉機能スタイル --- */
 /* ヘッダー部分をFlexboxにして、ボタンとタイトルを横並びに */
 .main-live-header {
@@ -1496,10 +1444,12 @@ hr.line2 {
 
 .main-live-header h2 {
   background: none;
+  color: inherit;
   padding: 0;
   margin: 0;
-  color: inherit;
   font-size: 1.3rem;
+  font-family: var(--font-main);
+  border-radius: 8px 8px 0 0;
 }
 
 /* 開閉ボタンのスタイル */
@@ -1515,10 +1465,13 @@ hr.line2 {
 
 /* デフォルトでコンテンツを閉じておく */
 .main-live-content {
-  max-height: 0; /* 高さを0にする */
-  overflow: hidden; /* はみ出した部分を隠す */
-  transition: max-height 0.5s ease-in-out, padding 0.3s ease-in-out; /* なめらかなアニメーション */
-  padding: 0 25px; /* 開いた時のためにpaddingは用意しておくが、高さが0なので見えない */
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 25px;
+  flex-grow: 1;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out, padding 0.3s ease-in-out;
 }
 
 /* --- 開いた状態のスタイル --- */
