@@ -36,6 +36,12 @@
   category: "CONTEST"
   time_start: "11:00"
   url: "https://www.m-1gp.com/schedule/detail.html?id=865"
+
+- date: "2026-11-02"
+  title: "M-1グランプリ3回戦"
+  category: "CONTEST"
+  time_start: "17:00"
+  url: "https://www.m-1gp.com/schedule/detail.html?id=892"
 # # 例：メディア出演
 # - date: "2026-07-01"
 #   title: "メディア出演"
